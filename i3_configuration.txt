@@ -182,3 +182,5 @@ bar {
 
 bindsym $mod+F1 exec setxkbmap us
 bindsym $mod+F2 exec setxkbmap ru
+
+exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
