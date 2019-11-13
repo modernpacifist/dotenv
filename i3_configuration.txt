@@ -214,5 +214,5 @@ bar {
 # For wallpaper
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
 
-# For language input
+# For language input (use 'i3-keyboard-layout' from executable-files-folder)
 bindsym $mod+space exec /usr/bin/i3-keyboard-layout cycle us ru
