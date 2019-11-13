@@ -125,6 +125,8 @@ set $ws17 "17"
 set $ws18 "18"
 set $ws19 "19"
 set $ws20 "20"
+set $ws21 "21"
+set $ws22 "22"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -147,6 +149,8 @@ bindsym $mod+F7 workspace number $ws17
 bindsym $mod+F8 workspace number $ws18
 bindsym $mod+F9 workspace number $ws19
 bindsym $mod+F10 workspace number $ws20
+bindsym $mod+F11 workspace number $ws21
+bindsym $mod+F12 workspace number $ws22
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -169,7 +173,8 @@ bindsym $mod+Shift+F7 move container to workspace number $ws17
 bindsym $mod+Shift+F8 move container to workspace number $ws18
 bindsym $mod+Shift+F9 move container to workspace number $ws19
 bindsym $mod+Shift+F10 move container to workspace number $ws20
-
+bindsym $mod+Shift+F11 move container to workspace number $ws21
+bindsym $mod+Shift+F12 move container to workspace number $ws22
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
