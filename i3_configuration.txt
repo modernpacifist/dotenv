@@ -47,7 +47,7 @@ bindsym $mod+KP_Enter exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 # kill focused window with numpad
-bindsym $mod+KP_Delete kill
+bindsym $mod+Shift+KP_Decimal kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
