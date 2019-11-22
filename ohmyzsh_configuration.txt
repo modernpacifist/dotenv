@@ -59,7 +59,8 @@ ZSH_THEME="robbyrussell"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
-RPROMPT="%{$fg[green]%}[%D{%c}]"
+#RPROMPT="%{$fg[green]%}[%D][%*]"
+RPROMPT="%{$fg[green]%}[%D{%y/%m/%d}|%*]"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
