@@ -258,3 +258,5 @@ bindsym $mod+space exec /usr/bin/i3-keyboard-layout cycle us ru
 
 # For disabled numlock trigger button
 exec --no-startup-id xmodmap -e 'keycode 77='
+
+exec --no-startup-id xset r rate 150 60
