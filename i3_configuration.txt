@@ -261,3 +261,6 @@ exec --no-startup-id xmodmap -e 'keycode 77='
 
 # For keyboard speed
 exec --no-startup-id xset r rate 150 75
+
+# For google startup
+exec --no-startup-id google-chrome
