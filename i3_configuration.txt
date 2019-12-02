@@ -295,12 +295,8 @@ bindsym $mod+space exec /usr/bin/i3-keyboard-layout cycle us ru
 
 
 # For disabled numlock trigger button
-exec --no-startup-id xmodmap -e 'keycode 77='
+exec_always --no-startup-id xmodmap -e 'keycode 77='
 
 
 # For keyboard speed
-exec --no-startup-id xset r rate 130 100
-
-
-# For google startup
-exec --no-startup-id google-chrome
+exec_always --no-startup-id xset r rate 200 125
