@@ -295,4 +295,4 @@ bindsym $mod+space exec /usr/bin/i3-keyboard-layout cycle us ru
 
 
 # For keyboard speed
-exec_always xset r rate 175 150
+exec_always xset r rate 165 150
