@@ -275,8 +275,6 @@ mode "resize" {
 
 # resize window 
 bindsym $mod+r mode "resize"
-# resize window with numpad
-bindsym $mod+KP_Subtract mode "resize"
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
