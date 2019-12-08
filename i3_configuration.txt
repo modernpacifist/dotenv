@@ -196,18 +196,18 @@ bindsym $mod+Shift+KP_9 move container to workspace number $ws9
 
 
 # SECOND-LEVEL
-set $ws11 "11"
-set $ws12 "12"
-set $ws13 "13"
-set $ws14 "14"
-set $ws15 "15"
-set $ws16 "16"
-set $ws17 "17"
-set $ws18 "18"
-set $ws19 "19"
-set $ws20 "20"
-set $ws21 "21"
-set $ws22 "22:IDE_DAEMONS"
+set $ws11 "11:F11"
+set $ws12 "12:F12"
+set $ws13 "13:F13"
+set $ws14 "14:F14"
+set $ws15 "15:F15"
+set $ws16 "16:F16"
+set $ws17 "17:F17"
+set $ws18 "18:F18"
+set $ws19 "19:F19"
+set $ws20 "20:F20"
+set $ws21 "21:F21"
+set $ws22 "22:PROG_DAEMONS"
 
 # switch to workspace SECOND-LEVEL
 bindsym $mod+F1 workspace number $ws11
