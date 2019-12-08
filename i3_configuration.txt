@@ -132,10 +132,10 @@ bindsym $mod+a focus parent
 # We use variables to avoid repeating the names in multiple places.
 
 # FIRST-LEVEL
-set $ws0 "0"
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
+set $ws0 "0:DAEMONS"
+set $ws1 "1:NETWORK"
+set $ws2 "2:TERMINAL"
+set $ws3 "3:IDE"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
