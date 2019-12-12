@@ -291,7 +291,7 @@ exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
 
 # For language input
 bindsym $mod+space exec /usr/bin/i3-keyboard-layout cycle us ru
-bindsym $mod+Shift+KP_Subtract exec nautilus
+bindsym $mod+Shift+N exec nautilus
 
 
 # For keyboard speed
