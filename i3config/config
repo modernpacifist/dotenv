@@ -297,9 +297,14 @@ bindsym $mod+Shift+N exec nautilus
 # For keyboard speed
 exec_always xset r rate 165 150
 
-# class                 border  backgr. text    indicator child_border
+# Class                 border  backgr. text    indicator child_border
 client.focused          #013220 #013220 #ffffff #000000   #013220
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #000000 #000000 #ffffff #ffffff   #000000
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+# For screenshot
+# bindsym Print
+bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`'
+
