@@ -119,11 +119,11 @@ bindsym --release $mod+Alt+space focus mode_toggle
 
 
 # focus the parent container
-bindsym --release $mod+a focus parent
+bindsym --release $mod+p focus parent
 
 
 # focus the child container
-bindsym --release $mod+d focus child
+bindsym --release $mod+c focus child
 
 
 # Define names for default workspaces for which we configure key bindings later on.
