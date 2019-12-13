@@ -55,9 +55,9 @@ bindsym --release $mod+Shift+KP_Decimal kill
 
 
 # start dmenu (a program launcher)
-bindsym --release $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run
 # start dmenu (a program launcher) with numpad
-bindsym --release $mod+Shift+KP_Add exec dmenu_run
+bindsym $mod+Shift+KP_Add exec dmenu_run
 
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
