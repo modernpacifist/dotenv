@@ -203,9 +203,7 @@ set $ws16 "16:F6"
 set $ws17 "17:F7"
 set $ws18 "18:F8"
 set $ws19 "19:F9"
-set $ws20 "20:F10"
-set $ws21 "21:F11"
-set $ws22 "22:PROG_DAEMONS"
+set $ws20 "20:PROG_DAEMONS"
 
 # switch to workspace SECOND-LEVEL
 bindsym $mod+F1 workspace number $ws11
@@ -218,8 +216,6 @@ bindsym $mod+F7 workspace number $ws17
 bindsym $mod+F8 workspace number $ws18
 bindsym $mod+F9 workspace number $ws19
 bindsym $mod+F10 workspace number $ws20
-bindsym $mod+F11 workspace number $ws21
-bindsym $mod+F12 workspace number $ws22
 
 # move focused container to workspace SECOND-LEVEL
 bindsym $mod+Shift+F1 move container to workspace number $ws11
@@ -232,9 +228,11 @@ bindsym $mod+Shift+F7 move container to workspace number $ws17
 bindsym $mod+Shift+F8 move container to workspace number $ws18
 bindsym $mod+Shift+F9 move container to workspace number $ws19
 bindsym $mod+Shift+F10 move container to workspace number $ws20
-bindsym $mod+Shift+F11 move container to workspace number $ws21
-bindsym $mod+Shift+F12 move container to workspace number $ws22
 
+
+# move between ws's with keys, not bindings
+bindsym --release $mod+F11 workspace prev
+bindsym --release $mod+F12 workspace next
 
 
 # reload the configuration file
