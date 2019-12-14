@@ -49,49 +49,29 @@ bindsym --release $mod+Shift+KP_Enter exec i3-sensible-terminal
 
 
 # kill focused window
-bindsym --release $mod+Shift+K kill
 bindsym --release $mod+Shift+Delete kill
+bindsym --release $mod+Shift+Q kill
 # kill focused window with numpad
 bindsym --release $mod+Shift+KP_Decimal kill
 
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym --release $mod+d exec dmenu_run
+bindsym --release $mod+Shift+M exec dmenu_run
 # start dmenu (a program launcher) with numpad
-bindsym $mod+Shift+KP_Add exec dmenu_run
-
-
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-
+bindsym --release $mod+Shift+KP_Add exec dmenu_run
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
 bindsym --release $mod+h split v
@@ -304,6 +284,5 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 # For screenshot
-# bindsym Print
 bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`'
  
