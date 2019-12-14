@@ -61,6 +61,7 @@ bindsym --release $mod+Shift+M exec dmenu_run
 # start dmenu (a program launcher) with numpad
 bindsym --release $mod+Shift+KP_Add exec dmenu_run
 
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -74,11 +75,11 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
-bindsym --release $mod+h split v
+bindsym --release $mod+Shift+h split v
 
 
 # split in vertical orientation
-bindsym --release $mod+v split h
+bindsym --release $mod+Shift+v split h
 
 
 # enter fullscreen mode for the focused container
@@ -100,11 +101,11 @@ bindsym --release $mod+Alt+space focus mode_toggle
 
 
 # focus the parent container
-bindsym --release $mod+p focus parent
+#bindsym --release $mod+p focus parent
 
 
 # focus the child container
-bindsym --release $mod+c focus child
+#bindsym --release $mod+c focus child
 
 
 # Define names for default workspaces for which we configure key bindings later on.
@@ -212,8 +213,8 @@ bindsym $mod+Shift+F10 move container to workspace number $ws20
 
 
 # move between ws's with keys, not bindings
-bindsym --release $mod+F11 workspace prev
-bindsym --release $mod+F12 workspace next
+bindsym --release $mod+p workspace prev
+bindsym --release $mod+n workspace next
 
 
 # reload the configuration file
@@ -270,7 +271,7 @@ exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
 bindsym --release $mod+space exec /usr/bin/i3-keyboard-layout cycle us ru
 
 # For execution of nautilus
-bindsym --release $mod+Shift+N exec nautilus
+bindsym --release $mod+Shift+n exec nautilus
 
 
 # For keyboard speed
