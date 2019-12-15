@@ -50,7 +50,7 @@ bindsym --release $mod+Shift+KP_Enter exec i3-sensible-terminal
 
 # kill focused window
 bindsym --release $mod+Shift+d kill
-bindsym --release $mod+Shift+Delete kill
+bindsym --release $mod+Shift+BackSpace kill
 # kill focused window with numpad
 bindsym --release $mod+Shift+KP_Decimal kill
 
