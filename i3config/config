@@ -83,12 +83,6 @@ bindsym --release $mod+Ctrl+v split h
 bindsym --release $mod+f fullscreen toggle
 
 
-# change container layout (stacked, tabbed, toggle split)
-#bindsym $mod+s layout stacking
-#bindsym $mod+w layout tabbed
-#bindsym $mod+e layout toggle split
-
-
 # toggle tiling / floating
 bindsym --release $mod+Shift+space floating toggle
 
@@ -117,6 +111,7 @@ set $ws7 "7:TERMINAL"
 set $ws8 "8:TERMINAL"
 set $ws9 "9:TERMINAL"
 set $ws10 "10:TERMINAL"
+
 # switch to workspace FIRST-LEVEL
 bindsym $mod+grave workspace number $ws0
 bindsym $mod+1 workspace number $ws1
@@ -129,6 +124,7 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
+
 # move focused container to workspace FIRST-LEVEL
 bindsym $mod+Shift+asciitilde move container to workspace number $ws0
 bindsym $mod+Shift+exclam move container to workspace number $ws1
@@ -141,6 +137,7 @@ bindsym $mod+Shift+ampersand move container to workspace number $ws7
 bindsym $mod+Shift+asterisk move container to workspace number $ws8
 bindsym $mod+Shift+parenleft move container to workspace number $ws9
 bindsym $mod+Shift+parenright move container to workspace number $ws10
+
 # switch to workspace with numpad FIRST-LEVEL
 bindsym $mod+KP_Insert workspace number $ws0
 bindsym $mod+KP_End workspace number $ws1
@@ -151,6 +148,7 @@ bindsym $mod+KP_Begin workspace number $ws5
 bindsym $mod+KP_Right workspace number $ws6
 bindsym $mod+KP_Home workspace number $ws7
 bindsym $mod+KP_Up workspace number $ws8
+
 # move focused container to workspace using numpad FIRST-LEVEL
 bindsym $mod+Shift+KP_0 move container to workspace number $ws0
 bindsym $mod+Shift+KP_1 move container to workspace number $ws1
@@ -175,6 +173,7 @@ set $ws17 "17:F7"
 set $ws18 "18:F8"
 set $ws19 "19:F9"
 set $ws20 "20:PROG_DAEMONS"
+
 # switch to workspace SECOND-LEVEL
 bindsym $mod+F1 workspace number $ws11
 bindsym $mod+F2 workspace number $ws12
@@ -186,6 +185,7 @@ bindsym $mod+F7 workspace number $ws17
 bindsym $mod+F8 workspace number $ws18
 bindsym $mod+F9 workspace number $ws19
 bindsym $mod+F10 workspace number $ws20
+
 # move focused container to workspace SECOND-LEVEL
 bindsym $mod+Shift+F1 move container to workspace number $ws11
 bindsym $mod+Shift+F2 move container to workspace number $ws12
@@ -274,6 +274,6 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 
-# For screenshot
+# For screenshot this command saves your screenshot to your buffer(no copy on your disk)
 bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`'
  
