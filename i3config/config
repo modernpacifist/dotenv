@@ -48,7 +48,7 @@ bindsym --release $mod+Return exec i3-sensible-terminal
 bindsym --release $mod+Shift+KP_Enter exec i3-sensible-terminal
 
 
-# mouse 
+# mouse impact 
 focus_follows_mouse no
 
 
@@ -199,7 +199,10 @@ bindsym $mod+Shift+F10 move container to workspace number $ws20
 bindsym --release $mod+n workspace next
 bindsym --release $mod+p workspace prev
 
-#test hehe xd
+# move window to next $ws
+bindsym --release $mod+Shift+n move container to workspace next
+bindsym --release $mod+Shift+p move container to workspace prev
+
 
 
 # reload the configuration file
@@ -257,7 +260,7 @@ bindsym --release $mod+space exec /usr/bin/i3-keyboard-layout cycle us ru
 
 
 # For execution of nautilus
-bindsym --release $mod+Shift+n exec nautilus
+bindsym --release $mod+Shift+u exec nautilus
 
 
 # For keyboard speed
