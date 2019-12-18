@@ -53,7 +53,7 @@ focus_follows_mouse no
 
 # kill focused window
 bindsym --release $mod+Shift+d kill
-bindsym --release $mod+Shift+BackSpace kill
+bindsym --release $mod+BackSpace kill
 # kill focused window with numpad
 bindsym --release $mod+Shift+KP_Decimal kill
 
