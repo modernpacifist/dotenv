@@ -199,9 +199,9 @@ bindsym --release $mod+n workspace next
 bindsym --release $mod+p workspace prev
 
 # reload the configuration file
-bindsym --release $mod+Shift+c reload
+bindsym --release $mod+Escape reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym --release $mod+Shift+r restart
+bindsym --release $mod+Shift+Escape restart
 # exit i3 (logs you out of your X session)
 bindsym --release $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
