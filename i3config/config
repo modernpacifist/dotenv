@@ -95,17 +95,17 @@ bindsym --release $mod+Alt+space focus mode_toggle
 
 
 # FIRST-LEVEL
-set $ws0 "0:DAEMONS"
-set $ws1 "1:NETWORK"
-set $ws2 "2:TERMINAL"
-set $ws3 "3:IDE"
-set $ws4 "4:IDE"
-set $ws5 "5:RUN"
-set $ws6 "6:TERMINAL"
-set $ws7 "7:TERMINAL"
-set $ws8 "8:TERMINAL"
-set $ws9 "9:TERMINAL"
-set $ws10 "10:TERMINAL"
+set $ws0 "0/DAEMONS"
+set $ws1 "1/NETWORK"
+set $ws2 "2/TERMINAL"
+set $ws3 "3/IDE"
+set $ws4 "4/IDE"
+set $ws5 "5/RUN"
+set $ws6 "6/TERMINAL"
+set $ws7 "7/TERMINAL"
+set $ws8 "8/TERMINAL"
+set $ws9 "9/TERMINAL"
+set $ws10 "10/TERMINAL"
 
 # switch to workspace FIRST-LEVEL
 bindsym $mod+grave workspace number $ws0
@@ -158,16 +158,16 @@ bindsym $mod+Shift+KP_9 move container to workspace number $ws9
 
 
 # SECOND-LEVEL
-set $ws11 "11:F1"
-set $ws12 "12:F2"
-set $ws13 "13:F3"
-set $ws14 "14:F4"
-set $ws15 "15:F5"
-set $ws16 "16:F6"
-set $ws17 "17:F7"
-set $ws18 "18:F8"
-set $ws19 "19:F9"
-set $ws20 "20:PROG_DAEMONS"
+set $ws11 "11/F1"
+set $ws12 "12/F2"
+set $ws13 "13/F3"
+set $ws14 "14/F4"
+set $ws15 "15/F5"
+set $ws16 "16/F6"
+set $ws17 "17/F7"
+set $ws18 "18/F8"
+set $ws19 "19/F9"
+set $ws20 "20/PROG_DAEMONS"
 
 # switch to workspace SECOND-LEVEL
 bindsym $mod+F1 workspace number $ws11
