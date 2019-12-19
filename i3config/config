@@ -40,10 +40,9 @@ bindsym --release XF86AudioMicMute exec --no-startup-id pactl set-source-mute @D
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-
-# start a terminal
+# Start a terminal
 bindsym --release $mod+Return exec i3-sensible-terminal
-# start a terminal with a numpad
+# Start a terminal with a numpad
 bindsym --release $mod+Shift+KP_Enter exec i3-sensible-terminal
 
 
@@ -52,7 +51,6 @@ focus_follows_mouse no
 
 
 # kill focused window
-bindsym --release $mod+Shift+d kill
 bindsym --release $mod+BackSpace kill
 # kill focused window with numpad
 bindsym --release $mod+Shift+KP_Decimal kill
@@ -95,17 +93,17 @@ bindsym --release $mod+Alt+space focus mode_toggle
 
 
 # FIRST-LEVEL
-set $ws0 "0/DAEMONS"
-set $ws1 "1/NETWORK"
-set $ws2 "2/TERMINAL"
-set $ws3 "3/IDE"
-set $ws4 "4/IDE"
-set $ws5 "5/RUN"
-set $ws6 "6/TERMINAL"
-set $ws7 "7/TERMINAL"
-set $ws8 "8/TERMINAL"
-set $ws9 "9/TERMINAL"
-set $ws10 "10/TERMINAL"
+set $ws0 "0:DAEMONS"
+set $ws1 "1:NETWORK"
+set $ws2 "2:TERMINAL"
+set $ws3 "3:IDE"
+set $ws4 "4:IDE"
+set $ws5 "5:RUN"
+set $ws6 "6:TERMINAL"
+set $ws7 "7:TERMINAL"
+set $ws8 "8:TERMINAL"
+set $ws9 "9:TERMINAL"
+set $ws10 "10:TERMINAL"
 
 # switch to workspace FIRST-LEVEL
 bindsym $mod+grave workspace number $ws0
@@ -194,6 +192,9 @@ bindsym $mod+Shift+F9 move container to workspace number $ws19
 bindsym $mod+Shift+F10 move container to workspace number $ws20
 
 
+# move to last visited ws
+bindsym $mod+Tab workspace back_and_forth
+
 # move between ws's with keys, not bindings
 bindsym --release $mod+n workspace next
 bindsym --release $mod+p workspace prev
@@ -244,7 +245,7 @@ bindsym --release $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	position bottom
+	position top
         status_command i3status | i3-keyboard-layout i3status
         mode hide
 }
