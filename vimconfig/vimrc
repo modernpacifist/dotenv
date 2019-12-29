@@ -5,13 +5,13 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'tpope/vim-fugitive'
+Plugin 'valloric/youcompleteme'
 
-Plugin 'git://git.wincent.com/command-t.git'
-
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'Command-T'
 
 Plugin 'easymotion/vim-easymotion'
+
+map <F2> :set hlsearch!<CR> * #
 
 call vundle#end()            " required
 filetype plugin indent on    " required
