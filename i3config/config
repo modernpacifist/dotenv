@@ -196,12 +196,12 @@ bindsym $mod+Shift+F10 move container to workspace number $ws20
 bindsym --release $mod+Tab workspace back_and_forth
 
 # move between ws's with keys, not bindings
-bindsym --release $mod+k workspace next
-bindsym --release $mod+j workspace prev
+bindsym --release $mod+n workspace next
+bindsym --release $mod+p workspace prev
 
 # move between ws's with keys, not bindings
-bindsym --release $mod+Shift+k move container to workspace next
-bindsym --release $mod+Shift+j move container to workspace prev
+bindsym --release $mod+Shift+n move container to workspace next
+bindsym --release $mod+Shift+p move container to workspace prev
 
 
 # reload the configuration file
