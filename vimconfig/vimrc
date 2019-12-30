@@ -1,7 +1,8 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible              
+filetype off                  
 
 set rtp+=~/.vim/bundle/Vundle.vim
+
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
@@ -13,8 +14,10 @@ Plugin 'terryma/vim-multiple-cursors'
 
 Plugin 'rip-rip/clang_complete'
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+Plugin 'octol/vim-cpp-enhanced-highlight'
+
+call vundle#end()            
+filetype plugin indent on
 
 syntax enable
 set shiftwidth=4
