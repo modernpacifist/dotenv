@@ -5,26 +5,30 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'valloric/youcompleteme'
-
 Plugin 'Command-T'
 
 Plugin 'easymotion/vim-easymotion'
 
-map <F2> :set hlsearch!<CR> * #
+Plugin 'terryma/vim-multiple-cursors'
+
+Plugin 'rip-rip/clang_complete'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 syntax enable
 set shiftwidth=4
+set softtabstop=4
 set noswapfile
 set number
 set tabstop=4
-set expandtab
+set noexpandtab
 
 if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
 
-let g:EasyMotion_leader_key ='<Tab>'
+let g:EasyMotion_leader_key = '<Leader>'
+
+let g:clang_library_path='/usr/lib/llvm-8/lib/libclang-8.so'
+
