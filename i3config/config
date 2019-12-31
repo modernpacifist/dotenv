@@ -286,3 +286,6 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 # For screenshot this command saves your screenshot to your buffer(no copy on your disk)
 bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`'
  
+# Disable capslock
+exec_always setxkbmap -option ctrl:nocaps
+
