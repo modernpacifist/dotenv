@@ -31,7 +31,7 @@ if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
 
-let g:EasyMotion_leader_key = '<Leader>'
+let g:EasyMotion_leader_key = '<Tab>'
 
 let g:clang_library_path='/usr/lib/llvm-8/lib/libclang-8.so'
 
