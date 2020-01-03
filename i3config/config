@@ -289,5 +289,5 @@ bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~
  
 
 # Disable Caps-lock and replace it with escape
-exec_always --no-startup-id setxkbmap -option caps:escape
+exec --no-startup-id setxkbmap -option caps:escape
 
