@@ -272,8 +272,8 @@ bindsym --release $mod+space exec /usr/bin/i3-keyboard-layout cycle us ru
 bindsym --release $mod+Shift+u exec nautilus
 
 
-# For keyboard speed
-exec_always xset r rate 165 150
+# For keyboard speed					dly speed
+exec_always --no-startup-id xset r rate 150 160
 
 
 # Class                 border  backgr. text    indicator child_border
