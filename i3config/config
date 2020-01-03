@@ -274,7 +274,8 @@ bindsym --release $mod+Shift+u exec nautilus
 
 # For keyboard speed					dly speed
 exec_always --no-startup-id xset r rate 175 150
-
+# Disable Caps-lock and replace it with escape
+exec_always --no-startup-id setxkbmap -option caps:escape
 
 # Class                 border  backgr. text    indicator child_border
 client.focused          #013220 #013220 #ffffff #000000   #013220
@@ -288,6 +289,4 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`'
  
 
-# Disable Caps-lock and replace it with escape
-exec_always --no-startup-id setxkbmap -option caps:escape
 
