@@ -1,23 +1,22 @@
 set nocompatible              
-filetype off                  
+filetype on
 
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'Command-T'
+"Plugin 'Command-T'
 
 Plugin 'easymotion/vim-easymotion'
 
-Plugin 'terryma/vim-multiple-cursors'
+"Plugin 'terryma/vim-multiple-cursors'
 
-Plugin 'rip-rip/clang_complete'
+"Plugin 'rip-rip/clang_complete'
 
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
 call vundle#end()            
-filetype plugin indent on
 
 syntax enable
 set shiftwidth=4
@@ -27,11 +26,11 @@ set number
 set tabstop=4
 set noexpandtab
 
-if filereadable("/etc/vim/vimrc.local")
-  source /etc/vim/vimrc.local
-endif
+"if filereadable("/etc/vim/vimrc.local")
+"  source /etc/vim/vimrc.local
+"endif
 
 let g:EasyMotion_leader_key = '<Tab>'
 
-let g:clang_library_path='/usr/lib/llvm-8/lib/libclang-8.so'
+"let g:clang_library_path='/usr/lib/llvm-8/lib/libclang-8.so'
 
