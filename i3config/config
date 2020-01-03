@@ -273,7 +273,7 @@ bindsym --release $mod+Shift+u exec nautilus
 
 
 # For keyboard speed					dly speed
-exec_always --no-startup-id xset r rate 150 160
+exec_always --no-startup-id xset r rate 175 150
 
 
 # Class                 border  backgr. text    indicator child_border
