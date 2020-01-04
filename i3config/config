@@ -274,9 +274,12 @@ bindsym --release $mod+Shift+u exec nautilus
 
 # For keyboard speed					dly speed
 exec_always --no-startup-id xset r rate 175 150
-# Disable Caps-lock and replace it with escape
+# Disable Caps-lock and replace it with escape/Disable default escape
 exec_always --no-startup-id setxkbmap -option caps:escape
+exec_always --no-startup-id xmodmap -e 'keycode 9=NoSymbol'
 
+
+# Env colors
 # Class                 border  backgr. text    indicator child_border
 client.focused          #013220 #013220 #ffffff #000000   #013220
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
