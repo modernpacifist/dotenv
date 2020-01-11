@@ -10,9 +10,9 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'easymotion/vim-easymotion'
 
-"Plugin 'terryma/vim-multiple-cursors'
+Plugin 'terryma/vim-multiple-cursors'
 
-"Plugin 'rip-rip/clang_complete'
+Plugin 'rip-rip/clang_complete'
 
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
@@ -26,11 +26,11 @@ set number
 set tabstop=4
 set noexpandtab
 
-"if filereadable("/etc/vim/vimrc.local")
-"  source /etc/vim/vimrc.local
-"endif
+if filereadable("/etc/vim/vimrc.local")
+  source /etc/vim/vimrc.local
+endif
 
 let g:EasyMotion_leader_key = '<Tab>'
 
-"let g:clang_library_path='/usr/lib/llvm-8/lib/libclang-8.so'
+let g:clang_library_path='/usr/lib/llvm-8/lib/libclang-8.so'
 

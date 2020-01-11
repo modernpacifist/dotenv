@@ -263,19 +263,20 @@ bar {
 # For wallpaper
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
 
-
 # For language input
 bindsym --release $mod+space exec /usr/bin/i3-keyboard-layout cycle us ru
-
 
 # For execution of nautilus
 bindsym --release $mod+Shift+u exec nautilus
 
 # For caps lock instead of escape
-exec_always setxkbmap -option caps:escape
+exec_always --no-startup-id setxkbmap -option caps:escape
 
 # For keyboard speed					dly speed
 exec_always --no-startup-id xset r rate 175 150
+
+# For invisible cursor 
+exec_always --no-startup-id unclutter &
 
 # Env colors
 # Class                 border  backgr. text    indicator child_border
@@ -288,4 +289,4 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 # For screenshot this command saves your screenshot to your buffer(no copy on your disk)
 bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`'
- 
+
