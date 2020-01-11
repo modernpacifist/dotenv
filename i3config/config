@@ -276,7 +276,7 @@ exec_always --no-startup-id setxkbmap -option caps:escape
 exec_always --no-startup-id xset r rate 175 150
 
 # For invisible cursor 
-exec_always --no-startup-id unclutter -grab -idle 0.01 &
+exec_always --no-startup-id unclutter -grab -idle 1 &
 
 # Env colors
 # Class                 border  backgr. text    indicator child_border
