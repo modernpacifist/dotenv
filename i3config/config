@@ -54,8 +54,8 @@ bindsym --release $mod+BackSpace kill
 bindsym --release $mod+Shift+KP_Decimal kill
 
 # change container layout (tabbed, toggle split)
-bindsym --release $mod+Shift+b layout tabbed
-bindsym --release $mod+Shift+s layout toggle split
+bindsym --release $mod+Ctrl+t layout tabbed
+bindsym --release $mod+Ctrl+s layout toggle split
 
 # start dmenu
 bindsym --release $mod+Shift+M exec dmenu_run
