@@ -45,22 +45,25 @@ bindsym --release $mod+Return exec i3-sensible-terminal
 # Start a terminal with a numpad
 bindsym --release $mod+Shift+KP_Enter exec i3-sensible-terminal
 
-
 # mouse impact 
 focus_follows_mouse no
-
 
 # kill focused window
 bindsym --release $mod+BackSpace kill
 # kill focused window with numpad
 bindsym --release $mod+Shift+KP_Decimal kill
 
+# change container layout (tabbed, toggle split)
+bindsym --release $mod+Shift+b layout tabbed
+bindsym --release $mod+Shift+s layout toggle split
 
 # start dmenu
 bindsym --release $mod+Shift+M exec dmenu_run
 # start dmenu with numpad
 bindsym --release $mod+Shift+KP_Add exec dmenu_run
 
+# get focus of the last widnow
+#bindsym --release $mod+Esc workspace back_and_forth
 
 # change focus
 bindsym $mod+h focus left
@@ -73,6 +76,9 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
+
+# focus the parent container
+bindsym $mod+Ctrl+p focus parent
 
 
 # split in horizontal orientation
@@ -192,7 +198,7 @@ bindsym $mod+Shift+F9 move container to workspace number $ws19
 bindsym $mod+Shift+F10 move container to workspace number $ws20
 
 
-# move to last visited ws
+# move to last focused workspace
 bindsym --release $mod+Tab workspace back_and_forth
 
 # move between ws's with keys, not bindings
@@ -208,8 +214,9 @@ bindsym --release $mod+Shift+p move container to workspace prev
 bindsym --release $mod+Escape reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym --release $mod+Shift+Escape restart
+# disabled for a while will check out if this command does any impact
 # exit i3 (logs you out of your X session)
-bindsym --release $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+#bindsym --release $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 
 # resize window (you can also use the mouse for that)
