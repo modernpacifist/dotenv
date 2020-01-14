@@ -79,6 +79,8 @@ bindsym $mod+Shift+l move right
 
 # focus the parent container
 bindsym $mod+Ctrl+p focus parent
+# focus the parent container
+bindsym $mod+Ctrl+c focus child
 
 
 # split in horizontal orientation
