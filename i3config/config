@@ -265,7 +265,7 @@ bar {
 
 
 # For wallpaper
-exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
 
 # For language input
 bindsym --release $mod+space exec /usr/bin/i3-keyboard-layout cycle us ru
@@ -284,7 +284,7 @@ exec_always --no-startup-id unclutter -grab -idle 3 &
 
 # Env colors
 # Class                 border  backgr. text    indicator child_border
-client.focused          #013220 #013220 #ffffff #000000   #013220
+client.focused          #ffffff #ffffff #000000 #000000   #ffffff
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #000000 #000000 #ffffff #ffffff   #000000
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
