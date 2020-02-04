@@ -268,13 +268,13 @@ bar {
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
 
 # For language input
-bindsym --release $mod+space exec /usr/bin/i3-keyboard-layout cycle us ru
+# bindsym --release $mod+space exec /usr/bin/i3-keyboard-layout cycle us ru
 
 # For execution of nautilus
 bindsym --release $mod+Shift+u exec nautilus
 
 # For caps lock instead of escape
-exec --no-startup-id setxkbmap -option caps:swapescape
+exec_always --no-startup-id setxkbmap -option caps:swapescape
 
 # For keyboard speed					dly speed
 exec --no-startup-id xset r rate 175 150
