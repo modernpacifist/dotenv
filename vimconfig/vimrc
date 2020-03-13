@@ -30,6 +30,7 @@ set noswapfile
 set number
 set tabstop=4
 set noexpandtab
+set autoread
 
 if filereadable("/etc/vim/vimrc.local")
 	source /etc/vim/vimrc.local
