@@ -21,6 +21,8 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
 
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+
+Plugin 'davidhalter/jedi-vim'
 call vundle#end()            
 
 syntax enable

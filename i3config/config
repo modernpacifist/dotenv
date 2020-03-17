@@ -277,7 +277,7 @@ bindsym --release $mod+Shift+u exec nautilus
 exec_always --no-startup-id setxkbmap -option caps:swapescape
 
 # For keyboard speed					dly speed
-exec_always --no-startup-id xset r rate 175 275
+exec_always --no-startup-id xset r rate 225 150
 
 # For invisible cursor 
 exec --no-startup-id unclutter -grab -idle 3 &
