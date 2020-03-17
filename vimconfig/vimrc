@@ -1,29 +1,6 @@
 set nocompatible              
-filetype on
 
-set rtp+=~/.vim/bundle/Vundle.vim
-
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'easymotion/vim-easymotion'
-
-Plugin 'terryma/vim-multiple-cursors'
-
-Plugin 'rip-rip/clang_complete'
-
-Plugin 'octol/vim-cpp-enhanced-highlight'
-
-Plugin 'chun-yang/auto-pairs'
-
-Plugin 'scrooloose/nerdcommenter'
-
-Plugin 'tpope/vim-surround'
-
-Plugin 'jeffkreeftmeijer/vim-numbertoggle'
-
-Plugin 'davidhalter/jedi-vim'
-call vundle#end()            
+filetype off
 
 syntax enable
 set shiftwidth=4
@@ -32,6 +9,37 @@ set noswapfile
 set number
 set tabstop=4
 set noexpandtab
+
+"----Vundle settings----
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+
+"----Code/project navigation----
+Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
+
+Plugin 'easymotion/vim-easymotion'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'rip-rip/clang_complete'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-surround'
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+Plugin 'jiangmiao/auto-pairs'
+
+"----Python----
+Plugin 'klen/python-mode'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'mitsuhiko/vim-jinja'
+Plugin 'mitsuhiko/vim-python-combined'
+
+call vundle#end()            
+
+filetype on
+filetype plugin on
+filetype plugin indent on
 
 if filereadable("/etc/vim/vimrc.local")
 	source /etc/vim/vimrc.local
