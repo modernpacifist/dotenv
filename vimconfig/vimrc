@@ -20,6 +20,8 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+Plugin 'terryma/vim-multiple-cursors'
 Plugin 'ciaranm/detectindent'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -33,10 +35,10 @@ Plugin 'w0rp/ale'
 Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-commentary'
 Plugin 'vim-python/python-syntax'
-Plugin 'klen/python-mode'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'mitsuhiko/vim-jinja'
 Plugin 'mitsuhiko/vim-python-combined'
+Plugin 'klen/python-mode'
 
 call vundle#end()            
 
