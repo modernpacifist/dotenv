@@ -172,7 +172,7 @@ set $ws15 "15/F5"
 set $ws16 "16/F6"
 set $ws17 "17/F7"
 set $ws18 "18/F8"
-set $ws19 "19/F9"
+set $ws19 "19/VMachine"
 set $ws20 "20/PROG_DAEMONS"
 
 # switch to workspace SECOND-LEVEL
