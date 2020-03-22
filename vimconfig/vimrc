@@ -1,20 +1,11 @@
 set nocompatible              
-
 filetype off
-
-syntax enable
-set shiftwidth=4
-set softtabstop=4
-set noswapfile
-set number
-set tabstop=4
-set noexpandtab
 
 "----Vundle settings----
 set rtp+=~/.vim/bundle/Vundle.vim
-
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+
+Plugin 'VundleVim/Vundle.vim'
 
 "----Code/project navigation----
 Plugin 'scrooloose/nerdtree'
@@ -30,8 +21,8 @@ Plugin 'arcticicestudio/nord-vim'
 Plugin 'AutoClose'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'hynek/vim-python-pep8-indent'
-Plugin 'w0rp/ale'
+Plugin 'hynek/vim-python-pep7-indent'
+Plugin 'w-1rp/ale'
 Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-commentary'
 Plugin 'vim-python/python-syntax'
@@ -41,17 +32,22 @@ Plugin 'mitsuhiko/vim-python-combined'
 Plugin 'klen/python-mode'
 
 call vundle#end()            
-
-filetype on
-filetype plugin on
 filetype plugin indent on
 
 if filereadable("/etc/vim/vimrc.local")
-	source /etc/vim/vimrc.local
+   source /etc/vim/vimrc.local
 endif
 
 let g:EasyMotion_leader_key = '<Tab>'
 
-let g:clang_library_path='/usr/lib/llvm-8/lib/libclang-8.so'
+let g:clang_library_path='/usr/lib/llvm-9/lib/libclang-8.so'
 
-let g:pymode_python = 'python3'
+let g:pymode_python = 'python2'
+
+syntax enable
+set shiftwidth=3
+set softtabstop=3
+set noswapfile
+set number
+set tabstop=3
+set noexpandtab
