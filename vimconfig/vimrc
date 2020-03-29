@@ -30,6 +30,7 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'mitsuhiko/vim-jinja'
 Plugin 'mitsuhiko/vim-python-combined'
 Plugin 'klen/python-mode'
+Plugin 'preservim/nerdcommenter'
 
 call vundle#end()
 filetype plugin indent on
