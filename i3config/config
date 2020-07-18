@@ -62,7 +62,7 @@ bindsym --release $mod+Shift+M exec dmenu_run
 # start dmenu with numpad
 bindsym --release $mod+Shift+KP_Add exec dmenu_run
 
-# get focus of the last widnow
+# get focus of the last window
 #bindsym --release $mod+Esc workspace back_and_forth
 
 # change focus
@@ -223,22 +223,21 @@ bindsym --release $mod+Shift+Escape restart
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+    # These bindings trigger as soon as you enter the resize mode
+    bindsym h resize shrink width 2 px or 2 ppt
+	bindsym j resize grow height 2 px or 2 ppt
+	bindsym k resize shrink height 2 px or 2 ppt
+	bindsym l resize grow width 2 px or 2 ppt
 
-        bindsym h resize shrink width 2 px or 2 ppt
-		bindsym j resize grow height 2 px or 2 ppt
-		bindsym k resize shrink height 2 px or 2 ppt
-		bindsym l resize grow width 2 px or 2 ppt
-	
-        bindsym Shift+h resize shrink width 5 px or 5 ppt
-        bindsym Shift+j resize grow height 5 px or 5 ppt
-        bindsym Shift+k resize shrink height 5 px or 5 ppt
-        bindsym Shift+l resize grow width 5 px or 5 ppt
+    bindsym Shift+h resize shrink width 5 px or 5 ppt
+    bindsym Shift+j resize grow height 5 px or 5 ppt
+    bindsym Shift+k resize shrink height 5 px or 5 ppt
+    bindsym Shift+l resize grow width 5 px or 5 ppt
 
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+    # back to normal: Enter or Escape or $mod+r
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
 }
 
 
@@ -248,30 +247,30 @@ bindsym --release $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 bar {
+    status_command    i3status
 	position top
-        status_command i3status | i3-keyboard-layout i3status
-        mode hide
+
 	colors {
 		background #000000
-	   statusline #eeeeee
-	   separator #666666
+	   	statusline #ffffff
+	   	separator #666666
 	   #                  border  backgr. text
-	   focused_workspace  #4c7899 #285577 #ffffff
-	   active_workspace   #333333 #5f676a #ffffff
-	   inactive_workspace #333333 #222222 #888888
-	   urgent_workspace   #2f343a #900000 #ffffff
+	   	focused_workspace  #4c7899 #285577 #ffffff
+	   	active_workspace   #333333 #5f676a #ffffff
+	   	inactive_workspace #333333 #222222 #888888
+	   	urgent_workspace   #2f343a #900000 #ffffff
 	}
 }
 
 
 # For wallpaper
-exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
 
 # For language input
 bindsym --release $mod+space exec /usr/bin/i3-keyboard-layout cycle us ru
 
 # For execution of nautilus
-bindsym --release $mod+Shift+u exec nautilus
+bindsym --release $mod+Shift+u exec caja
 
 # For caps lock instead of escape
 exec_always --no-startup-id setxkbmap -option caps:swapescape
@@ -294,3 +293,5 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 # For screenshot this command saves your screenshot to your buffer(no copy on your disk)
 bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`'
 
+# For volume icon
+exec --no-startup-id exec volumeicon
