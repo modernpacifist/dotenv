@@ -241,24 +241,22 @@ mode "resize" {
 # Resize Window 
 bindsym --release $mod+r mode "resize"
 
-
 # Start i3bar to display a workspace bar (plus the system information i3status
 bar {
 	status_command i3status | i3-keyboard-layout i3status
 	position top
 
-	colors {
+	colors	{
 		background #000000
 	   	statusline #ffffff
 	   	separator #666666
-	   #                  border  backgr. text
-	   	focused_workspace  #4c7899 #285577 #ffffff
-	   	active_workspace   #333333 #5f676a #ffffff
-	   	inactive_workspace #333333 #222222 #888888
-	   	urgent_workspace   #2f343a #900000 #ffffff
+		#                  border  backgr. text
+		focused_workspace  #4c7899 #285577 #ffffff
+		active_workspace   #333333 #5f676a #ffffff
+		inactive_workspace #333333 #222222 #888888
+		urgent_workspace   #2f343a #900000 #ffffff
 	}
 }
-
 
 # For wallpaper
 exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
@@ -289,6 +287,3 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 # For screenshot this command saves your screenshot to your buffer(no copy on your disk)
 bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`'
-
-# For volume icon
-exec --no-startup-id exec volumeicon
