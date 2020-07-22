@@ -11,8 +11,6 @@ sudo apt install unclutter
 
 # for screenshots
 sudo apt install scrot
+
 # screenshots into the clipboard instantly
 sudo apt install xclip
-
-# for swap of escape with caps-lock
-sudo apt install setxkbmap
