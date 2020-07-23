@@ -8,27 +8,14 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 "----Code/project navigation----
-Plugin 'scrooloose/nerdtree'
-Plugin 'majutsushi/tagbar'
-
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'ciaranm/detectindent'
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'tpope/vim-fugitive'
-Plugin 'arcticicestudio/nord-vim'
 Plugin 'AutoClose'
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'kien/ctrlp.vim'
 Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'dense-analysis/ale'
 Plugin 'tpope/vim-vinegar'
-Plugin 'tpope/vim-commentary'
 Plugin 'vim-python/python-syntax'
 Plugin 'davidhalter/jedi-vim'
-Plugin 'mitsuhiko/vim-jinja'
-Plugin 'mitsuhiko/vim-python-combined'
 Plugin 'klen/python-mode'
 Plugin 'preservim/nerdcommenter'
 
