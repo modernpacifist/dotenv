@@ -1,0 +1,2 @@
+#!/bin/env bash
+pwd | tr -d '\n' | xclip -selection c

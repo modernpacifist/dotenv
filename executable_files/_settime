@@ -1,0 +1,7 @@
+#!/bin/env bash
+if [[ $1 ]]; then
+	date +%T -s $1
+else
+	echo "Fucking shit you forgot to specify the file"
+	exit 1
+fi

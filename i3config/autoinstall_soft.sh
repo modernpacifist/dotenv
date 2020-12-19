@@ -1,13 +1,10 @@
-#!/bin/bash
+#!/bin/env bash
 
 # for background wallpaper
 sudo apt install feh
 
 # for graphical file explorer
 sudo apt install caja
-
-# for hidden cursor
-sudo apt install unclutter
 
 # for screenshots
 sudo apt install scrot

@@ -1,0 +1,9 @@
+#!/bin/env bash
+if [[ -z $@ ]];
+then
+    echo "No data specified"
+    exit 1
+else
+    echo -n $@ | xclip -selection clipboard
+    exit 0
+fi
