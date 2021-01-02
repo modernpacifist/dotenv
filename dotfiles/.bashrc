@@ -53,7 +53,7 @@ if [ -n "$force_color_prompt" ]; then
 	# a case would tend to support setf rather than setaf.)
 	color_prompt=yes
     else
-	color_prompt=
+		color_prompt=
     fi
 fi
 
@@ -61,8 +61,8 @@ if [ "$color_prompt" = yes ]; then
     prompt_color='\[\033[1;34m\]'
     path_color='\[\033[1;32m\]'
     if [ "$EUID" -eq 0 ]; then # Change prompt colors for root user
-	prompt_color='\[\033[1;31m\]'
-	path_color='\[\033[1;34m\]'
+		prompt_color='\[\033[1;31m\]'
+		path_color='\[\033[1;34m\]'
     fi
     PS1='${debian_chroot:+($debian_chroot)}'$prompt_color'\u@\h\[\033[00m\]:'$path_color'\w\[\033[00m\]\$ '
     unset prompt_color path_color
@@ -131,22 +131,57 @@ if ! shopt -oq posix; then
 fi
 
 #local variables do not move this 
-export target=192.168.0.203
-export remote_host=10.0.1.4
+export target=10.10.10.56
+export remote_host=10.10.10.56
+export target1=10.10.10.56
+export gateway=192.168.0.1
+export vpn_host=0.0.0.0
 
-#aliases
-alias _torstart='sudo systemctl start tor.service'
-alias _torstatus='sudo systemctl status tor.service'
-alias _torstop='sudo systemctl stop tor.service'
-alias _torrestart='sudo systemctl restart tor.service'
-alias _sshstart='sudo systemctl start ssh.service'
-alias _sshstop='sudo systemctl stop ssh.service'
-alias _sshrestart='sudo systemctl restart ssh.service'
-alias _proxychains='proxychains firefox www.duckduckgo.com'
-alias _vimlight='vim -u NONE'
-alias _gethostip='curl ident.me && echo'
-alias _gitcommitall='git add -A && git commit && git push'
-alias _left_screen='xrandr --auto && xrandr --output HDMI-1 --left-of LVDS-1'
-alias _timewrite='vim ~/Documents/timeflow/pattern.txt'
-alias r='source ~/.bashrc'
-alias c='clear'
+# get current branch in git repo
+function parse_git_branch() {
+	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
+	if [ ! "${BRANCH}" == "" ]
+	then
+		STAT=`parse_git_dirty`
+		echo "[${BRANCH}${STAT}]"
+	else
+		echo ""
+	fi
+}
+
+# get current status of git repo
+function parse_git_dirty {
+	status=`git status 2>&1 | tee`
+	dirty=`echo -n "${status}" 2> /dev/null | grep "modified:" &> /dev/null; echo "$?"`
+	untracked=`echo -n "${status}" 2> /dev/null | grep "Untracked files" &> /dev/null; echo "$?"`
+	ahead=`echo -n "${status}" 2> /dev/null | grep "Your branch is ahead of" &> /dev/null; echo "$?"`
+	newfile=`echo -n "${status}" 2> /dev/null | grep "new file:" &> /dev/null; echo "$?"`
+	renamed=`echo -n "${status}" 2> /dev/null | grep "renamed:" &> /dev/null; echo "$?"`
+	deleted=`echo -n "${status}" 2> /dev/null | grep "deleted:" &> /dev/null; echo "$?"`
+	bits=''
+	if [ "${renamed}" == "0" ]; then
+		bits=">${bits}"
+	fi
+	if [ "${ahead}" == "0" ]; then
+		bits="*${bits}"
+	fi
+	if [ "${newfile}" == "0" ]; then
+		bits="+${bits}"
+	fi
+	if [ "${untracked}" == "0" ]; then
+		bits="?${bits}"
+	fi
+	if [ "${deleted}" == "0" ]; then
+		bits="x${bits}"
+	fi
+	if [ "${dirty}" == "0" ]; then
+		bits="!${bits}"
+	fi
+	if [ ! "${bits}" == "" ]; then
+		echo " ${bits}"
+	else
+		echo ""
+	fi
+}
+
+export PS1="\[\e[2m\]\`parse_git_branch\`\[\e[m\][\u@\h:\W]\\$ "
