@@ -45,18 +45,18 @@ bindsym --release $mod+Shift+F12 exec --no-startup-id pactl set-sink-volume @DEF
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-# Start a terminal
+
+# Start a terminal(alactiry - my case)
 bindsym --release $mod+Return exec alacritty
-# Start a terminal with a numpad
-bindsym --release $mod+Shift+KP_Enter exec i3-sensible-terminal
+
+# Start a terminal(your case)
+#bindsym --release $mod+Return exec [i3-sensible-terminal | <YOUR_TERMINAL_EMULATOR>]
 
 # mouse impact 
 focus_follows_mouse no
 
 # kill focused window
 bindsym --release $mod+BackSpace kill
-# kill focused window with numpad
-bindsym --release $mod+Shift+KP_Decimal kill
 
 # change container layout (tabbed, toggle split)
 bindsym --release $mod+Ctrl+e layout default
@@ -65,8 +65,6 @@ bindsym --release $mod+Ctrl+s layout stacked
 
 # start dmenu
 bindsym --release $mod+Shift+M exec dmenu_run
-# start dmenu with numpad
-bindsym --release $mod+Shift+KP_Add exec dmenu_run
 
 # change focus
 bindsym $mod+h focus left
@@ -102,7 +100,7 @@ bindsym --release $mod+Ctrl+h split v
 # split in vertical orientation
 bindsym --release $mod+Ctrl+v split h
 
-# fullscreen mode
+# fullscreen mode of the focused window
 bindsym --release $mod+f fullscreen toggle
 
 # toggle tiling / floating
@@ -115,17 +113,17 @@ bindsym --release $mod+Mod1+space focus mode_toggle
 bindsym --release $mod+Mod1+r exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
 
 # FIRST-LEVEL
-set $ws0 " 0 "
-set $ws1 " 1 "
-set $ws2 " 2 "
-set $ws3 " 3 "
-set $ws4 " 4 "
-set $ws5 " 5 "
-set $ws6 " 6 "
-set $ws7 " 7 "
-set $ws8 " 8 "
-set $ws9 " 9 "
-set $ws10 " 10 "
+set $ws0 "0"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 
 # switch to workspace FIRST-LEVEL
 bindsym $mod+grave workspace number $ws0
@@ -154,16 +152,16 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # SECOND-LEVEL
-set $ws11 " 11 "
-set $ws12 " 12 "
-set $ws13 " 13 "
-set $ws14 " 14 "
-set $ws15 " 15 "
-set $ws16 " 16 "
-set $ws17 " 17 "
-set $ws18 " 18 "
-set $ws19 " 19 "
-set $ws20 " 20 "
+set $ws11 "11"
+set $ws12 "12"
+set $ws13 "13"
+set $ws14 "14"
+set $ws15 "15"
+set $ws16 "16"
+set $ws17 "17"
+set $ws18 "18"
+set $ws19 "19"
+set $ws20 "20"
 
 # switch to workspace SECOND-LEVEL
 bindsym $mod+F1 workspace number $ws11
@@ -247,10 +245,10 @@ bar {
 # For wallpaper
 exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
 
-# For language input
+# For language toggle en/ru
 bindsym --release $mod+space exec /bin/i3-keyboard-layout cycle us ru
 
-# For execution of nautilus
+# For execution of file manager
 bindsym --release $mod+Shift+u exec caja
 
 # For keyboard speed					dly speed
