@@ -61,8 +61,8 @@ if [ "$color_prompt" = yes ]; then
     prompt_color='\[\033[1;34m\]'
     path_color='\[\033[1;32m\]'
     if [ "$EUID" -eq 0 ]; then # Change prompt colors for root user
-		prompt_color='\[\033[1;31m\]'
-		path_color='\[\033[1;34m\]'
+        prompt_color='\[\033[1;31m\]'
+        path_color='\[\033[1;34m\]'
     fi
     PS1='${debian_chroot:+($debian_chroot)}'$prompt_color'\u@\h\[\033[00m\]:'$path_color'\w\[\033[00m\]\$ '
     unset prompt_color path_color
@@ -135,7 +135,7 @@ export target=10.10.10.56
 export remote_host=10.10.10.56
 export target1=10.10.10.56
 export gateway=192.168.0.1
-export vpn_host=0.0.0.0
+export vpn_ip=10.10.14.15
 
 # get current branch in git repo
 function parse_git_branch() {
