@@ -9,6 +9,37 @@ case $- in
       *) return;;
 esac
 
+#################################
+# TODO: check this for upgrades #
+#################################
+if _BASHRC_WAS_RUN 2>/dev/null; then
+    :;
+else    # Stuff that only needs to run the first time we source .bashrc.
+        # Useful to allow re-sourcing new changes, without breaking/changing things in this section
+    alias _BASHRC_WAS_RUN=true
+fi
+
+# Last mod time of a file or files
+get_file_timestamp () {
+    ls -1 --time-style=+%s -l "$@" | cut -f6 -d" "
+}
+
+# Make sure our version of the .bashrc file is up-to-date, or reload it.
+chk_bashrc_timestamp () {
+    if [[ "$_BASHRC_TIMESTAMP" -lt "$(get_file_timestamp "${HOME}/.bashrc")" || 
+        "$_BASHRC_TIMESTAMP" -lt "$(get_file_timestamp "${HOME}/.pentest_values")" ]]; then
+        echo >&2 "Changes applied..."
+        . ~/.bashrc
+    fi
+}
+_BASHRC_TIMESTAMP=$(date +%s)
+
+prompt_cmd () {
+    chk_bashrc_timestamp
+}
+PROMPT_COMMAND=prompt_cmd
+########################
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -26,10 +57,7 @@ shopt -s checkwinsize
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
-#shopt -s globstar
-
-# make less more friendly for non-text input files, see lesspipe(1)
-#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+shopt -s extglob
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
@@ -41,17 +69,10 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
 force_color_prompt=yes
-
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+        color_prompt=yes
     else
 		color_prompt=
     fi
@@ -73,11 +94,8 @@ unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
+    xterm*|rxvt*) PS1="\[\e[2m\]\`parse_git_branch\`\[\e[m\][\u@\h:\W]\\$ " ;;
+    *) ;;
 esac
 
 # enable color support of ls, less and man, and also add handy aliases
@@ -102,9 +120,6 @@ if [ -x /usr/bin/dircolors ]; then
     export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 fi
 
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
 # some more ls aliases
 alias ll='ls -l'
 alias la='ls -A'
@@ -119,6 +134,11 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# File, mostly containing IPv4's
+if [ -f ~/.pentest_values ]; then
+    . ~/.pentest_values
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -129,13 +149,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-#local variables do not move this 
-export target=10.10.10.56
-export remote_host=10.10.10.56
-export target1=10.10.10.56
-export gateway=192.168.0.1
-export vpn_ip=10.10.14.15
 
 # get current branch in git repo
 function parse_git_branch() {
@@ -183,5 +196,3 @@ function parse_git_dirty {
 		echo ""
 	fi
 }
-
-export PS1="\[\e[2m\]\`parse_git_branch\`\[\e[m\][\u@\h:\W]\\$ "
