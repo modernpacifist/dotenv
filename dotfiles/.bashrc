@@ -196,3 +196,11 @@ function parse_git_dirty {
 		echo ""
 	fi
 }
+
+alias r='source ~/.bashrc'
+alias -- -='cd -'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'

@@ -1,0 +1,2 @@
+#!/bin/env bash
+xrandr --auto && xrandr --output HDMI-1 --left-of LVDS-1

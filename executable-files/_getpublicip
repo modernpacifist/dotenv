@@ -1,0 +1,2 @@
+#!/bin/env bash
+curl ident.me && echo

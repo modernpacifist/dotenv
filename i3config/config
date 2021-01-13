@@ -243,7 +243,7 @@ bar {
 }
 
 # For wallpaper
-exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
+exec_always --no-startup-id feh --bg-fill /home/modernpacifist/Pictures/wallpaper.jpg
 
 # For language toggle en/ru
 bindsym --release $mod+space exec /bin/i3-keyboard-layout cycle us ru
