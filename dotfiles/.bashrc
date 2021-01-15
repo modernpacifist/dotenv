@@ -94,7 +94,7 @@ unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
-    xterm*|rxvt*) PS1="\[\e[2m\]\`parse_git_branch\`\[\e[m\][\u@\h:\W]\\$ " ;;
+    xterm*|rxvt*) PS1="\[\e[2m\]\`parse_git_branch\`\[\e[m\][\t][\u@\H:\W]\\$ " ;;
     *) ;;
 esac
 
@@ -204,3 +204,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
+
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
