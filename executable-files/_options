@@ -22,7 +22,7 @@ function update_network_interface_ip {
     if [[ $net_ip =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]]; then
         local line=$(grep -n -m 1 "$1"_ip ~/.pentest_values | cut -f1 -d:)
 
-        if [[ $line  ]]; then
+        if [[ $line ]]; then
             case $EUID in
                 "0") sed -i "${line}s/.*/export $1_ip=$net_ip/" ~/.pentest_values; sed -i "${line}s/.*/export $1_ip=$net_ip/" /home/*/.pentest_values;;
                 *) sed -i "${line}s/.*/export $1_ip=$net_ip/" ~/.pentest_values;;
@@ -37,7 +37,7 @@ function update_network_interface_gateway {
     if [[ $net_gateway =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]]; then
         local line=$(grep -n -m 1 "$1"_gateway ~/.pentest_values | cut -f1 -d:)
 
-        if [[ $line  ]]; then
+        if [[ $line ]]; then
             case $EUID in
                 "0") sed -i "${line}s/.*/export $1_gateway=$net_gateway/" ~/.pentest_values; sed -i "${line}s/.*/export $1_gateway=$net_gateway/" /home/*/.pentest_values;;
                 *) sed -i "${line}s/.*/export $1_gateway=$net_gateway/" ~/.pentest_values;;
@@ -55,18 +55,9 @@ function get_options {
     echo
 }
 
-function print_targets {
-    echo "Targets:"
-    echo -en "\$target: \033[1m$(return_ip $target)\033[0m  status: "; echo -e "\033[1m$(ip_status $target)\033[0m"
-    echo -en "\$target1: \033[1m$(return_ip $target1)\033[0m  status: "; echo -e "\033[1m$(ip_status $target1)\033[0m"
-    echo -en "\$target2: \033[1m$(return_ip $target2)\033[0m  status: "; echo -e "\033[1m$(ip_status $target2)\033[0m"
-    echo -en "\$remote_host: \033[1m$(return_ip $remote_host)\033[0m  status: "; echo -e "\033[1m$(ip_status $remote_host)\033[0m"
-    echo
-}
-
 function get_network_interfaces {
     array_test=()
-    for iface in $(ifconfig | cut -d ' ' -f1| tr ':' '\n' | awk NF); do
+    for iface in $(ifconfig | cut -d " " -f1| tr ":" "\n" | awk NF | egrep -w "eth[0-9]{1}|tun[0-9]{1}"); do
         array_test+=("$iface")
     done
     echo -n ${array_test[@]}
@@ -79,5 +70,14 @@ for interface in ${network_interfaces[@]}; do
     update_network_interface_gateway $interface;
     get_options $interface;
 done
+
+function print_targets {
+    echo "Targets:"
+    echo -en "\$target: \033[1m$(return_ip $target)\033[0m  status: "; echo -e "\033[1m$(ip_status $target)\033[0m"
+    echo -en "\$target1: \033[1m$(return_ip $target1)\033[0m  status: "; echo -e "\033[1m$(ip_status $target1)\033[0m"
+    echo -en "\$target2: \033[1m$(return_ip $target2)\033[0m  status: "; echo -e "\033[1m$(ip_status $target2)\033[0m"
+    echo -en "\$remote_host: \033[1m$(return_ip $remote_host)\033[0m  status: "; echo -e "\033[1m$(ip_status $remote_host)\033[0m"
+    echo
+}
 
 print_targets
