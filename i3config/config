@@ -275,4 +275,4 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`'
 
 # Enable/Disable touchpad
-bindsym --release $mod+c exec /bin/_touchpad_toggle
+bindsym --release $mod+Mod1+c exec _touchpad_toggle

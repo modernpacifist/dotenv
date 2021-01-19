@@ -57,7 +57,7 @@ function get_options {
 
 function get_network_interfaces {
     array_test=()
-    for iface in $(ifconfig | cut -d " " -f1| tr ":" "\n" | awk NF | egrep -w "eth[0-9]{1}|tun[0-9]{1}"); do
+    for iface in $(ifconfig | cut -d " " -f1| tr ":" "\n" | awk NF | egrep -w "wlan[0-9]{1}|eth[0-9]{1}|tun[0-9]{1}"); do
         array_test+=("$iface")
     done
     echo -n ${array_test[@]}
