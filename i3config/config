@@ -76,14 +76,14 @@ bindsym --release $mod+Ctrl+s layout stacked
 bindsym --release $mod+Shift+M exec dmenu_run
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym --release $mod+h focus left
+bindsym --release $mod+j focus down
+bindsym --release $mod+k focus up
+bindsym --release $mod+l focus right
 
 # change focus on different output (Mod1 is Alt)
-bindsym $mod+Mod1+h focus output left
-bindsym $mod+Mod1+l focus output right
+bindsym --release $mod+Mod1+h focus output left
+bindsym --release $mod+Mod1+l focus output right
 
 # move focused window
 bindsym --release $mod+Shift+h move left
@@ -236,7 +236,7 @@ bindsym --release $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 bar {
-	status_command i3status | i3-keyboard-layout i3status
+    status_command i3status | i3-keyboard-layout i3status
 	position top
 
 	colors	{
@@ -260,7 +260,7 @@ bindsym --release $mod+space exec /bin/i3-keyboard-layout cycle us ru
 # For execution of file manager
 bindsym --release $mod+Shift+u exec caja
 
-# For keyboard speed					dly speed
+# For keyboard speed                    dly speed
 exec_always --no-startup-id xset r rate 200 150
 
 # Env colors
@@ -276,3 +276,6 @@ bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~
 
 # Enable/Disable touchpad
 bindsym --release $mod+Mod1+c exec _touchpad_toggle
+
+# Move to screen on the east using ssh/x2x
+bindsym --release $mod+Mod1+Tab exec xdotool mousemove 5000 540 && xdotool mousemove_relative --polar 90 100
