@@ -85,10 +85,10 @@ scrolling:
 
   # Number of lines the viewport will move for every line scrolled when
   # scrollback is enabled (history > 0).
-  #multiplier: 3
+  # multiplier: 3
 
   # Scroll to the bottom when new text is written to the terminal.
-  # auto_scroll: true
+   #auto_scroll: true
 
 # Spaces per Tab (changes require restart)
 #
@@ -250,21 +250,21 @@ colors:
   normal:
     black:   '0x000000'
     red:     '0xff0000'
-    green:   '0x00d60d'
-    yellow:  '0xf7ff00'
-    blue:    '0x00fbff'
-    magenta: '0xc792ea'
-    cyan:    '0x00ffff'
+    green:   '0x008000'
+    yellow:  '0xb3b300'
+    blue:    '0x005ce6'
+    magenta: '0x7421ab'
+    cyan:    '0x00cccc'
     white:   '0xffffff'
 
   # Bright colors
   bright:
     black:   '0x000000'
     red:     '0xff0000'
-    green:   '0x00d60d'
-    yellow:  '0xf7ff00'
-    blue:    '0x00fbff'
-    magenta: '0xc792ea'
+    green:   '0x00aa00'
+    yellow:  '0xffff00'
+    blue:    '0x3399ff'
+    magenta: '0xb269e2'
     cyan:    '0x00ffff'
     white:   '0xffffff'
 
@@ -313,10 +313,10 @@ colors:
 #   - Linear
 #
 # Specifying a `duration` of `0` will disable the visual bell.
-#visual_bell:
-#  animation: EaseOutExpo
-#  duration: 0
-#  color: '0xffffff'
+#bell:
+  #animation: EaseOutExpo
+  #duration: 1
+  #color: '0xffffff'
 
 # Background opacity
 #
@@ -332,7 +332,7 @@ selection:
   save_to_clipboard: true
 
 # Allow terminal applications to change Alacritty's window title.
-#dynamic_title: true
+window.dynamic_title: true
 
 cursor:
   # Cursor style
@@ -359,8 +359,8 @@ cursor:
 #   - (macOS) /bin/bash --login
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
-#shell:
-#  program: /bin/bash
+shell:
+  program: /bin/bash
 #  args:
 #    - --login
 
@@ -570,8 +570,6 @@ key_bindings:
   - { key: Insert,   mods: Shift,         action: PasteSelection   }
   - { key: Key0,     mods: Control,       action: ResetFontSize    }
   - { key: Equals,   mods: Control,       action: IncreaseFontSize }
-  - { key: Add,      mods: Control,       action: IncreaseFontSize }
-  - { key: Subtract, mods: Control,       action: DecreaseFontSize }
   - { key: Minus,    mods: Control,       action: DecreaseFontSize }
   - { key: Return,   mods: Control|Shift, action: SpawnNewInstance }
   - { key: J,        mods: Control|Shift, action: ScrollLineDown   }
@@ -583,5 +581,3 @@ key_bindings:
 
   - { key: Paste,                    action: Paste                 }
   - { key: Copy,                     action: Copy                  }
-  - { key: L,         mods: Control, action: ClearLogNotice        }
-  - { key: L,         mods: Control, chars: "\x0c"                 }
