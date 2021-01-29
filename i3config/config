@@ -118,6 +118,9 @@ bindsym --release $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym --release $mod+Mod1+space focus mode_toggle
 
+# move to last focused workspace
+bindsym --release $mod+Mod1+s sticky toggle
+
 # rename workspaces
 bindsym --release $mod+Mod1+r exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
 
@@ -199,6 +202,7 @@ bindsym $mod+Shift+F10 move container to workspace number $ws20
 
 # move to last focused workspace
 bindsym --release $mod+Tab workspace back_and_forth
+
 
 # switch/move windows between workspaces
 bindsym --release $mod+n workspace next
