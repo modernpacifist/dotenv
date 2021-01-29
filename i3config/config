@@ -120,7 +120,7 @@ bindsym --release $mod+Ctrl+v split h
 bindsym --release $mod+f fullscreen toggle
 
 # toggle tiling / floating
-bindsym --release $mod+Shift+space floating toggle
+bindsym --release $mod+Shift+Mod1+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym --release $mod+Mod1+space focus mode_toggle
@@ -214,6 +214,10 @@ bindsym --release $mod+p workspace prev
 bindsym --release $mod+Shift+n move container to workspace next
 bindsym --release $mod+Shift+p move container to workspace prev
 
+# scratchpad interactions
+bindsym --release $mod+Mod1+minus move scratchpad
+bindsym --release $mod+Mod1+equal [class=.*] scratchpad show
+
 # reload the configuration file
 bindsym --release $mod+Escape reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -240,6 +244,24 @@ mode "resize" {
 
 # Resize Window 
 bindsym --release $mod+r mode "resize"
+
+mode "float-move" {
+    bindsym h move container left 5 px
+    bindsym j move container down 5 px
+    bindsym k move container up 5 px
+    bindsym l move container right 5 px
+
+    bindsym Shift+h move container left 375 px
+    bindsym Shift+j move container down 375 px
+    bindsym Shift+k move container up 375 px
+    bindsym Shift+l move container right 375 px
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+Mod1+f mode "default"
+}
+
+bindsym --release $mod+Mod1+f mode "float-move"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 bar {
