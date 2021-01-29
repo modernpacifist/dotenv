@@ -1,0 +1,33 @@
+#!/bin/env python3.9
+from argparse import ArgumentParser
+
+
+def get_args():
+    parser = ArgumentParser()
+    parser.add_argument("-c", "--ciphertext", required=True, dest="ciphertext", type=str,
+                        help="specify ")
+    return parser.parse_args()
+
+
+def offset_string(ciphertext: str, offset: int):
+    res = []
+    for i in ciphertext:
+        if (i.isupper()):
+            res.append(chr((ord(i) + offset-65) % 26 + 65))
+        elif (i.islower()):
+            res.append(chr((ord(i) + offset-97) % 26 + 97))
+        else:
+            res.append(i)
+    return ''.join(res)
+
+
+def main():
+    args = get_args()
+    ciphertext = args.ciphertext
+
+    for offset in range(0, 26):
+        print(offset_string(ciphertext, offset))
+
+
+if __name__ == "__main__":
+    main()
