@@ -86,21 +86,23 @@ bindsym --release $mod+Mod1+h focus output left
 bindsym --release $mod+Mod1+l focus output right
 
 # move focused window
-bindsym --release $mod+Shift+h move left
-bindsym --release $mod+Shift+j move down
-bindsym --release $mod+Shift+k move up
-bindsym --release $mod+Shift+l move right
+bindsym --release $mod+Shift+h move container left
+bindsym --release $mod+Shift+j move container down
+bindsym --release $mod+Shift+k move container up
+bindsym --release $mod+Shift+l move container right
+
+# move container to other screen
+bindsym --release $mod+Shift+Mod1+h move container to output left
+bindsym --release $mod+Shift+Mod1+j move container to output down
+bindsym --release $mod+Shift+Mod1+k move container to output up
+bindsym --release $mod+Shift+Mod1+l move container to output right
 
 # focus the parent container
 bindsym --release $mod+Ctrl+p focus parent
-
-# focus the parent container
 bindsym --release $mod+Ctrl+c focus child
 
 # move workspaces to different screens
-# left screen
 bindsym --release $mod+Ctrl+l move workspace to output left
-# right screen
 bindsym --release $mod+Ctrl+r move workspace to output right
 
 # split in horizontal orientation
@@ -117,7 +119,6 @@ bindsym --release $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym --release $mod+Mod1+space focus mode_toggle
-
 # move to last focused workspace
 bindsym --release $mod+Mod1+s sticky toggle
 
@@ -199,12 +200,10 @@ bindsym $mod+Shift+F8 move container to workspace number $ws18
 bindsym $mod+Shift+F9 move container to workspace number $ws19
 bindsym $mod+Shift+F10 move container to workspace number $ws20
 
-
 # move to last focused workspace
 bindsym --release $mod+Tab workspace back_and_forth
 
-
-# switch/move windows between workspaces
+# move forward/back between workspaces
 bindsym --release $mod+n workspace next
 bindsym --release $mod+p workspace prev
 bindsym --release $mod+Shift+n move container to workspace next
@@ -256,7 +255,7 @@ bar {
 }
 
 # For wallpaper
-exec_always --no-startup-id feh --bg-fill /home/modernpacifist/Pictures/wallpaper.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
 
 # For language toggle en/ru
 bindsym --release $mod+space exec /bin/i3-keyboard-layout cycle us ru
