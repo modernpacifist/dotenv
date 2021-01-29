@@ -55,14 +55,19 @@ bindsym --release $mod+Mod1+Shift+F12 exec --no-startup-id pactl set-sink-volume
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# mouse impact
+focus_follows_mouse no
+mouse_warping none
+
 # Start a terminal(alactiry - my case)
 bindsym --release $mod+Return exec alacritty
 
 # Start a terminal(your case)
 #bindsym --release $mod+Return exec [i3-sensible-terminal | <YOUR_TERMINAL_EMULATOR>]
 
-# mouse impact 
-focus_follows_mouse no
+# Styles for windows
+title_align center
+hide_edge_borders smart
 
 # kill focused window
 bindsym --release $mod+BackSpace kill
@@ -139,30 +144,30 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace FIRST-LEVEL
-bindsym $mod+grave workspace number $ws0
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
+bindsym --release $mod+grave workspace number $ws0
+bindsym --release $mod+1 workspace number $ws1
+bindsym --release $mod+2 workspace number $ws2
+bindsym --release $mod+3 workspace number $ws3
+bindsym --release $mod+4 workspace number $ws4
+bindsym --release $mod+5 workspace number $ws5
+bindsym --release $mod+6 workspace number $ws6
+bindsym --release $mod+7 workspace number $ws7
+bindsym --release $mod+8 workspace number $ws8
+bindsym --release $mod+9 workspace number $ws9
+bindsym --release $mod+0 workspace number $ws10
 
 # move focused container to workspace FIRST-LEVEL
-bindsym $mod+Shift+asciitilde move container to workspace number $ws0
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym --release $mod+Shift+asciitilde move container to workspace number $ws0
+bindsym --release $mod+Shift+1 move container to workspace number $ws1
+bindsym --release $mod+Shift+2 move container to workspace number $ws2
+bindsym --release $mod+Shift+3 move container to workspace number $ws3
+bindsym --release $mod+Shift+4 move container to workspace number $ws4
+bindsym --release $mod+Shift+5 move container to workspace number $ws5
+bindsym --release $mod+Shift+6 move container to workspace number $ws6
+bindsym --release $mod+Shift+7 move container to workspace number $ws7
+bindsym --release $mod+Shift+8 move container to workspace number $ws8
+bindsym --release $mod+Shift+9 move container to workspace number $ws9
+bindsym --release $mod+Shift+0 move container to workspace number $ws10
 
 # SECOND-LEVEL
 set $ws11 "11"
@@ -177,28 +182,28 @@ set $ws19 "19"
 set $ws20 "20"
 
 # switch to workspace SECOND-LEVEL
-bindsym $mod+F1 workspace number $ws11
-bindsym $mod+F2 workspace number $ws12
-bindsym $mod+F3 workspace number $ws13
-bindsym $mod+F4 workspace number $ws14
-bindsym $mod+F5 workspace number $ws15
-bindsym $mod+F6 workspace number $ws16
-bindsym $mod+F7 workspace number $ws17
-bindsym $mod+F8 workspace number $ws18
-bindsym $mod+F9 workspace number $ws19
-bindsym $mod+F10 workspace number $ws20
+bindsym --release $mod+F1 workspace number $ws11
+bindsym --release $mod+F2 workspace number $ws12
+bindsym --release $mod+F3 workspace number $ws13
+bindsym --release $mod+F4 workspace number $ws14
+bindsym --release $mod+F5 workspace number $ws15
+bindsym --release $mod+F6 workspace number $ws16
+bindsym --release $mod+F7 workspace number $ws17
+bindsym --release $mod+F8 workspace number $ws18
+bindsym --release $mod+F9 workspace number $ws19
+bindsym --release $mod+F10 workspace number $ws20
 
 # move focused container to workspace SECOND-LEVEL
-bindsym $mod+Shift+F1 move container to workspace number $ws11
-bindsym $mod+Shift+F2 move container to workspace number $ws12
-bindsym $mod+Shift+F3 move container to workspace number $ws13
-bindsym $mod+Shift+F4 move container to workspace number $ws14
-bindsym $mod+Shift+F5 move container to workspace number $ws15
-bindsym $mod+Shift+F6 move container to workspace number $ws16
-bindsym $mod+Shift+F7 move container to workspace number $ws17
-bindsym $mod+Shift+F8 move container to workspace number $ws18
-bindsym $mod+Shift+F9 move container to workspace number $ws19
-bindsym $mod+Shift+F10 move container to workspace number $ws20
+bindsym --release $mod+Shift+F1 move container to workspace number $ws11
+bindsym --release $mod+Shift+F2 move container to workspace number $ws12
+bindsym --release $mod+Shift+F3 move container to workspace number $ws13
+bindsym --release $mod+Shift+F4 move container to workspace number $ws14
+bindsym --release $mod+Shift+F5 move container to workspace number $ws15
+bindsym --release $mod+Shift+F6 move container to workspace number $ws16
+bindsym --release $mod+Shift+F7 move container to workspace number $ws17
+bindsym --release $mod+Shift+F8 move container to workspace number $ws18
+bindsym --release $mod+Shift+F9 move container to workspace number $ws19
+bindsym --release $mod+Shift+F10 move container to workspace number $ws20
 
 # move to last focused workspace
 bindsym --release $mod+Tab workspace back_and_forth
@@ -233,7 +238,6 @@ mode "resize" {
     bindsym $mod+r mode "default"
 }
 
-
 # Resize Window 
 bindsym --release $mod+r mode "resize"
 
@@ -245,9 +249,9 @@ bar {
 	colors	{
 		background #000000
         statusline #ffffff
-        separator #666666
+        separator #ffffff
         #                  border  backgr. text
-        focused_workspace  #4c7899 #285577 #ffffff
+        focused_workspace  #4c7899 #ffffff #000000
         active_workspace   #333333 #5f676a #ffffff
         inactive_workspace #333333 #222222 #888888
         urgent_workspace   #2f343a #900000 #ffffff
@@ -255,7 +259,7 @@ bar {
 }
 
 # For wallpaper
-exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
 
 # For language toggle en/ru
 bindsym --release $mod+space exec /bin/i3-keyboard-layout cycle us ru
