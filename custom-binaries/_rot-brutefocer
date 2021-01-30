@@ -4,12 +4,14 @@ from argparse import ArgumentParser
 
 def get_args():
     parser = ArgumentParser()
-    parser.add_argument("-c", "--ciphertext", required=True, dest="ciphertext", type=str,
-                        help="specify ")
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument("-m", "--message", action="store", help="specify single message")
+    group.add_argument("-c", "--ciphertext", nargs="+", dest="ciphertext", type=list,
+                       help="specify ciphertext")
     return parser.parse_args()
 
 
-def offset_string(ciphertext: str, offset: int):
+def bruteforce_string(ciphertext: str, offset: int):
     res = []
     for i in ciphertext:
         if (i.isupper()):
@@ -21,12 +23,25 @@ def offset_string(ciphertext: str, offset: int):
     return ''.join(res)
 
 
+def bf_single_msg(message):
+    for offset in range(0, 26):
+        print(bruteforce_string(message, offset))
+
+
+def bf_ciphertext(ciphertext):
+    for offset in range(0, 26):
+        for string in ciphertext:
+            print(bruteforce_string(string, offset), end=" ")
+        print()
+
+
 def main():
     args = get_args()
-    ciphertext = args.ciphertext
 
-    for offset in range(0, 26):
-        print(offset_string(ciphertext, offset))
+    if args.message:
+        bf_single_msg(args.message)
+    elif args.ciphertext:
+        bf_ciphertext(args.ciphertext)
 
 
 if __name__ == "__main__":
