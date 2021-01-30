@@ -1,0 +1,43 @@
+#!/bin/env bash
+if [[ -z $1 ]]; 
+then
+    echo 'Help with:'
+    echo 'hydra/gobuster/nc'
+fi
+
+if [[ $1 == hydra ]]; 
+then
+    ssh_bruteforce='hydra [-l|-L] <login> [-p|-P] <pwd> -s <port> <host> ssh -vV'
+    http_basicauth='hydra [-l|-L] <login> [-p|-P] <pwd> -s <port> -f <host> http[s]-[post|get]-form /<login-page>'
+    http_auth='hydra [-l|-L] <login> [-p|-P] <pwd> -s <port> -f <host> http[s]-[post|get]-form /<login-page>'
+
+    echo "1) $ssh_bruteforce"
+    echo "2) $http_basicauth"
+    echo "3) $http_auth"
+
+    read -t 30 -p 'state your choice: ' choice
+    case $choice in
+        1) echo -n $ssh_bruteforce | xclip -selection c;;
+        2) echo -n $http_basicauth | xclip -selection c;;
+        3) echo -n $http_auth | xclip -selection c;;
+        *) echo 'nothing was chosen';;
+    esac
+fi
+
+if [[ $1 == gobuster ]]; 
+then
+    echo 'you chose gobuster'
+fi
+
+if [[ $1 == nc ]]; 
+then
+    nc_intercept='nc -nlvp <port>'
+
+    echo "1) $nc_intercept"
+
+    read -t 30 -p 'state your choice: ' choice
+    case $choice in
+        1) echo -n $nc_intercept | xclip -selection c;;
+        *) echo 'nothing was chosen';;
+    esac
+fi
