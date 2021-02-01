@@ -32,9 +32,15 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym --release XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% && $refresh_i3status
-bindsym --release XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% && $refresh_i3status
-bindsym --release XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym --release XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2%
+bindsym --release XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2%
+bindsym --release XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+bindsym --release $mod+Mod1+F10 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle 
+bindsym --release $mod+Mod1+F11 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2%
+bindsym --release $mod+Mod1+F12 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2%
+bindsym --release $mod+Mod1+Shift+F11 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym --release $mod+Mod1+Shift+F12 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
 
 # Use playerctl to control player
 bindsym --release XF86AudioPlay exec playerctl play-pause
@@ -45,12 +51,6 @@ bindsym --release XF86AudioPrev exec playerctl previous
 bindsym --release $mod+Mod1+F8 exec playerctl play-pause
 bindsym --release $mod+Mod1+F9 exec playerctl next
 bindsym --release $mod+Mod1+F7 exec playerctl previous
-
-bindsym --release $mod+Mod1+F10 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym --release $mod+Mod1+F11 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2%
-bindsym --release $mod+Mod1+F12 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2%
-bindsym --release $mod+Mod1+Shift+F11 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
-bindsym --release $mod+Mod1+Shift+F12 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -68,6 +68,7 @@ bindsym --release $mod+Return exec alacritty
 # Styles for windows
 title_align center
 hide_edge_borders smart
+show_marks yes
 
 # kill focused window
 bindsym --release $mod+BackSpace kill
@@ -215,17 +216,16 @@ bindsym --release $mod+Shift+n move container to workspace next
 bindsym --release $mod+Shift+p move container to workspace prev
 
 # scratchpad interactions
+# ORIG
 bindsym --release $mod+Mod1+minus move scratchpad
-bindsym --release $mod+Mod1+equal [class=.*] scratchpad show
+bindsym --release $mod+Mod1+equal [class=".*"] scratchpad show
 
 # reload the configuration file
 bindsym --release $mod+Escape reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym --release $mod+Shift+Escape restart
 
-# resize window (you can also use the mouse for that)
-mode "resize-mode" {
-    # These bindings trigger as soon as you enter the resize mode
+mode "resize" {
     bindsym h resize shrink width 1 px or 1 ppt
     bindsym j resize grow height 1 px or 1 ppt
     bindsym k resize shrink height 1 px or 1 ppt
@@ -235,20 +235,43 @@ mode "resize-mode" {
     bindsym Mod1+j resize grow height 5 px or 5 ppt
     bindsym Mod1+k resize shrink height 5 px or 5 ppt
     bindsym Mod1+l resize grow width 5 px or 5 ppt
+    
+    bindsym Shift+h resize shrink width 10 px or 10 ppt
+    bindsym Shift+j resize grow height 10 px or 10 ppt
+    bindsym Shift+k resize shrink height 10 px or 10 ppt
+    bindsym Shift+l resize grow width 10 px or 10 ppt
+    
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
 
-    bindsym Shift+h resize shrink width 25 px or 25 ppt
-    bindsym Shift+j resize grow height 25 px or 25 ppt
-    bindsym Shift+k resize shrink height 25 px or 25 ppt
-    bindsym Shift+l resize grow width 25 px or 25 ppt
+bindsym --release $mod+r mode "resize"
 
-    # back to normal: Enter or Escape or $mod+r
+
+mode "float-resize-mode" {
+    bindsym h resize shrink width 1 px or 1 ppt
+    bindsym j resize grow height 1 px or 1 ppt
+    bindsym k resize shrink height 1 px or 1 ppt
+    bindsym l resize grow width 1 px or 1 ppt
+
+    bindsym Mod1+h resize shrink width 50 px or 50 ppt
+    bindsym Mod1+j resize grow height 50 px or 50 ppt
+    bindsym Mod1+k resize shrink height 50 px or 50 ppt
+    bindsym Mod1+l resize grow width 50 px or 50 ppt
+
+    bindsym Shift+h resize shrink width 150 px or 150 ppt
+    bindsym Shift+j resize grow height 150 px or 150 ppt
+    bindsym Shift+k resize shrink height 150 px or 150 ppt
+    bindsym Shift+l resize grow width 150 px or 150 ppt
+
     bindsym Return mode "default"
     bindsym Escape mode "default"
     bindsym $mod+Mod1+r mode "default"
 }
 
-# enter resize mode
-bindsym --release $mod+Mod1+r mode "resize-mode"
+bindsym --release $mod+Mod1+r mode "float-resize-mode"
+
 
 mode "float-move" {
     bindsym h move container left 1 px
@@ -271,11 +294,10 @@ mode "float-move" {
     bindsym $mod+Mod1+f mode "default"
 }
 
-# enter float-move mode
 bindsym --release $mod+Mod1+f mode "float-move"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
 bar {
+    output primary
     status_command i3status | i3-keyboard-layout i3status
 	position top
 
@@ -285,8 +307,25 @@ bar {
         separator #ffffff
         #                  border  backgr. text
         focused_workspace  #ffffff #ffffff #000000
-        active_workspace   #333333 #333333 #cccccc
-        inactive_workspace #000000 #000000 #cccccc
+        active_workspace   #111111 #111111 #ffffff
+        inactive_workspace #111111 #111111 #ffffff
+        urgent_workspace   #900000 #900000 #ffffff
+	}
+}
+
+bar {
+    output nonprimary
+	position top
+    tray_output none
+
+	colors	{
+		background #000000
+        statusline #ffffff
+        separator #ffffff
+        #                  border  backgr. text
+        focused_workspace  #ffffff #ffffff #000000
+        active_workspace   #111111 #111111 #ffffff
+        inactive_workspace #111111 #111111 #ffffff
         urgent_workspace   #900000 #900000 #ffffff
 	}
 }
@@ -301,15 +340,15 @@ bindsym --release $mod+space exec /bin/i3-keyboard-layout cycle us ru
 bindsym --release $mod+Shift+u exec caja
 
 # For keyboard speed                    dly speed
-exec_always --no-startup-id xset r rate 200 150
+exec --no-startup-id xset r rate 200 150
 
 # Env colors
 # Class                 border  backgr. text    indicator child_border
-client.focused          #ffffff #ffffff #000000 #000000   #ffffff
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #000000 #000000 #ffffff #ffffff   #000000
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.focused          #ffffff #ffffff #000000 #000000 #ffffff
+client.focused_inactive #111111 #111111 #ffffff #111111 #111111
+client.unfocused        #111111 #111111 #ffffff #111111 #111111
+client.urgent           #900000 #900000 #ffffff #900000 #900000
+client.placeholder      #000000 #000000 #ffffff #000000 #000000
 
 # For screenshot this command saves your screenshot to your buffer(no copy on your disk)
 bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`'
