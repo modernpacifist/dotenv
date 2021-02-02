@@ -2,7 +2,7 @@
 if [[ -z $1 ]]; 
 then
     echo 'Help with:'
-    echo 'hydra/gobuster/nc'
+    echo 'hydra/gobuster/nc/git'
 fi
 
 if [[ $1 == hydra ]]; 
@@ -38,6 +38,19 @@ then
     read -t 30 -p 'state your choice: ' choice
     case $choice in
         1) echo -n $nc_intercept | xclip -selection c;;
+        *) echo 'nothing was chosen';;
+    esac
+fi
+
+if [[ $1 == git ]];
+then
+    git_remove_remote_directory='git rm -r --cached <folder_name>'
+
+    echo "1) $git_remove_remote_directory"
+
+    read -t 30 -p 'state your choice: ' choice
+    case $choice in
+        1) echo -n $git_remove_remote_directory | xclip -selection c;;
         *) echo 'nothing was chosen';;
     esac
 fi

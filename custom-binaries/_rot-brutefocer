@@ -5,7 +5,7 @@ from argparse import ArgumentParser
 def get_args():
     parser = ArgumentParser()
     group = parser.add_mutually_exclusive_group(required=True)
-    group.add_argument("-m", "--message", action="store", help="specify single message")
+    group.add_argument("-m", "--message", dest="message", action="store", help="specify single message")
     group.add_argument("-c", "--ciphertext", nargs="+", dest="ciphertext", type=list,
                        help="specify ciphertext")
     return parser.parse_args()
