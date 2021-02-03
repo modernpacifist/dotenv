@@ -57,7 +57,7 @@ floating_modifier $mod
 
 # mouse impact
 focus_follows_mouse no
-mouse_warping none
+mouse_warping output
 
 # Start a terminal(alactiry - my case)
 bindsym --release $mod+Return exec alacritty
@@ -307,7 +307,7 @@ bar {
         separator #ffffff
         #                  border  backgr. text
         focused_workspace  #ffffff #ffffff #000000
-        active_workspace   #111111 #111111 #ffffff
+        active_workspace   #222222 #222222 #ffffff
         inactive_workspace #111111 #111111 #ffffff
         urgent_workspace   #900000 #900000 #ffffff
 	}
@@ -315,6 +315,7 @@ bar {
 
 bar {
     output nonprimary
+    status_command i3status --config /etc/i3nonprimary.conf
 	position top
     tray_output none
 
@@ -324,7 +325,7 @@ bar {
         separator #ffffff
         #                  border  backgr. text
         focused_workspace  #ffffff #ffffff #000000
-        active_workspace   #111111 #111111 #ffffff
+        active_workspace   #222222 #222222 #ffffff
         inactive_workspace #111111 #111111 #ffffff
         urgent_workspace   #900000 #900000 #ffffff
 	}
@@ -345,7 +346,7 @@ exec --no-startup-id xset r rate 200 150
 # Env colors
 # Class                 border  backgr. text    indicator child_border
 client.focused          #ffffff #ffffff #000000 #000000 #ffffff
-client.focused_inactive #111111 #111111 #ffffff #111111 #111111
+client.focused_inactive #222222 #222222 #ffffff #222222 #111111
 client.unfocused        #111111 #111111 #ffffff #111111 #111111
 client.urgent           #900000 #900000 #ffffff #900000 #900000
 client.placeholder      #000000 #000000 #ffffff #000000 #000000
