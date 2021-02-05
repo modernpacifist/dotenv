@@ -279,10 +279,10 @@ mode "float-move" {
     bindsym k move container up 1 px
     bindsym l move container right 1 px
 
-    bindsym Mod1+h move container left 50 px
-    bindsym Mod1+j move container down 50 px
-    bindsym Mod1+k move container up 50 px
-    bindsym Mod1+l move container right 50 px
+    bindsym Mod1+h move container left 15 px
+    bindsym Mod1+j move container down 15 px
+    bindsym Mod1+k move container up 15 px
+    bindsym Mod1+l move container right 15 px
 
     bindsym Shift+h move container left 150 px
     bindsym Shift+j move container down 150 px
@@ -295,6 +295,34 @@ mode "float-move" {
 }
 
 bindsym --release $mod+Mod1+f mode "float-move"
+
+
+mode "mouse-control" {
+    bindsym q exec xdotool click 1
+    bindsym w exec xdotool click 2
+    bindsym e exec xdotool click 3
+
+    bindsym h exec xdotool mousemove_relative --polar 270 5
+    bindsym j exec xdotool mousemove_relative --polar 180 5
+    bindsym k exec xdotool mousemove_relative --polar 0 5
+    bindsym l exec xdotool mousemove_relative --polar 90 5
+
+    bindsym Mod1+h exec xdotool mousemove_relative --polar 270 50
+    bindsym Mod1+j exec xdotool mousemove_relative --polar 180 50
+    bindsym Mod1+k exec xdotool mousemove_relative --polar 0 50
+    bindsym Mod1+l exec xdotool mousemove_relative --polar 90 50
+
+    bindsym Shift+h exec xdotool mousemove_relative --polar 270 250
+    bindsym Shift+j exec xdotool mousemove_relative --polar 180 250
+    bindsym Shift+k exec xdotool mousemove_relative --polar 0 250
+    bindsym Shift+l exec xdotool mousemove_relative --polar 90 250
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+Mod1+m mode "default"
+}
+
+bindsym --release $mod+Mod1+m mode "mouse-control"
 
 bar {
     output primary
@@ -356,6 +384,3 @@ bindsym --release Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~
 
 # Enable/Disable touchpad
 bindsym --release $mod+Mod1+c exec _touchpad_toggle
-
-# Move to screen on the east using ssh/x2x
-bindsym --release $mod+Mod1+Tab exec xdotool mousemove 5000 540 && xdotool mousemove_relative --polar 90 100
