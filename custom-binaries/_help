@@ -26,7 +26,14 @@ fi
 
 if [[ $1 == gobuster ]]; 
 then
-    echo 'you chose gobuster'
+    a='gobuster dir -u <target> -w <wordlist> -t 150'
+    echo "1) $a"
+    
+    read -t 30 -p 'state your choice: ' choice
+    case $choice in
+        1) echo -n $a | xclip -selection c;;
+        *) echo 'nothing was chosen';;
+    esac
 fi
 
 if [[ $1 == nc ]]; 
@@ -44,13 +51,14 @@ fi
 
 if [[ $1 == git ]];
 then
-    git_remove_remote_directory='git rm -r --cached <folder_name>'
+    git_rm_remote='git rm -r --cached <folder_name>'
 
-    echo "1) $git_remove_remote_directory"
+    echo "Remove object from remote repo, not local"
+    echo "1) $git_rm_remote"
 
     read -t 30 -p 'state your choice: ' choice
     case $choice in
-        1) echo -n $git_remove_remote_directory | xclip -selection c;;
+        1) echo -n $git_rm_remote | xclip -selection c;;
         *) echo 'nothing was chosen';;
     esac
 fi

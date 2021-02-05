@@ -301,6 +301,8 @@ mode "mouse-control" {
     bindsym q exec xdotool click 1
     bindsym w exec xdotool click 2
     bindsym e exec xdotool click 3
+    bindsym u exec xdotool click 4
+    bindsym d exec xdotool click 5
 
     bindsym h exec xdotool mousemove_relative --polar 270 5
     bindsym j exec xdotool mousemove_relative --polar 180 5
