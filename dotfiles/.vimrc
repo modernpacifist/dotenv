@@ -35,6 +35,7 @@ Plugin '907th/vim-auto-save'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'itchyny/vim-cursorword'
 
 call vundle#end()
 

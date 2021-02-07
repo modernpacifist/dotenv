@@ -243,7 +243,6 @@ mode "resize" {
     
     bindsym Return mode "default"
     bindsym Escape mode "default"
-    bindsym $mod+r mode "default"
 }
 
 bindsym --release $mod+r mode "resize"
@@ -267,7 +266,6 @@ mode "float-resize-mode" {
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
-    bindsym $mod+Mod1+r mode "default"
 }
 
 bindsym --release $mod+Mod1+r mode "float-resize-mode"
@@ -291,7 +289,6 @@ mode "float-move" {
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
-    bindsym $mod+Mod1+f mode "default"
 }
 
 bindsym --release $mod+Mod1+f mode "float-move"
@@ -321,7 +318,6 @@ mode "mouse-control" {
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
-    bindsym $mod+Mod1+m mode "default"
 }
 
 bindsym --release $mod+Mod1+m mode "mouse-control"
