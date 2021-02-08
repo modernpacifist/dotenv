@@ -277,10 +277,10 @@ mode "float-move" {
     bindsym k move container up 1 px
     bindsym l move container right 1 px
 
-    bindsym Mod1+h move container left 15 px
-    bindsym Mod1+j move container down 15 px
-    bindsym Mod1+k move container up 15 px
-    bindsym Mod1+l move container right 15 px
+    bindsym Mod1+h move container left 20 px
+    bindsym Mod1+j move container down 20 px
+    bindsym Mod1+k move container up 20 px
+    bindsym Mod1+l move container right 20 px
 
     bindsym Shift+h move container left 150 px
     bindsym Shift+j move container down 150 px
@@ -359,6 +359,7 @@ bar {
 
 # For wallpaper
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
+exec --no-startup-id keynav
 
 # For language toggle en/ru
 bindsym --release $mod+space exec /bin/i3-keyboard-layout cycle us ru
