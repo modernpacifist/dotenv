@@ -9,7 +9,7 @@ set expandtab
 set number
 set mouse=
 set nocompatible
-set laststatus=2
+set laststatus=0
 set completeopt+=menuone
 set completeopt+=noinsert
 set completeopt-=preview
@@ -36,6 +36,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'itchyny/vim-cursorword'
+Plugin 'google/vim-searchindex'
 
 call vundle#end()
 
@@ -46,7 +47,7 @@ if filereadable("/etc/vim/vimrc.local")
 endif
 
 let g:kite_supported_languages = ['python']
-let g:kite_auto_complete=1
+let g:kite_completions=1
 let g:kite_tab_complete=1
 let g:kite_snippets=1
 let g:kite_documentation_continual=1
