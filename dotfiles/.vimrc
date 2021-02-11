@@ -15,6 +15,8 @@ set laststatus=2
 set hidden
 set ignorecase
 set noswapfile
+set completeopt+=menuone
+set completeopt+=noinsert
 
 "reloads changed file on terminal focus
 au FocusGained,BufEnter * :checktime
@@ -50,13 +52,13 @@ endif
 let g:kite_supported_languages = ['python']
 let g:kite_completions=1
 let g:kite_tab_complete=1
-let g:kite_snippets=1
 let g:kite_documentation_continual=1
 
 let g:far#enable_undo=1
 let g:auto_save = 1
-let g:auto_save_events = ["InsertLeave", "TextChanged"]
 let g:auto_save_write_all_buffers = 1
+let g:auto_save_events = ["TextChangedI", "InsertLeave", "TextChanged"]
+
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 
@@ -71,9 +73,7 @@ colorscheme fogbell
 map <F2> :wa<CR>
 map <F3> :vertical resize -15<CR>
 map <F4> :vertical resize +15<CR>
-map <F5> :e<CR>
 map <F9> :@:<CR>
-map <C-@> :@:<CR>
 map <F10> :x<CR>
 map <F11> :xa<CR>
 map <F12> :qa!<CR>
@@ -83,11 +83,3 @@ command Cppexec !clear && g++ % && ./a.out
 command Cexec !clear && gcc % && ./a.out
 command Pyexec !clear && python3 %
 command Asmexec !clear && nasm -f elf64 % && ld -s -o run.sh *.o && ./run.sh
-
-"Git ops
-command GitAdd !clear && git add %
-command GitAddAll !clear && git add -A
-command GitCommit !clear && git commit
-command GitPush !clear && git push
-command GitStatus !clear && git status
-command GitDiff !clear && git diff
