@@ -11,7 +11,7 @@ set nowrap
 set smartindent
 set expandtab
 set nocompatible
-set laststatus=2
+set laststatus=0
 set hidden
 set ignorecase
 set noswapfile
@@ -20,6 +20,7 @@ set completeopt+=noinsert
 
 "reloads changed file on terminal focus
 au FocusGained,BufEnter * :checktime
+:au FocusLost * :wa
 
 "----Vundle settings----
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -28,15 +29,14 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 "----Code/project navigation----
+Plugin 'mg979/vim-visual-multi'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
-Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'klen/python-mode'
 Plugin 'preservim/nerdcommenter'
 Plugin 'brooth/far.vim'
 Plugin '907th/vim-auto-save'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'easymotion/vim-easymotion'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'itchyny/vim-cursorword'
 Plugin 'google/vim-searchindex'
@@ -55,9 +55,10 @@ let g:kite_tab_complete=1
 let g:kite_documentation_continual=1
 
 let g:far#enable_undo=1
+
 let g:auto_save = 1
 let g:auto_save_write_all_buffers = 1
-let g:auto_save_events = ["TextChangedI", "InsertLeave", "TextChanged"]
+let g:auto_save_events = ["InsertLeave", "TextChanged"]
 
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
