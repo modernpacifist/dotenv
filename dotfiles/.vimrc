@@ -1,22 +1,23 @@
 filetype off
 syntax enable
+set number
+set autoread
 set encoding=utf-8
+set wildmenu
 set softtabstop=0
 set shiftwidth=4
 set tabstop=4
+set nowrap
 set smartindent
 set expandtab
-set number
-set mouse=
 set nocompatible
-set laststatus=0
-set completeopt+=menuone
-set completeopt+=noinsert
-set completeopt-=preview
+set laststatus=2
 set hidden
 set ignorecase
-set nowrap
 set noswapfile
+
+"reloads changed file on terminal focus
+au FocusGained,BufEnter * :checktime
 
 "----Vundle settings----
 set rtp+=~/.vim/bundle/Vundle.vim
