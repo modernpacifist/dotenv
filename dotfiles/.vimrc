@@ -17,6 +17,7 @@ set ignorecase
 set noswapfile
 set completeopt+=menuone
 set completeopt+=noinsert
+set completeopt-=preview
 
 "reloads changed file on terminal focus
 au FocusGained,BufEnter * :checktime

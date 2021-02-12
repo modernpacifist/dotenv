@@ -124,7 +124,7 @@ bindsym --release $mod+f fullscreen toggle
 bindsym --release $mod+Shift+Mod1+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym --release $mod+Mod1+space focus mode_toggle
+bindsym --release $mod+Mod1+Tab focus mode_toggle
 # move to last focused workspace
 bindsym --release $mod+Mod1+s sticky toggle
 
@@ -248,16 +248,16 @@ mode "resize" {
 bindsym --release $mod+r mode "resize"
 
 
-mode "float-resize-mode" {
+mode "float-resize" {
     bindsym h resize shrink width 1 px or 1 ppt
     bindsym j resize grow height 1 px or 1 ppt
     bindsym k resize shrink height 1 px or 1 ppt
     bindsym l resize grow width 1 px or 1 ppt
 
-    bindsym Mod1+h resize shrink width 50 px or 50 ppt
-    bindsym Mod1+j resize grow height 50 px or 50 ppt
-    bindsym Mod1+k resize shrink height 50 px or 50 ppt
-    bindsym Mod1+l resize grow width 50 px or 50 ppt
+    bindsym Mod1+h resize shrink width 25 px or 25 ppt
+    bindsym Mod1+j resize grow height 25 px or 25 ppt
+    bindsym Mod1+k resize shrink height 25 px or 25 ppt
+    bindsym Mod1+l resize grow width 25 px or 25 ppt
 
     bindsym Shift+h resize shrink width 150 px or 150 ppt
     bindsym Shift+j resize grow height 150 px or 150 ppt
@@ -268,7 +268,7 @@ mode "float-resize-mode" {
     bindsym Escape mode "default"
 }
 
-bindsym --release $mod+Mod1+r mode "float-resize-mode"
+bindsym --release $mod+Mod1+r mode "float-resize"
 
 
 mode "float-move" {
@@ -277,10 +277,10 @@ mode "float-move" {
     bindsym k move container up 1 px
     bindsym l move container right 1 px
 
-    bindsym Mod1+h move container left 20 px
-    bindsym Mod1+j move container down 20 px
-    bindsym Mod1+k move container up 20 px
-    bindsym Mod1+l move container right 20 px
+    bindsym Mod1+h move container left 25 px
+    bindsym Mod1+j move container down 25 px
+    bindsym Mod1+k move container up 25 px
+    bindsym Mod1+l move container right 25 px
 
     bindsym Shift+h move container left 150 px
     bindsym Shift+j move container down 150 px
