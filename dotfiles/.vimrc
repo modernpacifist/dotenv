@@ -53,7 +53,7 @@ endif
 let g:kite_supported_languages = ['python']
 let g:kite_completions=1
 let g:kite_tab_complete=1
-let g:kite_documentation_continual=1
+let g:kite_documentation_continual=0
 
 let g:far#enable_undo=1
 
@@ -76,6 +76,7 @@ map <F2> :wa<CR>
 map <F3> :vertical resize -15<CR>
 map <F4> :vertical resize +15<CR>
 map <F9> :@:<CR>
+map <leader>r :@:<CR>
 map <F10> :x<CR>
 map <F11> :xa<CR>
 map <F12> :qa!<CR>
