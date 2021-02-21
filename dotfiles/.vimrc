@@ -68,7 +68,10 @@ let g:pymode_python = 'python3'
 let g:pymode_options_max_line_length = 110
 let g:pymode_virtualenv = 1
 let g:pymode_rope = 0
-let g:pymode_lint_on_write = 1
+let g:pymode_lint_checkers = ['pep8', 'pyflakes']
+let g:pymode_lint_on_fly = 1
+let g:pymode_motion = 0
+
 
 colorscheme fogbell
 
@@ -84,5 +87,5 @@ map <F12> :qa!<CR>
 "Langs execution
 command Cppexec !clear && g++ % && ./a.out
 command Cexec !clear && gcc % && ./a.out
-command Pyexec !clear && python3 %
+command Pyexec !clear && python3.9 %
 command Asmexec !clear && nasm -f elf64 % && ld -s -o run.sh *.o && ./run.sh
