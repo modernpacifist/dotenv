@@ -73,9 +73,9 @@ let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_complete_in_comments = 1
 let g:ycm_confirm_extra_conf = 0
 
-let g:UltiSnipsExpandTrigger="<S-s>"
-let g:UltiSnipsJumpForwardTrigger="<S-n>"
-let g:UltiSnipsJumpBackwardTrigger="<S-p>"
+let g:UltiSnipsExpandTrigger="<C-s>"
+let g:UltiSnipsJumpForwardTrigger="<C-j>"
+let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 let g:UltiSnipsEditSplit="vertical"
 
 colorscheme fogbell
@@ -91,14 +91,17 @@ autocmd FileType python map <buffer> <leader>r :w<CR>:exec '!clear && python3.9'
 autocmd FileType c map <buffer> <leader>r :w<CR>:exec '!clear && gcc' shellescape(@%, 1) '&& ./a.out'<CR>
 autocmd FileType c set colorcolumn=80 | 
     \ nnoremap <leader>f :NERDTreeFind<CR> |
-    \ nnoremap <leader>t :NERDTreeToggle<CR>
+    \ nnoremap <leader>t :NERDTreeToggle<CR> |
+    \ map <S-k> <nop>
 
 autocmd FileType cpp map <buffer> <leader>r :w<CR>:exec '!clear && g++' shellescape(@%, 1) '&& ./a.out'<CR>
 autocmd FileType cpp set colorcolumn=80 |
     \ nnoremap <leader>f :NERDTreeFind<CR> |
-    \ nnoremap <leader>t :NERDTreeToggle<CR>
+    \ nnoremap <leader>t :NERDTreeToggle<CR> |
+    \ map <S-k> <nop>
 
 autocmd FileType asm map <buffer> <leader>r :w<CR>:exec '!clear && nasm -f elf64' shellescape(@%, 1) '&& ld -s *.o && ./a.out'<CR>
 autocmd FileType asm set colorcolumn=80 |
     \ nnoremap <leader>f :NERDTreeFind<CR> |
-    \ nnoremap <leader>t :NERDTreeToggle<CR>
+    \ nnoremap <leader>t :NERDTreeToggle<CR> |
+    \ map <S-k> <nop>
