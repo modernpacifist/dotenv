@@ -89,19 +89,19 @@ map <F12> :qa!<CR>
 autocmd FileType python map <buffer> <leader>r :w<CR>:exec '!clear && python3.9' shellescape(@%, 1)<CR>
 
 autocmd FileType c map <buffer> <leader>r :w<CR>:exec '!clear && gcc' shellescape(@%, 1) '&& ./a.out'<CR>
-autocmd FileType c set colorcolumn=80 | 
+autocmd FileType c set colorcolumn=90 | 
     \ nnoremap <leader>f :NERDTreeFind<CR> |
     \ nnoremap <leader>t :NERDTreeToggle<CR> |
     \ map <S-k> <nop>
 
 autocmd FileType cpp map <buffer> <leader>r :w<CR>:exec '!clear && g++' shellescape(@%, 1) '&& ./a.out'<CR>
-autocmd FileType cpp set colorcolumn=80 |
+autocmd FileType cpp set colorcolumn=90 |
     \ nnoremap <leader>f :NERDTreeFind<CR> |
     \ nnoremap <leader>t :NERDTreeToggle<CR> |
     \ map <S-k> <nop>
 
 autocmd FileType asm map <buffer> <leader>r :w<CR>:exec '!clear && nasm -f elf64' shellescape(@%, 1) '&& ld -s *.o && ./a.out'<CR>
-autocmd FileType asm set colorcolumn=80 |
+autocmd FileType asm set colorcolumn=90 |
     \ nnoremap <leader>f :NERDTreeFind<CR> |
     \ nnoremap <leader>t :NERDTreeToggle<CR> |
     \ map <S-k> <nop>
