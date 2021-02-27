@@ -6,6 +6,7 @@ repos_to_backup=(
     '/home/modernpacifist/Documents/github-repositories/bash-pentesting-tools'
     '/home/modernpacifist/Documents/github-repositories/python3-practice'
     '/home/modernpacifist/Documents/github-repositories/reverse-engineering'
+    '/home/modernpacifist/Documents/github-repositories/c-language-practice'
     )
 
 for repo_dir in ${repos_to_backup[@]};
