@@ -1,4 +1,0 @@
-#!/bin/env bash
-cd $( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-backup_time=$(date "+%d/%m/%Y-%T")
-git add -A && git commit -m "$backup_time automated backup" && git push
