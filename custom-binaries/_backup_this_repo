@@ -1,4 +1,22 @@
 #!/bin/env bash
-cd $( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-backup_time=$(date "+%d/%m/%Y-%T")
-git add -A && git commit -m "$backup_time automated backup" && git push
+
+repos_to_backup=(
+    '/home/modernpacifist/Documents/github-repositories/System-backups'
+    '/home/modernpacifist/Documents/github-repositories/dotenv'
+    '/home/modernpacifist/Documents/github-repositories/bash-pentesting-tools'
+    '/home/modernpacifist/Documents/github-repositories/python3-practice'
+    '/home/modernpacifist/Documents/github-repositories/reverse-engineering'
+    )
+
+for repo_dir in ${repos_to_backup[@]};
+do 
+    cd $repo_dir
+    git add -A && git commit -m "$(date "+%d/%m/%Y-%T") automated backup" && git push
+    #echo $repo_dir
+done
+
+#echo $( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+#cd $( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+#backup_time=$(date "+%d/%m/%Y-%T")
+#git add -A && git commit -m "$backup_time automated backup" && git push
