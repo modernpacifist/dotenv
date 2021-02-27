@@ -1,4 +1,3 @@
-syntax enable
 set number
 set autoread
 set encoding=utf-8
@@ -19,8 +18,8 @@ set completeopt+=noinsert
 set completeopt-=preview
 
 "Reloads changed file on terminal focus
-au FocusGained,BufEnter * :checktime
-:au FocusLost * :wa
+autocmd FocusGained,BufEnter * :checktime
+autocmd FocusLost,InsertLeave,TextChanged * :wa
 
 "----Vundle settings----
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -32,11 +31,10 @@ Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'klen/python-mode'
 Plugin 'preservim/nerdcommenter'
+Plugin 'itchyny/vim-cursorword'
 Plugin 'brooth/far.vim'
-Plugin '907th/vim-auto-save'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'itchyny/vim-cursorword'
 Plugin 'google/vim-searchindex'
 Plugin 'preservim/nerdtree'
 Plugin 'SirVer/ultisnips'
@@ -45,6 +43,7 @@ Plugin 'honza/vim-snippets'
 call vundle#end()
 
 filetype plugin indent on
+syntax on
 
 let g:kite_supported_languages = ['python']
 let g:kite_completions=1
@@ -52,10 +51,6 @@ let g:kite_tab_complete=1
 let g:kite_documentation_continual=0
 
 let g:far#enable_undo=1
-
-let g:auto_save = 1
-let g:auto_save_write_all_buffers = 1
-let g:auto_save_events = ["InsertLeave", "TextChanged"]
 
 let g:pymode_python = 'python3'
 let g:pymode_lint_checkers = ['pep8', 'pyflakes']
@@ -76,7 +71,6 @@ let g:ycm_confirm_extra_conf = 0
 let g:UltiSnipsExpandTrigger="<C-s>"
 let g:UltiSnipsJumpForwardTrigger="<C-j>"
 let g:UltiSnipsJumpBackwardTrigger="<C-k>"
-let g:UltiSnipsEditSplit="vertical"
 
 colorscheme fogbell
 
@@ -86,22 +80,42 @@ map <F10> :x<CR>
 map <F11> :xa<CR>
 map <F12> :qa!<CR>
 
-autocmd FileType python map <buffer> <leader>r :w<CR>:exec '!clear && python3.9' shellescape(@%, 1)<CR>
+autocmd VimEnter * if (&filetype == 'c' || &filetype == 'cpp' || &filetype == 'asm') | NERDTree | wincmd p
 
-autocmd FileType c map <buffer> <leader>r :w<CR>:exec '!clear && gcc' shellescape(@%, 1) '&& ./a.out'<CR>
-autocmd FileType c set colorcolumn=90 | 
-    \ nnoremap <leader>f :NERDTreeFind<CR> |
-    \ nnoremap <leader>t :NERDTreeToggle<CR> |
-    \ map <S-k> <nop>
+augroup FastEscape
+    autocmd!
+    autocmd InsertEnter * set ttimeoutlen=0
+    autocmd InsertLeave * set ttimeoutlen=-1
+augroup END
 
-autocmd FileType cpp map <buffer> <leader>r :w<CR>:exec '!clear && g++' shellescape(@%, 1) '&& ./a.out'<CR>
-autocmd FileType cpp set colorcolumn=90 |
-    \ nnoremap <leader>f :NERDTreeFind<CR> |
-    \ nnoremap <leader>t :NERDTreeToggle<CR> |
-    \ map <S-k> <nop>
+augroup filetype_python
+    autocmd!
+    autocmd FileType python map <buffer> <leader>r :w<CR>:exec '!clear && python3.9' shellescape(@%, 1)<CR>
+augroup END
 
-autocmd FileType asm map <buffer> <leader>r :w<CR>:exec '!clear && nasm -f elf64' shellescape(@%, 1) '&& ld -s *.o && ./a.out'<CR>
-autocmd FileType asm set colorcolumn=90 |
-    \ nnoremap <leader>f :NERDTreeFind<CR> |
-    \ nnoremap <leader>t :NERDTreeToggle<CR> |
-    \ map <S-k> <nop>
+augroup filetype_c
+    autocmd!
+    autocmd FileType c map <buffer> <leader>r :w<CR>:exec '!clear && gcc' shellescape(@%, 1) '&& ./a.out'<CR>
+    autocmd FileType c set colorcolumn=90 |
+        \ nnoremap <leader>f :NERDTreeFind<CR> |
+        \ nnoremap <leader>t :NERDTreeToggle<CR> |
+        \ map <S-k> <nop>
+augroup END
+
+augroup filetype_cpp
+    autocmd!
+    autocmd FileType cpp map <buffer> <leader>r :w<CR>:exec '!clear && g++' shellescape(@%, 1) '&& ./a.out'<CR>
+    autocmd FileType cpp set colorcolumn=90 |
+        \ nnoremap <leader>f :NERDTreeFind<CR> |
+        \ nnoremap <leader>t :NERDTreeToggle<CR> |
+        \ map <S-k> <nop>
+augroup END
+
+augroup filetype_asm
+    autocmd!
+    autocmd FileType asm map <buffer> <leader>r :w<CR>:exec '!clear && nasm -f elf64' shellescape(@%, 1) '&& ld -s *.o && ./a.out'<CR>
+    autocmd FileType asm set colorcolumn=90 |
+        \ nnoremap <leader>f :NERDTreeFind<CR> |
+        \ nnoremap <leader>t :NERDTreeToggle<CR> |
+        \ map <S-k> <nop>
+augroup END
