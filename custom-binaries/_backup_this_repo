@@ -12,11 +12,4 @@ for repo_dir in ${repos_to_backup[@]};
 do 
     cd $repo_dir
     git add -A && git commit -m "$(date "+%d/%m/%Y-%T") automated backup" && git push
-    #echo $repo_dir
 done
-
-#echo $( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-
-#cd $( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-#backup_time=$(date "+%d/%m/%Y-%T")
-#git add -A && git commit -m "$backup_time automated backup" && git push
