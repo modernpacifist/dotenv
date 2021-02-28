@@ -1,25 +1,4 @@
-set number
-set autoread
-set encoding=utf-8
-set wildmenu
-set softtabstop=0
-set shiftwidth=4
-set tabstop=4
-set nowrap
-set smartindent
-set expandtab
 set nocompatible
-set laststatus=0
-set hidden
-set ignorecase
-set noswapfile
-set completeopt+=menuone
-set completeopt+=noinsert
-set completeopt-=preview
-
-"Reloads changed file on terminal focus
-autocmd FocusGained,BufEnter * :checktime
-autocmd FocusLost,InsertLeave,TextChanged * :wa
 
 "----Vundle settings----
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -42,8 +21,34 @@ Plugin 'honza/vim-snippets'
 
 call vundle#end()
 
+set number
+set autoread
+set encoding=utf-8
+set wildmenu
+set softtabstop=0
+set shiftwidth=4
+set tabstop=4
+set nowrap
+set smartindent
+set expandtab
+set laststatus=0
+set hidden
+set ignorecase
+set noswapfile
+set ttyfast
+set title
+set ttimeout
+set ttimeoutlen=0
+set completeopt+=menuone
+set completeopt+=noinsert
+set completeopt-=preview
+
 filetype plugin indent on
 syntax on
+
+"Reloads changed file on terminal focus
+autocmd FocusGained,BufEnter * :checktime
+autocmd FocusLost,InsertLeave,TextChanged * :wa
 
 let g:kite_supported_languages = ['python']
 let g:kite_completions=1
@@ -81,12 +86,6 @@ map <F11> :xa<CR>
 map <F12> :qa!<CR>
 
 autocmd VimEnter * if (&filetype == 'c' || &filetype == 'cpp' || &filetype == 'asm') | NERDTree | wincmd p
-
-augroup FastEscape
-    autocmd!
-    autocmd InsertEnter * set ttimeoutlen=0
-    autocmd InsertLeave * set ttimeoutlen=-1
-augroup END
 
 augroup filetype_python
     autocmd!
