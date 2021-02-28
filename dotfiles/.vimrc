@@ -10,7 +10,6 @@ Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'klen/python-mode'
 Plugin 'preservim/nerdcommenter'
-Plugin 'itchyny/vim-cursorword'
 Plugin 'brooth/far.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'jiangmiao/auto-pairs'
@@ -39,8 +38,7 @@ set ttyfast
 set title
 set ttimeout
 set ttimeoutlen=0
-set completeopt+=menuone
-set completeopt+=noinsert
+set completeopt+=longest,menuone,noinsert
 set completeopt-=preview
 
 filetype plugin indent on
