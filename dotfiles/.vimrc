@@ -20,6 +20,9 @@ Plugin 'honza/vim-snippets'
 
 call vundle#end()
 
+filetype plugin indent on
+
+syntax enable
 set number
 set autoread
 set encoding=utf-8
@@ -34,15 +37,10 @@ set laststatus=0
 set hidden
 set ignorecase
 set noswapfile
-set ttyfast
-set title
 set ttimeout
 set ttimeoutlen=0
 set completeopt+=longest,menuone,noinsert
 set completeopt-=preview
-
-filetype plugin indent on
-syntax on
 
 "Reloads changed file on terminal focus
 autocmd FocusGained,BufEnter * :checktime
