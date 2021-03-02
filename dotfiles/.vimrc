@@ -101,7 +101,7 @@ augroup filetype_cpp
     autocmd!
     autocmd FileType cpp autocmd VimEnter * NERDTree | wincmd p
     autocmd FileType cpp map <buffer> <leader>r :w<CR>:exec '!clear && g++' shellescape(@%, 1) '&& ./a.out'<CR>
-    autocmd FileType cpp set colorcolumn=90 |
+    autocmd FileType cpp set colorcolumn=100 |
         \ nnoremap <leader>f :NERDTreeFind<CR> |
         \ nnoremap <leader>t :NERDTreeToggle<CR> |
         \ map <S-k> <nop>
