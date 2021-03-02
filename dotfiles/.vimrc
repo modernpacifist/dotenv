@@ -13,6 +13,7 @@ Plugin 'preservim/nerdcommenter'
 Plugin 'brooth/far.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'itchyny/vim-cursorword'
 Plugin 'google/vim-searchindex'
 Plugin 'preservim/nerdtree'
 Plugin 'SirVer/ultisnips'
@@ -81,8 +82,6 @@ map <F10> :x<CR>
 map <F11> :xa<CR>
 map <F12> :qa!<CR>
 
-autocmd VimEnter * if (&filetype == 'c' || &filetype == 'cpp' || &filetype == 'asm') | NERDTree | wincmd p
-
 augroup filetype_python
     autocmd!
     autocmd FileType python map <buffer> <leader>r :w<CR>:exec '!clear && python3.9' shellescape(@%, 1)<CR>
@@ -90,6 +89,7 @@ augroup END
 
 augroup filetype_c
     autocmd!
+    autocmd FileType c autocmd VimEnter * NERDTree | wincmd p
     autocmd FileType c map <buffer> <leader>r :w<CR>:exec '!clear && gcc' shellescape(@%, 1) '&& ./a.out'<CR>
     autocmd FileType c set colorcolumn=90 |
         \ nnoremap <leader>f :NERDTreeFind<CR> |
@@ -99,6 +99,7 @@ augroup END
 
 augroup filetype_cpp
     autocmd!
+    autocmd FileType cpp autocmd VimEnter * NERDTree | wincmd p
     autocmd FileType cpp map <buffer> <leader>r :w<CR>:exec '!clear && g++' shellescape(@%, 1) '&& ./a.out'<CR>
     autocmd FileType cpp set colorcolumn=90 |
         \ nnoremap <leader>f :NERDTreeFind<CR> |
@@ -108,6 +109,7 @@ augroup END
 
 augroup filetype_asm
     autocmd!
+    autocmd FileType asm autocmd VimEnter * NERDTree | wincmd p
     autocmd FileType asm map <buffer> <leader>r :w<CR>:exec '!clear && nasm -f elf64' shellescape(@%, 1) '&& ld -s *.o && ./a.out'<CR>
     autocmd FileType asm set colorcolumn=90 |
         \ nnoremap <leader>f :NERDTreeFind<CR> |
