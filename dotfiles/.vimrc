@@ -85,6 +85,9 @@ map <F12> :qa!<CR>
 augroup filetype_python
     autocmd!
     autocmd FileType python map <buffer> <leader>r :w<CR>:exec '!clear && python3.9' shellescape(@%, 1)<CR>
+    autocmd FileType python nnoremap <leader>f :NERDTreeFind<CR> |
+        \ nnoremap <leader>t :NERDTreeToggle<CR> |
+        \ map <S-k> <nop>
 augroup END
 
 augroup filetype_c
