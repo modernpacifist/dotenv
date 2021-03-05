@@ -43,9 +43,10 @@ set ttimeoutlen=0
 set completeopt+=longest,menuone,noinsert
 set completeopt-=preview
 
-"Reloads changed file on terminal focus
+"Reloads buffer on its focus
 autocmd FocusGained,BufEnter * :checktime
-autocmd FocusLost,InsertLeave,TextChanged * :wa
+"Saves buffer on any change of data in it
+autocmd FocusLost,InsertLeave,TextChanged,InsertChange * :wa
 
 let g:kite_supported_languages = ['python']
 let g:kite_completions=1
@@ -73,6 +74,8 @@ let g:ycm_confirm_extra_conf = 0
 let g:UltiSnipsExpandTrigger="<C-s>"
 let g:UltiSnipsJumpForwardTrigger="<C-j>"
 let g:UltiSnipsJumpBackwardTrigger="<C-k>"
+
+let g:NERDTreeIgnore = ['\.h.gch$', '\.pyc$', '\.out$']
 
 colorscheme fogbell
 
