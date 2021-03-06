@@ -100,6 +100,7 @@ augroup filetype_c
     autocmd FileType c set colorcolumn=90 |
         \ nnoremap <leader>f :NERDTreeFind<CR> |
         \ nnoremap <leader>t :NERDTreeToggle<CR> |
+        \ nnoremap <leader>xa :xa<CR> |
         \ map <S-k> <nop>
 augroup END
 
@@ -110,6 +111,7 @@ augroup filetype_cpp
     autocmd FileType cpp set colorcolumn=100 |
         \ nnoremap <leader>f :NERDTreeFind<CR> |
         \ nnoremap <leader>t :NERDTreeToggle<CR> |
+        \ nnoremap <leader>xa :xa<CR> |
         \ map <S-k> <nop>
 augroup END
 
@@ -120,5 +122,6 @@ augroup filetype_asm
     autocmd FileType asm set colorcolumn=90 |
         \ nnoremap <leader>f :NERDTreeFind<CR> |
         \ nnoremap <leader>t :NERDTreeToggle<CR> |
+        \ nnoremap <leader>xa :xa<CR> |
         \ map <S-k> <nop>
 augroup END

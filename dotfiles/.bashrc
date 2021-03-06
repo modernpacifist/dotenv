@@ -93,9 +93,14 @@ else
 fi
 unset color_prompt force_color_prompt
 
-# If this is an xterm set the title to user@host:dir
+function nonzero_return() {
+    RETVAL=$?
+    [ $RETVAL -ne 0 ] && echo "{errcde:$RETVAL}"
+}
+
+## If this is an xterm set the title to user@host:dir
 case "$TERM" in
-    xterm*|rxvt*) PS1="\[\e[2m\]\`parse_git_branch\`\[\e[m\][\t][\u@\H:\W]\\$ " ;;
+    xterm*|rxvt*) PS1="\[\e[31m\]\`nonzero_return\`\[\e[m\]\[\e[2m\]\`parse_git_branch\`\[\e[m\][\t][\u@\H:\W]\\$ " ;;
     *) ;;
 esac
 
