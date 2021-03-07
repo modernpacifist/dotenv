@@ -81,12 +81,10 @@ colorscheme fogbell
 
 map <F3> :vertical resize -15<CR>
 map <F4> :vertical resize +15<CR>
-map <F10> :x<CR>
-map <F11> :xa<CR>
-map <F12> :qa!<CR>
 
-nnoremap <leader>xa :xa<CR>
-nnoremap <leader>wa :wa<CR>
+noremap <leader>s :update<CR>
+noremap <leader>xa :xa<CR>
+noremap <leader>wa :wa<CR>
 
 augroup filetype_python
     autocmd!
