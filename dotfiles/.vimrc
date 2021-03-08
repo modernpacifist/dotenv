@@ -85,6 +85,7 @@ map <F4> :vertical resize +15<CR>
 noremap <leader>s :update<CR>
 noremap <leader>xa :xa<CR>
 noremap <leader>wa :wa<CR>
+:map <C-S-v> (V)*y''
 
 augroup filetype_python
     autocmd!
