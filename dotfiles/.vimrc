@@ -36,6 +36,7 @@ set smartindent
 set expandtab
 set laststatus=0
 set hidden
+set showcmd
 set ignorecase
 set noswapfile
 set ttimeout
@@ -85,7 +86,7 @@ map <F4> :vertical resize +15<CR>
 noremap <leader>s :update<CR>
 noremap <leader>xa :xa<CR>
 noremap <leader>wa :wa<CR>
-:map <C-S-v> (V)*y''
+noremap <leader>y "+y
 
 augroup filetype_python
     autocmd!
