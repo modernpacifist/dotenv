@@ -80,48 +80,52 @@ let g:NERDTreeIgnore = ['\.h.gch$', '\.pyc$', '\.out$']
 
 colorscheme fogbell
 
-map <F3> :vertical resize -15<CR>
-map <F4> :vertical resize +15<CR>
+noremap <F3> :vertical resize -15<CR>
+noremap <F4> :vertical resize +15<CR>
+noremap <F10> :x<CR>
+noremap <F11> :xa<CR>
+noremap <F12> :qa!<CR>
 
 noremap <leader>s :update<CR>
 noremap <leader>xa :xa<CR>
 noremap <leader>wa :wa<CR>
+noremap <leader>qa :qa!<CR>
 noremap <leader>y "+y
 
 augroup filetype_python
     autocmd!
-    autocmd FileType python map <buffer> <leader>r :w<CR>:exec '!clear && python3.9' shellescape(@%, 1)<CR>
-    autocmd FileType python nnoremap <leader>f :NERDTreeFind<CR> |
-        \ nnoremap <leader>t :NERDTreeToggle<CR> |
-        \ map <S-k> <nop>
+    autocmd FileType python noremap <buffer> <leader>r :w<CR>:exec '!clear && python3.9' shellescape(@%, 1)<CR>
+    autocmd FileType python noremap <leader>f :NERDTreeFind<CR> |
+        \ noremap <leader>t :NERDTreeToggle<CR> |
+        \ noremap <S-k> <nop>
 augroup END
 
 augroup filetype_c
     autocmd!
     autocmd FileType c autocmd VimEnter * NERDTree | wincmd p
-    autocmd FileType c map <buffer> <leader>r :w<CR>:exec '!clear && gcc' shellescape(@%, 1) '&& ./a.out'<CR>
+    autocmd FileType c noremap <buffer> <leader>r :w<CR>:exec '!clear && gcc' shellescape(@%, 1) '&& ./a.out'<CR>
     autocmd FileType c set colorcolumn=90 |
-        \ nnoremap <leader>f :NERDTreeFind<CR> |
-        \ nnoremap <leader>t :NERDTreeToggle<CR> |
-        \ map <S-k> <nop>
+        \ noremap <leader>f :NERDTreeFind<CR> |
+        \ noremap <leader>t :NERDTreeToggle<CR> |
+        \ noremap <S-k> <nop>
 augroup END
 
 augroup filetype_cpp
     autocmd!
     autocmd FileType cpp autocmd VimEnter * NERDTree | wincmd p
-    autocmd FileType cpp map <buffer> <leader>r :w<CR>:exec '!clear && g++' shellescape(@%, 1) '&& ./a.out'<CR>
+    autocmd FileType cpp noremap <buffer> <leader>r :w<CR>:exec '!clear && g++' shellescape(@%, 1) '&& ./a.out'<CR>
     autocmd FileType cpp set colorcolumn=100 |
-        \ nnoremap <leader>f :NERDTreeFind<CR> |
-        \ nnoremap <leader>t :NERDTreeToggle<CR> |
-        \ map <S-k> <nop>
+        \ noremap <leader>f :NERDTreeFind<CR> |
+        \ noremap <leader>t :NERDTreeToggle<CR> |
+        \ noremap <S-k> <nop>
 augroup END
 
 augroup filetype_asm
     autocmd!
     autocmd FileType asm autocmd VimEnter * NERDTree | wincmd p
-    autocmd FileType asm map <buffer> <leader>r :w<CR>:exec '!clear && nasm -f elf64' shellescape(@%, 1) '&& ld -s *.o && ./a.out'<CR>
+    autocmd FileType asm noremap <buffer> <leader>r :w<CR>:exec '!clear && nasm -f elf64' shellescape(@%, 1) '&& ld -s *.o && ./a.out'<CR>
     autocmd FileType asm set colorcolumn=90 |
-        \ nnoremap <leader>f :NERDTreeFind<CR> |
-        \ nnoremap <leader>t :NERDTreeToggle<CR> |
-        \ map <S-k> <nop>
+        \ noremap <leader>f :NERDTreeFind<CR> |
+        \ noremap <leader>t :NERDTreeToggle<CR> |
+        \ noremap <S-k> <nop>
 augroup END
