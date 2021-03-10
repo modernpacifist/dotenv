@@ -91,6 +91,7 @@ noremap <leader>xa :xa<CR>
 noremap <leader>wa :wa<CR>
 noremap <leader>qa :qa!<CR>
 noremap <leader>y "+y
+noremap <leader>p "+p
 
 augroup filetype_python
     autocmd!
