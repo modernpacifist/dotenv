@@ -359,7 +359,6 @@ bar {
 
 # For wallpaper
 exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
-exec --no-startup-id keynav
 
 # For language toggle en/ru
 bindsym --release $mod+space exec /bin/i3-keyboard-layout cycle us ru
