@@ -1,2 +1,2 @@
 #!/bin/env bash
-sudo systemctl status tor.service
+systemctl status tor.service

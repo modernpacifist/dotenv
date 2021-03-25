@@ -4,5 +4,6 @@ then
     echo "No file specified"
     exit 1
 else
-    hexeditor -n $1
+    file $1 | tr "," "\n"
+    exit 0
 fi

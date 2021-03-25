@@ -1,2 +1,2 @@
 #!/bin/env bash
-sudo systemctl start tor.service
+systemctl start tor.service

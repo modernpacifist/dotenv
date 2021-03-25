@@ -1,2 +1,2 @@
 #!/bin/env bash
-sudo systemctl restart tor.service
+systemctl restart tor.service
