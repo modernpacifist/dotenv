@@ -564,7 +564,6 @@ mouse:
 # be mapped to the `ReceiveChar` action. Alternatively, you can use `None` for
 # a no-op if you do not wish to receive input characters for that binding.
 key_bindings:
-    # (Windows, Linux, and BSD only)
   - { key: V,        mods: Control|Shift, action: Paste            }
   - { key: C,        mods: Control|Shift, action: Copy             }
   - { key: Insert,   mods: Shift,         action: PasteSelection   }
@@ -578,6 +577,5 @@ key_bindings:
   - { key: D,        mods: Control|Shift, action: ScrollPageDown   }
   - { key: T,        mods: Control|Shift, action: ScrollToTop      }
   - { key: B,        mods: Control|Shift, action: ScrollToBottom   }
-
   - { key: Paste,                    action: Paste                 }
   - { key: Copy,                     action: Copy                  }
