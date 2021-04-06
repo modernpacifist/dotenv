@@ -1,0 +1,10 @@
+#!/bin/env bash
+if [[ -z $1 ]];
+then
+    echo "No $1 arg specified"
+    exit 1
+else
+    ps aux | head -n 1
+    ps aux | grep -i ${1}
+    exit 0
+fi
