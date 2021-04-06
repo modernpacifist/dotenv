@@ -1,9 +1,0 @@
-#!/bin/env bash
-if [[ -z $1 ]];
-then
-    exit 1
-else
-    $1
-    ssh -p $port dell_cloud@$remote_host $1
-    DISPLAY=:0
-fi

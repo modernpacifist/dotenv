@@ -381,4 +381,4 @@ client.placeholder      #000000 #000000 #ffffff #000000 #000000
 bindsym --release Print exec flameshot gui
 
 # Enable/Disable touchpad
-bindsym --release $mod+Mod1+c exec _touchpad_toggle
+bindsym --release $mod+Mod1+c exec __touchpad_toggle

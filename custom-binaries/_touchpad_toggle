@@ -1,9 +1,0 @@
-#!/bin/env bash
-
-touchpad_id=$(xinput | grep 'Synaptics TouchPad' | grep -Eo 'id=[0-9]{2}' | tr -dc '0-9')
-touchpad_state=$(xinput list-props $touchpad_id | grep "Device Enabled" | grep -o "[01]$")
-
-case $touchpad_state in
-    "0") xinput enable $touchpad_id;;
-    "1") xinput disable $touchpad_id; xdotool mousemove 10 1080;;
-esac
