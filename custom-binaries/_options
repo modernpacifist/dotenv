@@ -71,6 +71,14 @@ for interface in ${network_interfaces[@]}; do
     get_options $interface;
 done
 
+function print_ports {
+    echo "Ports:"
+    echo -en "\$port: \033[1m$(return_ip $port)\033[0m\n";
+    echo -en "\$port1: \033[1m$(return_ip $port1)\033[0m\n\n";
+}
+
+print_ports
+
 function print_targets {
     echo "Targets:"
     echo -en "\$target: \033[1m$(return_ip $target)\033[0m  status: "; echo -e "\033[1m$(ip_status $target)\033[0m"
