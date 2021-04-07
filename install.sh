@@ -8,11 +8,11 @@ then
     cp ./i3config/i3status.conf /etc/
 
     # dotfiles setup done
-    cp ./dotfiles/.bash_aliases /home/$1/ && cp .bash_aliases ~/
-    cp ./dotfiles/.bashrc /home/$1/ && cp .bashrc ~/
-    cp ./dotfiles/.gdbinit /home/$1/ && cp .gdbinit ~/
-    cp ./dotfiles/.inputrc /home/$1/ && cp .inputrc ~/
-    cp ./dotfiles/.vimrc /home/$1/ && cp .vimrc ~/
+    cp ./dotfiles/.bash_aliases /home/$1/ && cp ./dotfiles/.bash_aliases ~/
+    cp ./dotfiles/.bashrc /home/$1/ && cp ./dotfiles/.bashrc ~/
+    cp ./dotfiles/.gdbinit /home/$1/ && cp ./dotfiles/.gdbinit ~/
+    cp ./dotfiles/.inputrc /home/$1/ && cp ./dotfiles/.inputrc ~/
+    cp ./dotfiles/.vimrc /home/$1/ && cp ./dotfiles/.vimrc ~/
 
     # custom-binaries setup done
     cp ./custom-binaries/* /bin/
