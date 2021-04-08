@@ -15,7 +15,6 @@ esac
 if _BASHRC_WAS_RUN 2>/dev/null; then
     :;
 else    # Stuff that only needs to run the first time we source .bashrc.
-        # Useful to allow re-sourcing new changes, without breaking/changing things in this section
     alias _BASHRC_WAS_RUN=true
 fi
 
