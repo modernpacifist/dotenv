@@ -4,13 +4,18 @@ if [[ $UID != 0 ]]; then
     exit 1
 fi
 
-for file in $(ls -A custom-binaries); do
-    cp $file /bin/
+# Installation of binaries
+for bin_file in $(ls -A ./custom-binaries/); do
+    cp $bin_file /bin/
 done
 
-available_users=$(ls /home)
-for username in $available_users
-do
+# Installation of dotfiles for root
+for dot_file in $(ls -A ./dotfiles/); do
+    cp $dot_file ~/
+done
+
+available_users=$(ls -A /home)
+for username in $available_users; do
     if [[ -d /home/$username/.config/i3/ ]]; then
         cp ./i3config/config /home/$username/.config/i3/
         cp ./i3config/i3-keyboard-layout /bin/
@@ -18,12 +23,10 @@ do
         cp ./i3config/i3status.conf /etc/
     fi
 
+    # Installation of dotfiles for all users
     if [[ -d /home/$username/ ]]; then
-        files=$(ls -A ./dotfiles/)
-        for file in $files
-        do
-            cp ./dotfiles/$file /home/$username/
-            cp ./dotfiles/$file ~/
+        for dot_file in $(ls -A ./dotfiles/); do
+            cp ./dotfiles/$dot_file /home/$username/
         done
     fi
 
