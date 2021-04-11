@@ -1,0 +1,13 @@
+#!/bin/env bash
+
+night_mode() { 
+    #for disp in $(xrandr | sed -n 's/^\([^ ]*\).*\<connected>.*/\1/p'); do 
+    xrandr --output LVDS-1 --gamma $1 --brightness $2 
+    #done 
+} 
+
+case $1 in 
+  off) night_mode 1:1:1 1.0 ;; 
+  on) night_mode 1:0.85:0.6 0.7 ;;
+  *) echo 'specify mode on/off in $1'; exit 1;;
+esac
