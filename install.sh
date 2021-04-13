@@ -6,12 +6,12 @@ fi
 
 # Installation of binaries
 for bin_file in $(ls -A ./custom-binaries/); do
-    cp $bin_file /bin/
+    cp ./custom-binaries/$bin_file /bin/
 done
 
 # Installation of dotfiles for root
 for dot_file in $(ls -A ./dotfiles/); do
-    cp $dot_file ~/
+    cp ./dotfiles/$dot_file ~/
 done
 
 available_users=$(ls -A /home)
