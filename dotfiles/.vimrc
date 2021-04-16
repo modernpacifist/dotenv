@@ -80,8 +80,8 @@ let g:NERDTreeIgnore = ['\.h.gch$', '\.pyc$', '\.out$']
 
 colorscheme fogbell
 
-noremap <F3> :vertical resize -15<CR>
-noremap <F4> :vertical resize +15<CR>
+noremap <F3> :vertical resize -5<CR>
+noremap <F4> :vertical resize +5<CR>
 noremap <F10> :x<CR>
 noremap <F11> :xa<CR>
 noremap <F12> :qa!<CR>
