@@ -340,7 +340,7 @@ bar {
 
 bar {
     output nonprimary
-    status_command i3status --config /etc/i3nonprimary_status.conf
+    status_command i3status --config /etc/i3nonprimary_status.conf | i3-keyboard-layout i3status
 	position top
     tray_output none
 
