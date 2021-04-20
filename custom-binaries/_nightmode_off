@@ -1,0 +1,4 @@
+#!/bin/env bash
+for disp in $(xrandr | grep -w 'connected' | awk '{print $1}'); do 
+    xrandr --output $disp --gamma 1:1:1 --brightness 1
+done 
