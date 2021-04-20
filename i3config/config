@@ -44,11 +44,10 @@ bindsym --release $mod+Mod1+Shift+F12 exec --no-startup-id pactl set-sink-volume
 # Use playerctl to control player
 bindsym --release XF86AudioPlay exec playerctl play-pause
 bindsym --release XF86AudioPause exec playerctl play-pause
-bindsym --release XF86AudioNext exec playerctl next
-bindsym --release XF86AudioPrev exec playerctl previous
-
-bindsym --release $mod+Mod1+F8 exec playerctl play-pause
-bindsym --release $mod+Mod1+F9 exec playerctl next
+bindsym --release XF86AudioNext exec playerctl next 
+bindsym --release XF86AudioPrev exec playerctl previous 
+bindsym --release $mod+Mod1+F8 exec playerctl play-pause 
+bindsym --release $mod+Mod1+F9 exec playerctl next 
 bindsym --release $mod+Mod1+F7 exec playerctl previous
 
 # Use Mouse+$mod to drag floating windows to their wanted position
