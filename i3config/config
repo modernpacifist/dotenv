@@ -122,6 +122,9 @@ bindsym --release $mod+f fullscreen toggle
 # toggle tiling / floating
 bindsym --release $mod+Shift+Mod1+space floating toggle
 
+# floating windows by default
+for_window [class="TelegramDesktop" instance="telegram"] floating enable
+
 # change focus between tiling / floating windows
 bindsym --release $mod+Mod1+Tab focus mode_toggle
 # move to last focused workspace
