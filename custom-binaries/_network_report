@@ -1,5 +1,0 @@
-#!/bin/env bash
-ifconfig && echo; 
-netstat -tulpn && echo;
-nmcli con && echo;
-ip -4 addr && echo;
