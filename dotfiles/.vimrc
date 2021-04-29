@@ -57,7 +57,6 @@ let g:kite_documentation_continual=0
 let g:far#enable_undo=1
 
 let g:pymode_python = 'python3'
-let g:pymode_lint_checkers = ['pep8', 'pyflakes']
 let g:pymode_options_max_line_length = 110
 let g:pymode_lint_on_fly = 1
 let g:pymode_virtualenv = 1
