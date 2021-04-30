@@ -6,12 +6,17 @@ fi
 
 # Installation of binaries
 for bin_file in $(ls -A ./custom-binaries/); do
-    cp ./custom-binaries/$bin_file /bin/
+    cp ./custom-binaries/$bin_file /bin/ || echo "./custom-binaries/${bin_file} was not copied"
+done
+
+# Completions for binaries
+for comp_file in $(ls -A ./completions/); do
+    cp ./completions/$comp_file /usr/share/bash-completion/completions/$comp_file || echo "./completions/${comp_file} was not copied"
 done
 
 # Installation of dotfiles for root
 for dot_file in $(ls -A ./dotfiles/); do
-    cp ./dotfiles/$dot_file ~/
+    cp ./dotfiles/$dot_file ~/ || echo "./dotfiles/${dot_file} was not copied"
 done
 
 available_users=$(ls -A /home)

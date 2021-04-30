@@ -1,0 +1,90 @@
+#!/bin/env bash
+function print_options {
+    echo 'Help with:'
+    echo '├─── git     ── useful git commands'
+    echo '├─── gdb     ── useful gdb commands for memory examination'
+    echo '├─── cpu-registers     ── basic info about x86 cpu registers'
+    echo '└─── bash-scripting     ── bash error codes'
+}
+
+function git {
+    git_rm_remote='git rm -r --cached <folder_name>'
+    echo '   ┌ Remove object from remote repo, not local'
+    echo "1. $git_rm_remote"
+
+    git_diff_last_commit='git diff HEAD~'
+    echo '   ┌ Get difference between current version and last pushed to repo commmit'
+    echo "2. $git_diff_last_commit"
+
+    git_reset_last_local_commit='git reset HEAD~1'
+    echo '   ┌ Reset last local commit'
+    echo "3. $git_reset_last_local_commit"
+
+    read -p 'State your choice: ' choice
+    case $choice in
+        1) echo -n $git_rm_remote | xclip -selection c;;
+        2) echo -n $git_diff_last_commit | xclip -selection c;;
+        3) echo -n $git_reset_last_local_commit | xclip -selection c;;
+        *) exit 1;;
+    esac
+}
+
+function gdb {
+    stack_examination="x/2000xb \$esp+-500"
+    echo '   ┌ Examine stack bytes'
+    echo "1. (gdb) $stack_examination"
+
+    get_info_about_process="info proc all"
+    echo '   ┌ Get info about stack size'
+    echo "2. (gdb) $get_info_about_process"
+
+    read -p 'State your choice: ' choice
+    case $choice in
+        1) echo -n $stack_examination | xclip -selection c;;
+        2) echo -n $get_info_about_process | xclip -selection c;;
+        *) exit 1;;
+    esac
+}
+
+function cpu-registers {
+    printf 'Error codes:\n'
+    printf '%6s - catchall for general errors let "var1 = 1/0"\n' 1
+    printf '%6s - misuse of shell builtins, according to Bash documentation\n' 2
+    printf '%6s - command invoked cannot execute\n' 126
+    printf '%6s - "command not found"\n' 127
+    printf '%6s - invalid argument to exit\n' 128
+    printf '%6s - fatal error signal "n"\n' 128+n
+    printf '%6s - script terminated by Control-C\n' 130
+    printf '%6s - exit status out of range\n' 255
+}
+
+function bash-scripting {
+    echo "   ┌ Error code conventions"
+    echo "1. errors"
+    error_codes='\n1 - catchall for general errors let "var1 = 1/0"\n2 - misuse of shell builtins, according to Bash documentation\n126 - command invoked cannot execute\n127 - "command not found"\n128 - invalid argument to exit\n128+n - fatal error signal "n"\n130 - script terminated by Control-C\n255 - exit status out of range'
+
+    echo "   ┌ Sequence pipes in commands"
+    echo "2. pipes"
+    pipes='\n; - operator allows you to execute multiple commands in succession\n&& - run next command if previous command was successful\n|| - run next command if previous command was NOT successful\n'
+
+    read -p 'State your choice: ' choice
+    case $choice in
+        1) echo -e $error_codes;;
+        2) echo -e $pipes;;
+        *) exit 1;;
+    esac
+}
+
+if [[ -z $1 ]]; then
+    print_options
+fi
+
+if [[ $1 ]]; then
+    case $1 in
+        "git") git;;
+        "gdb") gdb;;
+        "cpu-registers") cpu-registers;;
+        "bash-scripting") bash-scripting;;
+        *) print_options;;
+    esac
+fi
