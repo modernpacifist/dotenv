@@ -55,11 +55,13 @@ let g:kite_tab_complete=1
 let g:kite_documentation_continual=0
 
 let g:pymode_python = 'python3'
-let g:pymode_lint_checkers = ['pyflakes']
+let g:pymode_lint_checkers = ['pyflakes', 'pylint']
 let g:pymode_options_max_line_length = 110
 let g:pymode_lint = 1
+let g:pymode_lint_on_write = 1
 let g:pymode_lint_cwindow = 0
 let g:pymode_virtualenv = 1
+let g:pymode_syntax = 0
 let g:pymode_motion = 0
 let g:pymode_rope = 0
 let g:pymode_run = 0
