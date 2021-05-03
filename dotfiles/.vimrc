@@ -18,6 +18,7 @@ Plugin 'google/vim-searchindex'
 Plugin 'preservim/nerdtree'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()
 
