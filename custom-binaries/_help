@@ -8,7 +8,7 @@ function print_options {
 }
 
 function git {
-    git_rm_remote='git rm -r --cached <folder_name>'
+    git_rm_remote='git rm --cached <file>'
     echo '   ┌ Remove object from remote repo, not local'
     echo "1. $git_rm_remote"
 
