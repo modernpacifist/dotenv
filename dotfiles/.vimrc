@@ -8,7 +8,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'mg979/vim-visual-multi'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'klen/python-mode'
 Plugin 'preservim/nerdcommenter'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'jiangmiao/auto-pairs'
@@ -18,6 +17,7 @@ Plugin 'preservim/nerdtree'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'scrooloose/syntastic'
 
 call vundle#end()
 
@@ -43,6 +43,9 @@ set ttimeout
 set ttimeoutlen=0
 set completeopt+=longest,menuone,noinsert
 set completeopt-=preview
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 "Reloads buffer on its focus
 autocmd FocusGained,BufEnter * :checktime
@@ -54,17 +57,24 @@ let g:kite_completions=1
 let g:kite_tab_complete=1
 let g:kite_documentation_continual=0
 
-let g:pymode_python = 'python3'
-let g:pymode_lint_checkers = ['pyflakes', 'pylint']
-let g:pymode_options_max_line_length = 110
-let g:pymode_lint = 1
-let g:pymode_lint_on_write = 1
-let g:pymode_lint_cwindow = 0
-let g:pymode_virtualenv = 1
-let g:pymode_syntax = 0
-let g:pymode_motion = 0
-let g:pymode_rope = 0
-let g:pymode_run = 0
+let g:syntastic_python_python_exec = 'python3'
+let g:syntastic_python_checkers = ['flake8','pylint']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+
+
+"let g:pymode_python = 'python3'
+"let g:pymode_lint_checkers = ['pyflakes', 'pylint']
+"let g:pymode_options_max_line_length = 110
+"let g:pymode_lint = 1
+"let g:pymode_lint_on_write = 1
+"let g:pymode_lint_cwindow = 0
+"let g:pymode_virtualenv = 1
+"let g:pymode_syntax = 0
+"let g:pymode_motion = 0
+"let g:pymode_rope = 0
+"let g:pymode_run = 0
 
 let g:ycm_filetype_blacklist = {'python': 1}
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
