@@ -2,6 +2,6 @@
 if [[ $1 ]]; then
 	date +%T -s $1
 else
-	echo "Fucking shit you forgot to specify the file"
+	echo 'Specify the time'
 	exit 1
 fi
