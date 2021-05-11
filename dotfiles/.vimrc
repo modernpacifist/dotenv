@@ -43,9 +43,6 @@ set ttimeout
 set ttimeoutlen=0
 set completeopt+=longest,menuone,noinsert
 set completeopt-=preview
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
 "Reloads buffer on its focus
 autocmd FocusGained,BufEnter * :checktime
@@ -81,19 +78,21 @@ let g:NERDTreeIgnore = ['\.h.gch$', '\.pyc$', '\.out$']
 
 colorscheme fogbell
 
-noremap <F3> :vertical resize -5<CR>
-noremap <F4> :vertical resize +5<CR>
-noremap <F9> :q<CR>
 noremap <F10> :x<CR>
 noremap <F11> :xa<CR>
 noremap <F12> :qa!<CR>
 
 noremap <leader>s :update<CR>
-noremap <leader>xa :xa<CR>
-noremap <leader>wa :wa<CR>
-noremap <leader>qa :qa!<CR>
 noremap <leader>y "+y
 noremap <leader>p "+p
+
+nnoremap <C-Tab> :tabnext<CR>
+nnoremap <C-S-Tab> :tabprevious<CR>
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 augroup filetype_python
     autocmd!
