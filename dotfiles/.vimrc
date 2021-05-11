@@ -83,6 +83,7 @@ colorscheme fogbell
 
 noremap <F3> :vertical resize -5<CR>
 noremap <F4> :vertical resize +5<CR>
+noremap <F9> :q<CR>
 noremap <F10> :x<CR>
 noremap <F11> :xa<CR>
 noremap <F12> :qa!<CR>
@@ -98,8 +99,7 @@ augroup filetype_python
     autocmd!
     autocmd FileType python noremap <buffer> <leader>r :w<CR>:exec '!clear && python3.9' shellescape(@%, 1)<CR>
     autocmd FileType python noremap <leader>f :NERDTreeFind<CR> |
-        \ noremap <leader>t :NERDTreeToggle<CR> |
-        \ noremap <S-k> <nop>
+        \ noremap <leader>t :NERDTreeToggle<CR>
 augroup END
 
 augroup filetype_c
@@ -109,8 +109,7 @@ augroup filetype_c
     autocmd FileType c noremap <buffer> <leader>m :w<CR>:exec '!clear && make'<CR>
     autocmd FileType c set colorcolumn=90 |
         \ noremap <leader>f :NERDTreeFind<CR> |
-        \ noremap <leader>t :NERDTreeToggle<CR> |
-        \ noremap <S-k> <nop>
+        \ noremap <leader>t :NERDTreeToggle<CR>
 augroup END
 
 augroup filetype_cpp
@@ -120,8 +119,7 @@ augroup filetype_cpp
     autocmd FileType c noremap <buffer> <leader>m :w<CR>:exec '!clear && make'<CR>
     autocmd FileType cpp set colorcolumn=100 |
         \ noremap <leader>f :NERDTreeFind<CR> |
-        \ noremap <leader>t :NERDTreeToggle<CR> |
-        \ noremap <S-k> <nop>
+        \ noremap <leader>t :NERDTreeToggle<CR>
 augroup END
 
 augroup filetype_asm
@@ -130,6 +128,5 @@ augroup filetype_asm
     autocmd FileType asm noremap <buffer> <leader>r :w<CR>:exec '!clear && nasm -f elf64' shellescape(@%, 1) '&& ld -s *.o && ./a.out'<CR>
     autocmd FileType asm set colorcolumn=90 |
         \ noremap <leader>f :NERDTreeFind<CR> |
-        \ noremap <leader>t :NERDTreeToggle<CR> |
-        \ noremap <S-k> <nop>
+        \ noremap <leader>t :NERDTreeToggle<CR>
 augroup END
