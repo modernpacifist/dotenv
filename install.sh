@@ -11,7 +11,7 @@ done
 
 # Completions for binaries
 for comp_file in $(ls -A ./completions/); do
-    cp ./completions/$comp_file /usr/share/bash-completion/completions/$comp_file || echo "./completions/${comp_file} was not copied"
+    cp ./completions/$comp_file /etc/bash_completion.d/$comp_file || echo "./completions/${comp_file} was not copied"
 done
 
 # Installation of dotfiles for root
