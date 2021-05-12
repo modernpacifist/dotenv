@@ -1,0 +1,30 @@
+#!/bin/env bash
+if [[ -z $1 ]];
+then
+    echo 'No $1 arg specified'
+    exit 1
+fi
+
+function start {
+    systemctl start tor.service
+}
+
+function restart {
+    systemctl restart tor.service
+}
+
+function status {
+    systemctl status tor.service
+}
+
+function stop {
+    systemctl stop tor.service
+}
+
+case $1 in
+    "start") start;;
+    "restart") status;;
+    "status") status;;
+    "stop") stop;;
+    *) exit 0;;
+esac

@@ -1,0 +1,8 @@
+#!/bin/env bash
+_tor_completions() {
+    if [ "${#COMP_WORDS[@]}" != "2" ]; then
+        return
+    fi
+    COMPREPLY=($(compgen -W "start restart status stop" "${COMP_WORDS[1]}"))
+}
+complete -F _tor_completions _tor
