@@ -42,6 +42,9 @@ for username in $available_users; do
         for fish_file in $(ls -A ./fish/); do
             cp ./fish/$fish_file /home/$username/.config/fish/
         done
+        for fish_file in $(ls -A ./fish/); do
+            cp ./fish/$fish_file /home/$username/.config/fish/
+        done
     fi
 
     if [[ -d /home/$username/.config/kitty ]]; then
