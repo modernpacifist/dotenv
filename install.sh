@@ -30,7 +30,7 @@ for username in $available_users; do
 
     if [[ -d /home/$username/ ]]; then
         for dot_file in $(ls -A ./dotfiles/); do
-            cp ./dotfiles/$dot_file /home/$username/
+            cp ./dotfiles/$dot_file /home/$username/$dot_file
         done
     fi
 
@@ -40,10 +40,11 @@ for username in $available_users; do
 
     if [[ -d /home/$username/.config/fish ]]; then
         for fish_file in $(ls -A ./fish/); do
-            cp ./fish/$fish_file /home/$username/.config/fish/
+            cp ./fish/$fish_file /home/$username/.config/fish/$fish_file
         done
-        for fish_file in $(ls -A ./fish/); do
-            cp ./fish/$fish_file /home/$username/.config/fish/
+        # fish completions
+        for fish_comp_file in $(ls -A ./fish-completions/); do
+            cp ./fish-completions/$fish_comp_file /etc/fish/completions/$fish_comp_file
         done
     fi
 
