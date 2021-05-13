@@ -55,10 +55,10 @@ mouse_warping output
 
 # Start a terminal(alactiry - my case)
 #bindsym --release $mod+Return exec alacritty
-bindsym --release $mod+Return exec kitty
+#bindsym --release $mod+Return exec kitty
 
 # Start a terminal(your case)
-#bindsym --release $mod+Return exec [i3-sensible-terminal | <YOUR_TERMINAL_EMULATOR>]
+bindsym --release $mod+Return exec i3-sensible-terminal
 
 # Styles for windows
 title_align center
