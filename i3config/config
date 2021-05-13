@@ -51,7 +51,7 @@ bindsym --release $mod+Mod1+Ctrl+Shift+l exec i3lock lock -i /usr/share/backgrou
 
 # mouse impact
 focus_follows_mouse no
-mouse_warping none
+mouse_warping output
 
 # Start a terminal(alactiry - my case)
 #bindsym --release $mod+Return exec alacritty

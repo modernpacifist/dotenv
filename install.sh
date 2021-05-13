@@ -4,7 +4,7 @@ if [[ $UID != 0 ]]; then
     exit 1
 fi
 
-# Installation of binaries
+ Installation of binaries
 for bin_file in $(ls -A ./custom-binaries/); do
     cp ./custom-binaries/$bin_file /bin/ || echo "./custom-binaries/${bin_file} was not copied"
 done
@@ -28,7 +28,6 @@ for username in $available_users; do
         cp ./i3config/i3status.conf /etc/
     fi
 
-    # Installation of dotfiles for all users
     if [[ -d /home/$username/ ]]; then
         for dot_file in $(ls -A ./dotfiles/); do
             cp ./dotfiles/$dot_file /home/$username/
@@ -37,6 +36,16 @@ for username in $available_users; do
 
     if [[ -d /home/$username/.config/alacritty ]]; then
         cp ./alacritty/alacritty.yml /home/$username/.config/alacritty
+    fi
+
+    if [[ -d /home/$username/.config/fish ]]; then
+        for fish_file in $(ls -A ./fish/); do
+            cp ./fish/$fish_file /home/$username/.config/fish/
+        done
+    fi
+
+    if [[ -d /home/$username/.config/kitty ]]; then
+        cp ./kitty/kitty.conf /home/$username/.config/kitty/
     fi
 done
 
