@@ -2,7 +2,6 @@ import h3
 import requests
 import tqdm
 import aiohttp
-import h3
 import pandas
 import psycopg2
 import pymongo
