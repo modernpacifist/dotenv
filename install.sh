@@ -4,7 +4,7 @@ if [[ $UID != 0 ]]; then
     exit 1
 fi
 
- Installation of binaries
+# Installation of binaries
 for bin_file in $(ls -A ./custom-binaries/); do
     cp ./custom-binaries/$bin_file /bin/ || echo "./custom-binaries/${bin_file} was not copied"
 done
