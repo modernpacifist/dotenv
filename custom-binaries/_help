@@ -20,11 +20,16 @@ function git {
     echo '   ┌ Reset last local commit'
     echo "3. $git_reset_last_local_commit"
 
+    git_pull_all_branches='git fetch --all'
+    echo '   ┌ Git pull all brances'
+    echo "3. $git_pull_all_branches"
+
     read -p 'State your choice: ' choice
     case $choice in
         1) echo -n $git_rm_remote | xclip -selection c;;
         2) echo -n $git_diff_last_commit | xclip -selection c;;
         3) echo -n $git_reset_last_local_commit | xclip -selection c;;
+        3) echo -n $git_pull_all_branches | xclip -selection c;;
         *) exit 1;;
     esac
 }
