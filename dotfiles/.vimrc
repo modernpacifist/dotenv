@@ -27,6 +27,7 @@ syntax enable
 set number
 set autoread
 set encoding=utf-8
+set shell=fish
 set wildmenu
 set softtabstop=0
 set shiftwidth=4
