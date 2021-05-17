@@ -1,3 +1,4 @@
+import xml
 import urllib
 import asyncio
 import os
