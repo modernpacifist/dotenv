@@ -76,6 +76,8 @@ let g:UltiSnipsJumpForwardTrigger="<C-j>"
 let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 
 let g:NERDTreeIgnore = ['\.h.gch$', '\.pyc$', '\.out$']
+let g:NERDTreeWinSize = 25
+let g:NERDTreeMinimalUI=1
 
 colorscheme fogbell
 
@@ -83,7 +85,6 @@ noremap <F10> :x<CR>
 noremap <F11> :xa<CR>
 noremap <F12> :qa!<CR>
 
-noremap <leader>s :update<CR>
 noremap <leader>y "+y
 noremap <leader>p "+p
 
