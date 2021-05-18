@@ -88,9 +88,6 @@ noremap <F12> :qa!<CR>
 noremap <leader>y "+y
 noremap <leader>p "+p
 
-nnoremap <C-Tab> :tabnext<CR>
-nnoremap <C-S-Tab> :tabprevious<CR>
-
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
