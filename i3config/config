@@ -294,22 +294,22 @@ mode "mouse-control" {
     bindsym e exec xdotool click 3
     bindsym u exec xdotool click 4
     bindsym d exec xdotool click 5
-
+    
     bindsym h exec xdotool mousemove_relative --polar 270 5
     bindsym j exec xdotool mousemove_relative --polar 180 5
     bindsym k exec xdotool mousemove_relative --polar 0 5
     bindsym l exec xdotool mousemove_relative --polar 90 5
-
+    
     bindsym Mod1+h exec xdotool mousemove_relative --polar 270 50
     bindsym Mod1+j exec xdotool mousemove_relative --polar 180 50
     bindsym Mod1+k exec xdotool mousemove_relative --polar 0 50
     bindsym Mod1+l exec xdotool mousemove_relative --polar 90 50
-
+    
     bindsym Shift+h exec xdotool mousemove_relative --polar 270 250
     bindsym Shift+j exec xdotool mousemove_relative --polar 180 250
     bindsym Shift+k exec xdotool mousemove_relative --polar 0 250
     bindsym Shift+l exec xdotool mousemove_relative --polar 90 250
-
+    
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
@@ -319,10 +319,10 @@ bindsym --release $mod+Mod1+m mode "mouse-control"
 bar {
     output primary
     status_command i3status | i3-keyboard-layout i3status
-	position top
-
-	colors	{
-		background #000000
+    position top
+    
+    colors	{
+        background #000000
         statusline #ffffff
         separator #ffffff
         #                  border  backgr. text
@@ -330,17 +330,18 @@ bar {
         active_workspace   #222222 #222222 #ffffff
         inactive_workspace #111111 #111111 #ffffff
         urgent_workspace   #900000 #900000 #ffffff
-	}
+    }
 }
 
 bar {
     output nonprimary
     status_command i3status --config /etc/i3nonprimary_status.conf | i3-keyboard-layout i3status
-	position top
     tray_output none
+    position top
+    mode hide
 
-	colors	{
-		background #000000
+    colors	{
+        background #000000
         statusline #ffffff
         separator #ffffff
         #                  border  backgr. text
@@ -348,7 +349,7 @@ bar {
         active_workspace   #222222 #222222 #ffffff
         inactive_workspace #111111 #111111 #ffffff
         urgent_workspace   #900000 #900000 #ffffff
-	}
+    }
 }
 
 # For wallpaper

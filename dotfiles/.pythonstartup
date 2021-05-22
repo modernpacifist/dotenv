@@ -22,6 +22,7 @@ import asciitree
 import asgiref
 import asn1crypto
 import astroid
+import sys
 import asysocks
 import autobahn
 import backcall
