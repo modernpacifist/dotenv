@@ -23,7 +23,7 @@ function stop {
 
 case $1 in
     "start") start;;
-    "restart") status;;
+    "restart") restart;;
     "status") status;;
     "stop") stop;;
     *) exit 0;;
