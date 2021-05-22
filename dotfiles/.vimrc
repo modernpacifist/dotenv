@@ -81,6 +81,7 @@ let g:NERDTreeMinimalUI=1
 
 colorscheme fogbell
 
+noremap <F9> :q<CR>
 noremap <F10> :x<CR>
 noremap <F11> :xa<CR>
 noremap <F12> :qa!<CR>
@@ -92,6 +93,12 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader><Tab> :tabnext<CR>
+nnoremap <leader><S-Tab> :tabprevious<CR>
 
 augroup filetype_python
     autocmd!
