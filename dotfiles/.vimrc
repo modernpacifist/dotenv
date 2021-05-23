@@ -94,11 +94,8 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-nnoremap <leader>1 1gt
-nnoremap <leader>2 2gt
-nnoremap <leader>3 3gt
-nnoremap <leader><Tab> :tabnext<CR>
-nnoremap <leader><S-Tab> :tabprevious<CR>
+nnoremap <C-I> :tabnext<CR>
+nnoremap <leader><C-I> :tabprevious<CR>
 
 augroup filetype_python
     autocmd!
