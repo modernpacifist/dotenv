@@ -1,8 +1,18 @@
 #!/bin/env bash
+
+set -e
+
+get_current_music() {
+    artist=$(playerctl metadata --format '{{artist}}' | sed 's/\ -\ Topic//')
+    track=$(playerctl metadata --format '{{title}}')
+    if [[ $artist && $track ]]; then
+        echo "$artist - $track"
+    fi
+}
+
 while :
 do
     read line 
-    playing=$(playerctl metadata --format '{{artist}}- {{title}}' | sed 's/\-\ Topic//')
-    block="{\"full_text\":\"$playing\"}"
+    block="{\"full_text\":\"$(get_current_music)\"}"
     echo "${line/\[\{/\[$block,\{}" || exit 1
 done
