@@ -5,7 +5,8 @@ set -e
 get_current_music() {
     artist=$(playerctl metadata --format '{{artist}}' | sed 's/\ -\ Topic//')
     track=$(playerctl metadata --format '{{title}}')
-    if [[ $artist && $track ]]; then
+    status=$(playerctl metadata --format '{{status}}')
+    if [[ $artist && $track && $status == "Playing" ]]; then
         echo "$artist - $track"
     fi
 }
