@@ -53,7 +53,7 @@ bindsym --release $mod+Mod1+Ctrl+Shift+l exec i3lock lock -i /usr/share/backgrou
 focus_follows_mouse no
 mouse_warping output
 
-# Start a terminal(alactiry - my case)
+# Start a terminal(kitty - my case)
 bindsym --release $mod+Return exec kitty
 
 # Styles for windows
