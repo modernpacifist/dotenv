@@ -7,7 +7,7 @@ get_current_music() {
     track=$(playerctl metadata --format '{{title}}')
     status=$(playerctl metadata --format '{{status}}')
     if [[ $artist && $track && $status == "Playing" ]]; then
-        echo "$artist - $track" | tr -d '"'
+        echo "$artist - $track" | tr -d '"\'
     fi
 }
 
