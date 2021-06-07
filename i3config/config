@@ -80,6 +80,8 @@ bindsym --release $mod+l focus right
 
 # change focus on different output (Mod1 is Alt)
 bindsym --release $mod+Mod1+h focus output left
+bindsym --release $mod+Mod1+j focus output down
+bindsym --release $mod+Mod1+k focus output up
 bindsym --release $mod+Mod1+l focus output right
 
 # move focused window
@@ -101,8 +103,8 @@ bindsym --release $mod+Ctrl+c focus child
 # move workspaces to different screens
 bindsym --release $mod+Ctrl+l move workspace to output left
 bindsym --release $mod+Ctrl+j move workspace to output down
-bindsym --release $mod+Ctrl+r move workspace to output right
 bindsym --release $mod+Ctrl+k move workspace to output up
+bindsym --release $mod+Ctrl+r move workspace to output right
 
 # split in horizontal orientation
 bindsym --release $mod+Ctrl+h split v
