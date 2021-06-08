@@ -9,9 +9,14 @@ for bin_file in $(ls -A ./custom-binaries/); do
     cp ./custom-binaries/$bin_file /bin/ || echo "./custom-binaries/${bin_file} was not copied"
 done
 
-# Completions for binaries
-for comp_file in $(ls -A ./completions/); do
-    cp ./completions/$comp_file /etc/bash_completion.d/$comp_file || echo "./completions/${comp_file} was not copied"
+# bash completions for binaries
+for bash_comp_file in $(ls -A ./bash-completions/); do
+    cp ./bash-completions/$bash_comp_file /etc/bash_completion.d/$bash_comp_file || echo "./bash-completions/${bash_comp_file} was not copied"
+done
+
+# fish completions for binaries
+for fish_comp_file in $(ls -A ./fish-completions/); do
+    cp ./fish-completions/$fish_comp_file /etc/fish/completions/$fish_comp_file || echo "./fish-completions/${fish_comp_file} was not copied"
 done
 
 # Installation of dotfiles for root
