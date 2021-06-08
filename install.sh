@@ -14,11 +14,6 @@ for bash_comp_file in $(ls -A ./bash-completions/); do
     cp ./bash-completions/$bash_comp_file /etc/bash_completion.d/$bash_comp_file || echo "./bash-completions/${bash_comp_file} was not copied"
 done
 
-# fish completions for binaries
-for fish_comp_file in $(ls -A ./fish-completions/); do
-    cp ./fish-completions/$fish_comp_file /etc/fish/completions/$fish_comp_file || echo "./fish-completions/${fish_comp_file} was not copied"
-done
-
 # Installation of dotfiles for root
 for dot_file in $(ls -A ./dotfiles/); do
     cp ./dotfiles/$dot_file ~/ || echo "./dotfiles/${dot_file} was not copied"
@@ -49,7 +44,7 @@ for username in $available_users; do
         done
         # fish completions
         for fish_comp_file in $(ls -A ./fish-completions/); do
-            cp ./fish-completions/$fish_comp_file /etc/fish/completions/$fish_comp_file
+            cp ./fish-completions/$fish_comp_file /etc/fish/completions/$fish_comp_file || echo "./fish-completions/${fish_comp_file} was not copied"
         done
     fi
 
