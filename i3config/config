@@ -120,12 +120,14 @@ bindsym --release $mod+Shift+Mod1+space floating toggle
 
 # floating windows by default
 for_window [class="TelegramDesktop" instance="telegram"] floating enable
+for_window [class="TelegramDesktop" instance="telegram"] move scratchpad
 
 # floating windows by default
-bindsym --release $mod+Mod1+t [instance="telegram"] scratchpad show
+bindsym --release $mod+Mod1+t [class="TelegramDesktop" instance="telegram"] scratchpad show
 
 # change focus between tiling / floating windows
 bindsym --release $mod+Mod1+Tab focus mode_toggle
+
 # move to last focused workspace
 bindsym --release $mod+Mod1+s sticky toggle
 
