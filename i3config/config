@@ -216,8 +216,12 @@ for_window [class="TelegramDesktop" instance="telegram"] floating enable, mark "
 bindsym --release $mod+Mod1+t [con_mark="tel"] scratchpad show
 
 # all scratchpad
-bindsym --release $mod+Mod1+minus mark "alpha", move scratchpad
+bindsym --release $mod+Mod1+minus mark "alpha"; move scratchpad
 bindsym --release $mod+Mod1+equal [con_mark="alpha"] scratchpad show
+
+# all scratchpad
+bindsym --release $mod+Ctrl+minus move scratchpad
+bindsym --release $mod+Ctrl+equal [class=".*"] scratchpad show
 
 # reload the configuration file
 bindsym --release $mod+Escape reload
