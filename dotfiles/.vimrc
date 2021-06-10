@@ -94,8 +94,10 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" tabs management 
 nnoremap <C-I> :tabnext<CR>
 nnoremap <leader><C-I> :tabprevious<CR>
+nnoremap <leader>n :tabnew %<CR>
 
 augroup filetype_python
     autocmd!
