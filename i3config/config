@@ -215,13 +215,13 @@ bindsym --release $mod+Shift+p move container to workspace prev
 for_window [class="TelegramDesktop" instance="telegram"] floating enable, mark "tel", move scratchpad
 bindsym --release $mod+Mod1+t [con_mark="tel"] scratchpad show
 
+# keybase scratchpad
+for_window [class="Keybase" instance="keybase"] floating enable, mark "kb", move scratchpad
+bindsym --release $mod+Mod1+e [con_mark="kb"] scratchpad show
+
 # all scratchpad
 bindsym --release $mod+Mod1+minus move scratchpad
 bindsym --release $mod+Mod1+equal [class=".*"] scratchpad show
-
-# all scratchpad
-bindsym --release $mod+Mod1+a mark "alpha"; move scratchpad
-bindsym --release $mod+Ctrl+a [con_mark="alpha"] scratchpad show
 
 # reload the configuration file
 bindsym --release $mod+Escape reload
