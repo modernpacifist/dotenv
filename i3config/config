@@ -219,21 +219,36 @@ bindsym --release $mod+Mod1+t [con_mark="tel"] scratchpad show
 for_window [class="Keybase" instance="keybase"] floating enable, mark "kb", move scratchpad
 bindsym --release $mod+Mod1+e [con_mark="kb"] scratchpad show
 
-# alpha scratchpad
-bindsym --release $mod+Ctrl+a, sticky enable, mark "alpha", move scratchpad
-bindsym --release $mod+Mod1+a [con_mark="alpha"] scratchpad show
+# overall scratchpads
+bindsym --release $mod+Ctrl+1, sticky enable, mark "1", move scratchpad
+bindsym --release $mod+Mod1+1 [con_mark="1"] scratchpad show
 
-# beta scratchpad
-bindsym --release $mod+Ctrl+b, sticky enable, mark "beta", move scratchpad
-bindsym --release $mod+Mod1+b [con_mark="beta"] scratchpad show
+bindsym --release $mod+Ctrl+2, sticky enable, mark "2", move scratchpad
+bindsym --release $mod+Mod1+2 [con_mark="2"] scratchpad show
 
-# delta scratchpad
-bindsym --release $mod+Ctrl+d, sticky enable, mark "delta", move scratchpad
-bindsym --release $mod+Mod1+d [con_mark="delta"] scratchpad show
+bindsym --release $mod+Ctrl+3, sticky enable, mark "3", move scratchpad
+bindsym --release $mod+Mod1+3 [con_mark="3"] scratchpad show
 
-# gamma scratchpad
-bindsym --release $mod+Ctrl+g, sticky enable, mark "gamma", move scratchpad
-bindsym --release $mod+Mod1+g [con_mark="gamma"] scratchpad show
+bindsym --release $mod+Ctrl+4, sticky enable, mark "4", move scratchpad
+bindsym --release $mod+Mod1+4 [con_mark="4"] scratchpad show
+
+bindsym --release $mod+Ctrl+5, sticky enable, mark "5", move scratchpad
+bindsym --release $mod+Mod5+5 [con_mark="5"] scratchpad show
+
+bindsym --release $mod+Ctrl+6, sticky enable, mark "6", move scratchpad
+bindsym --release $mod+Mod1+6 [con_mark="6"] scratchpad show
+
+bindsym --release $mod+Ctrl+7, sticky enable, mark "7", move scratchpad
+bindsym --release $mod+Mod1+7 [con_mark="7"] scratchpad show
+
+bindsym --release $mod+Ctrl+8, sticky enable, mark "8", move scratchpad
+bindsym --release $mod+Mod1+8 [con_mark="8"] scratchpad show
+
+bindsym --release $mod+Ctrl+9, sticky enable, mark "9", move scratchpad
+bindsym --release $mod+Mod1+9 [con_mark="9"] scratchpad show
+
+bindsym --release $mod+Ctrl+10, sticky enable, mark "10", move scratchpad
+bindsym --release $mod+Mod1+10 [con_mark="10"] scratchpad show
 
 # all scratchpad
 bindsym --release $mod+Mod1+minus move scratchpad
