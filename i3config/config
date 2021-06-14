@@ -219,6 +219,22 @@ bindsym --release $mod+Mod1+t [con_mark="tel"] scratchpad show
 for_window [class="Keybase" instance="keybase"] floating enable, mark "kb", move scratchpad
 bindsym --release $mod+Mod1+e [con_mark="kb"] scratchpad show
 
+# alpha scratchpad
+bindsym --release $mod+Ctrl+a, sticky enable, mark "alpha", move scratchpad
+bindsym --release $mod+Mod1+a [con_mark="alpha"] scratchpad show
+
+# beta scratchpad
+bindsym --release $mod+Ctrl+b, sticky enable, mark "beta", move scratchpad
+bindsym --release $mod+Mod1+b [con_mark="beta"] scratchpad show
+
+# delta scratchpad
+bindsym --release $mod+Ctrl+d, sticky enable, mark "delta", move scratchpad
+bindsym --release $mod+Mod1+d [con_mark="delta"] scratchpad show
+
+# gamma scratchpad
+bindsym --release $mod+Ctrl+g, sticky enable, mark "gamma", move scratchpad
+bindsym --release $mod+Mod1+g [con_mark="gamma"] scratchpad show
+
 # all scratchpad
 bindsym --release $mod+Mod1+minus move scratchpad
 bindsym --release $mod+Mod1+equal [class=".*"] scratchpad show
