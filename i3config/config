@@ -247,8 +247,8 @@ bindsym --release $mod+Mod1+8 [con_mark="8"] scratchpad show
 bindsym --release $mod+Ctrl+9, sticky enable, mark "9", move scratchpad
 bindsym --release $mod+Mod1+9 [con_mark="9"] scratchpad show
 
-bindsym --release $mod+Ctrl+10, sticky enable, mark "10", move scratchpad
-bindsym --release $mod+Mod1+10 [con_mark="10"] scratchpad show
+bindsym --release $mod+Ctrl+0, sticky enable, mark "10", move scratchpad
+bindsym --release $mod+Mod1+0 [con_mark="10"] scratchpad show
 
 # all scratchpad
 bindsym --release $mod+Mod1+minus move scratchpad
