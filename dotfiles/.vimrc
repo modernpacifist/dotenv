@@ -50,9 +50,8 @@ autocmd FocusGained,BufEnter * :checktime
 "Saves buffer on any change of data in it
 autocmd FocusLost,InsertLeave,TextChanged,InsertChange * :wa
 
-let g:kite_supported_languages = ['python']
-let g:kite_completions=1
-let g:kite_tab_complete=1
+let g:kite_completions=0
+let g:kite_tab_complete=0
 let g:kite_documentation_continual=0
 
 let g:pymode_python = 'python3'
@@ -64,7 +63,6 @@ let g:pymode_motion = 0
 let g:pymode_rope = 0
 let g:pymode_run = 0
 
-let g:ycm_filetype_blacklist = {'python': 1}
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_seed_identifiers_with_syntax = 1
@@ -98,6 +96,8 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <C-I> :tabnext<CR>
 nnoremap <leader><C-I> :tabprevious<CR>
 nnoremap <leader>n :tabnew %<CR>
+nnoremap <leader>< :-tabmove<CR>
+nnoremap <leader>> :+tabmove<CR>
 
 augroup filetype_python
     autocmd!
