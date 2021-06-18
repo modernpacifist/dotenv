@@ -241,8 +241,8 @@ bindsym --release $mod+Mod1+6 [con_mark="vau"] scratchpad show
 bindsym --release $mod+Ctrl+7, sticky enable, mark "zeta", move scratchpad
 bindsym --release $mod+Mod1+7 [con_mark="zeta"] scratchpad show
 
-bindsym --release $mod+Ctrl+8, sticky enable, mark "eta", move scratchpad
-bindsym --release $mod+Mod1+8 [con_mark="eta"] scratchpad show
+bindsym --release $mod+Ctrl+8, sticky enable, mark "octa", move scratchpad
+bindsym --release $mod+Mod1+8 [con_mark="octa"] scratchpad show
 
 bindsym --release $mod+Ctrl+9, sticky enable, mark "theta", move scratchpad
 bindsym --release $mod+Mod1+9 [con_mark="theta"] scratchpad show

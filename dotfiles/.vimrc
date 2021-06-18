@@ -1,6 +1,6 @@
 set nocompatible
 
-"----Vundle settings----
+" ----Vundle settings----
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -45,9 +45,9 @@ set ttimeoutlen=0
 set completeopt+=longest,menuone,noinsert
 set completeopt-=preview
 
-"Reloads buffer on its focus
+" Reloads buffer on its focus
 autocmd FocusGained,BufEnter * :checktime
-"Saves buffer on any change of data in it
+" Saves buffer on any change of data in it
 autocmd FocusLost,InsertLeave,TextChanged,InsertChange * :wa
 
 let g:kite_completions=0
