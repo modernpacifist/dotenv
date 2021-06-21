@@ -50,10 +50,6 @@ autocmd FocusGained,BufEnter * :checktime
 " Saves buffer on any change of data in it
 autocmd FocusLost,InsertLeave,TextChanged,InsertChange * :wa
 
-let g:kite_completions=0
-let g:kite_tab_complete=0
-let g:kite_documentation_continual=0
-
 let g:pymode_python = 'python3'
 let g:pymode_lint_checkers = ['pep8', 'pyflakes']
 let g:pymode_options_max_line_length = 110
