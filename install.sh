@@ -1,14 +1,14 @@
 #!/bin/env bash
 
 function root_setup {
-    cp ./binfiles/* /bin/
+    find ./binfiles -type f -exec cp {} /bin/ \;
 
     if [[ -d /etc/bash_completion.d/ ]]; then
-        cp ./bash-completions/* /etc/bash_completion.d/
+        find ./bash-completions -type f -exec cp {} /etc/bash_completion.d/ \;
     fi
 
     if [[ -d /etc/fish/completions/ ]]; then
-        cp ./fish-completions/* /etc/fish/completions/
+        find ./fish-completions/ -type f -exec cp {} /etc/fish/completions/ \;
     fi
 }
 
@@ -16,12 +16,12 @@ if [[ $EUID == 0 ]]; then
     root_setup
 fi
 
-# dotfiles setup
-cp ./dotfiles/* $HOME/
+#. dotfiles setup
+find ./dotfiles -type f -exec cp {} $HOME/ \;
 
 # i3wm setup
 if [[ -d $HOME/.config/i3/ ]]; then
-    cp ./i3config/* $HOME/.config/i3/
+    find ./i3config -type f -exec cp {} $HOME/.config/i3/ \;
 fi
 
 # alacritty setup
@@ -36,7 +36,7 @@ fi
 
 # fish setup
 if [[ -d $HOME/.config/fish ]]; then
-    cp ./fish/* $HOME/.config/fish/
+    find ./fish -type f -exec cp {} $HOME/.config/fish/ \;
 fi
 
 exit 0
