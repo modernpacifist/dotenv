@@ -47,13 +47,13 @@ bindsym --release $mod+Mod1+F7 exec playerctl previous
 floating_modifier $mod
 
 # Manually lock the system
-bindsym --release $mod+Mod1+Ctrl+Shift+l exec i3lock lock -i /usr/share/backgrounds/kali/kali-contours-16x9.png -t
+bindsym --release $mod+Mod1+Ctrl+Shift+l exec i3lock lock -i $HOME/Pictures/lock_picture.png -t
 
 # mouse impact
 focus_follows_mouse no
 mouse_warping output
 
-# Start a terminal(kitty - my case)
+# Start a terminal (kitty - my case)
 bindsym --release $mod+Return exec kitty
 
 # Styles for windows
@@ -116,7 +116,7 @@ bindsym --release $mod+Ctrl+v split h
 bindsym --release $mod+f fullscreen toggle
 
 # toggle tiling / floating
-bindsym --release $mod+Shift+Mod1+space floating toggle
+bindsym --release $mod+Mod1+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym --release $mod+Mod1+Tab focus mode_toggle
@@ -141,7 +141,7 @@ set $ws9 "9"
 set $ws10 "10"
 
 # go to workspace
-bindsym $mod+g exec i3-input -F 'workspace %s' -l 1 -P 'go to workspace: '
+bindsym $mod+g exec i3-input -F 'workspace %s' -l 1 -P 'Goto workspace: '
 
 # switch to workspace FIRST-LEVEL
 bindsym --release $mod+grave workspace number $ws0
@@ -254,7 +254,7 @@ bindsym --release $mod+Ctrl+0, sticky disable, mark "iota_0", move scratchpad
 bindsym --release $mod+Mod1+0 [con_mark="iota_0"] scratchpad show
 
 # go to mark
-bindsym $mod+Mod1+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
+bindsym $mod+Mod1+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto mark: '
 
 # all scratchpad
 bindsym --release $mod+Mod1+minus move scratchpad
@@ -364,7 +364,7 @@ bindsym --release $mod+Mod1+m mode "mouse-control"
 
 bar {
     output primary
-    status_command i3status | _get_current_track | i3-keyboard-layout i3status
+    status_command i3status --config $HOME/.config/i3/i3status.conf | _get_current_track | i3-keyboard-layout i3status
     position top
     
     colors	{
@@ -381,7 +381,7 @@ bar {
 
 bar {
     output nonprimary
-    status_command i3status --config /etc/i3nonprimary_status.conf | _get_current_track | i3-keyboard-layout i3status
+    status_command i3status --config $HOME/.config/i3/i3nonprimary_status.conf | _get_current_track | i3-keyboard-layout i3status
     tray_output none
     position top
     mode hide
@@ -399,7 +399,7 @@ bar {
 }
 
 # For wallpaper
-exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
+exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallpaper.jpg
 
 # Turn off screen dim
 exec --no-startup-id /bin/_screendim_off
