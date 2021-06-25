@@ -3,6 +3,6 @@ _help_completions() {
     if [ "${#COMP_WORDS[@]}" != "2" ]; then
         return
     fi
-    COMPREPLY=($(compgen -W "git gdb cpu-registers bash-scripting" "${COMP_WORDS[1]}"))
+    COMPREPLY=($(compgen -W "git gdb cpu-registers bash-scripting jupyter-lab" "${COMP_WORDS[1]}"))
 }
 complete -F _help_completions _help

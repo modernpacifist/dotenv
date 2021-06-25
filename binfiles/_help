@@ -4,6 +4,7 @@ function print_options {
     echo '├─── git     ── useful git commands'
     echo '├─── gdb     ── useful gdb commands for memory examination'
     echo '├─── cpu-registers     ── basic info about x86 cpu registers'
+    echo '├─── jupyter-lab     ── some jupyter commands'
     echo '└─── bash-scripting     ── bash error codes'
 }
 
@@ -63,6 +64,18 @@ function cpu-registers {
     printf '%6s - exit status out of range\n' 255
 }
 
+function jupyter-lab {
+    echo "   ┌ convert jupyter notebook to html"
+    echo "1. jupyter nbconvert <notebook_path> --no-input --template full"
+    html_convertion='jupyter nbconvert <notebook_path> --no-input --template full'
+
+    read -p 'State your choice: ' choice
+    case $choice in
+        1) echo -e $html_convertion | xclip -selection c;;
+        *) exit 1;;
+    esac
+}
+
 function bash-scripting {
     echo "   ┌ Error code conventions"
     echo "1. errors"
@@ -89,6 +102,7 @@ if [[ $1 ]]; then
         "git") git;;
         "gdb") gdb;;
         "cpu-registers") cpu-registers;;
+        "jupyter-lab") jupyter-lab;;
         "bash-scripting") bash-scripting;;
         *) print_options;;
     esac
