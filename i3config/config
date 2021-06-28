@@ -215,43 +215,43 @@ bindsym --release $mod+Shift+n move container to workspace next
 bindsym --release $mod+Shift+p move container to workspace prev
 
 # telegram scratchpad
-for_window [class="TelegramDesktop" instance="telegram"] sticky enable, floating enable, mark "tel", move scratchpad
-bindsym --release $mod+Mod1+t [con_mark="tel"] scratchpad show
+for_window [class="TelegramDesktop" instance="telegram"] sticky enable, floating enable, move scratchpad
+bindsym --release $mod+Mod1+t [class="TelegramDesktop" instance="telegram"] scratchpad show
 
 # keybase scratchpad
 for_window [class="Keybase" instance="keybase"] sticky enable, floating enable, mark "kb", move scratchpad
 bindsym --release $mod+Mod1+e [con_mark="kb"] scratchpad show
 
 # overall scratchpads
-bindsym --release $mod+Ctrl+1, sticky disable, mark "alpha_1", move scratchpad
-bindsym --release $mod+Mod1+1 [con_mark="alpha_1"] scratchpad show
+bindsym --release $mod+Ctrl+1, sticky disable, mark "1", move scratchpad
+bindsym $mod+Mod1+1 [con_mark="1"] scratchpad show
 
-bindsym --release $mod+Ctrl+2, sticky disable, mark "beta_2", move scratchpad
-bindsym --release $mod+Mod1+2 [con_mark="beta_2"] scratchpad show
+bindsym --release $mod+Ctrl+2, sticky disable, mark "2", move scratchpad
+bindsym $mod+Mod1+2 [con_mark="2"] scratchpad show
 
-bindsym --release $mod+Ctrl+3, sticky disable, mark "gamma_3", move scratchpad
-bindsym --release $mod+Mod1+3 [con_mark="gamma_3"] scratchpad show
+bindsym --release $mod+Ctrl+3, sticky disable, mark "3", move scratchpad
+bindsym $mod+Mod1+3 [con_mark="3"] scratchpad show
 
-bindsym --release $mod+Ctrl+4, sticky disable, mark "delta_4", move scratchpad
-bindsym --release $mod+Mod1+4 [con_mark="delta_4"] scratchpad show
+bindsym --release $mod+Ctrl+4, sticky disable, mark "4", move scratchpad
+bindsym $mod+Mod1+4 [con_mark="4"] scratchpad show
 
-bindsym --release $mod+Ctrl+5, sticky disable, mark "epsilon_5", move scratchpad
-bindsym --release $mod+Mod1+5 [con_mark="epsilon_5"] scratchpad show
+bindsym --release $mod+Ctrl+5, sticky disable, mark "5", move scratchpad
+bindsym $mod+Mod1+5 [con_mark="5"] scratchpad show
 
-bindsym --release $mod+Ctrl+6, sticky disable, mark "vau_6", move scratchpad
-bindsym --release $mod+Mod1+6 [con_mark="vau_6"] scratchpad show
+bindsym --release $mod+Ctrl+6, sticky disable, mark "6", move scratchpad
+bindsym $mod+Mod1+6 [con_mark="6"] scratchpad show
 
-bindsym --release $mod+Ctrl+7, sticky disable, mark "zeta_7", move scratchpad
-bindsym --release $mod+Mod1+7 [con_mark="zeta_7"] scratchpad show
+bindsym --release $mod+Ctrl+7, sticky disable, mark "7", move scratchpad
+bindsym $mod+Mod1+7 [con_mark="7"] scratchpad show
 
-bindsym --release $mod+Ctrl+8, sticky disable, mark "octal_8", move scratchpad
-bindsym --release $mod+Mod1+8 [con_mark="octal_8"] scratchpad show
+bindsym --release $mod+Ctrl+8, sticky disable, mark "8", move scratchpad
+bindsym $mod+Mod1+8 [con_mark="8"] scratchpad show
 
-bindsym --release $mod+Ctrl+9, sticky disable, mark "theta_9", move scratchpad
-bindsym --release $mod+Mod1+9 [con_mark="theta_9"] scratchpad show
+bindsym --release $mod+Ctrl+9, sticky disable, mark "9", move scratchpad
+bindsym $mod+Mod1+9 [con_mark="9"] scratchpad show
 
-bindsym --release $mod+Ctrl+0, sticky disable, mark "iota_0", move scratchpad
-bindsym --release $mod+Mod1+0 [con_mark="iota_0"] scratchpad show
+bindsym --release $mod+Ctrl+0, sticky disable, mark "0", move scratchpad
+bindsym $mod+Mod1+0 [con_mark="0"] scratchpad show
 
 # go to mark
 bindsym $mod+Mod1+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto mark: '
