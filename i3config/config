@@ -334,34 +334,6 @@ mode "float-move" {
 bindsym --release $mod+Mod1+f mode "float-move"
 
 
-mode "mouse-control" {
-    bindsym q exec xdotool click 1
-    bindsym w exec xdotool click 2
-    bindsym e exec xdotool click 3
-    bindsym u exec xdotool click 4
-    bindsym d exec xdotool click 5
-    
-    bindsym h exec xdotool mousemove_relative --polar 270 5
-    bindsym j exec xdotool mousemove_relative --polar 180 5
-    bindsym k exec xdotool mousemove_relative --polar 0 5
-    bindsym l exec xdotool mousemove_relative --polar 90 5
-    
-    bindsym Mod1+h exec xdotool mousemove_relative --polar 270 50
-    bindsym Mod1+j exec xdotool mousemove_relative --polar 180 50
-    bindsym Mod1+k exec xdotool mousemove_relative --polar 0 50
-    bindsym Mod1+l exec xdotool mousemove_relative --polar 90 50
-    
-    bindsym Shift+h exec xdotool mousemove_relative --polar 270 250
-    bindsym Shift+j exec xdotool mousemove_relative --polar 180 250
-    bindsym Shift+k exec xdotool mousemove_relative --polar 0 250
-    bindsym Shift+l exec xdotool mousemove_relative --polar 90 250
-    
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-bindsym --release $mod+Mod1+m mode "mouse-control"
-
 bar {
     output primary
     status_command i3status --config $HOME/.config/i3/i3status.conf | _get_current_track | i3-keyboard-layout i3status
@@ -411,7 +383,7 @@ bindsym --release $mod+space exec /bin/i3-keyboard-layout cycle us ru
 bindsym --release $mod+Shift+u exec caja
 
 # For keyboard speed                    dly speed
-exec --no-startup-id xset r rate 200 150
+exec --no-startup-id xset r rate 225 150
 
 # Env colors
 # Class                 border  backgr. text    indicator child_border
