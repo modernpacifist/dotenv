@@ -1,3 +1,2 @@
 #!/bin/env bash
-copied_path=$(pwd | tr -d '\n')
-echo -n $copied_path | xclip -selection c 
+echo -n $(pwd | tr -d '\n') | xclip -selection c 
