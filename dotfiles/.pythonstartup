@@ -1,4 +1,5 @@
 import collections
+import statistics
 import typing
 import matplotlib
 import PIL

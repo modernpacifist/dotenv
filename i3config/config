@@ -299,10 +299,10 @@ mode "float-resize" {
     bindsym Mod1+k resize shrink height 20 px or 20 ppt
     bindsym Mod1+l resize grow width 20 px or 20 ppt
 
-    bindsym Shift+h resize shrink width 150 px or 150 ppt
-    bindsym Shift+j resize grow height 150 px or 150 ppt
-    bindsym Shift+k resize shrink height 150 px or 150 ppt
-    bindsym Shift+l resize grow width 150 px or 150 ppt
+    bindsym Shift+h resize shrink width 200 px or 200 ppt
+    bindsym Shift+j resize grow height 200 px or 200 ppt
+    bindsym Shift+k resize shrink height 200 px or 200 ppt
+    bindsym Shift+l resize grow width 200 px or 200 ppt
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -322,10 +322,10 @@ mode "float-move" {
     bindsym Mod1+k move container up 20 px
     bindsym Mod1+l move container right 20 px
 
-    bindsym Shift+h move container left 150 px
-    bindsym Shift+j move container down 150 px
-    bindsym Shift+k move container up 150 px
-    bindsym Shift+l move container right 150 px
+    bindsym Shift+h move container left 200 px
+    bindsym Shift+j move container down 200 px
+    bindsym Shift+k move container up 200 px
+    bindsym Shift+l move container right 200 px
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -382,7 +382,7 @@ bindsym --release $mod+space exec /bin/i3-keyboard-layout cycle us ru
 # For execution of file manager
 bindsym --release $mod+Shift+u exec caja
 
-# For keyboard speed                    dly speed
+# For keyboard speed             dly speed
 exec --no-startup-id xset r rate 225 150
 
 # Env colors
