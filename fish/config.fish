@@ -18,7 +18,24 @@ function fish_right_prompt -d "Write out the right prompt"
     date "+%T"
 end
 
+function peco_select_history
+  if test (count $argv) = 0
+    set peco_flags --layout=bottom-up
+  else
+    set peco_flags --layout=bottom-up --query "$argv"
+  end
+
+  history|peco $peco_flags|read foo
+
+  if [ $foo ]
+    commandline $foo
+  else
+    commandline ''
+  end
+end
+
 function fish_user_key_bindings
-  bind \cr hstr
-  bind \cc _cpwd
+    bind \cr peco_select_history
+
+    bind \cd delete-char
 end

@@ -1,0 +1,17 @@
+{
+    "Keymap": {
+        "C-k": "peco.SelectUp",
+        "C-j": "peco.SelectDown",
+        "Esc": "peco.Cancel",
+        "C-c": "peco.Cancel",
+        "Tab": "peco.Finish",
+        "C-e": "peco.Finish"
+    },
+    "Style": {
+        "Basic": ["white", "on_black"],
+        "SavedSelection": ["white", "on_yellow"],
+        "Selected": ["black", "on_white"],
+        "Query": ["white", "on_black"],
+        "Matched": ["bold", "grey", "on_black"]
+    }
+}

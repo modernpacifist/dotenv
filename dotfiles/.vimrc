@@ -95,6 +95,9 @@ nnoremap <leader>n :tabnew %<CR>
 nnoremap <leader>< :-tabmove<CR>
 nnoremap <leader>> :+tabmove<CR>
 
+" disable of default shortcuts
+map <S-k> <Nop>
+
 augroup filetype_python
     autocmd!
     autocmd FileType python noremap <buffer> <leader>r :w<CR>:exec '!clear && python3.9' shellescape(@%, 1)<CR>

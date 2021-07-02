@@ -19,6 +19,11 @@ fi
 #. dotfiles setup
 find ./dotfiles -type f -exec cp {} $HOME/ \;
 
+# peco setup
+if [[ -d $HOME/.config/peco/ ]]; then
+    find ./peco -type f -exec cp {} $HOME/.config/peco/ \;
+fi
+
 # i3wm setup
 if [[ -d $HOME/.config/i3/ ]]; then
     find ./i3config -type f -exec cp {} $HOME/.config/i3/ \;
