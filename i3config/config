@@ -299,6 +299,11 @@ mode "float-resize" {
     bindsym Mod1+k resize shrink height 20 px or 20 ppt
     bindsym Mod1+l resize grow width 20 px or 20 ppt
 
+    bindsym Ctrl+h resize shrink width 40 px or 40 ppt
+    bindsym Ctrl+j resize grow height 40 px or 40 ppt
+    bindsym Ctrl+k resize shrink height 40 px or 40 ppt
+    bindsym Ctrl+l resize grow width 40 px or 40 ppt
+
     bindsym Shift+h resize shrink width 200 px or 200 ppt
     bindsym Shift+j resize grow height 200 px or 200 ppt
     bindsym Shift+k resize shrink height 200 px or 200 ppt
@@ -321,6 +326,11 @@ mode "float-move" {
     bindsym Mod1+j move container down 20 px
     bindsym Mod1+k move container up 20 px
     bindsym Mod1+l move container right 20 px
+
+    bindsym Ctrl+h move container left 40 px
+    bindsym Ctrl+j move container down 40 px
+    bindsym Ctrl+k move container up 40 px
+    bindsym Ctrl+l move container right 40 px
 
     bindsym Shift+h move container left 200 px
     bindsym Shift+j move container down 200 px
