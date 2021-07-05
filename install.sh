@@ -10,6 +10,8 @@ function root_setup {
     if [[ -d /etc/fish/completions/ ]]; then
         find ./fish-completions/ -type f -exec cp {} /etc/fish/completions/ \;
     fi
+
+    exit 0;
 }
 
 if [[ $EUID == 0 ]]; then
