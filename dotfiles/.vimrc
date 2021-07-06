@@ -96,7 +96,7 @@ nnoremap <leader>< :-tabmove<CR>
 nnoremap <leader>> :+tabmove<CR>
 
 " disable of default shortcuts
-map <S-k> <Nop>
+nnoremap <S-k> <Nop>
 
 augroup filetype_python
     autocmd!

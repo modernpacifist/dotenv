@@ -1,5 +1,6 @@
 set fish_greeting
 set -x PYTHONSTARTUP $HOME/.pythonstartup
+set -x EDITOR vim
 
 abbr -a -- - 'cd -'
 alias .='pwd'
