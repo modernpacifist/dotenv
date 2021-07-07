@@ -18,7 +18,7 @@ if [[ $EUID == 0 ]]; then
     root_setup
 fi
 
-#. dotfiles setup
+# dotfiles setup
 find ./dotfiles -type f -exec cp {} $HOME/ \;
 
 # peco setup
