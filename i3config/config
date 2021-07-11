@@ -253,6 +253,34 @@ bindsym $mod+Mod1+9 [con_mark="9"] scratchpad show
 bindsym --release $mod+Ctrl+0, sticky disable, mark "0", move scratchpad
 bindsym $mod+Mod1+0 [con_mark="0"] scratchpad show
 
+# overall scratchpads lvl2
+bindsym --release $mod+Ctrl+F1, sticky disable, mark "a", move scratchpad
+bindsym $mod+Mod1+F1 [con_mark="a"] scratchpad show
+
+bindsym --release $mod+Ctrl+F2, sticky disable, mark "b", move scratchpad
+bindsym $mod+Mod1+F2 [con_mark="b"] scratchpad show
+
+bindsym --release $mod+Ctrl+F3, sticky disable, mark "c", move scratchpad
+bindsym $mod+Mod1+F3 [con_mark="c"] scratchpad show
+
+bindsym --release $mod+Ctrl+F4, sticky disable, mark "d", move scratchpad
+bindsym $mod+Mod1+F4 [con_mark="d"] scratchpad show
+
+bindsym --release $mod+Ctrl+F5, sticky disable, mark "e", move scratchpad
+bindsym $mod+Mod1+F5 [con_mark="e"] scratchpad show
+
+bindsym --release $mod+Ctrl+F6, sticky disable, mark "f", move scratchpad
+bindsym $mod+Mod1+F6 [con_mark="f"] scratchpad show
+
+bindsym --release $mod+Ctrl+F7, sticky disable, mark "g", move scratchpad
+bindsym $mod+Mod1+F7 [con_mark="g"] scratchpad show
+
+bindsym --release $mod+Ctrl+F8, sticky disable, mark "h", move scratchpad
+bindsym $mod+Mod1+F8 [con_mark="h"] scratchpad show
+
+bindsym --release $mod+Ctrl+F9, sticky disable, mark "i", move scratchpad
+bindsym $mod+Mod1+F9 [con_mark="i"] scratchpad show
+
 # go to mark
 bindsym $mod+Mod1+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto mark: '
 
