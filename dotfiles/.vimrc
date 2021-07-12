@@ -68,6 +68,7 @@ let g:ycm_confirm_extra_conf = 0
 let g:UltiSnipsExpandTrigger="<C-s>"
 let g:UltiSnipsJumpForwardTrigger="<C-j>"
 let g:UltiSnipsJumpBackwardTrigger="<C-k>"
+let g:snips_author="modernpacifist"
 
 let g:NERDTreeIgnore = ['\.h.gch$', '\.pyc$', '\.out$']
 let g:NERDTreeWinSize = 25
