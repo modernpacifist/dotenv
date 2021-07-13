@@ -1,7 +1,0 @@
-#!/bin/env bash
-if [[ $1 ]]; then
-	date +%T -s $1
-else
-	echo 'Specify the time'
-	exit 1
-fi
