@@ -57,9 +57,10 @@ mouse_warping output
 bindsym --release $mod+Return exec kitty
 
 # Styles for windows
-title_align center
+title_align left
 hide_edge_borders smart
 show_marks yes
+workspace_layout stacking
 
 # kill focused window
 bindsym --release $mod+BackSpace kill
@@ -308,7 +309,7 @@ mode "resize" {
     bindsym Shift+j resize grow height 10 px or 10 ppt
     bindsym Shift+k resize shrink height 10 px or 10 ppt
     bindsym Shift+l resize grow width 10 px or 10 ppt
-    
+
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
