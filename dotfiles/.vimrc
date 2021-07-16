@@ -101,7 +101,6 @@ nnoremap <S-k> <Nop>
 
 augroup filetype_python
     autocmd!
-    autocmd FileType python noremap <buffer> <leader>r :w<CR>:exec '!clear && python3.9' shellescape(@%, 1)<CR>
     autocmd FileType python noremap <leader>f :NERDTreeFind<CR> |
         \ noremap <leader>t :NERDTreeToggle<CR>
 augroup END
@@ -109,9 +108,8 @@ augroup END
 augroup filetype_c
     autocmd!
     autocmd FileType c autocmd VimEnter * NERDTree | wincmd p
-    autocmd FileType c noremap <buffer> <leader>r :w<CR>:exec '!clear && gcc' shellescape(@%, 1) '&& ./a.out'<CR>
     autocmd FileType c noremap <buffer> <leader>m :w<CR>:exec '!clear && make'<CR>
-    autocmd FileType c set colorcolumn=90 |
+    autocmd FileType c set colorcolumn=100 |
         \ noremap <leader>f :NERDTreeFind<CR> |
         \ noremap <leader>t :NERDTreeToggle<CR>
 augroup END
@@ -119,8 +117,7 @@ augroup END
 augroup filetype_cpp
     autocmd!
     autocmd FileType cpp autocmd VimEnter * NERDTree | wincmd p
-    autocmd FileType cpp noremap <buffer> <leader>r :w<CR>:exec '!clear && g++' shellescape(@%, 1) '&& ./a.out'<CR>
-    autocmd FileType c noremap <buffer> <leader>m :w<CR>:exec '!clear && make'<CR>
+    autocmd FileType cpp noremap <buffer> <leader>m :w<CR>:exec '!clear && make'<CR>
     autocmd FileType cpp set colorcolumn=100 |
         \ noremap <leader>f :NERDTreeFind<CR> |
         \ noremap <leader>t :NERDTreeToggle<CR>
@@ -129,7 +126,7 @@ augroup END
 augroup filetype_asm
     autocmd!
     autocmd FileType asm autocmd VimEnter * NERDTree | wincmd p
-    autocmd FileType asm noremap <buffer> <leader>r :w<CR>:exec '!clear && nasm -f elf64' shellescape(@%, 1) '&& ld -s *.o && ./a.out'<CR>
+    autocmd FileType asm noremap <buffer> <leader>m :w<CR>:exec '!clear && make'<CR>
     autocmd FileType asm set colorcolumn=90 |
         \ noremap <leader>f :NERDTreeFind<CR> |
         \ noremap <leader>t :NERDTreeToggle<CR>
