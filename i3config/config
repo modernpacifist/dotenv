@@ -126,7 +126,7 @@ bindsym --release $mod+Mod1+Tab focus mode_toggle
 bindsym --release $mod+Mod1+s sticky toggle
 
 # rename workspaces
-bindsym --release $mod+Shift+r exec i3-input -F 'rename workspace to "%s"' -l 1 -P 'New name: '
+bindsym --release $mod+Shift+r exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
 
 # FIRST-LEVEL
 set $ws0 "0"

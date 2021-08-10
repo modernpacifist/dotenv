@@ -44,6 +44,7 @@ set ttimeout
 set ttimeoutlen=0
 set completeopt+=longest,menuone,noinsert
 set completeopt-=preview
+set updatetime=100
 
 " Reloads buffer on its focus
 autocmd FocusGained,BufEnter * :checktime
