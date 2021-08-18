@@ -18,6 +18,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'klen/python-mode'
+Plugin 'itchyny/vim-gitbranch'
 
 call vundle#end()
 
@@ -35,7 +36,6 @@ set tabstop=4
 set nowrap
 set smartindent
 set expandtab
-set laststatus=0
 set hidden
 set showcmd
 set ignorecase
@@ -45,6 +45,18 @@ set ttimeoutlen=0
 set completeopt+=longest,menuone,noinsert
 set completeopt-=preview
 set updatetime=100
+set laststatus=2
+
+set statusline+=%#LineNr#
+set statusline+=\ [%{gitbranch#name()}]
+set statusline+=\ %f
+set statusline+=%=
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+set statusline+=\ 
 
 " Reloads buffer on its focus
 autocmd FocusGained,BufEnter * :checktime
