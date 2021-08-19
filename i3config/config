@@ -170,42 +170,6 @@ bindsym --release $mod+Shift+8 move container to workspace number $ws8
 bindsym --release $mod+Shift+9 move container to workspace number $ws9
 bindsym --release $mod+Shift+0 move container to workspace number $ws10
 
-# SECOND-LEVEL
-set $ws11 "11"
-set $ws12 "12"
-set $ws13 "13"
-set $ws14 "14"
-set $ws15 "15"
-set $ws16 "16"
-set $ws17 "17"
-set $ws18 "18"
-set $ws19 "19"
-set $ws20 "20"
-
-# switch to workspace SECOND-LEVEL
-bindsym --release $mod+F1 workspace number $ws11
-bindsym --release $mod+F2 workspace number $ws12
-bindsym --release $mod+F3 workspace number $ws13
-bindsym --release $mod+F4 workspace number $ws14
-bindsym --release $mod+F5 workspace number $ws15
-bindsym --release $mod+F6 workspace number $ws16
-bindsym --release $mod+F7 workspace number $ws17
-bindsym --release $mod+F8 workspace number $ws18
-bindsym --release $mod+F9 workspace number $ws19
-bindsym --release $mod+F10 workspace number $ws20
-
-# move focused container to workspace SECOND-LEVEL
-bindsym --release $mod+Shift+F1 move container to workspace number $ws11
-bindsym --release $mod+Shift+F2 move container to workspace number $ws12
-bindsym --release $mod+Shift+F3 move container to workspace number $ws13
-bindsym --release $mod+Shift+F4 move container to workspace number $ws14
-bindsym --release $mod+Shift+F5 move container to workspace number $ws15
-bindsym --release $mod+Shift+F6 move container to workspace number $ws16
-bindsym --release $mod+Shift+F7 move container to workspace number $ws17
-bindsym --release $mod+Shift+F8 move container to workspace number $ws18
-bindsym --release $mod+Shift+F9 move container to workspace number $ws19
-bindsym --release $mod+Shift+F10 move container to workspace number $ws20
-
 # move to last focused workspace
 bindsym --release $mod+Tab workspace back_and_forth
 
