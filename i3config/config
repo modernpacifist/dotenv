@@ -388,6 +388,9 @@ bindsym --release $mod+Shift+u exec caja
 # For keyboard speed             dly speed
 exec --no-startup-id xset r rate 225 150
 
+# Do not turn off screens
+exec --no-startup-id xset -dpms
+
 # Env colors
 # Class                 border  backgr. text    indicator child_border
 client.focused          #ffffff #ffffff #000000 #000000 #ffffff
