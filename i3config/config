@@ -47,7 +47,7 @@ bindsym --release Mod1+F7 exec playerctl previous
 floating_modifier $mod
 
 # Manually lock the system
-bindsym --release $mod+Mod1+Ctrl+Shift+l exec i3lock lock -i $HOME/Pictures/lock_picture.png -t
+bindsym --release $mod+Mod1+Ctrl+Shift+l exec i3lock lock --color=000000 -t -f
 
 # mouse impact
 focus_follows_mouse no
@@ -384,9 +384,6 @@ bindsym --release $mod+space exec i3-keyboard-layout cycle us ru
 
 # For keyboard speed             dly speed
 exec --no-startup-id xset r rate 225 150
-
-# Do not turn off screens
-exec --no-startup-id xset -dpms
 
 # Env colors
 # Class                 border  backgr. text    indicator child_border
