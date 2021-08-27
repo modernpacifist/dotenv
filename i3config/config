@@ -377,13 +377,10 @@ bar {
 exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallpaper.jpg
 
 # Turn off screen dim
-exec --no-startup-id /bin/_screendim_off
+exec --no-startup-id _screendim_off
 
 # For language toggle en/ru
-bindsym --release $mod+space exec /bin/i3-keyboard-layout cycle us ru
-
-# For execution of file manager
-bindsym --release $mod+Shift+u exec caja
+bindsym --release $mod+space exec i3-keyboard-layout cycle us ru
 
 # For keyboard speed             dly speed
 exec --no-startup-id xset r rate 225 150
