@@ -70,9 +70,6 @@ bindsym --release $mod+Ctrl+e layout default
 bindsym --release $mod+Ctrl+t layout tabbed
 bindsym --release $mod+Ctrl+s layout stacked
 
-# start dmenu
-bindsym --release $mod+Shift+M exec dmenu_run
-
 # change focus
 bindsym --release $mod+h focus left
 bindsym --release $mod+j focus down
