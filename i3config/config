@@ -61,6 +61,7 @@ title_align left
 hide_edge_borders smart
 show_marks yes
 workspace_layout stacking
+focus_wrapping force
 
 # kill focused window
 bindsym --release $mod+BackSpace kill
@@ -123,7 +124,7 @@ bindsym --release $mod+Mod1+Tab focus mode_toggle
 bindsym --release $mod+Mod1+s sticky toggle
 
 # rename workspaces
-bindsym --release $mod+Shift+r exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
+bindsym --release $mod+Shift+r exec i3-input -F 'rename workspace to "%s"' -l 1 -P 'New name: '
 
 # FIRST-LEVEL
 set $ws0 "0"
@@ -396,5 +397,8 @@ bindsym --release Print exec flameshot gui
 # Enable/Disable touchpad
 bindsym --release $mod+Mod1+c exec __touchpad_toggle
 
-# Rofi
-bindsym --release $mod+Shift+m exec rofi -show window -kb-row-tab ""
+# Rofi run
+bindsym --release $mod+Shift+m exec rofi -show run -kb-row-tab ""
+
+# Rofi window
+bindsym --release $mod+Mod1+m exec rofi -show window -kb-row-tab ""
