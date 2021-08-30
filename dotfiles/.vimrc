@@ -19,6 +19,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'klen/python-mode'
 Plugin 'itchyny/vim-gitbranch'
+Plugin 'jremmen/vim-ripgrep'
 
 call vundle#end()
 
