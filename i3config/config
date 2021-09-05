@@ -147,9 +147,6 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-# go to workspace
-bindsym $mod+g exec i3-input -F 'workspace %s' -l 1 -P 'Goto workspace: '
-
 # switch to workspace FIRST-LEVEL
 bindsym --release $mod+grave workspace number $ws0
 bindsym --release $mod+1 workspace number $ws1
