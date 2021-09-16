@@ -72,6 +72,7 @@ let g:pymode_virtualenv = 1
 let g:pymode_motion = 0
 let g:pymode_rope = 0
 let g:pymode_run = 0
+let g:pymode_lint_ignore = "E155"
 
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 let g:ycm_min_num_of_chars_for_completion = 1
