@@ -40,3 +40,9 @@ function fish_user_key_bindings
     bind \cc _cpwd
     bind \cd delete-char
 end
+
+function export_pentest_variables --on-event fish_prompt
+    for s in (grep -E '": [^\{]' ~/.pentest_values.json 2>/dev/null | sed -e 's/: /=/' -e "s/\(\,\)\$//" | tr -d \"\ )
+        export $s
+    end
+end
