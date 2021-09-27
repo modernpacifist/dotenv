@@ -284,61 +284,55 @@ mode "resize" {
 bindsym --release $mod+r mode "resize"
 
 
-mode "float-resize" {
+mode "float-control" {
     bindsym h resize shrink width 1 px or 1 ppt
     bindsym j resize grow height 1 px or 1 ppt
     bindsym k resize shrink height 1 px or 1 ppt
     bindsym l resize grow width 1 px or 1 ppt
+
+    bindsym $mod+h move container left 1 px
+    bindsym $mod+j move container down 1 px
+    bindsym $mod+k move container up 1 px
+    bindsym $mod+l move container right 1 px
+
 
     bindsym Mod1+h resize shrink width 20 px or 20 ppt
     bindsym Mod1+j resize grow height 20 px or 20 ppt
     bindsym Mod1+k resize shrink height 20 px or 20 ppt
     bindsym Mod1+l resize grow width 20 px or 20 ppt
 
+    bindsym $mod+Mod1+h move container left 20 px
+    bindsym $mod+Mod1+j move container down 20 px
+    bindsym $mod+Mod1+k move container up 20 px
+    bindsym $mod+Mod1+l move container right 20 px
+
+
     bindsym Ctrl+h resize shrink width 40 px or 40 ppt
     bindsym Ctrl+j resize grow height 40 px or 40 ppt
     bindsym Ctrl+k resize shrink height 40 px or 40 ppt
     bindsym Ctrl+l resize grow width 40 px or 40 ppt
+
+    bindsym $mod+Ctrl+h move container left 40 px
+    bindsym $mod+Ctrl+j move container down 40 px
+    bindsym $mod+Ctrl+k move container up 40 px
+    bindsym $mod+Ctrl+l move container right 40 px
+
 
     bindsym Shift+h resize shrink width 200 px or 200 ppt
     bindsym Shift+j resize grow height 200 px or 200 ppt
     bindsym Shift+k resize shrink height 200 px or 200 ppt
     bindsym Shift+l resize grow width 200 px or 200 ppt
 
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-bindsym --release $mod+Mod1+r mode "float-resize"
-
-
-mode "float-move" {
-    bindsym h move container left 1 px
-    bindsym j move container down 1 px
-    bindsym k move container up 1 px
-    bindsym l move container right 1 px
-
-    bindsym Mod1+h move container left 20 px
-    bindsym Mod1+j move container down 20 px
-    bindsym Mod1+k move container up 20 px
-    bindsym Mod1+l move container right 20 px
-
-    bindsym Ctrl+h move container left 40 px
-    bindsym Ctrl+j move container down 40 px
-    bindsym Ctrl+k move container up 40 px
-    bindsym Ctrl+l move container right 40 px
-
-    bindsym Shift+h move container left 200 px
-    bindsym Shift+j move container down 200 px
-    bindsym Shift+k move container up 200 px
-    bindsym Shift+l move container right 200 px
+    bindsym $mod+Shift+h move container left 200 px
+    bindsym $mod+Shift+j move container down 200 px
+    bindsym $mod+Shift+k move container up 200 px
+    bindsym $mod+Shift+l move container right 200 px
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 
-bindsym --release $mod+Mod1+f mode "float-move"
-
+bindsym --release $mod+Mod1+f mode "float-control"
 
 bar {
     output primary
@@ -378,6 +372,9 @@ bar {
 
 # For wallpaper
 exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallpaper.jpg
+
+# Hide cursor while typing
+exec_always --no-startup-id xbanish
 
 # Turn off screen dim
 exec --no-startup-id _screendim_off
