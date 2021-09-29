@@ -374,7 +374,7 @@ bar {
 exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallpaper.jpg
 
 # Hide cursor while typing
-exec_always --no-startup-id xbanish
+exec --no-startup-id xbanish
 
 # Turn off screen dim
 exec --no-startup-id _screendim_off
