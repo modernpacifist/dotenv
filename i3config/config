@@ -47,7 +47,7 @@ bindsym --release Mod1+F7 exec playerctl previous
 floating_modifier $mod
 
 # Manually lock the system
-bindsym --release $mod+Mod1+Ctrl+Shift+l exec i3lock lock --color=000000 -t -f
+bindsym --release $mod+Mod1+Ctrl+Shift+l exec i3lock lock --color=000000 -t
 
 # mouse impact
 focus_follows_mouse no
