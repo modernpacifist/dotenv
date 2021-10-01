@@ -332,7 +332,7 @@ mode "float-control" {
     bindsym Escape mode "default"
 }
 
-bindsym --release $mod+Mod1+f mode "float-control"
+bindsym --release $mod+Mod1+r mode "float-control"
 
 bar {
     output primary
