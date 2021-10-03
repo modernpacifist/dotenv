@@ -124,6 +124,7 @@ bindsym --release $mod+Mod1+Tab focus mode_toggle
 bindsym --release $mod+Mod1+s sticky toggle
 
 # rename workspaces
+bindsym --release $mod+Ctrl+Shift+asciitilde rename workspace to 0
 bindsym --release $mod+Ctrl+Shift+1 rename workspace to 1
 bindsym --release $mod+Ctrl+Shift+2 rename workspace to 2
 bindsym --release $mod+Ctrl+Shift+3 rename workspace to 3
@@ -133,6 +134,7 @@ bindsym --release $mod+Ctrl+Shift+6 rename workspace to 6
 bindsym --release $mod+Ctrl+Shift+7 rename workspace to 7
 bindsym --release $mod+Ctrl+Shift+8 rename workspace to 8
 bindsym --release $mod+Ctrl+Shift+9 rename workspace to 9
+bindsym --release $mod+Ctrl+Shift+0 rename workspace to 10
 
 # FIRST-LEVEL
 set $ws0 "0"
