@@ -26,5 +26,5 @@ case $1 in
     "restart") restart;;
     "status") status;;
     "stop") stop;;
-    *) exit 0;;
+    *) echo "Legit options are: start, restart, status, stop"; exit 1;;
 esac
