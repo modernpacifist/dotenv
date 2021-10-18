@@ -406,3 +406,6 @@ bindsym --release $mod+Shift+m exec rofi -show run -kb-row-tab ""
 
 # Rofi window
 bindsym --release $mod+Mod1+m exec rofi -show window -kb-row-tab ""
+
+# File explorer
+bindsym --release $mod+Mod1+u exec caja
