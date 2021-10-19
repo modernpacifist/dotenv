@@ -20,6 +20,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'klen/python-mode'
 Plugin 'itchyny/vim-gitbranch'
 Plugin 'jremmen/vim-ripgrep'
+Plugin 'fatih/vim-go'
+Plugin 'bitfield/vim-gitgo'
 
 call vundle#end()
 
@@ -47,6 +49,7 @@ set completeopt+=longest,menuone,noinsert
 set completeopt-=preview
 set updatetime=100
 set laststatus=2
+set background=dark
 
 set statusline+=%#LineNr#
 set statusline+=\ [%{gitbranch#name()}]
@@ -63,6 +66,8 @@ set statusline+=\
 autocmd FocusGained,BufEnter * :checktime
 " Saves buffer on any change of data in it
 autocmd FocusLost,InsertLeave,TextChanged,InsertChange * :wa
+" Enable syntax for go 
+autocmd BufNewFile,BufRead *.go colorscheme gitgo
 
 let g:pymode_python = 'python3'
 let g:pymode_lint_checkers = ['pep8', 'pyflakes']
