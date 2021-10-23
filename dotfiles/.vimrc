@@ -40,8 +40,8 @@ set nowrap
 set smartindent
 set expandtab
 set hidden
+set noic
 set showcmd
-set ignorecase
 set noswapfile
 set ttimeout
 set ttimeoutlen=0
@@ -108,6 +108,8 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+:nnoremap <Leader>s :%s/\<<C-r><C-w>\>//gI<Left><Left><Left>
 
 " tabs management 
 nnoremap <C-I> :tabnext<CR>
