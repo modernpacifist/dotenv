@@ -50,6 +50,7 @@ set completeopt-=preview
 set updatetime=100
 set laststatus=2
 set background=dark
+set cursorline
 
 set statusline+=%#LineNr#
 set statusline+=\ [%{gitbranch#name()}]
