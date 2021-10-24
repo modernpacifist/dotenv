@@ -37,9 +37,11 @@ set shiftwidth=4
 set tabstop=4
 set nowrap
 set smartindent
+set autoindent
 set expandtab
 set hidden
-set noic
+set noignorecase
+set incsearch
 set showcmd
 set noswapfile
 set ttimeout
@@ -69,6 +71,10 @@ autocmd FocusLost,InsertLeave,TextChanged,InsertChange * :wa
 " Enable syntax for go 
 autocmd BufNewFile,BufRead *.go colorscheme gitgo
 
+" NerdCommenter settings
+map <C-_> <plug>NERDCommenterToggle
+let g:NERDToggleCheckAllLines = 1
+
 let g:pymode_python = 'python3'
 let g:pymode_lint_checkers = ['pep8', 'pyflakes']
 let g:pymode_options_max_line_length = 110
@@ -92,20 +98,19 @@ let g:snips_author="modernpacifist"
 
 colorscheme fogbell
 
-noremap <F9> :q<CR>
 noremap <F10> :x<CR>
 noremap <F11> :xa<CR>
 noremap <F12> :qa!<CR>
 
-noremap <leader>y "+y
-noremap <leader>p "+p
+noremap <C-C> "+y
+noremap <C-V> "+p
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-:nnoremap <Leader>s :%s/\<<C-r><C-w>\>//gI<Left><Left><Left>
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>//gI<Left><Left><Left>
 
 " tabs management 
 nnoremap <C-I> :tabnext<CR>
@@ -121,35 +126,20 @@ nnoremap <Down> <Nop>
 nnoremap <Left> <Nop>
 nnoremap <Right> <Nop>
 
-augroup filetype_python
-    autocmd!
-    autocmd FileType python noremap <leader>f :NERDTreeFind<CR> |
-        \ noremap <leader>t :NERDTreeToggle<CR>
-augroup END
-
 augroup filetype_c
     autocmd!
-    autocmd FileType c autocmd VimEnter * NERDTree | wincmd p
     autocmd FileType c noremap <buffer> <leader>m :w<CR>:exec '!clear && make'<CR>
-    autocmd FileType c set colorcolumn=100 |
-        \ noremap <leader>f :NERDTreeFind<CR> |
-        \ noremap <leader>t :NERDTreeToggle<CR>
+    autocmd FileType c set colorcolumn=100
 augroup END
 
 augroup filetype_cpp
     autocmd!
-    autocmd FileType cpp autocmd VimEnter * NERDTree | wincmd p
     autocmd FileType cpp noremap <buffer> <leader>m :w<CR>:exec '!clear && make'<CR>
-    autocmd FileType cpp set colorcolumn=100 |
-        \ noremap <leader>f :NERDTreeFind<CR> |
-        \ noremap <leader>t :NERDTreeToggle<CR>
+    autocmd FileType cpp set colorcolumn=100
 augroup END
 
 augroup filetype_asm
     autocmd!
-    autocmd FileType asm autocmd VimEnter * NERDTree | wincmd p
     autocmd FileType asm noremap <buffer> <leader>m :w<CR>:exec '!clear && make'<CR>
-    autocmd FileType asm set colorcolumn=90 |
-        \ noremap <leader>f :NERDTreeFind<CR> |
-        \ noremap <leader>t :NERDTreeToggle<CR>
+    autocmd FileType asm set colorcolumn=90
 augroup END
