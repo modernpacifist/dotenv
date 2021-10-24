@@ -13,7 +13,6 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'itchyny/vim-cursorword'
 Plugin 'google/vim-searchindex'
-Plugin 'preservim/nerdtree'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'airblade/vim-gitgutter'
@@ -90,10 +89,6 @@ let g:UltiSnipsExpandTrigger="<C-s>"
 let g:UltiSnipsJumpForwardTrigger="<C-j>"
 let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 let g:snips_author="modernpacifist"
-
-let g:NERDTreeIgnore = ['\.h.gch$', '\.pyc$', '\.out$']
-let g:NERDTreeWinSize = 25
-let g:NERDTreeMinimalUI=1
 
 colorscheme fogbell
 
