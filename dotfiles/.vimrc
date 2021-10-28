@@ -102,8 +102,8 @@ noremap <F10> :x<CR>
 noremap <F11> :xa<CR>
 noremap <F12> :qa!<CR>
 
-noremap <C-C> "+y
-noremap <C-V> "+p
+noremap <leader>y "+y
+noremap <leader>p "+p
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -113,11 +113,14 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>//gI<Left><Left><Left>
 
 " tabs management 
-nnoremap <C-I> :tabnext<CR>
-nnoremap <leader><C-I> :tabprevious<CR>
-nnoremap <leader>n :tabnew %<CR>
-nnoremap <leader>< :-tabmove<CR>
-nnoremap <leader>> :+tabmove<CR>
+nnoremap tk  :tabnext<CR>
+nnoremap tj  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+nnoremap t< :-tabmove<CR>
+nnoremap t> :+tabmove<CR>
+nnoremap th  :tabfirst<CR>
+nnoremap tw  :tabclose<CR>
+nnoremap tn  :tabnew<Space>
 
 " disable of default shortcuts
 nnoremap <S-k> <Nop>
@@ -142,4 +145,8 @@ augroup filetype_asm
     autocmd!
     autocmd FileType asm noremap <buffer> <leader>m :w<CR>:exec '!clear && make'<CR>
     autocmd FileType asm set colorcolumn=90
+augroup END
+
+augroup filetype_vim
+    autocmd FileType vim set syntax=off
 augroup END
