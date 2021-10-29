@@ -186,6 +186,7 @@ bindsym --release $mod+Shift+p move container to workspace prev
 # telegram scratchpad
 for_window [class="TelegramDesktop" instance="telegram"], mark "t", sticky enable, floating enable, move scratchpad
 bindsym --release $mod+Mod1+t [class="TelegramDesktop" instance="telegram"] scratchpad show
+bindsym --release $mod+Mod1+Ctrl+t [class="TelegramDesktop" instance="telegram"] focus
 
 # keybase scratchpad
 for_window [class="Keybase" instance="keybase"] sticky enable, floating enable, mark "k", move scratchpad

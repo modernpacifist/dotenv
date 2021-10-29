@@ -26,7 +26,7 @@ call vundle#end()
 
 filetype plugin indent on
 
-syntax enable
+syntax on
 set number
 set autoread
 set encoding=utf-8
@@ -40,7 +40,7 @@ set smartindent
 set autoindent
 set expandtab
 set hidden
-set noignorecase
+set noic
 set incsearch
 set showcmd
 set noswapfile
@@ -68,8 +68,6 @@ set statusline+=\
 autocmd FocusGained,BufEnter * :checktime
 " Saves buffer on any change of data in it
 autocmd FocusLost,InsertLeave,TextChanged,InsertChange * :wa
-" Enable syntax for go 
-autocmd BufNewFile,BufRead *.go colorscheme gitgo
 
 " NerdCommenter settings
 map <C-_> <plug>NERDCommenterToggle
@@ -98,6 +96,7 @@ let g:snips_author="modernpacifist"
 
 colorscheme fogbell
 
+noremap <F9> :q<CR>
 noremap <F10> :x<CR>
 noremap <F11> :xa<CR>
 noremap <F12> :qa!<CR>
@@ -110,6 +109,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" substitute word under cursor
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>//gI<Left><Left><Left>
 
 " tabs management 
@@ -149,4 +149,10 @@ augroup END
 
 augroup filetype_vim
     autocmd FileType vim set syntax=off
+augroup END
+
+augroup filetype_go
+    autocmd!
+    " Enable syntax for go 
+    autocmd BufNewFile,BufRead *.go colorscheme gitgo
 augroup END
