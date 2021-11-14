@@ -129,6 +129,11 @@ nnoremap <Down> <Nop>
 nnoremap <Left> <Nop>
 nnoremap <Right> <Nop>
 
+inoremap <M-J> <Down>
+inoremap <M-K> <Up>
+inoremap <M-H> <Left>
+inoremap <M-L> <Right>
+
 augroup filetype_c
     autocmd!
     autocmd FileType c noremap <buffer> <leader>m :w<CR>:exec '!clear && make'<CR>
