@@ -6,7 +6,6 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'mg979/vim-visual-multi'
-"Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'preservim/nerdcommenter'
 Plugin 'flazz/vim-colorschemes'
