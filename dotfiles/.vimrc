@@ -6,7 +6,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'mg979/vim-visual-multi'
-Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+"Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'preservim/nerdcommenter'
 Plugin 'flazz/vim-colorschemes'
@@ -18,7 +18,6 @@ Plugin 'honza/vim-snippets'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'klen/python-mode'
 Plugin 'itchyny/vim-gitbranch'
-Plugin 'jremmen/vim-ripgrep'
 Plugin 'fatih/vim-go'
 Plugin 'bitfield/vim-gitgo'
 
@@ -52,6 +51,7 @@ set updatetime=100
 set laststatus=2
 set background=dark
 set cursorline
+set number relativenumber
 
 set statusline+=%#LineNr#
 set statusline+=\ [%{gitbranch#name()}]
