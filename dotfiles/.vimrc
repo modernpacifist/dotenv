@@ -19,7 +19,6 @@ Plugin 'klen/python-mode'
 Plugin 'itchyny/vim-gitbranch'
 Plugin 'fatih/vim-go'
 Plugin 'bitfield/vim-gitgo'
-Plugin 'kablamo/vim-git-log'
 
 call vundle#end()
 
