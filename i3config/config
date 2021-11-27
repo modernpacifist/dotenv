@@ -60,7 +60,7 @@ title_align left
 hide_edge_borders smart
 show_marks yes
 workspace_layout stacking
-focus_wrapping force
+focus_wrapping workspace
 
 # kill focused window
 bindsym --release $mod+BackSpace kill
@@ -183,8 +183,12 @@ bindsym --release $mod+p workspace prev
 bindsym --release $mod+Shift+n move container to workspace next
 bindsym --release $mod+Shift+p move container to workspace prev
 
+
+# programming-spawned windows
+for_window [class="ProgTestWindow"] floating enable
+
 # telegram scratchpad
-for_window [class="TelegramDesktop" instance="telegram"], mark "t", sticky enable, floating enable, move scratchpad
+for_window [class="TelegramDesktop" instance="telegram"] mark "t", sticky enable, floating enable, move scratchpad
 bindsym --release $mod+Mod1+t [class="TelegramDesktop" instance="telegram"] scratchpad show
 bindsym --release $mod+Mod1+Ctrl+t [class="TelegramDesktop" instance="telegram"] focus
 
