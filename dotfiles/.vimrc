@@ -19,6 +19,7 @@ Plugin 'klen/python-mode'
 Plugin 'itchyny/vim-gitbranch'
 Plugin 'fatih/vim-go'
 Plugin 'bitfield/vim-gitgo'
+Plugin 'kablamo/vim-git-log'
 
 call vundle#end()
 
@@ -142,7 +143,7 @@ augroup END
 augroup filetype_cpp
     autocmd!
     autocmd FileType cpp noremap <buffer> <leader>m :w<CR>:exec '!clear && make'<CR>
-    autocmd FileType cpp set colorcolumn=100
+    autocmd FileType cpp set colorcolumn=110
 augroup END
 
 augroup filetype_asm

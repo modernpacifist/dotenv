@@ -185,7 +185,7 @@ bindsym --release $mod+Shift+p move container to workspace prev
 
 
 # programming-spawned windows
-for_window [class="ProgTestWindow"] floating enable
+for_window [class="DevFloatingWindow"] floating enable
 
 # telegram scratchpad
 for_window [class="TelegramDesktop" instance="telegram"] mark "t", sticky enable, floating enable, move scratchpad
