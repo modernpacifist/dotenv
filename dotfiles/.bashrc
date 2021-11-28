@@ -20,7 +20,7 @@ fi
 
 # Last mod time of a file or files
 get_file_timestamp () {
-    ls -1 --time-style=+%s -l "$@" | cut -f6 -d" "
+    ls -1 --time-style=+%s -l "$@" 2>/dev/null | cut -f6 -d" "
 }
 
 # Make sure our version of the .bashrc file is up-to-date, or reload it.
