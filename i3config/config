@@ -122,19 +122,6 @@ bindsym --release $mod+Mod1+Tab focus mode_toggle
 # move to last focused workspace
 bindsym --release $mod+Mod1+s sticky toggle
 
-# rename workspaces
-bindsym --release $mod+Ctrl+Shift+asciitilde rename workspace to 0
-bindsym --release $mod+Ctrl+Shift+1 rename workspace to 1
-bindsym --release $mod+Ctrl+Shift+2 rename workspace to 2
-bindsym --release $mod+Ctrl+Shift+3 rename workspace to 3
-bindsym --release $mod+Ctrl+Shift+4 rename workspace to 4
-bindsym --release $mod+Ctrl+Shift+5 rename workspace to 5
-bindsym --release $mod+Ctrl+Shift+6 rename workspace to 6
-bindsym --release $mod+Ctrl+Shift+7 rename workspace to 7
-bindsym --release $mod+Ctrl+Shift+8 rename workspace to 8
-bindsym --release $mod+Ctrl+Shift+9 rename workspace to 9
-bindsym --release $mod+Ctrl+Shift+0 rename workspace to 10
-
 # FIRST-LEVEL
 set $ws0 "0"
 set $ws1 "1"
@@ -147,6 +134,19 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+
+# rename workspaces
+bindsym --release $mod+Mod1+Shift+asciitilde rename workspace to $ws0
+bindsym --release $mod+Mod1+Shift+1 rename workspace to $ws1
+bindsym --release $mod+Mod1+Shift+2 rename workspace to $ws2
+bindsym --release $mod+Mod1+Shift+3 rename workspace to $ws3
+bindsym --release $mod+Mod1+Shift+4 rename workspace to $ws4
+bindsym --release $mod+Mod1+Shift+5 rename workspace to $ws5
+bindsym --release $mod+Mod1+Shift+6 rename workspace to $ws6
+bindsym --release $mod+Mod1+Shift+7 rename workspace to $ws7
+bindsym --release $mod+Mod1+Shift+8 rename workspace to $ws8
+bindsym --release $mod+Mod1+Shift+9 rename workspace to $ws9
+bindsym --release $mod+Mod1+Shift+0 rename workspace to $ws10
 
 # switch to workspace FIRST-LEVEL
 bindsym --release $mod+grave workspace number $ws0
