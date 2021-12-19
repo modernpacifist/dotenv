@@ -229,7 +229,7 @@ bindsym --release $mod+Ctrl+8, sticky disable, mark "8", move scratchpad
 bindsym $mod+Mod1+8 [con_mark="8"] scratchpad show
 bindsym $mod+Mod1+Ctrl+8 [con_mark="8"] focus
 
-bindsym --release $mod+Ctrl+9, sticky disable, mark "9", move scratchpad, move position 
+bindsym --release $mod+Ctrl+9, sticky disable, mark "9", move scratchpad
 bindsym $mod+Mod1+9 [con_mark="9"] scratchpad show
 bindsym $mod+Mod1+Ctrl+9 [con_mark="9"] focus
 
