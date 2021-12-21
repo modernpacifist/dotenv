@@ -19,7 +19,6 @@ Plugin 'klen/python-mode'
 Plugin 'itchyny/vim-gitbranch'
 Plugin 'fatih/vim-go'
 Plugin 'bitfield/vim-gitgo'
-Plugin 'bitfield/CSyntaxAfter'
 
 call vundle#end()
 
@@ -63,6 +62,7 @@ set statusline+=\[%{&fileformat}\]
 set statusline+=\ %p%%
 set statusline+=\ %l:%c
 set statusline+=\ 
+
 
 " Reloads buffer on its focus
 autocmd FocusGained,BufEnter * :checktime
