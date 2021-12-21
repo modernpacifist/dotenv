@@ -19,6 +19,7 @@ Plugin 'klen/python-mode'
 Plugin 'itchyny/vim-gitbranch'
 Plugin 'fatih/vim-go'
 Plugin 'bitfield/vim-gitgo'
+Plugin 'bitfield/CSyntaxAfter'
 
 call vundle#end()
 
