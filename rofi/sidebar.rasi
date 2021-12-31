@@ -10,7 +10,7 @@
     dark: #000000;
     // Black
     black:       #000000;
-    lightblack:  #000000;
+    lightblack:  #333333;
     //
     // Red
     red:         #cd5c5c;
@@ -81,7 +81,7 @@ element-text {
     text-color:       inherit;
 }
 element selected  normal {
-    background-color: @blue;
+    background-color: @lightblack;
 }
 element normal active {
     text-color: @lightblue;
