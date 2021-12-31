@@ -1,0 +1,22 @@
+configuration {
+    modi: "window,run";
+    font: "hack 10";
+    kb-row-tab: "";
+    kb-accept-entry: "";
+    kb-remove-to-eol: "";
+    kb-mode-complete: "";
+    kb-remove-char-back: "";
+    kb-move-end: "";
+    kb-remove-char-back: "BackSpace";
+    kb-row-select: "Tab,Control+e";
+    kb-remove-word-back: "Alt+BackSpace";
+    kb-remove-word-forward: "Alt+d";
+    kb-row-up: "Control+p,Control+k";
+    kb-mode-next: "Control+l";
+    kb-mode-previous: "Control+h";
+    kb-row-down: "Control+n,Control+j";
+    kb-accept-entry: "Return,KP_Enter";
+    terminal: "kitty";
+}
+
+@theme "/usr/share/rofi/themes/sidebar.rasi"

@@ -1,0 +1,31 @@
+rofi.modi: window,run
+rofi.width: 1250
+rofi.separator-style: none
+rofi.font: hack 10
+rofi.lines: 20
+rofi.location: 2
+rofi.yoffset: 100
+rofi.bw: 0
+rofi.hide-scrollbar: true
+rofi.columns: 1
+rofi.kb-row-tab: ""
+rofi.kb-row-select: Tab
+rofi.kb-remove-word-back: Alt+BackSpace
+rofi.kb-remove-word-forward: Alt+d
+rofi.line-margin: 1
+rofi.line-padding: 0
+rofi.kb-row-up: Control+k,Control+p
+rofi.kb-row-down: Control+j,Control+n
+rofi.kb-accept-entry: Return,KP_Enter
+rofi.terminal: kitty
+rofi.kb-mode-next: Control+l
+rofi.kb-mode-previous: Control+h
+rofi.kb-remove-to-eol: Control+Shift+e
+rofi.kb-remove-char-back: BackSpace
+
+rofi.fake-transparency: true
+rofi.opacity: 100
+rofi.color-window: #000000, #000000, #ffffff
+rofi.color-normal: #000000, #ffffff, #000000, #333333, #ffffff
+rofi.color-active: #000000, #ffffff, #000000, #666666, #ffffff
+rofi.color-urgent: #000000, #ffffff, #000000, #333333, #ffffff
