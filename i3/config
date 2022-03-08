@@ -235,6 +235,7 @@ bindsym --release $mod+Mod1+Ctrl+8 [con_mark="8"] focus
 bindsym --release $mod+Ctrl+9, sticky disable, mark "9", move scratchpad
 bindsym --release $mod+Mod1+9 [con_mark="9"] scratchpad show
 bindsym --release $mod+Mod1+Ctrl+9 [con_mark="9"] focus
+for_window [con_mark="9"] move absolute position 1120 px 19 px, resize set 800 700
 
 bindsym --release $mod+Ctrl+0, sticky disable, mark "0", move scratchpad
 bindsym --release $mod+Mod1+0 [con_mark="0"] scratchpad show
