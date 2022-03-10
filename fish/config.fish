@@ -13,11 +13,11 @@ alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 
 if type -q exa
-    alias l "exa -l -a --icons --color=never"
-    alias ll "exa -l -a -g --tree --level=2 --icons --color=never"
+    alias l "exa -l -ai --icons --color=never"
+    alias ll "exa -l -agi --tree --level=2 --icons --color=never"
 end
 
-function fish_right_prompt -d "Write out the right prompt"
+function fish_right_prompt -d "Write time on the right"
     date "+%T"
 end
 
