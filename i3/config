@@ -233,6 +233,8 @@ bindsym --release $mod+Mod1+Ctrl+0 [con_mark="0"] focus
 
 # setting positions for scratchpad windows
 for_window [con_mark="0"] move absolute position 920 px 580 px, resize set 1000 500
+for_window [con_mark="2"] move absolute position 720 px 19 px, resize set 1200 1061
+for_window [con_mark="3"] move absolute position 820 px 380 px, resize set 1100 700
 for_window [con_mark="9"] move absolute position 1120 px 19 px, resize set 800 950
 
 # overall scratchpads lvl2
@@ -256,7 +258,7 @@ bindsym --release $mod+Ctrl+F9, sticky disable, mark "i", move scratchpad
 bindsym $mod+Mod1+F9 [con_mark="i"] scratchpad show
 
 # go to mark
-bindsym $mod+Mod1+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto mark: '
+bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto mark: '
 
 # whole scratchpad
 #bindsym --release $mod+Mod1+minus move scratchpad

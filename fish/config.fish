@@ -13,8 +13,8 @@ alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 
 if type -q exa
-    alias l "exa -l -ai --icons --color=never"
-    alias ll "exa -l -agi --tree --level=2 --icons --color=never"
+    alias l "exa -aali --icons --color=never"
+    alias ll "exa -lagi --tree --level=2 --icons --color=never"
 end
 
 function fish_right_prompt -d "Write time on the right"
