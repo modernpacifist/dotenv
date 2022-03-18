@@ -11,6 +11,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
+alias _speedtest='curl -s \'https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py\' | python3.9 -'
 
 if type -q exa
     alias l "exa -aali --icons --color=never"
