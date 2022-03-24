@@ -260,7 +260,7 @@ bindsym --release $mod+Ctrl+F9, sticky disable, mark "i", move scratchpad
 bindsym $mod+Mod1+F9 [con_mark="i"] scratchpad show
 
 # go to mark
-bindsym $mod+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto mark: '
+bindsym $mod+Mod1+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto mark: '
 
 # whole scratchpad
 #bindsym --release $mod+Mod1+minus move scratchpad
