@@ -4,8 +4,8 @@
         "C-j": "peco.SelectDown",
         "Esc": "peco.Cancel",
         "C-c": "peco.Cancel",
-        "Tab": "peco.Finish",
-        "C-e": "peco.Finish"
+        "C-e": "peco.Finish",
+        "C-a": "peco.BeginningOfLine"
     },
     "Style": {
         "Basic": ["white", "on_black"],
