@@ -259,9 +259,6 @@ bindsym $mod+Mod1+F8 [con_mark="h"] scratchpad show
 bindsym --release $mod+Ctrl+F9, sticky disable, mark "i", move scratchpad
 bindsym $mod+Mod1+F9 [con_mark="i"] scratchpad show
 
-# goto mark
-bindsym $mod+Mod1+g exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto mark: '
-
 # whole scratchpad
 bindsym --release $mod+Mod1+equal [class=".*"] scratchpad show
 
@@ -382,6 +379,9 @@ bar {
 # For wallpaper
 exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallpaper.jpg
 
+# warpd
+exec_always --no-startup-id warpd 2>> /tmp/i3_warpd_startup.log
+
 # Hide cursor while typing
 exec --no-startup-id xbanish
 
@@ -405,7 +405,7 @@ client.placeholder      #000000 #000000 #ffffff #000000 #000000
 # For screenshot this command saves your screenshot to your buffer(no copy on your disk)
 bindsym --release Print exec flameshot gui
 
-# Enable/Disable touchpad
+## Enable/Disable touchpad
 bindsym --release $mod+Mod1+c exec __touchpad_toggle
 
 # Rofi run

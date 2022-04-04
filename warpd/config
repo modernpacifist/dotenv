@@ -1,0 +1,19 @@
+exit: capslock
+
+hint_oneshot_key: A-M-i
+hint_activation_key: A-M-o
+grid_activation_key: A-M-g
+activation_key: A-M-a
+speed: 200
+max_speed: 400
+
+buttons: z, x, c
+cursor_color: #00ffff
+copy_and_exit: y
+
+grid_keys: u, i, j, k
+
+hint_size: 20
+hint_bgcolor: #000000
+hint_fgcolor: #ffffff
+hint_border_radius: #ffffff
