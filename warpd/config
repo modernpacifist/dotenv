@@ -11,7 +11,7 @@ buttons: z, x, c
 cursor_color: #00ffff
 copy_and_exit: y
 
-grid_keys: u, i, j, k
+grid_keys: u, o, j, l
 
 hint_size: 20
 hint_bgcolor: #000000

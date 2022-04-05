@@ -237,7 +237,7 @@ for_window [con_mark="2"] move absolute position 720 px 19 px, resize set 1200 1
 for_window [con_mark="3"] move absolute position 820 px 380 px, resize set 1100 700
 for_window [con_mark="4"] move absolute position 0 px 19 px, resize set 1160 1061
 for_window [con_mark="8"] move absolute position 1020 px 580 px, resize set 900 500
-for_window [con_mark="9"] move absolute position 1080 px 19 px, resize set 840 950
+for_window [con_mark="9"] move absolute position 1020 px 580 px, resize set 900 500
 
 # overall scratchpads lvl2
 bindsym --release $mod+Ctrl+F1, sticky disable, mark "a", move scratchpad
@@ -258,6 +258,8 @@ bindsym --release $mod+Ctrl+F8, sticky disable, mark "h", move scratchpad
 bindsym $mod+Mod1+F8 [con_mark="h"] scratchpad show
 bindsym --release $mod+Ctrl+F9, sticky disable, mark "i", move scratchpad
 bindsym $mod+Mod1+F9 [con_mark="i"] scratchpad show
+bindsym --release $mod+Ctrl+F10, sticky disable, mark "j", move scratchpad
+bindsym $mod+Mod1+F10 [con_mark="j"] scratchpad show
 
 # whole scratchpad
 bindsym --release $mod+Mod1+equal [class=".*"] scratchpad show
