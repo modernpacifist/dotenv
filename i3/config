@@ -261,6 +261,8 @@ bindsym $mod+Mod1+F9 [con_mark="i"] scratchpad show
 bindsym --release $mod+Ctrl+F10, sticky disable, mark "j", move scratchpad
 bindsym $mod+Mod1+F10 [con_mark="j"] scratchpad show
 
+for_window [con_mark="j"] move absolute position 1080 px 19 px, resize set 840 950
+
 # whole scratchpad
 bindsym --release $mod+Mod1+equal [class=".*"] scratchpad show
 
