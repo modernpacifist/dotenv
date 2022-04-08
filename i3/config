@@ -384,7 +384,7 @@ bar {
 exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallpaper.jpg
 
 # warpd
-exec --no-startup-id warpd 2>> /tmp/i3_warpd_startup.log
+exec --no-startup-id warpd 2>> /tmp/i3_waprd_exec.log
 
 # Hide cursor while typing
 exec --no-startup-id xbanish

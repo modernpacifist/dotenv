@@ -4,6 +4,7 @@ hint_oneshot_key: A-M-i
 hint_activation_key: A-M-o
 grid_activation_key: A-M-g
 activation_key: A-M-a
+screen_activation_key: A-M-p
 speed: 200
 max_speed: 400
 
