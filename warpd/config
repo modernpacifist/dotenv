@@ -13,6 +13,7 @@ cursor_color: #00ffff
 copy_and_exit: y
 
 grid_keys: u, o, j, l
+grid_color: #ff0000
 
 hint_size: 20
 hint_bgcolor: #000000

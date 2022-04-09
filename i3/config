@@ -261,7 +261,8 @@ bindsym $mod+Mod1+F9 [con_mark="i"] scratchpad show
 bindsym --release $mod+Ctrl+F10, sticky disable, mark "j", move scratchpad
 bindsym $mod+Mod1+F10 [con_mark="j"] scratchpad show
 
-for_window [con_mark="j"] move absolute position 1080 px 19 px, resize set 840 950
+# setting positions for scratchpad windows || +right, +down, +right, +down
+for_window [con_mark="j"] move absolute position 1000 px 19 px, resize set 920 1061
 
 # whole scratchpad
 bindsym --release $mod+Mod1+equal [class=".*"] scratchpad show
@@ -341,6 +342,10 @@ mode "float-control" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
+
+# arrows with shortcuts instead of arrows
+bindsym --release Mod1+u exec xdotool key Up
+bindsym --release Mod1+d exec xdotool key Down
 
 bindsym --release $mod+Mod1+r mode "float-control"
 
