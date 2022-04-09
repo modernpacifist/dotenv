@@ -344,8 +344,8 @@ mode "float-control" {
 }
 
 # arrows with shortcuts instead of arrows
-bindsym --release Mod1+u exec xdotool key Up
-bindsym --release Mod1+d exec xdotool key Down
+bindsym --release Mod1+p exec xdotool key Up
+bindsym --release Mod1+n exec xdotool key Down
 
 bindsym --release $mod+Mod1+r mode "float-control"
 
