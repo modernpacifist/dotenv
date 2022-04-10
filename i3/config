@@ -344,8 +344,10 @@ mode "float-control" {
 }
 
 # arrows with shortcuts instead of arrows
-bindsym --release Mod1+p exec xdotool key --clearmodifiers --delay 0 Up 2> /dev/null
-bindsym --release Mod1+n exec xdotool key --clearmodifiers --delay 0 Down 2> /dev/null
+bindsym --release Mod1+k exec xdotool key --clearmodifiers --delay 0 Up 2> /dev/null
+bindsym --release Mod1+j exec xdotool key --clearmodifiers --delay 0 Down 2> /dev/null
+bindsym --release Mod1+l exec xdotool key --clearmodifiers --delay 0 Right 2> /dev/null
+bindsym --release Mod1+h exec xdotool key --clearmodifiers --delay 0 Left 2> /dev/null
 
 bindsym --release $mod+Mod1+r mode "float-control"
 
