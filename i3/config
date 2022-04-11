@@ -191,9 +191,8 @@ for_window [class="DevFloatingWindow"] floating enable
 for_window [class="Matplotlib"] floating enable, move absolute position 0 px 540 px, resize set 1000 540
 
 # telegram scratchpad
-for_window [class="TelegramDesktop" instance="telegram"] mark "t", sticky enable, floating enable, move scratchpad, move absolute position 1440 px 19 px, resize set 480 750
-bindsym --release $mod+Mod1+t [class="TelegramDesktop" instance="telegram"] scratchpad show
-bindsym --release $mod+Mod1+Ctrl+t [class="TelegramDesktop" instance="telegram"] focus
+for_window [class="TelegramDesktop" instance="telegram-desktop"] move absolute position 2940 px 29 px, resize set 900 1400, sticky enable, floating enable, move scratchpad
+bindsym --release $mod+Mod1+t [class="TelegramDesktop" instance="telegram-desktop"] scratchpad show
 
 # keybase scratchpad
 for_window [class="Keybase" instance="keybase"] sticky enable, floating enable, mark "k", move scratchpad
@@ -234,7 +233,7 @@ bindsym --release $mod+Mod1+Ctrl+0 [con_mark="0"] focus
 # setting positions for scratchpad windows || +right, +down, +right, +down
 for_window [con_mark="0"] move absolute position 1020 px 580 px, resize set 900 500
 for_window [con_mark="2"] move absolute position 720 px 19 px, resize set 1200 1061
-for_window [con_mark="3"] move absolute position 820 px 380 px, resize set 1100 700
+for_window [con_mark="3"] move absolute position 1840 px 760 px, resize set 2000 1400
 for_window [con_mark="4"] move absolute position 0 px 19 px, resize set 1160 1061
 for_window [con_mark="8"] move absolute position 1020 px 580 px, resize set 900 500
 for_window [con_mark="9"] move absolute position 1020 px 580 px, resize set 900 500
@@ -262,7 +261,7 @@ bindsym --release $mod+Ctrl+F10, sticky disable, mark "j", move scratchpad
 bindsym $mod+Mod1+F10 [con_mark="j"] scratchpad show
 
 # setting positions for scratchpad windows || +right, +down, +right, +down
-for_window [con_mark="j"] move absolute position 1000 px 19 px, resize set 920 1061
+for_window [con_mark="j"] move absolute position 2940 px 30 px, resize set 900 1400
 
 # whole scratchpad
 bindsym --release $mod+Mod1+equal [class=".*"] scratchpad show
@@ -357,9 +356,9 @@ bar {
     position top
     
     colors	{
-        background #000000
-        statusline #ffffff
-        separator #ffffff
+        background  #000000
+        statusline  #ffffff
+        separator   #ffffff
         #                  border  backgr. text
         focused_workspace  #ffffff #ffffff #000000
         active_workspace   #222222 #222222 #ffffff
@@ -376,9 +375,9 @@ bar {
     mode hide
 
     colors	{
-        background #000000
-        statusline #ffffff
-        separator #ffffff
+        background  #000000
+        statusline  #ffffff
+        separator   #ffffff
         #                  border  backgr. text
         focused_workspace  #ffffff #ffffff #000000
         active_workspace   #222222 #222222 #ffffff
@@ -415,6 +414,7 @@ client.placeholder      #000000 #000000 #ffffff #000000 #000000
 
 # For screenshot this command saves your screenshot to your buffer(no copy on your disk)
 bindsym --release Print exec flameshot gui
+bindsym --release $mod+Shift+s exec flameshot gui
 
 ## Enable/Disable touchpad
 bindsym --release $mod+Mod1+c exec __touchpad_toggle
