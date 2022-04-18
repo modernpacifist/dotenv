@@ -1,0 +1,8 @@
+#!/bin/env bash
+exited_containers=$(docker ps -a -q -f status=exited)
+if [[ ! -z $exited_containers ]]; then 
+    docker rm $exited_containers
+else
+    echo "No containers to cleanup"
+    exit 0
+fi

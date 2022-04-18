@@ -190,6 +190,9 @@ bindsym --release $mod+p workspace prev
 bindsym --release $mod+Shift+n move container to workspace next
 bindsym --release $mod+Shift+p move container to workspace prev
 
+# pop-up windows always floating
+for_window [window_role="pop-up"] floating enable
+
 # programming-spawned windows
 for_window [class="DevFloatingWindow"] floating enable
 
