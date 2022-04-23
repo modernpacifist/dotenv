@@ -1,0 +1,15 @@
+#!/bin/env bash
+if [[ -z $1 ]]; then
+    echo 'specify the file in $1'
+    exit 1
+fi
+
+cp $1 $1_copy
+# check executable permissions of the copy
+if [[ ! -x $1_copy ]]; then
+    chmod +x $1_copy
+fi
+./$1_copy
+rm ./$1_copy
+
+exit 0
