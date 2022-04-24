@@ -9,6 +9,6 @@ cp $1 $1_copy
 if [[ ! -x $1_copy ]]; then
     chmod +x $1_copy
 fi
-./$1_copy
+./$1_copy $2
 
 exit 0
