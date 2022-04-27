@@ -1,0 +1,8 @@
+#!/bin/env bash
+if [[ -z $1 ]]; 
+then
+    echo 'specify the file in $1'
+    exit 1
+else
+    cat $1 | jq
+fi

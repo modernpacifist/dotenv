@@ -5,6 +5,7 @@ set -x PATH $PATH /sbin/
 set -x PATH $PATH /usr/local/go/bin
 
 abbr -a -- - 'cd -'
+alias cls='clear'
 alias .='pwd'
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -14,7 +15,7 @@ alias ......='cd ../../../../..'
 alias _speedtest='curl -s \'https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py\' | python3.9 -'
 
 if type -q exa
-    alias l "exa -aali --icons --color=never"
+    alias l "exa -aalig --icons --color=never"
     alias ll "exa -lagi --tree --level=2 --icons --color=never"
 end
 
