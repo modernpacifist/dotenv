@@ -10,8 +10,8 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 set $mod Mod4
 
-#set_from_resource $mark_0_abs_position_x i3wm.mark_0_abs_position_x 920
-#set_from_resource $mark_0_abs_position_y i3wm.mark_0_abs_position_y 500
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
 
 set_from_resource $telegram_abs_position_x i3wm.telegram_abs_position_x 920
 set_from_resource $telegram_abs_position_y i3wm.telegram_abs_position_y 29
@@ -23,13 +23,18 @@ set_from_resource $mark_0_abs_position_y i3wm.mark_0_abs_position_y 1160
 set_from_resource $mark_0_size_1 i3wm.mark_0_size_1 1920
 set_from_resource $mark_0_size_2 i3wm.mark_0_size_2 1000
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-font pango:monospace 8
+set_from_resource $mark_2_abs_position_x i3wm.mark_2_abs_position_x 1920
+set_from_resource $mark_2_abs_position_y i3wm.mark_2_abs_position_y 1160
+set_from_resource $mark_2_size_1 i3wm.mark_2_size_1 1920
+set_from_resource $mark_2_size_2 i3wm.mark_2_size_2 1000
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+set_from_resource $mark_j_abs_position_x i3wm.mark_j_abs_position_x 2040
+set_from_resource $mark_j_abs_position_y i3wm.mark_j_abs_position_y 29
+set_from_resource $mark_j_size_1 i3wm.mark_j_size_1 1800
+set_from_resource $mark_j_size_2 i3wm.mark_j_size_2 2131
+
+# Font for window titles. Will also be used by the bar unless a different font is used in the bar {} block below.
+font pango:monospace 8
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -55,13 +60,10 @@ bindsym --release Mod1+F8 exec playerctl play-pause
 bindsym --release Mod1+F9 exec playerctl next 
 bindsym --release Mod1+F7 exec playerctl previous
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
 # Manually lock the system
 bindsym --release $mod+Mod1+Ctrl+Shift+l exec i3lock lock --color=000000 -t
 
-# mouse impact
+# Mouse impact
 focus_follows_mouse no
 mouse_warping output
 
@@ -199,9 +201,11 @@ bindsym --release $mod+Shift+p move container to workspace prev
 # pop-up windows always floating
 for_window [window_role="pop-up"] floating enable
 
+# not focused windows
+no_focus [class="Firefox-esr" instance="Navigator"]
+
 # programming-spawned windows
 for_window [class="DevFloatingWindow"] floating enable
-
 for_window [class="Matplotlib"] floating enable, move absolute position 0 px 540 px, resize set 1000 540
 
 # telegram scratchpad
@@ -253,7 +257,7 @@ bindsym --release $mod+Mod1+Ctrl+0 [con_mark="0"] focus
 
 # setting positions for scratchpad windows || +right, +down, +right, +down
 for_window [con_mark="0"] move absolute position $mark_0_abs_position_x px $mark_0_abs_position_y px, resize set $mark_0_size_1 $mark_0_size_2
-for_window [con_mark="2"] move absolute position 720 px 19 px, resize set 1200 1061
+for_window [con_mark="2"] move absolute position $mark_2_abs_position_x px $mark_2_abs_position_y px, resize set $mark_2_size_1 $mark_2_size_2
 for_window [con_mark="3"] move absolute position 1840 px 760 px, resize set 2000 1400
 for_window [con_mark="4"] move absolute position 0 px 19 px, resize set 1160 1061
 for_window [con_mark="8"] move absolute position 1020 px 580 px, resize set 900 500
@@ -283,8 +287,8 @@ bindsym $mod+Mod1+F9 [con_mark="i"] scratchpad show
 bindsym $mod+Mod1+F10 [con_mark="j"] scratchpad show
 
 # setting positions for scratchpad windows || +right, +down, +right, +down
-#for_window [con_mark="j"] move absolute position 1000 px 19 px, resize set 920 1061
-for_window [con_mark="j"] move absolute position 2340 px 29 px, resize set 1500 2000
+#for_window [con_mark="j"] move absolute position 2040 px 29 px, resize set 1800 2131
+for_window [con_mark="j"] move absolute position $mark_j_abs_position_x px $mark_j_abs_position_y px, resize set $mark_j_size_1 $mark_j_size_2
 for_window [con_mark="i"] move absolute position 2940 px 30 px, resize set 900 1400
 for_window [con_mark="a"] move absolute position 0 px 19 px, resize set 1000 1061
 
@@ -370,31 +374,31 @@ bindsym --release $mod+Mod1+r mode "float-control"
 
 # bug here
 mode "float-scale" {
-    bindsym h resize shrink width 1 px or 1 ppt, move container right 1 px
+    bindsym l resize shrink width 1 px or 1 ppt, move container right 1 px
     bindsym k resize grow height 1 px or 1 ppt, move container up 1 px
     bindsym j resize shrink height 1 px or 1 ppt, move container down 1 px
-    bindsym l resize grow width 1 px or 1 ppt, move container left 1 px
+    bindsym h resize grow width 1 px or 1 ppt, move container left 1 px
 
-    bindsym Mod1+h resize shrink width 20 px or 20 ppt, move container right 20 px
+    bindsym Mod1+l resize shrink width 20 px or 20 ppt, move container right 20 px
     bindsym Mod1+k resize grow height 20 px or 20 ppt, move container up 20 px
     bindsym Mod1+j resize shrink height 20 px or 20 ppt, move container down 20 px
-    bindsym Mod1+l resize grow width 20 px or 20 ppt, move container left 20 px
+    bindsym Mod1+h resize grow width 20 px or 20 ppt, move container left 20 px
 
-    bindsym Ctrl+h resize shrink width 40 px or 40 ppt, move container right 40 px
+    bindsym Ctrl+l resize shrink width 40 px or 40 ppt, move container right 40 px
     bindsym Ctrl+k resize grow height 40 px or 40 ppt, move container up 40 px
     bindsym Ctrl+j resize shrink height 40 px or 40 ppt, move container down 40 px
-    bindsym Ctrl+l resize grow width 40 px or 40 ppt, move container left 40 px
+    bindsym Ctrl+h resize grow width 40 px or 40 ppt, move container left 40 px
 
-    bindsym Shift+h resize shrink width 200 px or 200 ppt, move container right 200 px
+    bindsym Shift+l resize shrink width 200 px or 200 ppt, move container right 200 px
     bindsym Shift+k resize grow height 200 px or 200 ppt, move container up 200 px
     bindsym Shift+j resize shrink height 200 px or 200 ppt, move container down 200 px
-    bindsym Shift+l resize grow width 200 px or 200 ppt, move container left 200 px
+    bindsym Shift+h resize grow width 200 px or 200 ppt, move container left 200 px
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 
-bindsym --release $mod+Mod1+Shift+r mode "float-scale"
+bindsym --release $mod+Mod1+Ctrl+r mode "float-scale"
 
 # arrows with shortcuts instead of arrows
 bindsym --release Mod1+k exec xdotool key --clearmodifiers --delay 0 Up 2> /dev/null
@@ -406,16 +410,33 @@ bar {
     output primary
     status_command i3status --config $HOME/.config/i3/i3status.conf | i3-keyboard-layout i3status | _get_current_track
     position top
-    
+
     colors	{
-        background  #000000
-        statusline  #ffffff
-        separator   #ffffff
-        #                  border  backgr. text
-        focused_workspace  #ffffff #ffffff #000000
-        active_workspace   #222222 #222222 #ffffff
-        inactive_workspace #111111 #111111 #ffffff
-        urgent_workspace   #900000 #900000 #ffffff
+        background          #000000
+        statusline          #ffffff
+        separator           #ffffff
+        #                   border     backgr.    text
+        focused_workspace   #ffffff    #ffffff    #000000
+        active_workspace    #222222    #222222    #ffffff
+        inactive_workspace  #111111    #111111    #ffffff
+        urgent_workspace    #900000    #900000    #ffffff
+    }
+}
+
+bar {
+    output nonprimary
+    position top
+    mode hide
+
+    colors	{
+        background          #000000
+        statusline          #ffffff
+        separator           #ffffff
+        #                   border     backgr.    text
+        focused_workspace   #ffffff    #ffffff    #000000
+        active_workspace    #222222    #222222    #ffffff
+        inactive_workspace  #111111    #111111    #ffffff
+        urgent_workspace    #900000    #900000    #ffffff
     }
 }
 
@@ -435,15 +456,15 @@ exec --no-startup-id _screendim_off
 bindsym --release $mod+space exec i3-keyboard-layout cycle us ru
 
 # For keyboard speed             dly speed
-exec_always --no-startup-id xset r rate 225 150
+exec_always --no-startup-id exec xset r rate 225 150
 
 # Env colors
-# Class                 border  backgr. text    indicator child_border
-client.focused          #ffffff #ffffff #000000 #000000 #ffffff
-client.focused_inactive #222222 #222222 #ffffff #222222 #111111
-client.unfocused        #111111 #111111 #ffffff #111111 #111111
-client.urgent           #900000 #900000 #ffffff #900000 #900000
-client.placeholder      #000000 #000000 #ffffff #000000 #000000
+# Class                 border     backgr.    text       indicator  child_border
+client.focused          #ffffff    #ffffff    #000000    #000000    #ffffff
+client.focused_inactive #222222    #222222    #ffffff    #222222    #111111
+client.unfocused        #111111    #111111    #ffffff    #111111    #111111
+client.urgent           #900000    #900000    #ffffff    #900000    #900000
+client.placeholder      #000000    #000000    #ffffff    #000000    #000000
 
 # For screenshot this command saves your screenshot to your buffer(no copy on your disk)
 bindsym --release Print exec flameshot gui
