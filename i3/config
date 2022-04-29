@@ -23,10 +23,10 @@ set_from_resource $mark_0_abs_position_y i3wm.mark_0_abs_position_y 1160
 set_from_resource $mark_0_size_1 i3wm.mark_0_size_1 1920
 set_from_resource $mark_0_size_2 i3wm.mark_0_size_2 1000
 
-set_from_resource $mark_2_abs_position_x i3wm.mark_2_abs_position_x 1920
-set_from_resource $mark_2_abs_position_y i3wm.mark_2_abs_position_y 1160
-set_from_resource $mark_2_size_1 i3wm.mark_2_size_1 1920
-set_from_resource $mark_2_size_2 i3wm.mark_2_size_2 1000
+set_from_resource $mark_2_abs_position_x i3wm.mark_2_abs_position_x 1420
+set_from_resource $mark_2_abs_position_y i3wm.mark_2_abs_position_y 29
+set_from_resource $mark_2_size_1 i3wm.mark_2_size_1 2420
+set_from_resource $mark_2_size_2 i3wm.mark_2_size_2 2131
 
 set_from_resource $mark_j_abs_position_x i3wm.mark_j_abs_position_x 2040
 set_from_resource $mark_j_abs_position_y i3wm.mark_j_abs_position_y 29
@@ -406,10 +406,12 @@ bindsym --release Mod1+j exec xdotool key --clearmodifiers --delay 0 Down 2> /de
 bindsym --release Mod1+l exec xdotool key --clearmodifiers --delay 0 Right 2> /dev/null
 bindsym --release Mod1+h exec xdotool key --clearmodifiers --delay 0 Left 2> /dev/null
 
+
 bar {
     output primary
     status_command i3status --config $HOME/.config/i3/i3status.conf | i3-keyboard-layout i3status | _get_current_track
     position top
+    tray_output primary
 
     colors	{
         background          #000000
@@ -427,6 +429,7 @@ bar {
     output nonprimary
     position top
     mode hide
+    tray_output none
 
     colors	{
         background          #000000
