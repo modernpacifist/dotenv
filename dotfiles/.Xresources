@@ -24,6 +24,11 @@ rofi.dpi: 144
 *mark_2_size_1: 2420
 *mark_2_size_2: 2131
 
+*mark_i_abs_position_x: 2040
+*mark_i_abs_position_y: 29
+*mark_i_size_1: 1800
+*mark_i_size_2: 2131
+
 *mark_j_abs_position_x: 2040
 *mark_j_abs_position_y: 29
 *mark_j_size_1: 1800

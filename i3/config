@@ -28,6 +28,11 @@ set_from_resource $mark_2_abs_position_y i3wm.mark_2_abs_position_y 29
 set_from_resource $mark_2_size_1 i3wm.mark_2_size_1 2420
 set_from_resource $mark_2_size_2 i3wm.mark_2_size_2 2131
 
+set_from_resource $mark_i_abs_position_x i3wm.mark_i_abs_position_x 2040
+set_from_resource $mark_i_abs_position_y i3wm.mark_i_abs_position_y 29
+set_from_resource $mark_i_size_1 i3wm.mark_i_size_1 1800
+set_from_resource $mark_i_size_2 i3wm.mark_i_size_2 2131
+
 set_from_resource $mark_j_abs_position_x i3wm.mark_j_abs_position_x 2040
 set_from_resource $mark_j_abs_position_y i3wm.mark_j_abs_position_y 29
 set_from_resource $mark_j_size_1 i3wm.mark_j_size_1 1800
@@ -287,9 +292,8 @@ bindsym $mod+Mod1+F9 [con_mark="i"] scratchpad show
 bindsym $mod+Mod1+F10 [con_mark="j"] scratchpad show
 
 # setting positions for scratchpad windows || +right, +down, +right, +down
-#for_window [con_mark="j"] move absolute position 2040 px 29 px, resize set 1800 2131
+for_window [con_mark="i"] move absolute position $mark_i_abs_position_x px $mark_i_abs_position_y px, resize set $mark_i_size_1 $mark_i_size_2
 for_window [con_mark="j"] move absolute position $mark_j_abs_position_x px $mark_j_abs_position_y px, resize set $mark_j_size_1 $mark_j_size_2
-for_window [con_mark="i"] move absolute position 2940 px 30 px, resize set 900 1400
 for_window [con_mark="a"] move absolute position 0 px 19 px, resize set 1000 1061
 
 # whole scratchpad
