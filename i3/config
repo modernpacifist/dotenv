@@ -28,6 +28,11 @@ set_from_resource $mark_2_abs_position_y i3wm.mark_2_abs_position_y 29
 set_from_resource $mark_2_size_1 i3wm.mark_2_size_1 2420
 set_from_resource $mark_2_size_2 i3wm.mark_2_size_2 2131
 
+set_from_resource $mark_3_abs_position_x i3wm.mark_3_abs_position_x 1840
+set_from_resource $mark_3_abs_position_y i3wm.mark_3_abs_position_y 760
+set_from_resource $mark_3_size_1 i3wm.mark_3_size_1 2000
+set_from_resource $mark_3_size_2 i3wm.mark_3_size_2 1400
+
 set_from_resource $mark_i_abs_position_x i3wm.mark_i_abs_position_x 2040
 set_from_resource $mark_i_abs_position_y i3wm.mark_i_abs_position_y 29
 set_from_resource $mark_i_size_1 i3wm.mark_i_size_1 1800
@@ -44,6 +49,11 @@ font pango:monospace 8
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+
+# reload the configuration file
+bindsym --release $mod+Escape reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym --release $mod+Shift+Escape restart
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym --release XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2%
@@ -75,7 +85,7 @@ mouse_warping output
 # Start a terminal (kitty - my case)
 bindsym --release $mod+Return exec kitty
 
-# Styles for windows
+# Options for windows
 title_align left
 hide_edge_borders smart
 show_marks yes
@@ -214,8 +224,8 @@ for_window [class="DevFloatingWindow"] floating enable
 for_window [class="Matplotlib"] floating enable, move absolute position 0 px 540 px, resize set 1000 540
 
 # telegram scratchpad
-for_window [class="TelegramDesktop" instance="telegram-desktop"], floating enable move absolute position $telegram_abs_position_x px $telegram_abs_position_y px, resize set $telegram_size_1 $telegram_size_2, sticky enable, move scratchpad
-bindsym --release $mod+Mod1+t [class="TelegramDesktop" instance="telegram-desktop"] scratchpad show
+for_window [class="TelegramDesktop" instance="telegram-desktop"], floating enable, move scratchpad, sticky enable
+bindsym --release $mod+Mod1+t [class="TelegramDesktop" instance="telegram-desktop"] scratchpad show, move absolute position $telegram_abs_position_x px $telegram_abs_position_y px, resize set $telegram_size_1 $telegram_size_2
 
 # keybase scratchpad
 for_window [class="Keybase" instance="keybase"] sticky enable, floating enable, move scratchpad
@@ -223,15 +233,15 @@ bindsym --release $mod+Mod1+e [class="Keybase" instance="keybase"] scratchpad sh
 
 # overall scratchpads
 bindsym --release $mod+Ctrl+1, sticky disable, mark "1", move scratchpad, [con_mark="1"] scratchpad show
-bindsym --release $mod+Ctrl+2, sticky disable, mark "2", move scratchpad, [con_mark="2"] scratchpad show
-bindsym --release $mod+Ctrl+3, sticky disable, mark "3", move scratchpad, [con_mark="3"] scratchpad show
-bindsym --release $mod+Ctrl+4, sticky disable, mark "4", move scratchpad, [con_mark="4"] scratchpad show
+bindsym --release $mod+Ctrl+2, sticky disable, mark "2", move scratchpad, [con_mark="2"] scratchpad show, move absolute position $mark_2_abs_position_x px $mark_2_abs_position_y px, resize set $mark_2_size_1 $mark_2_size_2
+bindsym --release $mod+Ctrl+3, sticky disable, mark "3", move scratchpad, [con_mark="3"] scratchpad show, move absolute position $mark_3_abs_position_x px $mark_3_abs_position_y px, resize set $mark_3_size_1 $mark_3_size_2
+bindsym --release $mod+Ctrl+4, sticky disable, mark "4", move scratchpad, [con_mark="4"] scratchpad show, move absolute position 0 px 29 px, resize set 1160 1061
 bindsym --release $mod+Ctrl+5, sticky disable, mark "5", move scratchpad, [con_mark="5"] scratchpad show
 bindsym --release $mod+Ctrl+6, sticky disable, mark "6", move scratchpad, [con_mark="6"] scratchpad show
 bindsym --release $mod+Ctrl+7, sticky disable, mark "7", move scratchpad, [con_mark="7"] scratchpad show
-bindsym --release $mod+Ctrl+8, sticky disable, mark "8", move scratchpad, [con_mark="8"] scratchpad show
-bindsym --release $mod+Ctrl+9, sticky disable, mark "9", move scratchpad, [con_mark="9"] scratchpad show
-bindsym --release $mod+Ctrl+0, sticky disable, mark "0", move scratchpad, [con_mark="0"] scratchpad show
+bindsym --release $mod+Ctrl+8, sticky disable, mark "8", move scratchpad, [con_mark="8"] scratchpad show, move absolute position 1020 px 580 px, resize set 900 500
+bindsym --release $mod+Ctrl+9, sticky disable, mark "9", move scratchpad, [con_mark="9"] scratchpad show, move absolute position 1020 px 580 px, resize set 900 500
+bindsym --release $mod+Ctrl+0, sticky disable, mark "0", move scratchpad, [con_mark="0"] scratchpad show, move absolute position $mark_0_abs_position_x px $mark_0_abs_position_y px, resize set $mark_0_size_1 $mark_0_size_2
 
 # moving particular marked window to your currently focused ws
 bindsym --release $mod+Mod1+1 [con_mark="1"] scratchpad show
@@ -260,16 +270,8 @@ bindsym --release $mod+Mod1+Ctrl+8 [con_mark="8"] focus
 bindsym --release $mod+Mod1+Ctrl+9 [con_mark="9"] focus
 bindsym --release $mod+Mod1+Ctrl+0 [con_mark="0"] focus
 
-# setting positions for scratchpad windows || +right, +down, +right, +down
-for_window [con_mark="0"] move absolute position $mark_0_abs_position_x px $mark_0_abs_position_y px, resize set $mark_0_size_1 $mark_0_size_2
-for_window [con_mark="2"] move absolute position $mark_2_abs_position_x px $mark_2_abs_position_y px, resize set $mark_2_size_1 $mark_2_size_2
-for_window [con_mark="3"] move absolute position 1840 px 760 px, resize set 2000 1400
-for_window [con_mark="4"] move absolute position 0 px 19 px, resize set 1160 1061
-for_window [con_mark="8"] move absolute position 1020 px 580 px, resize set 900 500
-for_window [con_mark="9"] move absolute position 1020 px 580 px, resize set 900 500
-
-# overall scratchpads lvl2
-bindsym --release $mod+Ctrl+F1, sticky disable, mark "a", move scratchpad
+# overall scratchpads lvl2, absolute positions: for scratchpad windows || +right, +down, +right, +down
+bindsym --release $mod+Ctrl+F1, sticky disable, mark "a", move scratchpad, [con_mark="a"] scratchpad show, move absolute position 0 px 19 px, resize set 1000 1061
 bindsym --release $mod+Ctrl+F2, sticky disable, mark "b", move scratchpad
 bindsym --release $mod+Ctrl+F3, sticky disable, mark "c", move scratchpad
 bindsym --release $mod+Ctrl+F4, sticky disable, mark "d", move scratchpad
@@ -277,8 +279,8 @@ bindsym --release $mod+Ctrl+F5, sticky disable, mark "e", move scratchpad
 bindsym --release $mod+Ctrl+F6, sticky disable, mark "f", move scratchpad
 bindsym --release $mod+Ctrl+F7, sticky disable, mark "g", move scratchpad
 bindsym --release $mod+Ctrl+F8, sticky disable, mark "h", move scratchpad
-bindsym --release $mod+Ctrl+F9, sticky disable, mark "i", move scratchpad
-bindsym --release $mod+Ctrl+F10, sticky disable, mark "j", move scratchpad
+bindsym --release $mod+Ctrl+F9, sticky disable, mark "i", move scratchpad, [con_mark="i"] scratchpad show, move absolute position $mark_i_abs_position_x px $mark_i_abs_position_y px, resize set $mark_i_size_1 $mark_i_size_2
+bindsym --release $mod+Ctrl+F10, sticky disable, mark "j", move scratchpad, [con_mark="j"] scratchpad show, move absolute position $mark_j_abs_position_x px $mark_j_abs_position_y px, resize set $mark_j_size_1 $mark_j_size_2
 
 bindsym $mod+Mod1+F1 [con_mark="a"] scratchpad show
 bindsym $mod+Mod1+F2 [con_mark="b"] scratchpad show
@@ -291,18 +293,8 @@ bindsym $mod+Mod1+F8 [con_mark="h"] scratchpad show
 bindsym $mod+Mod1+F9 [con_mark="i"] scratchpad show
 bindsym $mod+Mod1+F10 [con_mark="j"] scratchpad show
 
-# setting positions for scratchpad windows || +right, +down, +right, +down
-for_window [con_mark="i"] move absolute position $mark_i_abs_position_x px $mark_i_abs_position_y px, resize set $mark_i_size_1 $mark_i_size_2
-for_window [con_mark="j"] move absolute position $mark_j_abs_position_x px $mark_j_abs_position_y px, resize set $mark_j_size_1 $mark_j_size_2
-for_window [con_mark="a"] move absolute position 0 px 19 px, resize set 1000 1061
-
 # whole scratchpad
 bindsym --release $mod+Mod1+equal [class=".*"] scratchpad show
-
-# reload the configuration file
-bindsym --release $mod+Escape reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym --release $mod+Shift+Escape restart
 
 mode "resize" {
     bindsym h resize shrink width 1 px or 1 ppt
