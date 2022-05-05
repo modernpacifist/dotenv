@@ -4,6 +4,6 @@ then
     echo "No file specified"
     exit 1
 else
-    file $1 | tr "," "\n"
+    file $1 | sed 's/,\ /\n/g'
     exit 0
 fi
