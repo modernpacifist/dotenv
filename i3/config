@@ -401,6 +401,23 @@ mode "float-scale" {
 
 bindsym --release $mod+Mod1+Ctrl+r mode "float-scale"
 
+mode "float-window-position" {
+    bindsym --release z exec __move 1
+    bindsym --release x exec __move 2
+    bindsym --release c exec __move 3
+    bindsym --release a exec __move 4
+    bindsym --release s exec __move 5
+    bindsym --release d exec __move 6
+    bindsym --release q exec __move 7
+    bindsym --release w exec __move 8
+    bindsym --release e exec __move 9
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym --release $mod+Mod1+w mode "float-window-position"
+
 # arrows with shortcuts instead of arrows
 bindsym --release Mod1+k exec xdotool key --clearmodifiers --delay 0 Up 2> /dev/null
 bindsym --release Mod1+j exec xdotool key --clearmodifiers --delay 0 Down 2> /dev/null
