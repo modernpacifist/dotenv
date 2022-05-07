@@ -14,11 +14,6 @@ rofi.dpi: 144
 *telegram_size_1: 900
 *telegram_size_2: 1400
 
-*mark_0_abs_position_x: 1920
-*mark_0_abs_position_y: 1160
-*mark_0_size_1: 1920
-*mark_0_size_2: 1000
-
 *mark_2_abs_position_x: 1420
 *mark_2_abs_position_y: 29
 *mark_2_size_1: 2420
@@ -28,6 +23,16 @@ rofi.dpi: 144
 *mark_3_abs_position_y: 760
 *mark_3_size_1: 2000
 *mark_3_size_2: 1400
+
+*mark_9_abs_position_x: 1920
+*mark_9_abs_position_y: 1160
+*mark_9_size_1: 1920
+*mark_9_size_2: 1000
+
+*mark_0_abs_position_x: 1920
+*mark_0_abs_position_y: 1160
+*mark_0_size_1: 1920
+*mark_0_size_2: 1000
 
 *mark_i_abs_position_x: 2040
 *mark_i_abs_position_y: 29

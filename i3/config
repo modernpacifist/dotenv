@@ -18,11 +18,6 @@ set_from_resource $telegram_abs_position_y i3wm.telegram_abs_position_y 29
 set_from_resource $telegram_size_1 i3wm.telegram_size_1 900
 set_from_resource $telegram_size_2 i3wm.telegram_size_2 1400
 
-set_from_resource $mark_0_abs_position_x i3wm.mark_0_abs_position_x 1920
-set_from_resource $mark_0_abs_position_y i3wm.mark_0_abs_position_y 1160
-set_from_resource $mark_0_size_1 i3wm.mark_0_size_1 1920
-set_from_resource $mark_0_size_2 i3wm.mark_0_size_2 1000
-
 set_from_resource $mark_2_abs_position_x i3wm.mark_2_abs_position_x 1420
 set_from_resource $mark_2_abs_position_y i3wm.mark_2_abs_position_y 29
 set_from_resource $mark_2_size_1 i3wm.mark_2_size_1 2420
@@ -32,6 +27,16 @@ set_from_resource $mark_3_abs_position_x i3wm.mark_3_abs_position_x 1840
 set_from_resource $mark_3_abs_position_y i3wm.mark_3_abs_position_y 760
 set_from_resource $mark_3_size_1 i3wm.mark_3_size_1 2000
 set_from_resource $mark_3_size_2 i3wm.mark_3_size_2 1400
+
+set_from_resource $mark_9_abs_position_x i3wm.mark_9_abs_position_x 1920
+set_from_resource $mark_9_abs_position_y i3wm.mark_9_abs_position_y 1160
+set_from_resource $mark_9_size_1 i3wm.mark_9_size_1 1920
+set_from_resource $mark_9_size_2 i3wm.mark_9_size_2 1000
+
+set_from_resource $mark_0_abs_position_x i3wm.mark_0_abs_position_x 1920
+set_from_resource $mark_0_abs_position_y i3wm.mark_0_abs_position_y 1160
+set_from_resource $mark_0_size_1 i3wm.mark_0_size_1 1920
+set_from_resource $mark_0_size_2 i3wm.mark_0_size_2 1000
 
 set_from_resource $mark_i_abs_position_x i3wm.mark_i_abs_position_x 2040
 set_from_resource $mark_i_abs_position_y i3wm.mark_i_abs_position_y 29
@@ -240,7 +245,7 @@ bindsym --release $mod+Ctrl+5, sticky disable, mark "5", move scratchpad, [con_m
 bindsym --release $mod+Ctrl+6, sticky disable, mark "6", move scratchpad, [con_mark="6"] scratchpad show
 bindsym --release $mod+Ctrl+7, sticky disable, mark "7", move scratchpad, [con_mark="7"] scratchpad show
 bindsym --release $mod+Ctrl+8, sticky disable, mark "8", move scratchpad, [con_mark="8"] scratchpad show, move absolute position 1020 px 580 px, resize set 900 500
-bindsym --release $mod+Ctrl+9, sticky disable, mark "9", move scratchpad, [con_mark="9"] scratchpad show, move absolute position 1020 px 580 px, resize set 900 500
+bindsym --release $mod+Ctrl+9, sticky disable, mark "9", move scratchpad, [con_mark="9"] scratchpad show, move absolute position $mark_9_abs_position_x px $mark_9_abs_position_y px, resize set $mark_9_size_1 $mark_9_size_2
 bindsym --release $mod+Ctrl+0, sticky disable, mark "0", move scratchpad, [con_mark="0"] scratchpad show, move absolute position $mark_0_abs_position_x px $mark_0_abs_position_y px, resize set $mark_0_size_1 $mark_0_size_2
 
 # moving particular marked window to your currently focused ws
