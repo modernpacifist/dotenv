@@ -399,7 +399,7 @@ mode "float-scale" {
     bindsym Escape mode "default"
 }
 
-bindsym --release $mod+Mod1+Ctrl+r mode "float-scale"
+bindsym --release $mod+Ctrl+Mod1+r mode "float-scale"
 
 mode "float-window-position" {
     bindsym --release z exec __move_float_window 1
@@ -416,7 +416,7 @@ mode "float-window-position" {
     bindsym Escape mode "default"
 }
 
-bindsym --release $mod+Mod1+w mode "float-window-position"
+bindsym --release $mod+Ctrl+Mod1+w mode "float-window-position"
 
 # arrows with shortcuts instead of arrows
 bindsym --release Mod1+k exec xdotool key --clearmodifiers --delay 0 Up 2> /dev/null
