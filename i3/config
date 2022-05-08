@@ -149,7 +149,7 @@ bindsym --release $mod+Ctrl+v split h
 bindsym --release $mod+f fullscreen toggle
 
 # toggle tiling / floating
-bindsym --release $mod+Mod1+space floating toggle
+bindsym --release $mod+Mod1+space floating toggle, move position center
 
 # change focus between tiling / floating windows
 bindsym --release $mod+Mod1+Tab focus mode_toggle
@@ -297,6 +297,9 @@ bindsym $mod+Mod1+F7 [con_mark="g"] scratchpad show
 bindsym $mod+Mod1+F8 [con_mark="h"] scratchpad show
 bindsym $mod+Mod1+F9 [con_mark="i"] scratchpad show
 bindsym $mod+Mod1+F10 [con_mark="j"] scratchpad show
+
+# swap marked containers
+bindsym --release $mod+Ctrl+Mod1+s exec i3-input -F 'swap container with mark %s' -l 1 -P 'Swap with: '
 
 # whole scratchpad
 bindsym --release $mod+Mod1+equal [class=".*"] scratchpad show
