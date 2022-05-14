@@ -19,6 +19,7 @@ Plugin 'klen/python-mode'
 Plugin 'itchyny/vim-gitbranch'
 Plugin 'fatih/vim-go'
 Plugin 'bitfield/vim-gitgo'
+"Plugin 'vim-ctrlspace/vim-ctrlspace'
 
 call vundle#end()
 
@@ -43,6 +44,7 @@ set incsearch
 set showcmd
 set noswapfile
 set ttimeout
+set timeoutlen=5000
 set ttimeoutlen=0
 set completeopt+=longest,menuone,noinsert
 set completeopt-=preview
@@ -51,6 +53,8 @@ set laststatus=2
 set background=dark
 set cursorline
 set number relativenumber
+set splitright
+set splitbelow
 
 set statusline+=%#LineNr#
 set statusline+=\ [%{gitbranch#name()}]
@@ -101,8 +105,8 @@ noremap <F10> :x<CR>
 noremap <F11> :xa<CR>
 noremap <F12> :qa!<CR>
 
-noremap <leader>y "+y
-noremap <leader>p "+p
+noremap <Leader>y "+y
+noremap <Leader>p "+p
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -110,24 +114,33 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " substitute word under cursor
-nnoremap <Leader>s :%s/\<<C-r><C-w>\>//gI<Left><Left><Left>
+nnoremap <Leader>s :argdo %s/\<<C-r><C-w>\>//gIe<Left><Left><Left><Left>
 
 " tabs management 
-nnoremap tk  :tabnext<CR>
-nnoremap tj  :tabprev<CR>
-nnoremap tl  :tablast<CR>
-nnoremap t< :-tabmove<CR>
-nnoremap t> :+tabmove<CR>
-nnoremap th  :tabfirst<CR>
-nnoremap tw  :tabclose<CR>
-nnoremap tn  :tabnew<Space>
+nnoremap <Leader>tk  :tabnext<CR>
+nnoremap <Leader>tj  :tabprev<CR>
+nnoremap <Leader>t< :-tabmove<CR>
+nnoremap <Leader>t> :+tabmove<CR>
+nnoremap <Leader>tw  :tabclose<CR>
+nnoremap <Leader>tn  :tabnew<Space>
+
+nnoremap <Leader>t1  :tabn 1<CR>
+nnoremap <Leader>t2  :tabn 2<CR>
+nnoremap <Leader>t3  :tabn 3<CR>
+nnoremap <Leader>t4  :tabn 4<CR>
+nnoremap <Leader>t5  :tabn 5<CR>
+nnoremap <Leader>t6  :tabn 6<CR>
+nnoremap <Leader>t7  :tabn 7<CR>
+nnoremap <Leader>t8  :tabn 8<CR>
+nnoremap <Leader>t9  :tabn 9<CR>
+nnoremap <Leader>t0  :tabn 10<CR>
+
+" windows management
+nnoremap <Leader>vs  :vsplit<Space>
+nnoremap <Leader>hs  :split<Space>
 
 " disable of default shortcuts
 nnoremap <S-k> <Nop>
-nnoremap <Up> <Nop>
-nnoremap <Down> <Nop>
-nnoremap <Left> <Nop>
-nnoremap <Right> <Nop>
 
 inoremap <M-J> <Down>
 inoremap <M-K> <Up>
@@ -136,19 +149,19 @@ inoremap <M-L> <Right>
 
 augroup filetype_c
     autocmd!
-    autocmd FileType c noremap <buffer> <leader>m :w<CR>:exec '!clear && make'<CR>
+    autocmd FileType c noremap <buffer> <Leader>m :w<CR>:exec '!clear && make'<CR>
     autocmd FileType c set colorcolumn=100
 augroup END
 
 augroup filetype_cpp
     autocmd!
-    autocmd FileType cpp noremap <buffer> <leader>m :w<CR>:exec '!clear && make'<CR>
+    autocmd FileType cpp noremap <buffer> <Leader>m :w<CR>:exec '!clear && make'<CR>
     autocmd FileType cpp set colorcolumn=110
 augroup END
 
 augroup filetype_asm
     autocmd!
-    autocmd FileType asm noremap <buffer> <leader>m :w<CR>:exec '!clear && make'<CR>
+    autocmd FileType asm noremap <buffer> <Leader>m :w<CR>:exec '!clear && make'<CR>
     autocmd FileType asm set colorcolumn=90
 augroup END
 
@@ -161,3 +174,5 @@ augroup filetype_go
     " Enable syntax for go 
     autocmd BufNewFile,BufRead *.go colorscheme gitgo
 augroup END
+
+"autocmd BufEnter * colorscheme default
