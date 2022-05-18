@@ -152,7 +152,7 @@ bindsym --release $mod+f fullscreen toggle
 bindsym --release $mod+Mod1+space floating toggle, move position center
 
 # change focus between tiling / floating windows
-bindsym --release Mod1+Tab focus mode_toggle
+bindsym --release Mod1+space focus mode_toggle
 bindsym --release XF86Eject focus mode_toggle
 
 # move to last focused workspace
