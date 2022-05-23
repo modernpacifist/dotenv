@@ -19,7 +19,7 @@ Plugin 'klen/python-mode'
 Plugin 'itchyny/vim-gitbranch'
 Plugin 'fatih/vim-go'
 Plugin 'bitfield/vim-gitgo'
-"Plugin 'vim-ctrlspace/vim-ctrlspace'
+Plugin 'JamshedVesuna/vim-markdown-preview'
 
 call vundle#end()
 
