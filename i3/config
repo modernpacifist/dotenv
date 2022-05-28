@@ -265,16 +265,16 @@ bindsym --release $mod+Mod1+0 [con_mark="0"] scratchpad show
 bindsym $mod+Mod1+Ctrl+u exec i3-input -F 'unmark %s' -l 1 -P 'Unmark: '
 
 # moving your focus to particular marked window
-bindsym --release $mod+Mod1+Ctrl+1 [con_mark="1"] focus
-bindsym --release $mod+Mod1+Ctrl+2 [con_mark="2"] focus
-bindsym --release $mod+Mod1+Ctrl+3 [con_mark="3"] focus
-bindsym --release $mod+Mod1+Ctrl+4 [con_mark="4"] focus
-bindsym --release $mod+Mod1+Ctrl+5 [con_mark="5"] focus
-bindsym --release $mod+Mod1+Ctrl+6 [con_mark="6"] focus
-bindsym --release $mod+Mod1+Ctrl+7 [con_mark="7"] focus
-bindsym --release $mod+Mod1+Ctrl+8 [con_mark="8"] focus
-bindsym --release $mod+Mod1+Ctrl+9 [con_mark="9"] focus
-bindsym --release $mod+Mod1+Ctrl+0 [con_mark="0"] focus
+bindsym --release Ctrl+1 [con_mark="1"] focus
+bindsym --release Ctrl+2 [con_mark="2"] focus
+bindsym --release Ctrl+3 [con_mark="3"] focus
+bindsym --release Ctrl+4 [con_mark="4"] focus
+bindsym --release Ctrl+5 [con_mark="5"] focus
+bindsym --release Ctrl+6 [con_mark="6"] focus
+bindsym --release Ctrl+7 [con_mark="7"] focus
+bindsym --release Ctrl+8 [con_mark="8"] focus
+bindsym --release Ctrl+9 [con_mark="9"] focus
+bindsym --release Ctrl+0 [con_mark="0"] focus
 
 # overall scratchpads lvl2, absolute positions: for scratchpad windows || +right, +down, +right, +down
 bindsym --release $mod+Ctrl+F1, sticky disable, mark "a", move scratchpad, [con_mark="a"] scratchpad show, move absolute position 0 px 19 px, resize set 1000 1061
@@ -298,6 +298,17 @@ bindsym $mod+Mod1+F7 [con_mark="g"] scratchpad show
 bindsym $mod+Mod1+F8 [con_mark="h"] scratchpad show
 bindsym $mod+Mod1+F9 [con_mark="i"] scratchpad show
 bindsym $mod+Mod1+F10 [con_mark="j"] scratchpad show
+
+bindsym --release Ctrl+F1 [con_mark="a"] focus
+bindsym --release Ctrl+F2 [con_mark="b"] focus
+bindsym --release Ctrl+F3 [con_mark="c"] focus
+bindsym --release Ctrl+F4 [con_mark="d"] focus
+bindsym --release Ctrl+F5 [con_mark="e"] focus
+bindsym --release Ctrl+F6 [con_mark="f"] focus
+bindsym --release Ctrl+F7 [con_mark="g"] focus
+bindsym --release Ctrl+F8 [con_mark="h"] focus
+bindsym --release Ctrl+F9 [con_mark="i"] focus
+bindsym --release Ctrl+F10 [con_mark="j"] focus
 
 # swap marked containers
 bindsym --release $mod+Ctrl+Mod1+s exec i3-input -F 'swap container with mark %s' -l 1 -P 'Swap with: '
