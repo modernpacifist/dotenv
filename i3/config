@@ -237,6 +237,12 @@ bindsym --release $mod+Mod1+t [class="TelegramDesktop" instance="telegram-deskto
 for_window [class="Keybase" instance="keybase"] sticky enable, floating enable, move scratchpad
 bindsym --release $mod+Mod1+e [class="Keybase" instance="keybase"] scratchpad show
 
+# mark container
+bindsym --release $mod+Mod1+m exec i3-input -F 'mark %s' -l 1 -P 'Mark container with: '
+
+# unmark container
+bindsym $mod+Mod1+Ctrl+u exec i3-input -F 'unmark %s' -l 1 -P 'Unmark: '
+
 # overall scratchpads
 bindsym --release $mod+Ctrl+1, sticky disable, mark "1", move scratchpad, [con_mark="1"] scratchpad show
 bindsym --release $mod+Ctrl+2, sticky disable, mark "2", move scratchpad, [con_mark="2"] scratchpad show, move absolute position $mark_2_abs_position_x px $mark_2_abs_position_y px, resize set $mark_2_size_1 $mark_2_size_2
@@ -259,14 +265,11 @@ bindsym --release $mod+Mod1+6 [con_mark="6"] scratchpad show
 bindsym --release $mod+Mod1+7 [con_mark="7"] scratchpad show
 bindsym --release $mod+Mod1+8 [con_mark="8"] scratchpad show
 bindsym --release $mod+Mod1+9 [con_mark="9"] scratchpad show
-bindsym --release $mod+Mod1+0 [con_mark="0"] scratchpad show 
-
-# unmarking specified window
-bindsym $mod+Mod1+Ctrl+u exec i3-input -F 'unmark %s' -l 1 -P 'Unmark: '
+bindsym --release $mod+Mod1+0 [con_mark="0"] scratchpad show
 
 # moving your focus to particular marked window
 bindsym --release Ctrl+1 [con_mark="1"] focus
-bindsym --release Ctrl+2 [con_mark="2"] focus
+bindsym --release Ctrl+2 [con_mark="2"] focus, move absolute position $mark_2_abs_position_x px $mark_2_abs_position_y px, resize set $mark_2_size_1 $mark_2_size_2
 bindsym --release Ctrl+3 [con_mark="3"] focus
 bindsym --release Ctrl+4 [con_mark="4"] focus
 bindsym --release Ctrl+5 [con_mark="5"] focus
@@ -274,7 +277,7 @@ bindsym --release Ctrl+6 [con_mark="6"] focus
 bindsym --release Ctrl+7 [con_mark="7"] focus
 bindsym --release Ctrl+8 [con_mark="8"] focus
 bindsym --release Ctrl+9 [con_mark="9"] focus
-bindsym --release Ctrl+0 [con_mark="0"] focus
+bindsym --release Ctrl+0 [con_mark="0"] focus, move absolute position $mark_0_abs_position_x px $mark_0_abs_position_y px, resize set $mark_0_size_1 $mark_0_size_2
 
 # overall scratchpads lvl2, absolute positions: for scratchpad windows || +right, +down, +right, +down
 bindsym --release $mod+Ctrl+F1, sticky disable, mark "a", move scratchpad, [con_mark="a"] scratchpad show, move absolute position 0 px 19 px, resize set 1000 1061
@@ -309,6 +312,7 @@ bindsym --release Ctrl+F7 [con_mark="g"] focus
 bindsym --release Ctrl+F8 [con_mark="h"] focus
 bindsym --release Ctrl+F9 [con_mark="i"] focus
 bindsym --release Ctrl+F10 [con_mark="j"] focus
+
 
 # swap marked containers
 bindsym --release $mod+Ctrl+Mod1+s exec i3-input -F 'swap container with mark %s' -l 1 -P 'Swap with: '
@@ -511,9 +515,6 @@ bindsym --release $mod+Mod1+c exec __touchpad_toggle
 
 # Rofi run
 bindsym --release $mod+Shift+m exec rofi -show run -config ~/.config/rofi/config.rasi
-
-# Rofi window
-bindsym --release $mod+Mod1+m exec rofi -show window -config ~/.config/rofi/config.rasi
 
 # File explorer
 bindsym --release $mod+Mod1+u exec caja
