@@ -28,6 +28,11 @@ set_from_resource $mark_3_abs_position_y i3wm.mark_3_abs_position_y 760
 set_from_resource $mark_3_size_1 i3wm.mark_3_size_1 2000
 set_from_resource $mark_3_size_2 i3wm.mark_3_size_2 1400
 
+set_from_resource $mark_4_abs_position_x i3wm.mark_4_abs_position_x 1840
+set_from_resource $mark_4_abs_position_y i3wm.mark_4_abs_position_y 760
+set_from_resource $mark_4_size_1 i3wm.mark_4_size_1 2000
+set_from_resource $mark_4_size_2 i3wm.mark_4_size_2 1400
+
 set_from_resource $mark_9_abs_position_x i3wm.mark_9_abs_position_x 1920
 set_from_resource $mark_9_abs_position_y i3wm.mark_9_abs_position_y 1160
 set_from_resource $mark_9_size_1 i3wm.mark_9_size_1 1920
@@ -247,7 +252,7 @@ bindsym $mod+Mod1+Ctrl+u exec i3-input -F 'unmark %s' -l 1 -P 'Unmark: '
 bindsym --release $mod+Ctrl+1, sticky disable, mark "1", move scratchpad, [con_mark="1"] scratchpad show
 bindsym --release $mod+Ctrl+2, sticky disable, mark "2", move scratchpad, [con_mark="2"] scratchpad show, move absolute position $mark_2_abs_position_x px $mark_2_abs_position_y px, resize set $mark_2_size_1 $mark_2_size_2
 bindsym --release $mod+Ctrl+3, sticky disable, mark "3", move scratchpad, [con_mark="3"] scratchpad show, move absolute position $mark_3_abs_position_x px $mark_3_abs_position_y px, resize set $mark_3_size_1 $mark_3_size_2
-bindsym --release $mod+Ctrl+4, sticky disable, mark "4", move scratchpad, [con_mark="4"] scratchpad show, move absolute position 0 px 29 px, resize set 1160 1061
+bindsym --release $mod+Ctrl+4, sticky disable, mark "4", move scratchpad, [con_mark="4"] scratchpad show, move absolute position $mark_4_abs_position_x px $mark_4_abs_position_y px, resize set $mark_4_size_1 $mark_4_size_2
 bindsym --release $mod+Ctrl+5, sticky disable, mark "5", move scratchpad, [con_mark="5"] scratchpad show
 bindsym --release $mod+Ctrl+6, sticky disable, mark "6", move scratchpad, [con_mark="6"] scratchpad show
 bindsym --release $mod+Ctrl+7, sticky disable, mark "7", move scratchpad, [con_mark="7"] scratchpad show
@@ -271,7 +276,7 @@ bindsym --release $mod+Mod1+0 [con_mark="0"] scratchpad show
 bindsym --release Ctrl+1 [con_mark="1"] focus
 bindsym --release Ctrl+2 [con_mark="2"] focus, move absolute position $mark_2_abs_position_x px $mark_2_abs_position_y px, resize set $mark_2_size_1 $mark_2_size_2
 bindsym --release Ctrl+3 [con_mark="3"] focus
-bindsym --release Ctrl+4 [con_mark="4"] focus
+bindsym --release Ctrl+4 [con_mark="4"] focus, move absolute position $mark_4_abs_position_x px $mark_4_abs_position_y px, resize set $mark_4_size_1 $mark_4_size_2
 bindsym --release Ctrl+5 [con_mark="5"] focus
 bindsym --release Ctrl+6 [con_mark="6"] focus
 bindsym --release Ctrl+7 [con_mark="7"] focus
@@ -311,8 +316,7 @@ bindsym --release Ctrl+F6 [con_mark="f"] focus
 bindsym --release Ctrl+F7 [con_mark="g"] focus
 bindsym --release Ctrl+F8 [con_mark="h"] focus
 bindsym --release Ctrl+F9 [con_mark="i"] focus
-bindsym --release Ctrl+F10 [con_mark="j"] focus
-
+bindsym --release Ctrl+F10 [con_mark="j"] focus, move absolute position $mark_j_abs_position_x px $mark_j_abs_position_y px, resize set $mark_j_size_1 $mark_j_size_2
 
 # swap marked containers
 bindsym --release $mod+Ctrl+Mod1+s exec i3-input -F 'swap container with mark %s' -l 1 -P 'Swap with: '
