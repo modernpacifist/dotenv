@@ -101,6 +101,7 @@ hide_edge_borders smart
 show_marks yes
 workspace_layout stacking
 focus_wrapping workspace
+#default_border pixel 1
 
 # kill focused window
 bindsym --release $mod+BackSpace kill
@@ -155,6 +156,10 @@ bindsym --release $mod+f fullscreen toggle
 
 # toggle tiling / floating
 bindsym --release $mod+Mod1+space floating toggle, move position center
+
+# add mark of floating container
+for_window [floating] title_format " FLOATING | %title"
+#for_window [all] border pixel 1
 
 # change focus between tiling / floating windows
 bindsym --release Mod1+space focus mode_toggle
