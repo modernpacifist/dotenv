@@ -159,7 +159,6 @@ bindsym --release $mod+Mod1+space floating toggle, move position center
 
 # add mark of floating container
 for_window [floating] title_format " FLOATING | %title"
-#for_window [all] border pixel 1
 
 # change focus between tiling / floating windows
 bindsym --release Mod1+space focus mode_toggle
