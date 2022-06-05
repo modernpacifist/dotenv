@@ -247,84 +247,79 @@ for_window [class="Keybase" instance="keybase"] sticky enable, floating enable, 
 bindsym --release $mod+Mod1+e [class="Keybase" instance="keybase"] scratchpad show
 
 # mark container
-bindsym --release $mod+Mod1+m exec i3-input -F 'mark %s' -l 1 -P 'Mark container with: '
+bindsym --release $mod+Mod1+m exec i3-input -F 'mark %s' -l 2 -P 'Mark container with: '
 
 # unmark container
-#bindsym $mod+Mod1+Ctrl+u exec i3-input -F 'unmark %s' -l 1 -P 'Unmark: '
-bindsym $mod+Mod1+u exec i3-input -F 'unmark %s' -l 1 -P 'Unmark: '
+bindsym $mod+Mod1+u exec i3-input -F 'unmark %s' -l 2 -P 'Unmark: '
 
 # overall scratchpads
-bindsym --release $mod+Ctrl+1, sticky disable, mark "1", move scratchpad, [con_mark="1"] scratchpad show
-bindsym --release $mod+Ctrl+2, sticky disable, mark "2", move scratchpad, [con_mark="2"] scratchpad show, move absolute position $mark_2_abs_position_x px $mark_2_abs_position_y px, resize set $mark_2_size_1 $mark_2_size_2
-bindsym --release $mod+Ctrl+3, sticky disable, mark "3", move scratchpad, [con_mark="3"] scratchpad show, move absolute position $mark_3_abs_position_x px $mark_3_abs_position_y px, resize set $mark_3_size_1 $mark_3_size_2
-bindsym --release $mod+Ctrl+4, sticky disable, mark "4", move scratchpad, [con_mark="4"] scratchpad show, move absolute position $mark_4_abs_position_x px $mark_4_abs_position_y px, resize set $mark_4_size_1 $mark_4_size_2
-bindsym --release $mod+Ctrl+5, sticky disable, mark "5", move scratchpad, [con_mark="5"] scratchpad show
-bindsym --release $mod+Ctrl+6, sticky disable, mark "6", move scratchpad, [con_mark="6"] scratchpad show
-bindsym --release $mod+Ctrl+7, sticky disable, mark "7", move scratchpad, [con_mark="7"] scratchpad show
-bindsym --release $mod+Ctrl+8, sticky disable, mark "8", move scratchpad, [con_mark="8"] scratchpad show, move absolute position 1020 px 580 px, resize set 900 500
-bindsym --release $mod+Ctrl+9, sticky disable, mark "9", move scratchpad, [con_mark="9"] scratchpad show, move absolute position $mark_9_abs_position_x px $mark_9_abs_position_y px, resize set $mark_9_size_1 $mark_9_size_2
-bindsym --release $mod+Ctrl+0, sticky disable, mark "0", move scratchpad, [con_mark="0"] scratchpad show, move absolute position $mark_0_abs_position_x px $mark_0_abs_position_y px, resize set $mark_0_size_1 $mark_0_size_2
+bindsym --release $mod+Ctrl+1, sticky disable, mark "1", move scratchpad, [con_mark="^1$"] scratchpad show
+bindsym --release $mod+Ctrl+2, sticky disable, mark "2", move scratchpad, [con_mark="^2$"] scratchpad show, move absolute position $mark_2_abs_position_x px $mark_2_abs_position_y px, resize set $mark_2_size_1 $mark_2_size_2
+bindsym --release $mod+Ctrl+3, sticky disable, mark "3", move scratchpad, [con_mark="^3$"] scratchpad show, move absolute position $mark_3_abs_position_x px $mark_3_abs_position_y px, resize set $mark_3_size_1 $mark_3_size_2
+bindsym --release $mod+Ctrl+4, sticky disable, mark "4", move scratchpad, [con_mark="^4$"] scratchpad show, move absolute position $mark_4_abs_position_x px $mark_4_abs_position_y px, resize set $mark_4_size_1 $mark_4_size_2
+bindsym --release $mod+Ctrl+5, sticky disable, mark "5", move scratchpad, [con_mark="^5$"] scratchpad show
+bindsym --release $mod+Ctrl+6, sticky disable, mark "6", move scratchpad, [con_mark="^6$"] scratchpad show
+bindsym --release $mod+Ctrl+7, sticky disable, mark "7", move scratchpad, [con_mark="^7$"] scratchpad show
+bindsym --release $mod+Ctrl+8, sticky disable, mark "8", move scratchpad, [con_mark="^8$"] scratchpad show, move absolute position 1020 px 580 px, resize set 900 500
+bindsym --release $mod+Ctrl+9, sticky disable, mark "9", move scratchpad, [con_mark="^9$"] scratchpad show, move absolute position $mark_9_abs_position_x px $mark_9_abs_position_y px, resize set $mark_9_size_1 $mark_9_size_2
+bindsym --release $mod+Ctrl+0, sticky disable, mark "0", move scratchpad, [con_mark="^0$"] scratchpad show, move absolute position $mark_0_abs_position_x px $mark_0_abs_position_y px, resize set $mark_0_size_1 $mark_0_size_2
+# lvl2
+bindsym --release $mod+Ctrl+F1, sticky disable, mark "f1", move scratchpad, [con_mark="^f1$"] scratchpad show, move absolute position 0 px 19 px, resize set 1000 1061
+bindsym --release $mod+Ctrl+F2, sticky disable, mark "f2", move scratchpad
+bindsym --release $mod+Ctrl+F3, sticky disable, mark "f3", move scratchpad
+bindsym --release $mod+Ctrl+F4, sticky disable, mark "f4", move scratchpad
+bindsym --release $mod+Ctrl+F5, sticky disable, mark "f5", move scratchpad
+bindsym --release $mod+Ctrl+F6, sticky disable, mark "f6", move scratchpad
+bindsym --release $mod+Ctrl+F7, sticky disable, mark "f7", move scratchpad
+bindsym --release $mod+Ctrl+F8, sticky disable, mark "f8", move scratchpad
+bindsym --release $mod+Ctrl+F9, sticky disable, mark "f9", move scratchpad, [con_mark="^f9$"] scratchpad show, move absolute position $mark_i_abs_position_x px $mark_i_abs_position_y px, resize set $mark_i_size_1 $mark_i_size_2
+bindsym --release $mod+Ctrl+F10, sticky disable, mark "f10", move scratchpad, [con_mark="^f10$"] scratchpad show, move absolute position $mark_j_abs_position_x px $mark_j_abs_position_y px, resize set $mark_j_size_1 $mark_j_size_2
 
-# moving particular marked window to your currently focused ws
-bindsym --release $mod+Mod1+1 [con_mark="1"] scratchpad show
-bindsym --release $mod+Mod1+2 [con_mark="2"] scratchpad show
-bindsym --release $mod+Mod1+3 [con_mark="3"] scratchpad show
-bindsym --release $mod+Mod1+4 [con_mark="4"] scratchpad show
-bindsym --release $mod+Mod1+5 [con_mark="5"] scratchpad show
-bindsym --release $mod+Mod1+6 [con_mark="6"] scratchpad show
-bindsym --release $mod+Mod1+7 [con_mark="7"] scratchpad show
-bindsym --release $mod+Mod1+8 [con_mark="8"] scratchpad show
-bindsym --release $mod+Mod1+9 [con_mark="9"] scratchpad show
-bindsym --release $mod+Mod1+0 [con_mark="0"] scratchpad show
+# show/hide particular container with mark
+bindsym --release $mod+Mod1+1 [con_mark="^1$"] scratchpad show
+bindsym --release $mod+Mod1+2 [con_mark="^2$"] scratchpad show
+bindsym --release $mod+Mod1+3 [con_mark="^3$"] scratchpad show
+bindsym --release $mod+Mod1+4 [con_mark="^4$"] scratchpad show
+bindsym --release $mod+Mod1+5 [con_mark="^5$"] scratchpad show
+bindsym --release $mod+Mod1+6 [con_mark="^6$"] scratchpad show
+bindsym --release $mod+Mod1+7 [con_mark="^7$"] scratchpad show
+bindsym --release $mod+Mod1+8 [con_mark="^8$"] scratchpad show
+bindsym --release $mod+Mod1+9 [con_mark="^9$"] scratchpad show
+bindsym --release $mod+Mod1+0 [con_mark="^0$"] scratchpad show
+# lvl2
+bindsym $mod+Mod1+F1 [con_mark="^f1$"] scratchpad show
+bindsym $mod+Mod1+F2 [con_mark="^f2$"] scratchpad show
+bindsym $mod+Mod1+F3 [con_mark="^f3$"] scratchpad show
+bindsym $mod+Mod1+F4 [con_mark="^f4$"] scratchpad show
+bindsym $mod+Mod1+F5 [con_mark="^f5$"] scratchpad show
+bindsym $mod+Mod1+F6 [con_mark="^f6$"] scratchpad show
+bindsym $mod+Mod1+F7 [con_mark="^f7$"] scratchpad show
+bindsym $mod+Mod1+F8 [con_mark="^f8$"] scratchpad show
+bindsym $mod+Mod1+F9 [con_mark="^f9$"] scratchpad show
+bindsym $mod+Mod1+F10 [con_mark="^f10$"] scratchpad show
 
 # moving your focus to particular marked window
-bindsym --release Ctrl+1 [con_mark="1"] focus
-bindsym --release Ctrl+2 [con_mark="2"] focus, move absolute position $mark_2_abs_position_x px $mark_2_abs_position_y px, resize set $mark_2_size_1 $mark_2_size_2
-bindsym --release Ctrl+3 [con_mark="3"] focus
-bindsym --release Ctrl+4 [con_mark="4"] focus, move absolute position $mark_4_abs_position_x px $mark_4_abs_position_y px, resize set $mark_4_size_1 $mark_4_size_2
-bindsym --release Ctrl+5 [con_mark="5"] focus
-bindsym --release Ctrl+6 [con_mark="6"] focus
-bindsym --release Ctrl+7 [con_mark="7"] focus
-bindsym --release Ctrl+8 [con_mark="8"] focus
-bindsym --release Ctrl+9 [con_mark="9"] focus
-bindsym --release Ctrl+0 [con_mark="0"] focus, move absolute position $mark_0_abs_position_x px $mark_0_abs_position_y px, resize set $mark_0_size_1 $mark_0_size_2
-
-# overall scratchpads lvl2, absolute positions: for scratchpad windows || +right, +down, +right, +down
-bindsym --release $mod+Ctrl+F1, sticky disable, mark "a", move scratchpad, [con_mark="a"] scratchpad show, move absolute position 0 px 19 px, resize set 1000 1061
-bindsym --release $mod+Ctrl+F2, sticky disable, mark "b", move scratchpad
-bindsym --release $mod+Ctrl+F3, sticky disable, mark "c", move scratchpad
-bindsym --release $mod+Ctrl+F4, sticky disable, mark "d", move scratchpad
-bindsym --release $mod+Ctrl+F5, sticky disable, mark "e", move scratchpad
-bindsym --release $mod+Ctrl+F6, sticky disable, mark "f", move scratchpad
-bindsym --release $mod+Ctrl+F7, sticky disable, mark "g", move scratchpad
-bindsym --release $mod+Ctrl+F8, sticky disable, mark "h", move scratchpad
-bindsym --release $mod+Ctrl+F9, sticky disable, mark "i", move scratchpad, [con_mark="i"] scratchpad show, move absolute position $mark_i_abs_position_x px $mark_i_abs_position_y px, resize set $mark_i_size_1 $mark_i_size_2
-#bindsym --release $mod+Ctrl+F10, sticky disable, mark "j", move scratchpad, [con_mark="j"] scratchpad show, move absolute position $mark_j_abs_position_x px $mark_j_abs_position_y px, resize set $mark_j_size_1 $mark_j_size_2
-bindsym --release $mod+Ctrl+F10, sticky disable, mark "f10", move scratchpad, [con_mark="j"] scratchpad show, move absolute position $mark_j_abs_position_x px $mark_j_abs_position_y px, resize set $mark_j_size_1 $mark_j_size_2
-
-bindsym $mod+Mod1+F1 [con_mark="a"] scratchpad show
-bindsym $mod+Mod1+F2 [con_mark="b"] scratchpad show
-bindsym $mod+Mod1+F3 [con_mark="c"] scratchpad show
-bindsym $mod+Mod1+F4 [con_mark="d"] scratchpad show
-bindsym $mod+Mod1+F5 [con_mark="e"] scratchpad show
-bindsym $mod+Mod1+F6 [con_mark="f"] scratchpad show
-bindsym $mod+Mod1+F7 [con_mark="g"] scratchpad show
-bindsym $mod+Mod1+F8 [con_mark="h"] scratchpad show
-bindsym $mod+Mod1+F9 [con_mark="i"] scratchpad show
-#bindsym $mod+Mod1+F10 [con_mark="j"] scratchpad show
-bindsym $mod+Mod1+F10 [con_mark="f10"] scratchpad show
-
-bindsym --release Ctrl+F1 [con_mark="a"] focus
-bindsym --release Ctrl+F2 [con_mark="b"] focus
-bindsym --release Ctrl+F3 [con_mark="c"] focus
-bindsym --release Ctrl+F4 [con_mark="d"] focus
-bindsym --release Ctrl+F5 [con_mark="e"] focus
-bindsym --release Ctrl+F6 [con_mark="f"] focus
-bindsym --release Ctrl+F7 [con_mark="g"] focus
-bindsym --release Ctrl+F8 [con_mark="h"] focus
-bindsym --release Ctrl+F9 [con_mark="i"] focus
-#bindsym --release Ctrl+F10 [con_mark="j"] focus, move absolute position $mark_j_abs_position_x px $mark_j_abs_position_y px, resize set $mark_j_size_1 $mark_j_size_2
-bindsym --release Ctrl+F10 [con_mark="f10"] focus, move absolute position $mark_j_abs_position_x px $mark_j_abs_position_y px, resize set $mark_j_size_1 $mark_j_size_2
+bindsym --release Ctrl+1 [con_mark="^1$"] focus
+bindsym --release Ctrl+2 [con_mark="^2$"] focus, move absolute position $mark_2_abs_position_x px $mark_2_abs_position_y px, resize set $mark_2_size_1 $mark_2_size_2
+bindsym --release Ctrl+3 [con_mark="^3$"] focus
+bindsym --release Ctrl+4 [con_mark="^4$"] focus, move absolute position $mark_4_abs_position_x px $mark_4_abs_position_y px, resize set $mark_4_size_1 $mark_4_size_2
+bindsym --release Ctrl+5 [con_mark="^5$"] focus
+bindsym --release Ctrl+6 [con_mark="^6$"] focus
+bindsym --release Ctrl+7 [con_mark="^7$"] focus
+bindsym --release Ctrl+8 [con_mark="^8$"] focus
+bindsym --release Ctrl+9 [con_mark="^9$"] focus
+bindsym --release Ctrl+0 [con_mark="^0$"] focus, move absolute position $mark_0_abs_position_x px $mark_0_abs_position_y px, resize set $mark_0_size_1 $mark_0_size_2
+# lvl2
+bindsym --release Ctrl+F1 [con_mark="^f1$"] focus
+bindsym --release Ctrl+F2 [con_mark="^f2$"] focus
+bindsym --release Ctrl+F3 [con_mark="^f3$"] focus
+bindsym --release Ctrl+F4 [con_mark="^f4$"] focus
+bindsym --release Ctrl+F5 [con_mark="^f5$"] focus
+bindsym --release Ctrl+F6 [con_mark="^f6$"] focus
+bindsym --release Ctrl+F7 [con_mark="^f7$"] focus
+bindsym --release Ctrl+F8 [con_mark="^f8$"] focus
+bindsym --release Ctrl+F9 [con_mark="^f9$"] focus, move absolute position $mark_i_abs_position_x px $mark_i_abs_position_y px, resize set $mark_i_size_1 $mark_i_size_2
+bindsym --release Ctrl+F10 [con_mark="^f10$"] focus, move absolute position $mark_j_abs_position_x px $mark_j_abs_position_y px, resize set $mark_j_size_1 $mark_j_size_2
 
 # swap marked containers
 bindsym --release $mod+Ctrl+Mod1+s exec i3-input -F 'swap container with mark %s' -l 1 -P 'Swap with: '
