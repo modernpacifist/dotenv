@@ -250,7 +250,8 @@ bindsym --release $mod+Mod1+e [class="Keybase" instance="keybase"] scratchpad sh
 bindsym --release $mod+Mod1+m exec i3-input -F 'mark %s' -l 1 -P 'Mark container with: '
 
 # unmark container
-bindsym $mod+Mod1+Ctrl+u exec i3-input -F 'unmark %s' -l 1 -P 'Unmark: '
+#bindsym $mod+Mod1+Ctrl+u exec i3-input -F 'unmark %s' -l 1 -P 'Unmark: '
+bindsym $mod+Mod1+u exec i3-input -F 'unmark %s' -l 1 -P 'Unmark: '
 
 # overall scratchpads
 bindsym --release $mod+Ctrl+1, sticky disable, mark "1", move scratchpad, [con_mark="1"] scratchpad show
@@ -298,7 +299,8 @@ bindsym --release $mod+Ctrl+F6, sticky disable, mark "f", move scratchpad
 bindsym --release $mod+Ctrl+F7, sticky disable, mark "g", move scratchpad
 bindsym --release $mod+Ctrl+F8, sticky disable, mark "h", move scratchpad
 bindsym --release $mod+Ctrl+F9, sticky disable, mark "i", move scratchpad, [con_mark="i"] scratchpad show, move absolute position $mark_i_abs_position_x px $mark_i_abs_position_y px, resize set $mark_i_size_1 $mark_i_size_2
-bindsym --release $mod+Ctrl+F10, sticky disable, mark "j", move scratchpad, [con_mark="j"] scratchpad show, move absolute position $mark_j_abs_position_x px $mark_j_abs_position_y px, resize set $mark_j_size_1 $mark_j_size_2
+#bindsym --release $mod+Ctrl+F10, sticky disable, mark "j", move scratchpad, [con_mark="j"] scratchpad show, move absolute position $mark_j_abs_position_x px $mark_j_abs_position_y px, resize set $mark_j_size_1 $mark_j_size_2
+bindsym --release $mod+Ctrl+F10, sticky disable, mark "f10", move scratchpad, [con_mark="j"] scratchpad show, move absolute position $mark_j_abs_position_x px $mark_j_abs_position_y px, resize set $mark_j_size_1 $mark_j_size_2
 
 bindsym $mod+Mod1+F1 [con_mark="a"] scratchpad show
 bindsym $mod+Mod1+F2 [con_mark="b"] scratchpad show
@@ -309,7 +311,8 @@ bindsym $mod+Mod1+F6 [con_mark="f"] scratchpad show
 bindsym $mod+Mod1+F7 [con_mark="g"] scratchpad show
 bindsym $mod+Mod1+F8 [con_mark="h"] scratchpad show
 bindsym $mod+Mod1+F9 [con_mark="i"] scratchpad show
-bindsym $mod+Mod1+F10 [con_mark="j"] scratchpad show
+#bindsym $mod+Mod1+F10 [con_mark="j"] scratchpad show
+bindsym $mod+Mod1+F10 [con_mark="f10"] scratchpad show
 
 bindsym --release Ctrl+F1 [con_mark="a"] focus
 bindsym --release Ctrl+F2 [con_mark="b"] focus
@@ -320,7 +323,8 @@ bindsym --release Ctrl+F6 [con_mark="f"] focus
 bindsym --release Ctrl+F7 [con_mark="g"] focus
 bindsym --release Ctrl+F8 [con_mark="h"] focus
 bindsym --release Ctrl+F9 [con_mark="i"] focus
-bindsym --release Ctrl+F10 [con_mark="j"] focus, move absolute position $mark_j_abs_position_x px $mark_j_abs_position_y px, resize set $mark_j_size_1 $mark_j_size_2
+#bindsym --release Ctrl+F10 [con_mark="j"] focus, move absolute position $mark_j_abs_position_x px $mark_j_abs_position_y px, resize set $mark_j_size_1 $mark_j_size_2
+bindsym --release Ctrl+F10 [con_mark="f10"] focus, move absolute position $mark_j_abs_position_x px $mark_j_abs_position_y px, resize set $mark_j_size_1 $mark_j_size_2
 
 # swap marked containers
 bindsym --release $mod+Ctrl+Mod1+s exec i3-input -F 'swap container with mark %s' -l 1 -P 'Swap with: '
@@ -498,7 +502,7 @@ exec --no-startup-id warpd 2>> /tmp/i3_waprd_exec.log
 exec --no-startup-id xbanish 2>> /tmp/i3_exec.log
 
 # Turn off screen dim
-exec --no-startup-id _screendim_off
+exec --no-startup-id __screendim_off
 
 # For language toggle en/ru
 bindsym --release $mod+space exec i3-keyboard-layout cycle us ru
@@ -525,4 +529,4 @@ bindsym --release $mod+Mod1+c exec __touchpad_toggle
 bindsym --release $mod+Shift+m exec rofi -show run -config ~/.config/rofi/config.rasi
 
 # File explorer
-bindsym --release $mod+Mod1+u exec caja
+bindsym --release $mod+Shift+f exec caja
