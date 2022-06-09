@@ -11,40 +11,40 @@ rofi.dpi: 144
 ! i3wm float container variables
 *telegram_abs_position_x: 2940
 *telegram_abs_position_y: 29
-*telegram_size_1: 900
-*telegram_size_2: 1400
+*telegram_horizontal_size: 900
+*telegram_vertical_size: 1400
 
 *mark_2_abs_position_x: 1420
 *mark_2_abs_position_y: 29
-*mark_2_size_1: 2420
-*mark_2_size_2: 2131
+*mark_2_horizontal_size: 2420
+*mark_2_vertical_size: 2131
 
 *mark_3_abs_position_x: 1840
 *mark_3_abs_position_y: 760
-*mark_3_size_1: 2000
-*mark_3_size_2: 1400
+*mark_3_horizontal_size: 2000
+*mark_3_vertical_size: 1400
 
 *mark_4_abs_position_x: 0
 *mark_4_abs_position_y: 29
-*mark_4_size_1: 1820
-*mark_4_size_2: 2131
+*mark_4_horizontal_size: 1820
+*mark_4_vertical_size: 2131
 
 *mark_9_abs_position_x: 1420
 *mark_9_abs_position_y: 29
-*mark_9_size_1: 2420
-*mark_9_size_2: 2131
+*mark_9_horizontal_size: 2420
+*mark_9_vertical_size: 2131
 
 *mark_0_abs_position_x: 1840
 *mark_0_abs_position_y: 1160
-*mark_0_size_1: 2000
-*mark_0_size_2: 1000
+*mark_0_horizontal_size: 2000
+*mark_0_vertical_size: 1000
 
-*mark_i_abs_position_x: 1420
-*mark_i_abs_position_y: 29
-*mark_i_size_1: 2420
-*mark_i_size_2: 2131
+*mark_f9_abs_position_x: 1420
+*mark_f9_abs_position_y: 29
+*mark_f9_horizontal_size: 2420
+*mark_f9_vertical_size: 2131
 
-*mark_j_abs_position_x: 1840
-*mark_j_abs_position_y: 29
-*mark_j_size_1: 2000
-*mark_j_size_2: 2131
+*mark_f10_abs_position_x: 2040
+*mark_f10_abs_position_y: 29
+*mark_f10_horizontal_size: 1800
+*mark_f10_vertical_size: 2131
