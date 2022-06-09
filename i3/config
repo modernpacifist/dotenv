@@ -33,19 +33,19 @@ set_from_resource $mark_4_abs_position_y i3wm.mark_4_abs_position_y 760
 set_from_resource $mark_4_horizontal_size i3wm.mark_4_horizontal_size 2000
 set_from_resource $mark_4_vertical_size i3wm.mark_4_vertical_size 1400
 
-set_from_resource $mark_9_abs_position_x i3wm.mark_9_abs_position_x 1920
-set_from_resource $mark_9_abs_position_y i3wm.mark_9_abs_position_y 1160
-set_from_resource $mark_9_horizontal_size i3wm.mark_9_horizontal_size 1920
-set_from_resource $mark_9_vertical_size i3wm.mark_9_vertical_size 1000
+set_from_resource $mark_9_abs_position_x i3wm.mark_9_abs_position_x 1420
+set_from_resource $mark_9_abs_position_y i3wm.mark_9_abs_position_y 29
+set_from_resource $mark_9_horizontal_size i3wm.mark_9_horizontal_size 2420
+set_from_resource $mark_9_vertical_size i3wm.mark_9_vertical_size 2131
 
-set_from_resource $mark_0_abs_position_x i3wm.mark_0_abs_position_x 1920
+set_from_resource $mark_0_abs_position_x i3wm.mark_0_abs_position_x 1820
 set_from_resource $mark_0_abs_position_y i3wm.mark_0_abs_position_y 1160
-set_from_resource $mark_0_horizontal_size i3wm.mark_0_horizontal_size 1920
+set_from_resource $mark_0_horizontal_size i3wm.mark_0_horizontal_size 2000
 set_from_resource $mark_0_vertical_size i3wm.mark_0_vertical_size 1000
 
-set_from_resource $mark_f9_abs_position_x i3wm.mark_f9_abs_position_x 2040
+set_from_resource $mark_f9_abs_position_x i3wm.mark_f9_abs_position_x 1420
 set_from_resource $mark_f9_abs_position_y i3wm.mark_f9_abs_position_y 29
-set_from_resource $mark_f9_horizontal_size i3wm.mark_f9_horizontal_size 1800
+set_from_resource $mark_f9_horizontal_size i3wm.mark_f9_horizontal_size 2420
 set_from_resource $mark_f9_vertical_size i3wm.mark_f9_vertical_size 2131
 
 set_from_resource $mark_f10_abs_position_x i3wm.mark_f10_abs_position_x 2040
@@ -101,7 +101,6 @@ hide_edge_borders smart
 show_marks yes
 workspace_layout stacking
 focus_wrapping workspace
-#default_border pixel 1
 
 # kill focused window
 bindsym --release $mod+BackSpace kill
