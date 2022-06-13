@@ -29,6 +29,11 @@ rofi.dpi: 144
 *mark_4_horizontal_size: 1820
 *mark_4_vertical_size: 2131
 
+*mark_8_abs_position_x: 1420
+*mark_8_abs_position_y: 29
+*mark_8_horizontal_size: 2420
+*mark_8_vertical_size: 2131
+
 *mark_9_abs_position_x: 1420
 *mark_9_abs_position_y: 29
 *mark_9_horizontal_size: 2420
