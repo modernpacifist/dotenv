@@ -528,4 +528,4 @@ bindsym --release $mod+Mod1+c exec __touchpad_toggle
 bindsym --release $mod+Shift+m exec rofi -show run -config ~/.config/rofi/config.rasi
 
 # File explorer
-bindsym --release $mod+Shift+f exec caja
+bindsym --release $mod+Mod1+u exec caja
