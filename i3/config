@@ -197,6 +197,9 @@ bindsym --release $mod+Mod1+Shift+8 rename workspace to $ws8
 bindsym --release $mod+Mod1+Shift+9 rename workspace to $ws9
 bindsym --release $mod+Mod1+Shift+0 rename workspace to $ws10
 
+# append name to the workspace
+bindsym $mod+Shift+r exec _rename_i3wm_workspace
+
 # switch to workspace FIRST-LEVEL
 bindsym --release $mod+grave workspace number $ws0
 bindsym --release $mod+1 workspace number $ws1
