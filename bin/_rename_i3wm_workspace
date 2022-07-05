@@ -1,2 +1,10 @@
 #!/bin/bash
-i3-input -F "rename workspace to "$(i3-msg -t get_workspaces | jq -r "map(select(.focused))[0].num"):%s"" -P "Append title: "
+focused_workspace=$(i3-msg -t get_workspaces | jq -r "map(select(.focused))[0].num")
+echo $focused_workspace
+#usr_input=$(i3-input -F "rename workspace to "${focused_workspace}:%s"" -P "Append title: ")
+usr_input=$(i3-input -P "Append title: ")
+echo $usr_input
+if [[ $usr_input == "" ]]; then
+    #echo "XDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD"
+    i3-input -F "rename workspace to "${focused_workspace}""
+fi
