@@ -142,6 +142,13 @@ nnoremap <Leader>hs  :split<Space>
 " disable of default shortcuts
 nnoremap <S-k> <Nop>
 
+" gitblame
+fun! GitCommand(command)
+  silent! !clear
+  exec "!git " . a:command . " %"
+endfun
+nnoremap <leader>b :call GitCommand("blame") <CR>
+
 inoremap <M-J> <Down>
 inoremap <M-K> <Up>
 inoremap <M-H> <Left>
@@ -175,4 +182,3 @@ augroup filetype_go
     autocmd BufNewFile,BufRead *.go colorscheme gitgo
 augroup END
 
-"autocmd BufEnter * colorscheme default
