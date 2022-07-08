@@ -147,7 +147,7 @@ fun! GitCommand(command)
   silent! !clear
   exec "!git " . a:command . " %"
 endfun
-nnoremap <leader>b :call GitCommand("blame") <CR>
+nnoremap <leader>g :call GitCommand("blame") <CR>
 
 inoremap <M-J> <Down>
 inoremap <M-K> <Up>
