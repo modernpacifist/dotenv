@@ -3,7 +3,7 @@
 set -e
 
 get_current_marks() {
-    echo -n [$(i3-msg -t get_marks | jq -r 'join("|")')]
+    echo -n $(i3-msg -t get_marks | jq -r 'join("|")')
 }
 
 while :
