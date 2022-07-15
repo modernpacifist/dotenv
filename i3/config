@@ -329,7 +329,7 @@ bindsym --release Ctrl+F9 [con_mark="^f9$"] focus, move absolute position $mark_
 bindsym --release Ctrl+F10 [con_mark="^f10$"] focus, move absolute position $mark_f10_abs_position_x px $mark_f10_abs_position_y px, resize set $mark_f10_horizontal_size $mark_f10_vertical_size
 
 # swap marked containers
-bindsym --release $mod+Ctrl+Mod1+s exec i3-input -F 'swap container with mark %s' -l 1 -P 'Swap with: '
+bindsym --release $mod+Mod1+Shift+s exec i3-input -F 'swap container with mark %s' -l 3 -P 'Swap with: '
 
 # whole scratchpad
 bindsym --release $mod+Mod1+equal [class=".*"] scratchpad show
@@ -460,7 +460,7 @@ bindsym --release Mod1+h exec xdotool key --clearmodifiers --delay 0 Left 2> /de
 
 bar {
     output primary
-    status_command i3status --config $HOME/.config/i3/i3status.conf | i3-keyboard-layout i3status | _get_current_track
+    status_command i3status --config $HOME/.config/i3/i3status.conf | i3-keyboard-layout i3status | _get_current_track | _get_current_marks
     position top
     tray_output primary
 
