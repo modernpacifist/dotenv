@@ -198,7 +198,7 @@ bindsym --release $mod+Mod1+Shift+9 rename workspace to $ws9
 bindsym --release $mod+Mod1+Shift+0 rename workspace to $ws10
 
 # append name to the workspace
-bindsym $mod+Shift+r exec _rename_i3wm_workspace
+bindsym --release $mod+Shift+r exec __rename_i3wm_workspace
 
 # switch to workspace FIRST-LEVEL
 bindsym --release $mod+grave workspace number $ws0
@@ -253,7 +253,7 @@ bindsym --release $mod+Mod1+t [class="TelegramDesktop" instance="telegram-deskto
 for_window [class="Keybase" instance="keybase"] sticky enable, floating enable, move scratchpad
 bindsym --release $mod+Mod1+e [class="Keybase" instance="keybase"] scratchpad show
 
-# mark container
+# mark container with prompt
 bindsym --release $mod+Mod1+m exec i3-input -F 'mark %s' -l 3 -P 'Mark container with: '
 
 # unmark container
@@ -495,7 +495,7 @@ bar {
 }
 
 # For wallpaper
-exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallpaper.jpeg
+exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallpaper_skull.jpg
 
 # warpd
 exec --no-startup-id warpd 2>> /tmp/i3_waprd_exec.log
@@ -532,3 +532,6 @@ bindsym --release $mod+Shift+m exec rofi -show run -config ~/.config/rofi/config
 
 # File explorer
 bindsym --release $mod+Shift+u exec caja
+
+# Swapping workspaces
+bindsym --release $mod+Mod1+Ctrl+s exec __swap_focused_workspace
