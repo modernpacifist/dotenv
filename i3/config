@@ -255,6 +255,7 @@ bindsym --release $mod+Mod1+e [class="Keybase" instance="keybase"] scratchpad sh
 
 # mark container with prompt
 bindsym --release $mod+Mod1+m exec i3-input -F 'mark %s' -l 3 -P 'Mark container with: '
+bindsym --release $mod+Mod1+m exec __
 
 # unmark container
 bindsym $mod+Mod1+u [con_id=__focused__] unmark
