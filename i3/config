@@ -92,6 +92,7 @@ bindsym --release Mod1+F7 exec playerctl previous
 
 # Manually lock the system
 bindsym --release $mod+Mod1+Ctrl+Shift+l exec i3lock lock --color=000000 -t
+bindsym --release $mod+q exec i3lock lock --color=000000 -t
 
 # Mouse impact
 focus_follows_mouse no
