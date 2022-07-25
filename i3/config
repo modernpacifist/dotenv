@@ -92,6 +92,7 @@ bindsym --release Mod1+F7 exec playerctl previous
 
 # Manually lock the system
 bindsym --release $mod+Mod1+Ctrl+Shift+l exec i3lock lock --color=000000 -t
+bindsym --release $mod+q exec i3lock lock --color=000000 -t
 
 # Mouse impact
 focus_follows_mouse no
@@ -198,7 +199,7 @@ bindsym --release $mod+Mod1+Shift+9 rename workspace to $ws9
 bindsym --release $mod+Mod1+Shift+0 rename workspace to $ws10
 
 # append name to the workspace
-bindsym $mod+Shift+r exec _rename_i3wm_workspace
+bindsym --release $mod+Shift+r exec __rename_i3wm_workspace
 
 # switch to workspace FIRST-LEVEL
 bindsym --release $mod+grave workspace number $ws0
@@ -253,8 +254,9 @@ bindsym --release $mod+Mod1+t [class="TelegramDesktop" instance="telegram-deskto
 for_window [class="Keybase" instance="keybase"] sticky enable, floating enable, move scratchpad
 bindsym --release $mod+Mod1+e [class="Keybase" instance="keybase"] scratchpad show
 
-# mark container
-bindsym --release $mod+Mod1+m exec i3-input -F 'mark %s' -l 2 -P 'Mark container with: '
+# mark container with prompt
+#bindsym --release $mod+Mod1+m exec i3-input -F 'mark %s' -l 3 -P 'Mark container with: '
+bindsym --release $mod+Mod1+m exec __mark_container
 
 # unmark container
 bindsym $mod+Mod1+u [con_id=__focused__] unmark
@@ -329,7 +331,7 @@ bindsym --release Ctrl+F9 [con_mark="^f9$"] focus, move absolute position $mark_
 bindsym --release Ctrl+F10 [con_mark="^f10$"] focus, move absolute position $mark_f10_abs_position_x px $mark_f10_abs_position_y px, resize set $mark_f10_horizontal_size $mark_f10_vertical_size
 
 # swap marked containers
-bindsym --release $mod+Ctrl+Mod1+s exec i3-input -F 'swap container with mark %s' -l 1 -P 'Swap with: '
+bindsym --release $mod+Mod1+Shift+s exec i3-input -F 'swap container with mark %s' -l 3 -P 'Swap with: '
 
 # whole scratchpad
 bindsym --release $mod+Mod1+equal [class=".*"] scratchpad show
@@ -460,7 +462,7 @@ bindsym --release Mod1+h exec xdotool key --clearmodifiers --delay 0 Left 2> /de
 
 bar {
     output primary
-    status_command i3status --config $HOME/.config/i3/i3status.conf | i3-keyboard-layout i3status | _get_current_track
+    status_command i3status --config $HOME/.config/i3/i3status.conf | i3-keyboard-layout i3status | __get_current_track | __get_current_marks
     position top
     tray_output primary
 
@@ -495,7 +497,7 @@ bar {
 }
 
 # For wallpaper
-exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallpaper.jpeg
+exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallpaper_skull.jpg
 
 # warpd
 exec --no-startup-id warpd 2>> /tmp/i3_waprd_exec.log
@@ -532,3 +534,6 @@ bindsym --release $mod+Shift+m exec rofi -show run -config ~/.config/rofi/config
 
 # File explorer
 bindsym --release $mod+Shift+u exec caja
+
+# Swapping workspaces
+bindsym --release $mod+Mod1+Ctrl+s exec __swap_focused_workspace
