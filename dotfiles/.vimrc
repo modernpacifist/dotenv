@@ -98,6 +98,7 @@ let g:UltiSnipsJumpForwardTrigger="<C-j>"
 let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 let g:snips_author="modernpacifist"
 
+
 colorscheme fogbell
 
 noremap <F9> :q<CR>
@@ -135,19 +136,16 @@ nnoremap <Leader>t8  :tabn 8<CR>
 nnoremap <Leader>t9  :tabn 9<CR>
 nnoremap <Leader>t0  :tabn 10<CR>
 
+" markdown preview
+let vim_markdown_preview_hotkey='<Nop>'
+nnoremap <Leader>mp  :call Vim_Markdown_Preview()<CR>
+
 " windows management
 nnoremap <Leader>vs  :vsplit<Space>
 nnoremap <Leader>hs  :split<Space>
 
 " disable of default shortcuts
 nnoremap <S-k> <Nop>
-
-" gitblame
-fun! GitCommand(command)
-  silent! !clear
-  exec "!git " . a:command . " %"
-endfun
-nnoremap <leader>gb :call GitCommand("blame") <CR>
 
 inoremap <M-J> <Down>
 inoremap <M-K> <Up>
@@ -182,3 +180,4 @@ augroup filetype_go
     autocmd BufNewFile,BufRead *.go colorscheme gitgo
 augroup END
 
+"autocmd BufEnter * colorscheme default
