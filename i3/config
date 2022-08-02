@@ -535,4 +535,4 @@ bindsym --release $mod+Shift+m exec rofi -show run -config ~/.config/rofi/config
 bindsym --release $mod+Shift+u exec caja
 
 # Swapping workspaces
-bindsym --release $mod+Mod1+Ctrl+s exec __swap_focused_workspace
+bindsym --release $mod+Mod1+Ctrl+s exec __swap_workspaces
