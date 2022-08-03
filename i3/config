@@ -94,6 +94,9 @@ bindsym --release Mod1+F7 exec playerctl previous
 bindsym --release $mod+Mod1+Ctrl+Shift+l exec i3lock lock --color=000000 -t
 bindsym --release $mod+q exec i3lock lock --color=000000 -t
 
+# Autolocking the system in 10 afk minutes
+exec xautolock -detectsleep -time 10 -locker 'i3lock --color=000000 -t' -notify 30 -notifier "notify-send -u critical -t 2000 -- 'SYSTEM LOCKDOWN IS IN 30 SECONDS'"
+
 # Mouse impact
 focus_follows_mouse no
 mouse_warping output
