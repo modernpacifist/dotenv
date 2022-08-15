@@ -70,8 +70,8 @@ bindsym --release $mod+Escape reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym --release $mod+Shift+Escape restart
 
-# creating variable for volume limit(optional)
-set $max_volume 80
+# variable for volume limit(default is 100)
+set $max_volume 100
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym --release XF86AudioRaiseVolume exec --no-startup-id __volume_control +2 $max_volume
