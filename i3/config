@@ -70,16 +70,19 @@ bindsym --release $mod+Escape reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym --release $mod+Shift+Escape restart
 
-# Use pactl to adjust volume in PulseAudio.
-bindsym --release XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2%
-bindsym --release XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2%
-bindsym --release XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+# creating variable for volume limit(optional)
+set $max_volume 80
 
-bindsym --release Mod1+F10 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle 
-bindsym --release Mod1+F11 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2%
-bindsym --release Mod1+F12 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2%
-bindsym --release Mod1+Shift+F11 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
-bindsym --release Mod1+Shift+F12 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+# Use pactl to adjust volume in PulseAudio.
+bindsym --release XF86AudioRaiseVolume exec --no-startup-id __volume_control +2 $max_volume
+bindsym --release XF86AudioLowerVolume exec --no-startup-id __volume_control -2 $max_volume
+bindsym --release XF86AudioMute exec --no-startup-id __volume_control toggle
+
+bindsym --release Mod1+F10 exec --no-startup-id __volume_control toggle 
+bindsym --release Mod1+F11 exec --no-startup-id __volume_control -2 $max_volume
+bindsym --release Mod1+F12 exec --no-startup-id __volume_control +2 $max_volume
+bindsym --release Mod1+Shift+F11 exec --no-startup-id __volume_control -10 $max_volume
+bindsym --release Mod1+Shift+F12 exec --no-startup-id __volume_control +10 $max_volume
 
 # Use playerctl to control player
 bindsym --release XF86AudioPlay exec playerctl play-pause
@@ -315,7 +318,7 @@ bindsym $mod+Mod1+F10 [con_mark="^f10$"] scratchpad show
 bindsym --release Ctrl+1 [con_mark="^1$"] focus
 bindsym --release Ctrl+2 [con_mark="^2$"] focus, move absolute position $mark_2_abs_position_x px $mark_2_abs_position_y px, resize set $mark_2_horizontal_size $mark_2_vertical_size
 bindsym --release Ctrl+3 [con_mark="^3$"] focus
-bindsym --release Ctrl+4 [con_mark="^4$"] focus, move absolute position $mark_4_abs_position_x px $mark_4_abs_position_y px, resize set $mark_4_horizontal_size $mark_4_vertical_size
+bindsym --release Ctrl+4 [con_mark="^4$"] focus
 bindsym --release Ctrl+5 [con_mark="^5$"] focus
 bindsym --release Ctrl+6 [con_mark="^6$"] focus
 bindsym --release Ctrl+7 [con_mark="^7$"] focus
