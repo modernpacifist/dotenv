@@ -334,8 +334,8 @@ bindsym --release Ctrl+F5 [con_mark="^f5$"] focus
 bindsym --release Ctrl+F6 [con_mark="^f6$"] focus
 bindsym --release Ctrl+F7 [con_mark="^f7$"] focus
 bindsym --release Ctrl+F8 [con_mark="^f8$"] focus
-bindsym --release Ctrl+F9 [con_mark="^f9$"] focus, move absolute position $mark_f9_abs_position_x px $mark_f9_abs_position_y px, resize set $mark_f9_horizontal_size $mark_f9_vertical_size
-bindsym --release Ctrl+F10 [con_mark="^f10$"] focus, move absolute position $mark_f10_abs_position_x px $mark_f10_abs_position_y px, resize set $mark_f10_horizontal_size $mark_f10_vertical_size
+bindsym --release Ctrl+F9 [con_mark="^f9$"] focus
+bindsym --release Ctrl+F10 [con_mark="^f10$"] focus
 
 # swap marked containers
 bindsym --release $mod+Mod1+Shift+s exec __swap_container_with_mark
