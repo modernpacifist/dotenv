@@ -329,7 +329,7 @@ bindsym --release Ctrl+6 [con_mark="^6$"] focus
 bindsym --release Ctrl+7 [con_mark="^7$"] focus
 bindsym --release Ctrl+8 [con_mark="^8$"] focus
 bindsym --release Ctrl+9 [con_mark="^9$"] focus
-bindsym --release Ctrl+0 [con_mark="^0$"] focus, move absolute position $mark_0_abs_position_x px $mark_0_abs_position_y px, resize set $mark_0_horizontal_size $mark_0_vertical_size
+bindsym --release Ctrl+0 [con_mark="^0$"] focus
 # lvl2
 bindsym --release Ctrl+F1 [con_mark="^f1$"] focus
 bindsym --release Ctrl+F2 [con_mark="^f2$"] focus
