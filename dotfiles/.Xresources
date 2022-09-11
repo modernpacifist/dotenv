@@ -44,10 +44,10 @@ rofi.dpi: 144
 *mark_0_horizontal_size: 2000
 *mark_0_vertical_size: 1000
 
-*mark_f1_abs_position_x: 1420
-*mark_f1_abs_position_y: 29
-*mark_f1_horizontal_size: 2420
-*mark_f1_vertical_size: 2131
+*mark_f1_abs_position_x: 2397
+*mark_f1_abs_position_y: 1347
+*mark_f1_horizontal_size: 1440
+*mark_f1_vertical_size: 810
 
 *mark_f9_abs_position_x: 1420
 *mark_f9_abs_position_y: 29
