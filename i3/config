@@ -285,7 +285,7 @@ bindsym --release $mod+Ctrl+8, sticky disable, mark "8", move scratchpad, [con_m
 bindsym --release $mod+Ctrl+9, sticky disable, mark "9", move scratchpad, [con_mark="^9$"] scratchpad show, move absolute position $mark_9_abs_position_x px $mark_9_abs_position_y px, resize set $mark_9_horizontal_size $mark_9_vertical_size
 bindsym --release $mod+Ctrl+0, sticky disable, mark "0", move scratchpad, [con_mark="^0$"] scratchpad show, move absolute position $mark_0_abs_position_x px $mark_0_abs_position_y px, resize set $mark_0_horizontal_size $mark_0_vertical_size
 # lvl2
-bindsym --release $mod+Ctrl+F1, sticky disable, mark "f1", move scratchpad, [con_mark="^f1$"] scratchpad show, move absolute position $mark_f1_abs_position_x px $mark_f1_abs_position_y px, resize set $mark_f1_horizontal_size $mark_f1_vertical_size
+bindsym --release $mod+Ctrl+F1, sticky enable, mark "f1", move scratchpad, [con_mark="^f1$"] scratchpad show, move absolute position $mark_f1_abs_position_x px $mark_f1_abs_position_y px, resize set $mark_f1_horizontal_size $mark_f1_vertical_size
 bindsym --release $mod+Ctrl+F2, sticky disable, mark "f2", move scratchpad
 bindsym --release $mod+Ctrl+F3, sticky disable, mark "f3", move scratchpad
 bindsym --release $mod+Ctrl+F4, sticky disable, mark "f4", move scratchpad
