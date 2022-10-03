@@ -254,6 +254,7 @@ for_window [window_role="pop-up"] floating enable
 
 # not focused windows
 no_focus [class="Firefox-esr" instance="Navigator"]
+no_focus [class="zoom"]
 
 # programming-spawned windows
 for_window [class="DevFloatingWindow"] floating enable
