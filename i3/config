@@ -176,7 +176,7 @@ bindsym --release $mod+Mod1+space floating toggle, move position center
 for_window [floating] title_format " FLOATING | %title"
 
 # add mark for picture in picture window
-for_window [title="Picture in picture"] mark "f1"
+for_window [title="Picture in picture"] mark "f1", move scratchpad, scratchpad show
 
 # change focus between tiling / floating windows
 bindsym --release Mod1+space focus mode_toggle
