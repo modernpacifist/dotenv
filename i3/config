@@ -251,6 +251,7 @@ bindsym --release $mod+Shift+p move container to workspace prev
 
 # pop-up windows always floating
 for_window [window_role="pop-up"] floating enable
+for_window [class="Caja" instance="caja"] floating enable, resize set 2000 1540, move position center
 
 # not focused windows
 no_focus [class="Firefox-esr" instance="Navigator"]
