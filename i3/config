@@ -323,7 +323,7 @@ bindsym $mod+Mod1+F10 [con_mark="^f10$"] scratchpad show
 
 # moving your focus to particular marked window
 bindsym --release Ctrl+1 [con_mark="^1$"] focus
-bindsym --release Ctrl+2 [con_mark="^2$"] focus, move absolute position $mark_2_abs_position_x px $mark_2_abs_position_y px, resize set $mark_2_horizontal_size $mark_2_vertical_size
+bindsym --release Ctrl+2 [con_mark="^2$"] focus
 bindsym --release Ctrl+3 [con_mark="^3$"] focus
 bindsym --release Ctrl+4 [con_mark="^4$"] focus
 bindsym --release Ctrl+5 [con_mark="^5$"] focus
