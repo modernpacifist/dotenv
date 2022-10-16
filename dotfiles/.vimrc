@@ -67,7 +67,6 @@ set statusline+=\ %p%%
 set statusline+=\ %l:%c
 set statusline+=\ 
 
-
 " Reloads buffer on its focus
 autocmd FocusGained,BufEnter * :checktime
 " Saves buffer on any change of data in it
@@ -87,6 +86,7 @@ let g:pymode_rope = 0
 let g:pymode_run = 0
 let g:pymode_lint_ignore = "E155"
 
+
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_seed_identifiers_with_syntax = 1
@@ -98,8 +98,7 @@ let g:UltiSnipsJumpForwardTrigger="<C-j>"
 let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 let g:snips_author="modernpacifist"
 
-
-colorscheme fogbell
+"colorscheme fogbell
 
 noremap <F9> :q<CR>
 noremap <F10> :x<CR>
