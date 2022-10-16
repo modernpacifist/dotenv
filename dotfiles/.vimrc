@@ -98,7 +98,7 @@ let g:UltiSnipsJumpForwardTrigger="<C-j>"
 let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 let g:snips_author="modernpacifist"
 
-"colorscheme fogbell
+colorscheme fogbell
 
 noremap <F9> :q<CR>
 noremap <F10> :x<CR>

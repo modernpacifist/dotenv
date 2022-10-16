@@ -99,7 +99,7 @@ bindsym --release Mod1+F9 exec playerctl next
 bindsym --release Mod1+F7 exec playerctl previous
 
 # Manually lock the system
-bindsym --release $mod+Mod1+Ctrl+Shift+l exec i3lock -u --color=000000
+bindsym --release $mod+Mod1+Ctrl+Shift+l exec i3lock --color=000000
 
 # Autolocking the system in 5 afk minutes
 exec_always xautolock -detectsleep -time 2 -locker 'setxkbmap us; i3lock --color=000000' -notify 10 -notifier "notify-send -i $HOME/Pictures/warning.png -u critical -t 10000 -- 'system lockdown is in 10 seconds'"
