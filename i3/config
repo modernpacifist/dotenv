@@ -426,23 +426,6 @@ mode "float-control" {
 
 bindsym --release $mod+Mod1+r mode "float-control"
 
-mode "__move_float_window" {
-    bindsym --release z exec __move_float_window 1
-    bindsym --release x exec __move_float_window 2
-    bindsym --release c exec __move_float_window 3
-    bindsym --release a exec __move_float_window 4
-    bindsym --release s exec __move_float_window 5
-    bindsym --release d exec __move_float_window 6
-    bindsym --release q exec __move_float_window 7
-    bindsym --release w exec __move_float_window 8
-    bindsym --release e exec __move_float_window 9
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-bindsym --release $mod+Ctrl+Mod1+m mode "__move_float_window"
-
 # bug here
 mode "float-scale" {
     bindsym l resize shrink width 1 px or 1 ppt, move container right 1 px
@@ -473,12 +456,22 @@ mode "float-scale" {
 
 bindsym --release $mod+Ctrl+Mod1+r mode "float-scale"
 
+# __move_float_window
+bindsym --release $mod+Ctrl+Mod1+z exec __move_float_window 1
+bindsym --release $mod+Ctrl+Mod1+x exec __move_float_window 2
+bindsym --release $mod+Ctrl+Mod1+c exec __move_float_window 3
+bindsym --release $mod+Ctrl+Mod1+a exec __move_float_window 4
+bindsym --release $mod+Ctrl+Mod1+s exec __move_float_window 5
+bindsym --release $mod+Ctrl+Mod1+d exec __move_float_window 6
+bindsym --release $mod+Ctrl+Mod1+q exec __move_float_window 7
+bindsym --release $mod+Ctrl+Mod1+w exec __move_float_window 8
+bindsym --release $mod+Ctrl+Mod1+e exec __move_float_window 9
+
 # arrows with shortcuts instead of arrows
 bindsym --release Mod1+k exec xdotool key --clearmodifiers --delay 0 Up 2> /dev/null
 bindsym --release Mod1+j exec xdotool key --clearmodifiers --delay 0 Down 2> /dev/null
 bindsym --release Mod1+l exec xdotool key --clearmodifiers --delay 0 Right 2> /dev/null
 bindsym --release Mod1+h exec xdotool key --clearmodifiers --delay 0 Left 2> /dev/null
-
 
 bar {
     output primary
@@ -556,4 +549,4 @@ bindsym --release $mod+Shift+m exec rofi -show run -config ~/.config/rofi/config
 bindsym --release $mod+Shift+u exec caja
 
 # Swapping workspaces
-bindsym --release $mod+Mod1+Ctrl+s exec __swap_workspaces
+bindsym --release $mod+Ctrl+Shift+s exec __swap_workspaces
