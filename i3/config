@@ -477,7 +477,7 @@ bindsym --release Mod1+h exec xdotool key --clearmodifiers --delay 0 Left 2> /de
 
 bar {
     output primary
-    status_command i3status --config $HOME/.config/i3/i3status.conf | i3-keyboard-layout i3status | __get_current_track | __get_current_marks
+    status_command i3status --config $HOME/.config/i3/i3status.conf | i3-keyboard-layout i3status | __get_current_marks | __get_current_track
     position top
     tray_output primary
 
