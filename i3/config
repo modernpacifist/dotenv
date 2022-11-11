@@ -176,7 +176,7 @@ bindsym --release $mod+Mod1+space floating toggle, move position center
 for_window [floating] title_format " FLOATING | %title"
 
 # add mark for picture in picture window
-for_window [title="Picture in picture"] mark "f1", move scratchpad, scratchpad show
+for_window [title="Picture in picture"] mark "f1", move scratchpad, scratchpad show, exec __move_float_window 3
 
 for_window [class="^Pavucontrol$" title="^Volume Control$"] mark "4"
 
