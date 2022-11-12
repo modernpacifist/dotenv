@@ -178,7 +178,7 @@ for_window [floating] title_format " FLOATING | %title"
 # add mark for picture in picture window
 for_window [title="Picture in picture"] mark "f1", move scratchpad, scratchpad show, exec __move_float_window 3
 
-for_window [class="^Pavucontrol$" title="^Volume Control$"] mark "4"
+for_window [class="^Pavucontrol$" title="^Volume Control$"] mark "monitor2", move scratchpad, scratchpad show
 
 # change focus between tiling / floating windows
 bindsym --release Mod1+space focus mode_toggle
@@ -277,6 +277,10 @@ bindsym --release $mod+Mod1+m exec __mark_container
 
 # unmark container
 bindsym $mod+Mod1+u [con_id=__focused__] unmark
+
+# show all scratchpad containers with monitor
+bindsym --release $mod+m [con_mark="^monitor*"] scratchpad show
+bindsym --release $mod+Ctrl+m exec __monitor_scratchpad "mark"
 
 # overall scratchpads
 bindsym --release $mod+Ctrl+1, sticky disable, mark "1", move scratchpad, [con_mark="^1$"] scratchpad show
