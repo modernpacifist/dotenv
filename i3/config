@@ -281,7 +281,7 @@ bindsym $mod+Mod1+u [con_id=__focused__] unmark
 # monitor scratchpad management
 bindsym --release $mod+Mod1+m exec __monitor_scratchpad "show"
 bindsym --release $mod+Ctrl+m exec __monitor_scratchpad "mark"
-bindsym --release $mod+Ctrl+d exec __monitor_scratchpad "hide"
+bindsym --release $mod+Mod1+d exec __monitor_scratchpad "hide"
 
 # overall scratchpads
 bindsym --release $mod+Ctrl+1, sticky disable, mark "1", move scratchpad, [con_mark="^1$"] scratchpad show
