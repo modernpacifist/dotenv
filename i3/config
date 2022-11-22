@@ -260,6 +260,9 @@ for_window [class="Caja" instance="caja"] floating enable, resize set 2000 1540,
 # not focused windows
 no_focus [class="Firefox-esr" instance="Navigator"]
 no_focus [class="zoom"]
+
+no_focus [con_mark="^monitor[0-9]$"]
+
 for_window [class="zoom" title="Chat"] floating enable, resize set 1000 1200, move position center
 
 # programming-spawned windows
