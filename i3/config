@@ -176,9 +176,11 @@ bindsym --release $mod+Mod1+space floating toggle, move position center
 for_window [floating] title_format " FLOATING | %title"
 
 # add mark for picture in picture window
-for_window [title="Picture in picture"] mark "f1", move scratchpad, scratchpad show, exec __move_float_window 3
+for_window [title="Picture in picture"] mark "f1", move scratchpad, scratchpad show, exec __move_float_window preset save
 for_window [title="Task Manager - Google Chrome"] floating enable, exec __move_float_window 5, resize set 1000 900
 
+#for_window [class="^Pavucontrol$" title="^Volume Control$"] mark "monitor2", move scratchpad, scratchpad show
+#for_window [class="^MongoDB Compass$"] mark "monitor3", move scratchpad, scratchpad show
 for_window [class="^Pavucontrol$" title="^Volume Control$"] mark "monitor2", move scratchpad, scratchpad show
 for_window [class="^MongoDB Compass$"] mark "monitor3", move scratchpad, scratchpad show
 
@@ -372,7 +374,7 @@ mode "resize" {
     bindsym Mod1+j resize grow height 5 px or 5 ppt
     bindsym Mod1+k resize shrink height 5 px or 5 ppt
     bindsym Mod1+l resize grow width 5 px or 5 ppt
-    
+
     bindsym Shift+h resize shrink width 10 px or 10 ppt
     bindsym Shift+j resize grow height 10 px or 10 ppt
     bindsym Shift+k resize shrink height 10 px or 10 ppt
