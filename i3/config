@@ -267,11 +267,13 @@ for_window [class="zoom" title="Chat"] floating enable, resize set 1000 1200, mo
 for_window [class="DevFloatingWindow"] floating enable
 for_window [class="Matplotlib"] floating enable, move absolute position 0 px 540 px, resize set 1000 540
 
-# telegram scratchpad
+# telegram float
 for_window [class="TelegramDesktop" instance="Telegram"], floating enable, move scratchpad, sticky enable
 bindsym --release $mod+Mod1+t [class="TelegramDesktop" instance="Telegram"] scratchpad show, move absolute position $telegram_abs_position_x px $telegram_abs_position_y px, resize set $telegram_horizontal_size $telegram_vertical_size
 
 #for_window [class="TelegramDesktop" instance="Telegram" title="Media viewer"], floating enable
+# slack float
+for_window [class="Slack" instance="slack"], floating enable
 
 # keybase scratchpad
 for_window [class="Keybase" instance="keybase"] sticky enable, floating enable, move scratchpad
