@@ -1,4 +1,5 @@
 exit: capslock
+hint_exit: capslock
 
 hint_oneshot_key: A-M-i
 hint_activation_key: A-M-o
@@ -7,15 +8,14 @@ activation_key: A-M-a
 screen_activation_key: A-M-p
 speed: 200
 max_speed: 400
+buttons: z x c
 
-buttons: z, x, c
 cursor_color: #00ffff
 copy_and_exit: y
 
-grid_keys: u, o, j, l
 grid_color: #ff0000
 
-hint_size: 20
+hint_size: 40
 hint_bgcolor: #000000
 hint_fgcolor: #ffffff
 hint_border_radius: #ffffff
