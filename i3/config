@@ -182,6 +182,9 @@ for_window [title="Task Manager - Google Chrome"] floating enable, exec __move_f
 for_window [class="^Pavucontrol$" title="^Volume Control$"] mark "monitor2", move scratchpad, scratchpad show
 for_window [class="^MongoDB Compass$"] mark "monitor3", move scratchpad, scratchpad show
 
+# feh
+for_window [class="^feh$"] floating enable, exec __move_float_window 5
+
 # change focus between tiling / floating windows
 bindsym --release Mod1+space focus mode_toggle
 bindsym --release XF86Eject focus mode_toggle
@@ -470,33 +473,33 @@ mode "float-scale" {
 
 bindsym --release $mod+Ctrl+Mod1+r mode "float-scale"
 
-mode "__move_float_window" {
-    bindsym --release z exec __move_float_window 1
-    bindsym --release x exec __move_float_window 2
-    bindsym --release c exec __move_float_window 3
-    bindsym --release a exec __move_float_window 4
-    bindsym --release s exec __move_float_window 5
-    bindsym --release d exec __move_float_window 6
-    bindsym --release q exec __move_float_window 7
-    bindsym --release w exec __move_float_window 8
-    bindsym --release e exec __move_float_window 9
+bindsym --release $mod+Ctrl+Mod1+z exec __move_float_window 1
+bindsym --release $mod+Ctrl+Mod1+x exec __move_float_window 2
+bindsym --release $mod+Ctrl+Mod1+c exec __move_float_window 3
+bindsym --release $mod+Ctrl+Mod1+a exec __move_float_window 4
+bindsym --release $mod+Ctrl+Mod1+s exec __move_float_window 5
+bindsym --release $mod+Ctrl+Mod1+d exec __move_float_window 6
+bindsym --release $mod+Ctrl+Mod1+q exec __move_float_window 7
+bindsym --release $mod+Ctrl+Mod1+w exec __move_float_window 8
+bindsym --release $mod+Ctrl+Mod1+e exec __move_float_window 9
 
-    bindsym --release Shift+q exec __move_float_window 10
-    bindsym --release Shift+a exec __move_float_window 11
-    bindsym --release Shift+z exec __move_float_window 12
-    bindsym --release Shift+w exec __move_float_window 13
-    bindsym --release Shift+s exec __move_float_window 14
-    bindsym --release Shift+x exec __move_float_window 15
-    bindsym --release Shift+e exec __move_float_window 16
-    bindsym --release Shift+d exec __move_float_window 17
-    bindsym --release Shift+c exec __move_float_window 18
+mode "__move_float_window monitor 1" {
+    bindsym --release q exec __move_float_window 10
+    bindsym --release a exec __move_float_window 11
+    bindsym --release z exec __move_float_window 12
+    bindsym --release w exec __move_float_window 13
+    bindsym --release s exec __move_float_window 14
+    bindsym --release x exec __move_float_window 15
+    bindsym --release e exec __move_float_window 16
+    bindsym --release d exec __move_float_window 17
+    bindsym --release c exec __move_float_window 18
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 
 # __move_float_window
-bindsym --release $mod+Ctrl+Mod1+m mode "__move_float_window"
+bindsym --release $mod+Ctrl+Mod1+1 mode "__move_float_window monitor 1"
 
 # arrows with shortcuts instead of arrows
 bindsym --release Mod1+k exec xdotool key --clearmodifiers --delay 0 Up 2> /dev/null

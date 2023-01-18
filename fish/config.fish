@@ -17,6 +17,7 @@ alias _speedtest='curl -s \'https://raw.githubusercontent.com/sivel/speedtest-cl
 if type -q exa
     alias l "exa -aalig --icons --color=never"
     alias ll "exa -lagi --tree --level=2 --icons --color=never"
+    alias ls "exa -aalig --icons --color=never --sort=created"
 end
 
 function fish_right_prompt -d "Write time on the right"
