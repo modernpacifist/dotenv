@@ -176,7 +176,7 @@ bindsym --release $mod+Mod1+space floating toggle, move position center
 for_window [floating] title_format " FLOATING | %title"
 
 # add mark for picture in picture window
-for_window [title="Picture in picture"] mark "f1", move scratchpad, scratchpad show, exec __move_float_window preset save
+for_window [title="Picture in picture"] mark "f1", move scratchpad, scratchpad show, exec __move_float_window 18
 for_window [title="Task Manager - Google Chrome"] floating enable, exec __move_float_window 5, resize set 1000 900
 
 for_window [class="^Pavucontrol$" title="^Volume Control$"] mark "monitor2", move scratchpad, scratchpad show
@@ -262,6 +262,7 @@ for_window [class="Caja" instance="caja"] floating enable, resize set 2000 1540,
 
 # not focused windows
 no_focus [class="Firefox-esr" instance="Navigator"]
+
 no_focus [class="zoom"]
 
 for_window [class="zoom" title="Chat"] floating enable, resize set 1000 1200, move position center
