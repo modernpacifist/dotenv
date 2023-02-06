@@ -449,6 +449,7 @@ bindsym --release $mod+Mod1+r mode "float-control"
 # bug here
 mode "float-scale" {
     bindsym w exec __scale_float_window w
+    bindsym s exec __scale_float_window s
 
     bindsym l exec __scale_float_window 1 1
     bindsym k exec __scale_float_window 2 1
