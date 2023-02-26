@@ -269,6 +269,8 @@ no_focus [class="zoom"]
 
 for_window [class="zoom" title="Chat"] floating enable, resize set 1000 1200, move position center
 
+for_window [class="Pulseeffects" instance="pulseeffects"] floating enable, resize set 3240 1331, move position center
+
 # programming-spawned windows
 for_window [class="DevFloatingWindow"] floating enable
 for_window [class="Matplotlib"] floating enable, move absolute position 0 px 540 px, resize set 1000 540
