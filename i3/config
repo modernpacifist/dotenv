@@ -440,6 +440,14 @@ mode "float-control" {
     bindsym $mod+Shift+k move container up 200 px
     bindsym $mod+Shift+l move container right 200 px
 
+
+    bindsym minus exec __diagonal_resize -40
+    bindsym Shift+minus exec __diagonal_resize -200
+
+    bindsym equal exec __diagonal_resize 40
+    bindsym Shift+plus exec __diagonal_resize 200
+
+
     bindsym Mod1+space focus mode_toggle
 
     bindsym Return mode "default"
