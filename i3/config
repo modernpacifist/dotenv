@@ -268,6 +268,7 @@ for_window [class="Firefox-esr" instance="Navigator"] floating enable, resize se
 no_focus [class="zoom"]
 
 for_window [class="zoom" title="Chat"] floating enable, resize set 1000 1200, move position center
+for_window [class="zoom"] move container to workspace number $ws9
 
 for_window [class="Pulseeffects" instance="pulseeffects"] floating enable, resize set 3240 1331, move position center
 
