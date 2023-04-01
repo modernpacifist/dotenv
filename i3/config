@@ -270,7 +270,8 @@ no_focus [class="zoom"]
 for_window [class="zoom" title="Chat"] floating enable, resize set 1000 1200, move position center
 for_window [class="zoom"] move container to workspace number $ws9
 
-for_window [class="Pulseeffects" instance="pulseeffects"] floating enable, resize set 3240 1331, move position center
+no_focus [class="Pulseeffects" instance="pulseeffects"]
+for_window [class="Pulseeffects" instance="pulseeffects"] floating enable, resize set 3240 1331, move position center, move container to workspace number $ws10
 
 # programming-spawned windows
 for_window [class="DevFloatingWindow"] floating enable
@@ -291,7 +292,7 @@ bindsym --release $mod+Mod1+e [class="Keybase" instance="keybase"] scratchpad sh
 # mark container with prompt
 bindsym --release $mod+m exec __mark_container
 
-# unmark container
+# unmark focused container
 bindsym $mod+u [con_id=__focused__] unmark
 
 # monitor scratchpad management
