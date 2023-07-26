@@ -17,8 +17,11 @@ Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'numirias/semshi'
 Plug 'preservim/nerdcommenter'
 
+" automatic closing brackets, etc.
+Plug 'windwp/nvim-autopairs'
+
 " completion engine
-Plug 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " python code syntax check
 Plug 'neomake/neomake'
@@ -28,6 +31,11 @@ Plug 'machakann/vim-highlightedyank'
 
 call plug#end()
 
+" for windwp/nvim-autopairs
+lua << EOF
+require("nvim-autopairs").setup {}
+EOF
+
 filetype plugin indent on
 
 syntax on
@@ -35,7 +43,7 @@ set guicursor=i:block
 set number
 set autoread
 set encoding=utf-8
-set shell=fish
+set shell=bash
 set wildmenu
 set softtabstop=0
 set shiftwidth=4
@@ -76,9 +84,10 @@ set statusline+=\ %p%%
 set statusline+=\ %l:%c
 set statusline+=\ 
 
+let g:python3_host_prog = '/usr/local/bin/python3.10'
+
 let g:coc_global_extensions = [
   \ 'coc-json',
-  \ 'coc-pairs',
   \ 'coc-pyright', 
   \ 'coc-python', 
   \ 'coc-snippets',
