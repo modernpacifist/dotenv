@@ -124,8 +124,7 @@ let g:UltiSnipsJumpForwardTrigger="<C-j>"
 let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 let g:snips_author="modernpacifist"
 
-"colorscheme 256_noir
-autocmd BufNewFile,BufRead *.colorscheme gitgo
+colorscheme 256_noir
 autocmd BufNewFile,BufRead *.go colorscheme gitgo
 
 noremap <F2> <Plug>(coc-rename)
@@ -209,10 +208,4 @@ inoremap <M-L> <Right>
 "
 "augroup filetype_vim
 "    autocmd FileType vim set syntax=off
-"augroup END
-"
-"augroup filetype_go
-"    autocmd!
-"    " Enable syntax for go 
-"    autocmd FileType go colorscheme gitgo
 "augroup END
