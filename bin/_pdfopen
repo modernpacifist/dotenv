@@ -1,0 +1,9 @@
+#!/bin/env bash
+
+if [[ -z $1 ]]; then
+    echo 'No $1 arg specified'
+    exit 1
+fi
+
+nohup atril $1 & 2>/dev/null
+exit 0
