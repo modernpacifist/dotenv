@@ -4,7 +4,6 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 
-
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
@@ -78,6 +77,9 @@ bindsym --release $mod+Shift+Escape restart
 # variable for volume limit(default is 100)
 set $max_volume 100
 
+bindsym --release XF86MonBrightnessDown exec --no-startup-id __screen_dimmer -0.1
+bindsym --release XF86MonBrightnessUp exec --no-startup-id __screen_dimmer +0.1
+
 # Use pactl to adjust volume in PulseAudio.
 bindsym --release XF86AudioRaiseVolume exec --no-startup-id __volume_control +2 $max_volume
 bindsym --release XF86AudioLowerVolume exec --no-startup-id __volume_control -2 $max_volume
@@ -88,6 +90,7 @@ bindsym --release Mod1+F11 exec --no-startup-id __volume_control -2 $max_volume
 bindsym --release Mod1+F12 exec --no-startup-id __volume_control +2 $max_volume
 bindsym --release Mod1+Shift+F11 exec --no-startup-id __volume_control -10 $max_volume
 bindsym --release Mod1+Shift+F12 exec --no-startup-id __volume_control +10 $max_volume
+bindsym --release Mod1+XF86Tools exec --no-startup-id __volume_control round
 
 # Use playerctl to control player
 bindsym --release XF86AudioPlay exec playerctl play-pause
@@ -100,9 +103,6 @@ bindsym --release Mod1+F7 exec playerctl previous
 
 # Manually lock the system
 bindsym --release $mod+Mod1+Ctrl+Shift+l exec i3lock --color=000000
-
-# Autolocking the system in 10 afk minutes
-exec xautolock -detectsleep -time 10 -locker 'setxkbmap us; i3lock --color=000000' -notify 10 -notifier "notify-send -i $HOME/Pictures/warning.png -u critical -t 10000 -- 'system lockdown is in 10 seconds'"
 
 # Mouse impact
 focus_follows_mouse no
@@ -167,7 +167,7 @@ bindsym --release $mod+Ctrl+h split v
 bindsym --release $mod+Ctrl+v split h
 
 # fullscreen mode of the focused window
-bindsym --release $mod+f fullscreen toggle
+bindsym --release $mod+Mod1+f fullscreen toggle
 
 # toggle tiling / floating
 bindsym --release $mod+Mod1+space floating toggle, move position center
@@ -176,7 +176,7 @@ bindsym --release $mod+Mod1+space floating toggle, move position center
 for_window [floating] title_format " FLOATING | %title"
 
 # add mark for picture in picture window
-for_window [title="Picture in picture"] mark "f1", move scratchpad, scratchpad show, exec __move_float_window 18
+for_window [title="Picture in picture"] floating enable, mark "f1", resize set height 550, move scratchpad, scratchpad show, exec __move_float_window 18
 for_window [title="Task Manager - Google Chrome"] floating enable, exec __move_float_window 5, resize set 1000 900
 
 for_window [class="^Pavucontrol$" title="^Volume Control$"] mark "monitor2", move scratchpad, scratchpad show
@@ -204,6 +204,8 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+
+workspace $ws1 output HDMI-0
 
 # change workspace index
 bindsym --release $mod+Ctrl+Shift+asciitilde exec __change_workspace_index $ws0
@@ -259,6 +261,9 @@ bindsym --release $mod+Shift+p move container to workspace prev
 # pop-up windows always floating
 for_window [window_role="pop-up"] floating enable
 for_window [class="Caja" instance="caja"] floating enable, resize set 2000 1540, move position center
+assign [class="Caja" instance="caja"] → output primary
+assign [class="Xdg-desktop-portal-gtk" instance="xdg-desktop-portal-gtk"] → output primary
+
 
 # not focused windows
 no_focus [class="Firefox-esr" instance="Navigator"]
@@ -272,16 +277,16 @@ for_window [class="zoom"] move container to workspace number $ws9
 
 no_focus [class="Pulseeffects" instance="pulseeffects"]
 for_window [class="Pulseeffects" instance="pulseeffects"] floating enable, resize set 3240 1331, move position center, move container to workspace number $ws10
+exec pulseeffects
 
 # programming-spawned windows
-for_window [class="DevFloatingWindow"] floating enable
-for_window [class="Matplotlib"] floating enable, move absolute position 0 px 540 px, resize set 1000 540
+for_window [class="DevFloatingWindow"] floating enable, move absolute position 0 px 1960 px, resize set 1300 200
+for_window [class="Matplotlib"] floating enable, move absolute position 420 px 1350 px, resize set 1000 540
 
 # telegram float
-for_window [class="TelegramDesktop" instance="Telegram"], floating enable, move scratchpad, sticky enable
-bindsym --release $mod+Mod1+t [class="TelegramDesktop" instance="Telegram"] scratchpad show, move absolute position $telegram_abs_position_x px $telegram_abs_position_y px, resize set $telegram_horizontal_size $telegram_vertical_size
+for_window [class="TelegramDesktop" instance="telegram-desktop"], floating enable, move scratchpad, sticky enable
+bindsym --release $mod+Mod1+t [class="TelegramDesktop" instance="telegram-desktop"] scratchpad show, move absolute position $telegram_abs_position_x px $telegram_abs_position_y px, resize set $telegram_horizontal_size $telegram_vertical_size
 
-#for_window [class="TelegramDesktop" instance="Telegram" title="Media viewer"], floating enable
 # slack float
 for_window [class="Slack" instance="slack"], floating enable
 
@@ -458,10 +463,10 @@ mode "float-control" {
 
 bindsym --release $mod+Mod1+r mode "float-control"
 
-# bug here
-mode "float-scale" {
+mode "__scale_float_window" {
+    # for borderline resize
     bindsym w exec __scale_float_window w
-    bindsym s exec __scale_float_window s
+    bindsym s exec __scale_float_window a
 
     bindsym l exec __scale_float_window 1 1
     bindsym k exec __scale_float_window 2 1
@@ -483,13 +488,19 @@ mode "float-scale" {
     bindsym Shift+j exec __scale_float_window 3 200
     bindsym Shift+h exec __scale_float_window 4 200
 
+    bindsym minus exec __scale_float_window widen -40
+    bindsym Shift+minus exec __scale_float_window widen -200
+
+    bindsym equal exec __scale_float_window widen 40
+    bindsym Shift+plus exec __scale_float_window widen 200
+
     bindsym Mod1+space focus mode_toggle
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 
-bindsym --release $mod+Ctrl+Mod1+r mode "float-scale"
+bindsym --release $mod+Ctrl+Mod1+r mode "__scale_float_window"
 
 bindsym --release $mod+Ctrl+Mod1+z exec __move_float_window 1
 bindsym --release $mod+Ctrl+Mod1+x exec __move_float_window 2
@@ -562,7 +573,7 @@ bar {
 }
 
 # For wallpaper
-exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallpaper_skull.jpg
+exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallpaper.jpg
 
 # warpd
 exec --no-startup-id warpd 2>> /tmp/i3_waprd_exec.log
