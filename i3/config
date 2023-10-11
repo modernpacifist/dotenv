@@ -488,11 +488,11 @@ mode "__scale_float_window" {
     bindsym Shift+j exec __scale_float_window 3 200
     bindsym Shift+h exec __scale_float_window 4 200
 
-    bindsym minus exec __scale_float_window widen -40
-    bindsym Shift+minus exec __scale_float_window widen -200
+    bindsym --release minus exec __scale_float_window widen -40
+    bindsym --release Shift+minus exec __scale_float_window widen -200
 
-    bindsym equal exec __scale_float_window widen 40
-    bindsym Shift+plus exec __scale_float_window widen 200
+    bindsym --release equal exec __scale_float_window widen 40
+    bindsym --release Shift+plus exec __scale_float_window widen 200
 
     bindsym Mod1+space focus mode_toggle
 
