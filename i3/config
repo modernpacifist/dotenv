@@ -205,7 +205,7 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-workspace $ws1 output HDMI-0
+workspace $ws1 output primary
 
 # change workspace index
 bindsym --release $mod+Ctrl+Shift+asciitilde exec __change_workspace_index $ws0
