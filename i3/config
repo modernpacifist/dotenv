@@ -208,17 +208,29 @@ set $ws10 "10"
 workspace $ws1 output primary
 
 # change workspace index
-bindsym --release $mod+Ctrl+Shift+asciitilde exec __change_workspace_index $ws0
-bindsym --release $mod+Ctrl+Shift+1 exec __change_workspace_index $ws1
-bindsym --release $mod+Ctrl+Shift+2 exec __change_workspace_index $ws2
-bindsym --release $mod+Ctrl+Shift+3 exec __change_workspace_index $ws3
-bindsym --release $mod+Ctrl+Shift+4 exec __change_workspace_index $ws4
-bindsym --release $mod+Ctrl+Shift+5 exec __change_workspace_index $ws5
-bindsym --release $mod+Ctrl+Shift+6 exec __change_workspace_index $ws6
-bindsym --release $mod+Ctrl+Shift+7 exec __change_workspace_index $ws7
-bindsym --release $mod+Ctrl+Shift+8 exec __change_workspace_index $ws8
-bindsym --release $mod+Ctrl+Shift+9 exec __change_workspace_index $ws9
-bindsym --release $mod+Ctrl+Shift+0 exec __change_workspace_index $ws10
+#bindsym --release $mod+Ctrl+Shift+asciitilde exec __change_workspace_index $ws0
+#bindsym --release $mod+Ctrl+Shift+1 exec __change_workspace_index $ws1
+#bindsym --release $mod+Ctrl+Shift+2 exec __change_workspace_index $ws2
+#bindsym --release $mod+Ctrl+Shift+3 exec __change_workspace_index $ws3
+#bindsym --release $mod+Ctrl+Shift+4 exec __change_workspace_index $ws4
+#bindsym --release $mod+Ctrl+Shift+5 exec __change_workspace_index $ws5
+#bindsym --release $mod+Ctrl+Shift+6 exec __change_workspace_index $ws6
+#bindsym --release $mod+Ctrl+Shift+7 exec __change_workspace_index $ws7
+#bindsym --release $mod+Ctrl+Shift+8 exec __change_workspace_index $ws8
+#bindsym --release $mod+Ctrl+Shift+9 exec __change_workspace_index $ws9
+#bindsym --release $mod+Ctrl+Shift+0 exec __change_workspace_index $ws10
+bindsym --release $mod+Ctrl+Shift+asciitilde exec change_workspace_index --index $ws0
+bindsym --release $mod+Ctrl+Shift+1 exec change_workspace_index --index $ws1
+bindsym --release $mod+Ctrl+Shift+2 exec change_workspace_index --index $ws2
+bindsym --release $mod+Ctrl+Shift+3 exec change_workspace_index --index $ws3
+bindsym --release $mod+Ctrl+Shift+4 exec change_workspace_index --index $ws4
+bindsym --release $mod+Ctrl+Shift+5 exec change_workspace_index --index $ws5
+bindsym --release $mod+Ctrl+Shift+6 exec change_workspace_index --index $ws6
+bindsym --release $mod+Ctrl+Shift+7 exec change_workspace_index --index $ws7
+bindsym --release $mod+Ctrl+Shift+8 exec change_workspace_index --index $ws8
+bindsym --release $mod+Ctrl+Shift+9 exec change_workspace_index --index $ws9
+bindsym --release $mod+Ctrl+Shift+0 exec change_workspace_index --index $ws10
+
 
 # append name to the workspace
 bindsym --release $mod+Shift+r exec __rename_i3wm_workspace
