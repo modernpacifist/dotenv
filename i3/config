@@ -90,7 +90,7 @@ bindsym --release Mod1+F11 exec --no-startup-id __volume_control -2 $max_volume
 bindsym --release Mod1+F12 exec --no-startup-id __volume_control +2 $max_volume
 bindsym --release Mod1+Shift+F11 exec --no-startup-id __volume_control -10 $max_volume
 bindsym --release Mod1+Shift+F12 exec --no-startup-id __volume_control +10 $max_volume
-bindsym --release Mod1+XF86Tools exec --no-startup-id __volume_control round
+bindsym --release $mod+Mod1+F12 exec --no-startup-id __volume_control round
 
 # Use playerctl to control player
 bindsym --release XF86AudioPlay exec playerctl play-pause
