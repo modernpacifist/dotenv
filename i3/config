@@ -539,7 +539,8 @@ bindsym --release Mod1+h exec xdotool key --clearmodifiers --delay 0 Left 2> /de
 
 bar {
     output primary
-    status_command i3status --config $HOME/.config/i3/i3status.conf | __get_current_marks | __touchpad_toggle i3status | __get_current_track
+    #status_command i3status --config $HOME/.config/i3/i3status.conf | __get_current_marks | __touchpad_toggle i3status | __get_current_track
+    status_command i3status --config $HOME/.config/i3/i3status.conf | __get_current_marks | __touchpad_toggle i3status | prepend_i3status |  __get_current_track
     position top
     tray_output primary
 
@@ -586,7 +587,6 @@ exec --no-startup-id xbanish 2>> /tmp/i3_exec.log
 exec --no-startup-id __screendim_off
 
 # For language toggle en/ru
-#bindsym --release $mod+space exec i3-keyboard-layout cycle us ru
 bindsym --release $mod+space exec change_keyboard_layout --layouts us/ru
 
 # For keyboard speed             dly speed
