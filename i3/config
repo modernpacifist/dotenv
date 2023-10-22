@@ -222,7 +222,7 @@ bindsym --release $mod+Ctrl+Shift+0 exec change_workspace_index --index $ws10
 
 
 # append name to the workspace
-bindsym --release $mod+Shift+r exec __rename_i3wm_workspace
+bindsym --release $mod+Shift+r exec rename_workspace
 
 # switch to workspace FIRST-LEVEL
 bindsym --release $mod+grave workspace number $ws0
