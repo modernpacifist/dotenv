@@ -57,10 +57,10 @@ set_from_resource $mark_f9_abs_position_y i3wm.mark_f9_abs_position_y 29
 set_from_resource $mark_f9_horizontal_size i3wm.mark_f9_horizontal_size 2420
 set_from_resource $mark_f9_vertical_size i3wm.mark_f9_vertical_size 2131
 
-set_from_resource $mark_f10_abs_position_x i3wm.mark_f10_abs_position_x 2040
+set_from_resource $mark_f10_abs_position_x i3wm.mark_f10_abs_position_x 6
 set_from_resource $mark_f10_abs_position_y i3wm.mark_f10_abs_position_y 29
-set_from_resource $mark_f10_horizontal_size i3wm.mark_f10_horizontal_size 1800
-set_from_resource $mark_f10_vertical_size i3wm.mark_f10_vertical_size 2131
+set_from_resource $mark_f10_horizontal_size i3wm.mark_f10_horizontal_size 3834
+set_from_resource $mark_f10_vertical_size i3wm.mark_f10_vertical_size 1200
 
 # Font for window titles. Will also be used by the bar unless a different font is used in the bar {} block below.
 font pango:monospace 8
@@ -326,7 +326,8 @@ bindsym --release $mod+Ctrl+F6, sticky disable, mark "f6", move scratchpad
 bindsym --release $mod+Ctrl+F7, sticky disable, mark "f7", move scratchpad
 bindsym --release $mod+Ctrl+F8, sticky disable, mark "f8", move scratchpad
 bindsym --release $mod+Ctrl+F9, sticky disable, mark "f9", move scratchpad, [con_mark="^f9$"] scratchpad show, move absolute position $mark_f9_abs_position_x px $mark_f9_abs_position_y px, resize set $mark_f9_horizontal_size $mark_f9_vertical_size
-bindsym --release $mod+Ctrl+F10, sticky disable, mark "f10", move scratchpad, [con_mark="^f10$"] scratchpad show, move absolute position $mark_f10_abs_position_x px $mark_f10_abs_position_y px, resize set $mark_f10_horizontal_size $mark_f10_vertical_size
+#bindsym --release $mod+Ctrl+F10, sticky disable, mark "f10", move scratchpad, [con_mark="^f10$"] scratchpad show, move absolute position 0 px 29 px, resize set 3840 1200
+bindsym --release $mod+Ctrl+F10, sticky disable, mark "f10", move scratchpad, [con_mark="^f10$"] scratchpad show, move absolute position $mark_f10_abs_position_x px $mark_f10_abs_position_y px, resize set 3840 1200
 
 # show/hide particular container with mark
 bindsym --release $mod+Mod1+1 [con_mark="^1$"] scratchpad show
