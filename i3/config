@@ -205,6 +205,13 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+set $ws11 "11"
+set $ws12 "12"
+set $ws13 "13"
+set $ws14 "14"
+set $ws15 "15"
+set $ws16 "16"
+
 workspace $ws1 output primary
 
 # change workspace index
@@ -220,6 +227,12 @@ bindsym --release $mod+Ctrl+Shift+8 exec change_workspace_index --index $ws8
 bindsym --release $mod+Ctrl+Shift+9 exec change_workspace_index --index $ws9
 bindsym --release $mod+Ctrl+Shift+0 exec change_workspace_index --index $ws10
 
+bindsym --release $mod+Ctrl+Shift+F1 exec change_workspace_index --index $ws11
+bindsym --release $mod+Ctrl+Shift+F2 exec change_workspace_index --index $ws12
+bindsym --release $mod+Ctrl+Shift+F3 exec change_workspace_index --index $ws13
+bindsym --release $mod+Ctrl+Shift+F4 exec change_workspace_index --index $ws14
+bindsym --release $mod+Ctrl+Shift+F5 exec change_workspace_index --index $ws15
+bindsym --release $mod+Ctrl+Shift+F6 exec change_workspace_index --index $ws16
 
 # append name to the workspace
 bindsym --release $mod+Shift+r exec rename_workspace
@@ -236,6 +249,13 @@ bindsym --release $mod+7 workspace number $ws7
 bindsym --release $mod+8 workspace number $ws8
 bindsym --release $mod+9 workspace number $ws9
 bindsym --release $mod+0 workspace number $ws10
+
+bindsym --release $mod+F1 workspace number $ws11
+bindsym --release $mod+F2 workspace number $ws12
+bindsym --release $mod+F3 workspace number $ws13
+bindsym --release $mod+F4 workspace number $ws14
+bindsym --release $mod+F5 workspace number $ws15
+bindsym --release $mod+F6 workspace number $ws16
 
 # move focused container to workspace FIRST-LEVEL
 bindsym --release $mod+Shift+asciitilde move container to workspace number $ws0
