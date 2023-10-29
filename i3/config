@@ -464,8 +464,10 @@ bindsym --release $mod+Mod1+r mode "float-control"
 
 mode "__scale_float_window" {
     # for borderline resize
-    bindsym w exec __scale_float_window w
-    bindsym s exec __scale_float_window a
+    bindsym w exec ScaleFloatWindow -mode w
+    bindsym s exec ScaleFloatWindow -mode s
+    bindsym d exec ScaleFloatWindow -mode d
+    bindsym a exec ScaleFloatWindow -mode a
 
     bindsym l exec __scale_float_window 1 1
     bindsym k exec __scale_float_window 2 1
