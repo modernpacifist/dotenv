@@ -2,7 +2,8 @@ set fish_greeting
 set -x PYTHONSTARTUP $HOME/.pythonstartup
 set -x EDITOR vim
 set -x PATH $PATH /sbin/
-set -x PATH $PATH /usr/local/go/bin
+set -x PATH $PATH /usr/local/go/bin/
+set -x PATH $PATH $HOME/.local/bin/
 
 abbr -a -- - 'cd -'
 alias cls='clear'
@@ -13,6 +14,11 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 alias _speedtest='curl -s \'https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py\' | python3.9 -'
+alias vi='nvim'
+alias f='fuck'
+alias pdfreader='atril'
+alias b='batcat'
+alias cal='cal -A 2'
 
 if type -q exa
     alias l "exa -aalig --icons --color=never"
@@ -79,3 +85,5 @@ function export_pentest_variables --on-event fish_prompt
         export $s
     end
 end
+
+thefuck --alias | source
