@@ -172,6 +172,7 @@ bindsym --release $mod+Mod1+f fullscreen toggle
 
 #bindsym --release $mod+g mark --add "last"
 #bindsym --release Mod1+Tab exec BackAndForthContainers
+bindsym --release Mod1+Tab exec BackAndForthContainers
 
 # toggle tiling / floating
 bindsym --release $mod+Mod1+space floating toggle, move position center
