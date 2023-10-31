@@ -170,7 +170,8 @@ bindsym --release $mod+Ctrl+v split h
 # fullscreen mode of the focused window
 bindsym --release $mod+Mod1+f fullscreen toggle
 
-bindsym --release $mod+g mark --add "last"
+#bindsym --release $mod+g mark --add "last"
+bindsym --release Mod1+Tab mark --add "last"
 
 # toggle tiling / floating
 bindsym --release $mod+Mod1+space floating toggle, move position center
