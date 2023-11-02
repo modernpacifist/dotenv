@@ -119,7 +119,6 @@ workspace_layout stacking
 focus_wrapping workspace
 
 # kill focused window
-#bindsym --release $mod+BackSpace kill
 bindsym --release $mod+BackSpace exec KillContainer
 
 # change container layout (tabbed, toggle split)
