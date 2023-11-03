@@ -77,8 +77,8 @@ bindsym --release $mod+Shift+Escape restart
 # variable for volume limit(default is 100)
 set $max_volume 100
 
-bindsym --release XF86MonBrightnessDown exec --no-startup-id __screen_dimmer -0.1
-bindsym --release XF86MonBrightnessUp exec --no-startup-id __screen_dimmer +0.1
+bindsym --release XF86MonBrightnessDown exec --no-startup-id ScreenDim -f -0.1
+bindsym --release XF86MonBrightnessUp exec --no-startup-id ScreenDim -f 0.1
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym --release XF86AudioRaiseVolume exec --no-startup-id __volume_control +2 $max_volume
