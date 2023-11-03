@@ -52,6 +52,11 @@ set_from_resource $mark_f1_abs_position_y i3wm.mark_f1_abs_position_y 29
 set_from_resource $mark_f1_horizontal_size i3wm.mark_f1_horizontal_size 1800
 set_from_resource $mark_f1_vertical_size i3wm.mark_f1_vertical_size 2131
 
+set_from_resource $mark_f1_abs_position_x i3wm.mark_f2_abs_position_x 3846
+set_from_resource $mark_f1_abs_position_y i3wm.mark_f2_abs_position_y 1837
+set_from_resource $mark_f1_horizontal_size i3wm.mark_f2_horizontal_size 1794
+set_from_resource $mark_f1_vertical_size i3wm.mark_f2_vertical_size 1040
+
 set_from_resource $mark_f9_abs_position_x i3wm.mark_f9_abs_position_x 1420
 set_from_resource $mark_f9_abs_position_y i3wm.mark_f9_abs_position_y 29
 set_from_resource $mark_f9_horizontal_size i3wm.mark_f9_horizontal_size 2420
@@ -342,7 +347,7 @@ bindsym --release $mod+Ctrl+9, sticky disable, mark "9", move scratchpad, [con_m
 bindsym --release $mod+Ctrl+0, sticky disable, mark "0", move scratchpad, [con_mark="^0$"] scratchpad show, move absolute position $mark_0_abs_position_x px $mark_0_abs_position_y px, resize set $mark_0_horizontal_size $mark_0_vertical_size
 # lvl2
 bindsym --release $mod+Ctrl+F1, sticky enable, mark "f1", move scratchpad, [con_mark="^f1$"] scratchpad show, move absolute position $mark_f1_abs_position_x px $mark_f1_abs_position_y px, resize set $mark_f1_horizontal_size $mark_f1_vertical_size
-bindsym --release $mod+Ctrl+F2, sticky disable, mark "f2", move scratchpad, [con_mark="^f2$"] scratchpad show, move absolute position 5614 px 1178 px
+bindsym --release $mod+Ctrl+F2, sticky disable, mark "f2", move scratchpad, [con_mark="^f2$"] scratchpad show, move absolute position $mark_f2_abs_position_x px $mark_f2_abs_position_y px, resize set $mark_f2_horizontal_size $mark_f2_vertical_size
 bindsym --release $mod+Ctrl+F3, sticky disable, mark "f3", move scratchpad
 bindsym --release $mod+Ctrl+F4, sticky disable, mark "f4", move scratchpad
 bindsym --release $mod+Ctrl+F5, sticky disable, mark "f5", move scratchpad
