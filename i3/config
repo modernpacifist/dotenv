@@ -52,10 +52,10 @@ set_from_resource $mark_f1_abs_position_y i3wm.mark_f1_abs_position_y 29
 set_from_resource $mark_f1_horizontal_size i3wm.mark_f1_horizontal_size 1800
 set_from_resource $mark_f1_vertical_size i3wm.mark_f1_vertical_size 2131
 
-set_from_resource $mark_f2_abs_position_x i3wm.mark_f2_abs_position_x 3846
-set_from_resource $mark_f2_abs_position_y i3wm.mark_f2_abs_position_y 1837
-set_from_resource $mark_f2_horizontal_size i3wm.mark_f2_horizontal_size 1794
-set_from_resource $mark_f2_vertical_size i3wm.mark_f2_vertical_size 1040
+set_from_resource $mark_f2_abs_position_x i3wm.mark_f2_abs_position_x 3840
+set_from_resource $mark_f2_abs_position_y i3wm.mark_f2_abs_position_y 1810
+set_from_resource $mark_f2_horizontal_size i3wm.mark_f2_horizontal_size 1800
+set_from_resource $mark_f2_vertical_size i3wm.mark_f2_vertical_size 1070
 
 set_from_resource $mark_f9_abs_position_x i3wm.mark_f9_abs_position_x 1420
 set_from_resource $mark_f9_abs_position_y i3wm.mark_f9_abs_position_y 29
