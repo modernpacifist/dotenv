@@ -10,7 +10,7 @@
 set $mod Mod4
 
 # Use Mouse+$mod to drag floating windows to their wanted position
-#floating_modifier $mod
+floating_modifier $mod
 
 set_from_resource $telegram_abs_position_x i3wm.telegram_abs_position_x 920
 set_from_resource $telegram_abs_position_y i3wm.telegram_abs_position_y 29
