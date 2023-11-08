@@ -1,9 +1,9 @@
 set fish_greeting
-set -x PYTHONSTARTUP $HOME/.pythonstartup
 set -x EDITOR vim
 set -x PATH $PATH /sbin/
 set -x PATH $PATH /usr/local/go/bin/
 set -x PATH $PATH $HOME/.local/bin/
+set -g fish_complete_args -C
 
 abbr -a -- - 'cd -'
 alias cls='clear'
