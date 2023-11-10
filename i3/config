@@ -334,17 +334,23 @@ bindsym $mod+u [con_id=__focused__] unmark
 bindsym --release $mod+Mod1+m exec __monitor_scratchpad "toggle"
 bindsym --release $mod+Ctrl+m exec __monitor_scratchpad "mark"
 
+bindsym --release $mod+Ctrl+Shift+Mod1+s exec --no-startup-id SaveWindowGeometry
+
 # overall scratchpads
 bindsym --release $mod+Ctrl+1, sticky disable, mark "1", move scratchpad, [con_mark="^1$"] scratchpad show
-bindsym --release $mod+Ctrl+2, sticky disable, mark "2", move scratchpad, [con_mark="^2$"] scratchpad show, move absolute position $mark_2_abs_position_x px $mark_2_abs_position_y px, resize set $mark_2_horizontal_size $mark_2_vertical_size
-bindsym --release $mod+Ctrl+3, sticky disable, mark "3", move scratchpad, [con_mark="^3$"] scratchpad show, move absolute position $mark_3_abs_position_x px $mark_3_abs_position_y px, resize set $mark_3_horizontal_size $mark_3_vertical_size
+#bindsym --release $mod+Ctrl+2, sticky disable, mark "2", move scratchpad, [con_mark="^2$"] scratchpad show, move absolute position $mark_2_abs_position_x px $mark_2_abs_position_y px, resize set $mark_2_horizontal_size $mark_2_vertical_size
+#bindsym --release $mod+Ctrl+3, sticky disable, mark "3", move scratchpad, [con_mark="^3$"] scratchpad show, move absolute position $mark_3_abs_position_x px $mark_3_abs_position_y px, resize set $mark_3_horizontal_size $mark_3_vertical_size
 bindsym --release $mod+Ctrl+4, sticky disable, mark "4", move scratchpad, [con_mark="^4$"] scratchpad show, move absolute position $mark_4_abs_position_x px $mark_4_abs_position_y px, resize set $mark_4_horizontal_size $mark_4_vertical_size
 bindsym --release $mod+Ctrl+5, sticky disable, mark "5", move scratchpad, [con_mark="^5$"] scratchpad show
 bindsym --release $mod+Ctrl+6, sticky disable, mark "6", move scratchpad, [con_mark="^6$"] scratchpad show
 bindsym --release $mod+Ctrl+7, sticky disable, mark "7", move scratchpad, [con_mark="^7$"] scratchpad show
 bindsym --release $mod+Ctrl+8, sticky disable, mark "8", move scratchpad, [con_mark="^8$"] scratchpad show, move absolute position $mark_8_abs_position_x px $mark_8_abs_position_y px, resize set $mark_8_horizontal_size $mark_8_vertical_size
 bindsym --release $mod+Ctrl+9, sticky disable, mark "9", move scratchpad, [con_mark="^9$"] scratchpad show, move absolute position $mark_9_abs_position_x px $mark_9_abs_position_y px, resize set $mark_9_horizontal_size $mark_9_vertical_size
-bindsym --release $mod+Ctrl+0, sticky disable, mark "0", move scratchpad, [con_mark="^0$"] scratchpad show, move absolute position $mark_0_abs_position_x px $mark_0_abs_position_y px, resize set $mark_0_horizontal_size $mark_0_vertical_size
+#bindsym --release $mod+Ctrl+0, sticky disable, mark "0", move scratchpad, [con_mark="^0$"] scratchpad show, move absolute position $mark_0_abs_position_x px $mark_0_abs_position_y px, resize set $mark_0_horizontal_size $mark_0_vertical_size
+bindsym --release $mod+Ctrl+2 exec --no-startup-id SaveWindowGeometry --restore 2
+bindsym --release $mod+Ctrl+3 exec --no-startup-id SaveWindowGeometry --restore 3
+bindsym --release $mod+Ctrl+0 exec --no-startup-id SaveWindowGeometry --restore 0
+
 # lvl2
 bindsym --release $mod+Ctrl+F1, sticky enable, mark "f1", move scratchpad, [con_mark="^f1$"] scratchpad show, move absolute position $mark_f1_abs_position_x px $mark_f1_abs_position_y px, resize set $mark_f1_horizontal_size $mark_f1_vertical_size
 bindsym --release $mod+Ctrl+F2, sticky disable, mark "f2", move scratchpad, [con_mark="^f2$"] scratchpad show, move absolute position $mark_f2_abs_position_x px $mark_f2_abs_position_y px, resize set $mark_f2_horizontal_size $mark_f2_vertical_size
