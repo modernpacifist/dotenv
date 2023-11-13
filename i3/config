@@ -314,8 +314,10 @@ for_window [class="DevFloatingWindow"] floating enable, move absolute position 0
 for_window [class="Matplotlib"] floating enable, move absolute position 420 px 1350 px, resize set 1000 540
 
 # telegram float
-for_window [class="TelegramDesktop" instance="telegram-desktop"], mark --add "telegram", floating enable, move scratchpad, sticky enable
+for_window [class="^TelegramDesktop$" instance="^telegram-desktop$"], mark --add "telegram", move scratchpad, floating enable, sticky enable
+for_window [class="^TelegramDesktop$" instance="^telegram-desktop$" title="^Media viewer$"] focus
 bindsym --release $mod+Mod1+t exec --no-startup-id SaveWindowGeometry --show telegram
+#bindsym --release $mod+Mod1+t [class="^TelegramDesktop$" instance="^telegram-desktop$"] scratchpad show
 
 # slack float
 for_window [class="Slack" instance="slack"], floating enable
