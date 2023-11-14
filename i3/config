@@ -355,17 +355,19 @@ bindsym --release $mod+Ctrl+0 exec --no-startup-id SaveWindowGeometry --restore 
 
 # lvl2
 #bindsym --release $mod+Ctrl+F1, sticky enable, mark "f1", move scratchpad, [con_mark="^f1$"] scratchpad show, move absolute position $mark_f1_abs_position_x px $mark_f1_abs_position_y px, resize set $mark_f1_horizontal_size $mark_f1_vertical_size
-bindsym --release $mod+Ctrl+F2, sticky disable, mark "f2", move scratchpad, [con_mark="^f2$"] scratchpad show, move absolute position $mark_f2_abs_position_x px $mark_f2_abs_position_y px, resize set $mark_f2_horizontal_size $mark_f2_vertical_size
+#bindsym --release $mod+Ctrl+F2, sticky disable, mark "f2", move scratchpad, [con_mark="^f2$"] scratchpad show, move absolute position $mark_f2_abs_position_x px $mark_f2_abs_position_y px, resize set $mark_f2_horizontal_size $mark_f2_vertical_size
 bindsym --release $mod+Ctrl+F3, sticky disable, mark "f3", move scratchpad
 bindsym --release $mod+Ctrl+F4, sticky disable, mark "f4", move scratchpad
 bindsym --release $mod+Ctrl+F5, sticky disable, mark "f5", move scratchpad
 bindsym --release $mod+Ctrl+F6, sticky disable, mark "f6", move scratchpad
 bindsym --release $mod+Ctrl+F7, sticky disable, mark "f7", move scratchpad
 bindsym --release $mod+Ctrl+F8, sticky disable, mark "f8", move scratchpad
-bindsym --release $mod+Ctrl+F9, sticky disable, mark "f9", move scratchpad, [con_mark="^f9$"] scratchpad show, move absolute position $mark_f9_abs_position_x px $mark_f9_abs_position_y px, resize set $mark_f9_horizontal_size $mark_f9_vertical_size
+#bindsym --release $mod+Ctrl+F9, sticky disable, mark "f9", move scratchpad, [con_mark="^f9$"] scratchpad show, move absolute position $mark_f9_abs_position_x px $mark_f9_abs_position_y px, resize set $mark_f9_horizontal_size $mark_f9_vertical_size
 #bindsym --release $mod+Ctrl+F10, sticky disable, mark "f10", move scratchpad, [con_mark="^f10$"] scratchpad show, move absolute position $mark_f10_abs_position_x px $mark_f10_abs_position_y px, resize set $mark_f10_horizontal_size $mark_f10_vertical_size
 
 bindsym --release $mod+Ctrl+F1 exec --no-startup-id SaveWindowGeometry --restore f1
+bindsym --release $mod+Ctrl+F2 exec --no-startup-id SaveWindowGeometry --restore f2
+bindsym --release $mod+Ctrl+F9 exec --no-startup-id SaveWindowGeometry --restore f9
 bindsym --release $mod+Ctrl+F10 exec --no-startup-id SaveWindowGeometry --restore f10
 
 # show/hide particular container with mark
