@@ -108,6 +108,7 @@ inoremap <silent><expr> <Tab>
 
 " Visual multi colorscheme
 let g:VM_highlight_matches = 'hi! Search ctermfg=255 ctermbg=240'
+let g:VM_case_setting = 'sensitive'
 
 let g:neomake_python_enabled_makers = ['flake8']
 " Reloads buffer on its focus
