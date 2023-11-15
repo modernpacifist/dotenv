@@ -279,6 +279,13 @@ bindsym --release $mod+Shift+8 move container to workspace number $ws8
 bindsym --release $mod+Shift+9 move container to workspace number $ws9
 bindsym --release $mod+Shift+0 move container to workspace number $ws10
 
+bindsym --release $mod+Shift+F1 move container to workspace number $ws11
+bindsym --release $mod+Shift+F2 move container to workspace number $ws12
+bindsym --release $mod+Shift+F3 move container to workspace number $ws13
+bindsym --release $mod+Shift+F4 move container to workspace number $ws14
+bindsym --release $mod+Shift+F5 move container to workspace number $ws15
+bindsym --release $mod+Shift+F6 move container to workspace number $ws16
+
 # move to last focused workspace
 bindsym --release $mod+Tab workspace back_and_forth
 
@@ -314,9 +321,9 @@ for_window [class="DevFloatingWindow"] floating enable, move absolute position 0
 for_window [class="Matplotlib"] floating enable, move absolute position 420 px 1350 px, resize set 1000 540
 
 # telegram float
-for_window [class="^TelegramDesktop$" instance="^telegram-desktop$" title="^Telegram$"], mark --add "telegram", move scratchpad, floating enable, sticky enable, exec --no-startup-id SaveWindowGeometry --update telegram
+for_window [class="^TelegramDesktop$" instance="^telegram-desktop$" title="^Telegram$"], mark --add "telegram", move scratchpad, floating enable, sticky enable, exec --no-startup-id ManageFloatContainer --update telegram
 for_window [class="^TelegramDesktop$" instance="^telegram-desktop$" title="^Media viewer$"] focus
-bindsym --release $mod+Mod1+t exec --no-startup-id SaveWindowGeometry --show telegram
+bindsym --release $mod+Mod1+t exec --no-startup-id ManageFloatContainer --show telegram
 
 # slack float
 for_window [class="Slack" instance="slack"], floating enable
@@ -335,7 +342,9 @@ bindsym $mod+u [con_id=__focused__] unmark
 bindsym --release $mod+Mod1+m exec __monitor_scratchpad "toggle"
 bindsym --release $mod+Ctrl+m exec __monitor_scratchpad "mark"
 
-bindsym --release $mod+Ctrl+Shift+Mod1+s exec --no-startup-id SaveWindowGeometry
+bindsym --release $mod+Ctrl+Shift+Mod1+s exec --no-startup-id ManageFloatContainer
+
+bindsym --release $mod+Ctrl+Mod1+grave exec --no-startup-id ManageFloatContainer --reset
 
 # overall scratchpads
 bindsym --release $mod+Ctrl+1, sticky disable, mark "1", move scratchpad, [con_mark="^1$"] scratchpad show
@@ -348,10 +357,10 @@ bindsym --release $mod+Ctrl+7, sticky disable, mark "7", move scratchpad, [con_m
 bindsym --release $mod+Ctrl+8, sticky disable, mark "8", move scratchpad, [con_mark="^8$"] scratchpad show, move absolute position $mark_8_abs_position_x px $mark_8_abs_position_y px, resize set $mark_8_horizontal_size $mark_8_vertical_size
 bindsym --release $mod+Ctrl+9, sticky disable, mark "9", move scratchpad, [con_mark="^9$"] scratchpad show, move absolute position $mark_9_abs_position_x px $mark_9_abs_position_y px, resize set $mark_9_horizontal_size $mark_9_vertical_size
 #bindsym --release $mod+Ctrl+0, sticky disable, mark "0", move scratchpad, [con_mark="^0$"] scratchpad show, move absolute position $mark_0_abs_position_x px $mark_0_abs_position_y px, resize set $mark_0_horizontal_size $mark_0_vertical_size
-bindsym --release $mod+Ctrl+2 exec --no-startup-id SaveWindowGeometry --restore 2
-bindsym --release $mod+Ctrl+3 exec --no-startup-id SaveWindowGeometry --restore 3
-bindsym --release $mod+Ctrl+4 exec --no-startup-id SaveWindowGeometry --restore 4
-bindsym --release $mod+Ctrl+0 exec --no-startup-id SaveWindowGeometry --restore 0
+bindsym --release $mod+Ctrl+2 exec --no-startup-id ManageFloatContainer --restore 2
+bindsym --release $mod+Ctrl+3 exec --no-startup-id ManageFloatContainer --restore 3
+bindsym --release $mod+Ctrl+4 exec --no-startup-id ManageFloatContainer --restore 4
+bindsym --release $mod+Ctrl+0 exec --no-startup-id ManageFloatContainer --restore 0
 
 # lvl2
 #bindsym --release $mod+Ctrl+F1, sticky enable, mark "f1", move scratchpad, [con_mark="^f1$"] scratchpad show, move absolute position $mark_f1_abs_position_x px $mark_f1_abs_position_y px, resize set $mark_f1_horizontal_size $mark_f1_vertical_size
@@ -365,10 +374,10 @@ bindsym --release $mod+Ctrl+F8, sticky disable, mark "f8", move scratchpad
 #bindsym --release $mod+Ctrl+F9, sticky disable, mark "f9", move scratchpad, [con_mark="^f9$"] scratchpad show, move absolute position $mark_f9_abs_position_x px $mark_f9_abs_position_y px, resize set $mark_f9_horizontal_size $mark_f9_vertical_size
 #bindsym --release $mod+Ctrl+F10, sticky disable, mark "f10", move scratchpad, [con_mark="^f10$"] scratchpad show, move absolute position $mark_f10_abs_position_x px $mark_f10_abs_position_y px, resize set $mark_f10_horizontal_size $mark_f10_vertical_size
 
-bindsym --release $mod+Ctrl+F1 exec --no-startup-id SaveWindowGeometry --restore f1
-bindsym --release $mod+Ctrl+F2 exec --no-startup-id SaveWindowGeometry --restore f2
-bindsym --release $mod+Ctrl+F9 exec --no-startup-id SaveWindowGeometry --restore f9
-bindsym --release $mod+Ctrl+F10 exec --no-startup-id SaveWindowGeometry --restore f10
+bindsym --release $mod+Ctrl+F1 exec --no-startup-id ManageFloatContainer --restore f1
+bindsym --release $mod+Ctrl+F2 exec --no-startup-id ManageFloatContainer --restore f2
+bindsym --release $mod+Ctrl+F9 exec --no-startup-id ManageFloatContainer --restore f9
+bindsym --release $mod+Ctrl+F10 exec --no-startup-id ManageFloatContainer --restore f10
 
 # show/hide particular container with mark
 bindsym --release $mod+Mod1+1 [con_mark="^1$"] scratchpad show
