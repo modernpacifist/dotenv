@@ -244,7 +244,7 @@ bindsym --release $mod+Ctrl+Shift+F5 exec ChangeWorkspaceIndex --index $ws15
 bindsym --release $mod+Ctrl+Shift+F6 exec ChangeWorkspaceIndex --index $ws16
 
 # append name to the workspace
-bindsym --release $mod+Shift+r exec rename_workspace
+bindsym --release $mod+Shift+r exec RenameWorkspace
 
 # switch to workspace FIRST-LEVEL
 bindsym --release $mod+grave workspace number $ws0
