@@ -187,7 +187,7 @@ for_window [floating] title_format " FLOATING | %title"
 # add mark for picture in picture window
 #for_window [title="Picture in picture"] floating enable, mark "f1", resize set height 550, move scratchpad, scratchpad show, exec __move_float_window 18
 #for_window [title="Picture in picture"] floating enable, mark "f1",  exec --no-startup-id ManageFloatContainer --update f1
-for_window [title="Picture in picture"], mark --add "f1", floating enable, exec --no-startup-id ManageFloatContainer --restore f1
+for_window [title="Picture in picture"], mark --add "f1", move scratchpad, floating enable, exec --no-startup-id ManageFloatContainer --show f1
 for_window [title="Task Manager - Google Chrome"] floating enable, exec __move_float_window 5, resize set 1000 900
 
 for_window [class="^Pavucontrol$" title="^Volume Control$"] mark "monitor2", move scratchpad, scratchpad show
