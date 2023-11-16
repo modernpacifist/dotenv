@@ -348,8 +348,6 @@ bindsym --release $mod+Ctrl+m exec __monitor_scratchpad "mark"
 
 bindsym --release $mod+Ctrl+Shift+Mod1+s exec --no-startup-id ManageFloatContainer
 
-bindsym --release $mod+Ctrl+Mod1+grave exec --no-startup-id ManageFloatContainer --reset
-
 # overall scratchpads
 bindsym --release $mod+Ctrl+1, sticky disable, mark "1", move scratchpad, [con_mark="^1$"] scratchpad show
 #bindsym --release $mod+Ctrl+2, sticky disable, mark "2", move scratchpad, [con_mark="^2$"] scratchpad show, move absolute position $mark_2_abs_position_x px $mark_2_abs_position_y px, resize set $mark_2_horizontal_size $mark_2_vertical_size
