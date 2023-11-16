@@ -185,7 +185,9 @@ bindsym --release $mod+Mod1+space floating toggle, move position center
 for_window [floating] title_format " FLOATING | %title"
 
 # add mark for picture in picture window
-for_window [title="Picture in picture"] floating enable, mark "f1", resize set height 550, move scratchpad, scratchpad show, exec __move_float_window 18
+#for_window [title="Picture in picture"] floating enable, mark "f1", resize set height 550, move scratchpad, scratchpad show, exec __move_float_window 18
+#for_window [title="Picture in picture"] floating enable, mark "f1",  exec --no-startup-id ManageFloatContainer --update f1
+for_window [title="Picture in picture"], mark --add "f1", floating enable, exec --no-startup-id ManageFloatContainer --restore f1
 for_window [title="Task Manager - Google Chrome"] floating enable, exec __move_float_window 5, resize set 1000 900
 
 for_window [class="^Pavucontrol$" title="^Volume Control$"] mark "monitor2", move scratchpad, scratchpad show
@@ -325,7 +327,7 @@ for_window [class="DevFloatingWindow"] floating enable, move absolute position 0
 for_window [class="Matplotlib"] floating enable, move absolute position 420 px 1350 px, resize set 1000 540
 
 # telegram float
-for_window [class="^TelegramDesktop$" instance="^telegram-desktop$" title="^Telegram$"], mark --add "telegram", move scratchpad, floating enable, sticky enable, exec --no-startup-id ManageFloatContainer --update telegram
+for_window [class="^TelegramDesktop$" instance="^telegram-desktop$" title="^Telegram$"], mark --add "telegram", move scratchpad, floating enable, exec --no-startup-id ManageFloatContainer --update telegram
 for_window [class="^TelegramDesktop$" instance="^telegram-desktop$" title="^Media viewer$"] focus
 bindsym --release $mod+Mod1+t exec --no-startup-id ManageFloatContainer --show telegram
 
