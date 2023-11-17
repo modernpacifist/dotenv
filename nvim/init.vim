@@ -16,6 +16,7 @@ Plug 'bitfield/vim-gitgo'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'numirias/semshi'
 Plug 'preservim/nerdcommenter'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " automatic closing brackets, etc.
 Plug 'windwp/nvim-autopairs'
@@ -34,6 +35,10 @@ call plug#end()
 " for windwp/nvim-autopairs
 lua << EOF
 require("nvim-autopairs").setup {}
+EOF
+
+lua << EOF
+require("ibl").setup()
 EOF
 
 filetype plugin indent on
