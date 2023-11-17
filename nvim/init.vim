@@ -40,9 +40,6 @@ call plug#end()
 " for windwp/nvim-autopairs
 lua << EOF
 require("nvim-autopairs").setup {}
-EOF
-
-lua << EOF
 require("ibl").setup()
 EOF
 
@@ -164,6 +161,10 @@ nnoremap <Leader>t< :-tabmove<CR>
 nnoremap <Leader>t> :+tabmove<CR>
 nnoremap <Leader>tw  :tabclose<CR>
 nnoremap <Leader>tn  :tabnew<Space>
+
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
 
 nnoremap <Leader>t1  :tabn 1<CR>
 nnoremap <Leader>t2  :tabn 2<CR>
