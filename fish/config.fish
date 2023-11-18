@@ -78,6 +78,7 @@ function fish_user_key_bindings
     bind \cr peco_select_history
     bind \cc _cpwd
     bind \cd delete-char
+    bind \cv vi
 end
 
 function export_pentest_variables --on-event fish_prompt

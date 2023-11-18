@@ -346,7 +346,7 @@ bindsym $mod+u [con_id=__focused__] unmark
 bindsym --release $mod+Mod1+m exec __monitor_scratchpad "toggle"
 bindsym --release $mod+Ctrl+m exec __monitor_scratchpad "mark"
 
-bindsym --release $mod+Ctrl+Shift+Mod1+s exec --no-startup-id ManageFloatContainer
+bindsym --release $mod+Ctrl+Shift+Mod1+s exec --no-startup-id ManageFloatContainer --save
 
 # overall scratchpads
 bindsym --release $mod+Ctrl+1, sticky disable, mark "1", move scratchpad, [con_mark="^1$"] scratchpad show
