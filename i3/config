@@ -292,6 +292,7 @@ bindsym --release $mod+Shift+F6 move container to workspace number $ws16
 
 # move to last focused workspace
 bindsym --release $mod+Tab workspace back_and_forth
+bindsym --release $mod+Mod1+Tab focus output DP-0.8 HDMI-0
 
 # move forward/back between workspaces
 bindsym --release $mod+n workspace next
