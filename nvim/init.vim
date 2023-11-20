@@ -35,6 +35,8 @@ Plug 'neomake/neomake'
 " Hightlight your yank area
 Plug 'machakann/vim-highlightedyank'
 
+Plug 'lewis6991/gitsigns.nvim'
+
 call plug#end()
 
 " for windwp/nvim-autopairs
