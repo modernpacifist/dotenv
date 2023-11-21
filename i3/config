@@ -510,7 +510,7 @@ mode "float-control" {
 
 bindsym --release $mod+Mod1+r mode "float-control"
 
-mode "__scale_float_window" {
+mode "ScaleFloatWindow" {
     # for borderline resize
     #bindsym --release grave exec --no-startup-id ManageFloatContainer --reset
     bindsym --release grave exec --no-startup-id ScaleFloatWindow -mode r
@@ -556,7 +556,7 @@ mode "__scale_float_window" {
     bindsym Escape mode "default"
 }
 
-bindsym --release $mod+Ctrl+Mod1+r mode "__scale_float_window"
+bindsym --release $mod+Ctrl+Mod1+r mode "ScaleFloatWindow"
 
 bindsym --release $mod+Ctrl+Mod1+z exec __move_float_window 1
 bindsym --release $mod+Ctrl+Mod1+x exec __move_float_window 2
