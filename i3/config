@@ -512,7 +512,6 @@ bindsym --release $mod+Mod1+r mode "float-control"
 
 mode "ScaleFloatWindow" {
     # for borderline resize
-    #bindsym --release grave exec --no-startup-id ManageFloatContainer --reset
     bindsym --release grave exec --no-startup-id ScaleFloatWindow -mode r
 
     bindsym --release w exec --no-startup-id ScaleFloatWindow -mode w
