@@ -587,7 +587,6 @@ bar {
     status_command i3status --config $HOME/.config/i3/i3status.conf | uptime.sh | i3-keyboard-layout i3status | __get_current_marks | __touchpad_toggle i3status |  __get_current_track
     position top
     tray_output primary
-    mode hide
 
     colors	{
         background          #000000
@@ -604,8 +603,8 @@ bar {
 bar {
     output nonprimary
     position top
-    mode hide
     tray_output none
+    mode hide
 
     colors	{
         background          #000000
