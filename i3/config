@@ -187,7 +187,7 @@ for_window [class="^MongoDB Compass$"] mark "monitor3", move scratchpad, scratch
 
 for_window [class="(?i)VirtualBox"] floating enable
 
-for_window [class="(?i)vlc"], mark "f2" floating enable, exec --no-startup-id ManageFloatContainer --restore f2 
+for_window [class="(?i)vlc" window_role="^vlc-main$"], mark "f2" floating enable, exec --no-startup-id ManageFloatContainer --restore f2 
 # feh
 for_window [class="^feh$"] floating enable, exec __move_float_window 5
 
