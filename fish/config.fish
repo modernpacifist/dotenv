@@ -5,6 +5,8 @@ set -x PATH $PATH /usr/local/go/bin/
 set -x PATH $PATH $HOME/.local/bin/
 set -g fish_complete_args -C
 
+set -gx ATUIN_NOBIND "true"
+
 abbr -a -- - 'cd -'
 alias cls='clear'
 alias .='pwd'
@@ -58,24 +60,8 @@ function fish_prompt --description 'Write out the prompt'
     echo -n -s (set_color $fish_color_user) "$USER" $normal @ (set_color $color_host) (prompt_hostname) $normal ' ' (set_color $color_cwd) (prompt_pwd) $normal (fish_vcs_prompt) $normal $prompt_status $suffix " "
 end
 
-function peco_select_history
-    if test (count $argv) = 0
-        set peco_flags --layout=bottom-up
-    else
-        set peco_flags --layout=bottom-up --query "$argv"
-    end
-
-    history|peco $peco_flags|read foo
-
-    if [ $foo ]
-        commandline $foo
-    else
-        commandline ''
-    end
-end
-
 function fish_user_key_bindings
-    bind \cr peco_select_history
+    bind \cr _atuin_search
     bind \cc _cpwd
     bind \cd delete-char
     bind \cv vi
