@@ -42,6 +42,7 @@ call plug#end()
 " for windwp/nvim-autopairs
 lua << EOF
 require("nvim-autopairs").setup {}
+
 require("ibl").setup()
 
 require("gitsigns").setup {
@@ -50,7 +51,7 @@ require("gitsigns").setup {
         change       = { text = '~' },
         delete       = { text = '-' },
         topdelete    = { text = '‾' },
-        changedelete = { text = '~' },
+        changedelete = { text = '_' },
         untracked    = { text = '|' },
     },
     current_line_blame = true,
