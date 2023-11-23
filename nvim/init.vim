@@ -9,7 +9,7 @@ Plug 'itchyny/vim-cursorword'
 Plug 'google/vim-searchindex'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'airblade/vim-gitgutter'
+"Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/vim-gitbranch'
 Plug 'fatih/vim-go'
 Plug 'bitfield/vim-gitgo'
@@ -43,6 +43,26 @@ call plug#end()
 lua << EOF
 require("nvim-autopairs").setup {}
 require("ibl").setup()
+
+require("gitsigns").setup {
+    signs = {
+        add          = { text = '+' },
+        change       = { text = '~' },
+        delete       = { text = '-' },
+        topdelete    = { text = '‾' },
+        changedelete = { text = '~' },
+        untracked    = { text = '|' },
+    },
+    current_line_blame = true,
+    current_line_blame_opts = {
+        virt_text = true,
+        virt_text_pos = 'right_align', -- 'eol' | 'overlay' | 'right_align'
+        delay = 50,
+        ignore_whitespace = false,
+    },
+    current_line_blame_formatter = '<author>, <author_time:%d-%m-%Y> - <summary>',
+}
+
 EOF
 
 filetype plugin indent on
