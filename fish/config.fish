@@ -4,7 +4,6 @@ set -x PATH $PATH /sbin/
 set -x PATH $PATH /usr/local/go/bin/
 set -x PATH $PATH $HOME/.local/bin/
 set -g fish_complete_args -C
-
 set -gx ATUIN_NOBIND "true"
 
 abbr -a -- - 'cd -'
@@ -27,6 +26,9 @@ if type -q exa
     alias ll "exa -lagi --tree --level=2 --icons --color=never"
     alias ls "exa -aalig --icons --color=never --sort=created"
 end
+
+atuin init fish | source
+thefuck --alias | source
 
 function fish_right_prompt -d "Write time on the right"
     date "+%T"
@@ -72,5 +74,3 @@ function export_pentest_variables --on-event fish_prompt
         export $s
     end
 end
-
-thefuck --alias | source
