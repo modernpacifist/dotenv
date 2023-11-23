@@ -342,7 +342,8 @@ bindsym $mod+u [con_id=__focused__] unmark
 bindsym --release $mod+Mod1+m exec __monitor_scratchpad "toggle"
 bindsym --release $mod+Ctrl+m exec __monitor_scratchpad "mark"
 
-bindsym --release $mod+Ctrl+Shift+Mod1+s exec --no-startup-id ManageFloatContainer --save
+#bindsym --release $mod+Ctrl+Shift+Mod1+s exec --no-startup-id ManageFloatContainer --save
+bindsym --release $mod+s exec --no-startup-id ManageFloatContainer --save
 
 # overall scratchpads
 bindsym --release $mod+Ctrl+1, sticky disable, mark "1", move scratchpad, [con_mark="^1$"] scratchpad show
@@ -518,30 +519,55 @@ mode "ScaleFloatWindow" {
     # for borderline resize
     bindsym --release grave exec --no-startup-id ScaleFloatWindow -mode r
 
-    bindsym --release w exec --no-startup-id ScaleFloatWindow -mode w
-    bindsym --release s exec --no-startup-id ScaleFloatWindow -mode s
-    bindsym --release d exec --no-startup-id ScaleFloatWindow -mode d
-    bindsym --release a exec --no-startup-id ScaleFloatWindow -mode a
+    #bindsym --release w exec --no-startup-id ScaleFloatWindow -mode w
+    #bindsym --release s exec --no-startup-id ScaleFloatWindow -mode s
+    #bindsym --release d exec --no-startup-id ScaleFloatWindow -mode d
+    #bindsym --release a exec --no-startup-id ScaleFloatWindow -mode a
 
-    bindsym l exec __scale_float_window 1 1
-    bindsym k exec __scale_float_window 2 1
-    bindsym j exec __scale_float_window 3 1
-    bindsym h exec __scale_float_window 4 1
+    bindsym --release w exec --no-startup-id ScaleFloatWindow --mode w && ManageFloatContainer --save
+    bindsym --release s exec --no-startup-id ScaleFloatWindow --mode s && ManageFloatContainer --save
+    bindsym --release d exec --no-startup-id ScaleFloatWindow --mode d && ManageFloatContainer --save
+    bindsym --release a exec --no-startup-id ScaleFloatWindow --mode a && ManageFloatContainer --save
 
-    bindsym Mod1+l exec __scale_float_window 1 20
-    bindsym Mod1+k exec __scale_float_window 2 20
-    bindsym Mod1+j exec __scale_float_window 3 20
-    bindsym Mod1+h exec __scale_float_window 4 20
+    #bindsym l exec __scale_float_window 1 1
+    #bindsym k exec __scale_float_window 2 1
+    #bindsym j exec __scale_float_window 3 1
+    #bindsym h exec __scale_float_window 4 1
 
-    bindsym Ctrl+l exec __scale_float_window 1 40
-    bindsym Ctrl+k exec __scale_float_window 2 40
-    bindsym Ctrl+j exec __scale_float_window 3 40
-    bindsym Ctrl+h exec __scale_float_window 4 40
+    bindsym l exec __scale_float_window 1 1 && ManageFloatContainer --save
+    bindsym k exec __scale_float_window 2 1 && ManageFloatContainer --save
+    bindsym j exec __scale_float_window 3 1 && ManageFloatContainer --save
+    bindsym h exec __scale_float_window 4 1 && ManageFloatContainer --save
 
-    bindsym Shift+l exec __scale_float_window 1 200
-    bindsym Shift+k exec __scale_float_window 2 200
-    bindsym Shift+j exec __scale_float_window 3 200
-    bindsym Shift+h exec __scale_float_window 4 200
+    #bindsym Mod1+l exec __scale_float_window 1 20
+    #bindsym Mod1+k exec __scale_float_window 2 20
+    #bindsym Mod1+j exec __scale_float_window 3 20
+    #bindsym Mod1+h exec __scale_float_window 4 20
+
+    bindsym Mod1+l exec --no-startup-id __scale_float_window 1 20 && ManageFloatContainer --save
+    bindsym Mod1+k exec --no-startup-id __scale_float_window 2 20 && ManageFloatContainer --save
+    bindsym Mod1+j exec --no-startup-id __scale_float_window 3 20 && ManageFloatContainer --save
+    bindsym Mod1+h exec --no-startup-id __scale_float_window 4 20 && ManageFloatContainer --save
+
+    #bindsym Ctrl+l exec __scale_float_window 1 40
+    #bindsym Ctrl+k exec __scale_float_window 2 40
+    #bindsym Ctrl+j exec __scale_float_window 3 40
+    #bindsym Ctrl+h exec __scale_float_window 4 40
+
+    bindsym Ctrl+l exec __scale_float_window 1 40 && ManageFloatContainer --save
+    bindsym Ctrl+k exec __scale_float_window 2 40 && ManageFloatContainer --save
+    bindsym Ctrl+j exec __scale_float_window 3 40 && ManageFloatContainer --save
+    bindsym Ctrl+h exec __scale_float_window 4 40 && ManageFloatContainer --save
+
+    #bindsym Shift+l exec __scale_float_window 1 200
+    #bindsym Shift+k exec __scale_float_window 2 200
+    #bindsym Shift+j exec __scale_float_window 3 200
+    #bindsym Shift+h exec __scale_float_window 4 200
+
+    bindsym Shift+l exec --no-startup-id __scale_float_window 1 200 && ManageFloatContainer --save
+    bindsym Shift+k exec --no-startup-id __scale_float_window 2 200 && ManageFloatContainer --save
+    bindsym Shift+j exec --no-startup-id __scale_float_window 3 200 && ManageFloatContainer --save
+    bindsym Shift+h exec --no-startup-id __scale_float_window 4 200 && ManageFloatContainer --save
 
     bindsym --release minus exec ScaleFloatWindow --widen -40
     bindsym --release Shift+minus exec ScaleFloatWindow --widen -200
