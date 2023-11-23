@@ -583,15 +583,15 @@ mode "ScaleFloatWindow" {
 
 bindsym --release $mod+Ctrl+Mod1+r mode "ScaleFloatWindow"
 
-bindsym --release $mod+Ctrl+Mod1+z exec __move_float_window 1
-bindsym --release $mod+Ctrl+Mod1+x exec __move_float_window 2
-bindsym --release $mod+Ctrl+Mod1+c exec __move_float_window 3
-bindsym --release $mod+Ctrl+Mod1+a exec __move_float_window 4
-bindsym --release $mod+Ctrl+Mod1+s exec __move_float_window 5
-bindsym --release $mod+Ctrl+Mod1+d exec __move_float_window 6
-bindsym --release $mod+Ctrl+Mod1+q exec __move_float_window 7
-bindsym --release $mod+Ctrl+Mod1+w exec __move_float_window 8
-bindsym --release $mod+Ctrl+Mod1+e exec __move_float_window 9
+bindsym --release $mod+Ctrl+Mod1+z exec __move_float_window 1 && ManageFloatContainer --save
+bindsym --release $mod+Ctrl+Mod1+x exec __move_float_window 2 && ManageFloatContainer --save
+bindsym --release $mod+Ctrl+Mod1+c exec __move_float_window 3 && ManageFloatContainer --save
+bindsym --release $mod+Ctrl+Mod1+a exec __move_float_window 4 && ManageFloatContainer --save
+bindsym --release $mod+Ctrl+Mod1+s exec __move_float_window 5 && ManageFloatContainer --save
+bindsym --release $mod+Ctrl+Mod1+d exec __move_float_window 6 && ManageFloatContainer --save
+bindsym --release $mod+Ctrl+Mod1+q exec __move_float_window 7 && ManageFloatContainer --save
+bindsym --release $mod+Ctrl+Mod1+w exec __move_float_window 8 && ManageFloatContainer --save
+bindsym --release $mod+Ctrl+Mod1+e exec __move_float_window 9 && ManageFloatContainer --save
 
 mode "__move_float_window monitor 1" {
     bindsym --release q exec __move_float_window 10
