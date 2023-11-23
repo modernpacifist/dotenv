@@ -184,7 +184,7 @@ let vim_markdown_preview_hotkey='<Nop>'
 nnoremap <Leader>mp  :call Vim_Markdown_Preview()<CR>
 
 " windows management
-nnoremap <Leader>vs  :vsplit<Space>
+nnoremap <Leader>vs  :vsplit<CR>
 nnoremap <Leader>hs  :split<Space>
 
 " disable of default shortcuts
