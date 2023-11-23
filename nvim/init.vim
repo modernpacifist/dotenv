@@ -9,7 +9,6 @@ Plug 'itchyny/vim-cursorword'
 Plug 'google/vim-searchindex'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-"Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/vim-gitbranch'
 Plug 'fatih/vim-go'
 Plug 'bitfield/vim-gitgo'
@@ -39,11 +38,11 @@ Plug 'lewis6991/gitsigns.nvim'
 
 call plug#end()
 
-" for windwp/nvim-autopairs
 lua << EOF
+
 require("nvim-autopairs").setup {}
 
-require("ibl").setup()
+require("ibl").setup {}
 
 require("gitsigns").setup {
     signs = {
