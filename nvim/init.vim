@@ -63,6 +63,35 @@ require("gitsigns").setup {
     current_line_blame_formatter = '<author>, <author_time:%d-%m-%Y> - <summary>',
 }
 
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+
+local actions = require "telescope.actions"
+require("telescope").setup {
+    defaults = {
+        mappings = {
+            i = {
+                ["<C-j>"] = actions.move_selection_next,
+                ["<C-k>"] = actions.move_selection_previous,
+            },
+
+            n = {
+                --
+            },
+        },
+    },
+
+    pickers = {
+        --
+    },
+
+    extensions = {
+        --
+    },
+}
+
 EOF
 
 filetype plugin indent on
@@ -183,10 +212,6 @@ nnoremap <Leader>t< :-tabmove<CR>
 nnoremap <Leader>t> :+tabmove<CR>
 nnoremap <Leader>tw  :tabclose<CR>
 nnoremap <Leader>tn  :tabnew<Space>
-
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
 
 nnoremap <Leader>t1  :tabn 1<CR>
 nnoremap <Leader>t2  :tabn 2<CR>
