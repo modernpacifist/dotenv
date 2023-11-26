@@ -309,8 +309,9 @@ no_focus [class="zoom"]
 for_window [class="zoom" title="Chat"] floating enable, resize set 1000 1200, move position center
 for_window [class="zoom"] move container to workspace number $ws9
 
-no_focus [class="Pulseeffects" instance="pulseeffects"]
-for_window [class="Pulseeffects" instance="pulseeffects"] floating enable, resize set 3240 1331, move position center, move container to workspace number $ws10
+assign [class="^Pulseeffects$" instance="^pulseeffects$"] $ws10
+for_window [class="^Pulseeffects$" instance="^pulseeffects$"] floating enable, resize set 3240 1331, move position center
+
 exec pulseeffects
 
 # programming-spawned windows
