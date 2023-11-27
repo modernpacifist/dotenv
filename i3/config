@@ -332,6 +332,7 @@ bindsym --release $mod+Mod1+e [class="Keybase" instance="keybase"] scratchpad sh
 
 # mark container with prompt
 bindsym --release $mod+m exec __mark_container
+bindsym --release $mod+Ctrl+l exec LockContainer
 
 # unmark focused container
 bindsym $mod+u [con_id=__focused__] unmark
