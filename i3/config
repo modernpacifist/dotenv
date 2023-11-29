@@ -171,7 +171,7 @@ exec_always --no-startup-id BackAndForthContainers --daemon
 bindsym --release $mod+Mod1+space floating toggle, move position center
 
 # add mark of floating container
-for_window [floating] title_format " FLOATING | %title"
+for_window [floating] sticky disable, title_format " FLOATING | %title"
 
 # add mark for picture in picture window
 for_window [title="Picture in picture"] floating enable, mark "f1", resize set height 550, move scratchpad, scratchpad show, exec __move_float_window 18
