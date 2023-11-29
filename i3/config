@@ -315,7 +315,7 @@ for_window [class="^Pulseeffects$" instance="^pulseeffects$"] floating enable, r
 assign [class="^easyeffects$" instance="^easyeffects$"] $ws10
 for_window [class="^easyeffects$" instance="^easyeffects$"] floating enable, resize set 3240 1331, move position center
 
-exec pulseeffects
+exec easyeffects
 
 # programming-spawned windows
 for_window [class="DevFloatingWindow"] floating enable, move absolute position 0 px 1960 px, resize set 1300 200
