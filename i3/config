@@ -191,6 +191,7 @@ for_window [class="^feh$"] floating enable, exec __move_float_window 5
 
 # change focus between tiling / floating windows
 bindsym --release Mod1+space focus mode_toggle
+bindsym --release $mod+period focus mode_toggle
 bindsym --release XF86Eject focus mode_toggle
 
 # move to last focused workspace
