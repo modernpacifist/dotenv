@@ -298,11 +298,9 @@ for_window [class="Caja" instance="caja"] floating enable, resize set 2000 1540,
 assign [class="Caja" instance="caja"] → output primary
 assign [class="Xdg-desktop-portal-gtk" instance="xdg-desktop-portal-gtk"] → output primary
 
-
 # not focused windows
 no_focus [class="Firefox-esr" instance="Navigator"]
 for_window [class="Firefox-esr" instance="Navigator"] floating enable, resize set 2100 1210, move position center
-
 
 no_focus [class="zoom"]
 
