@@ -662,7 +662,6 @@ exec --no-startup-id xbanish 2>> /tmp/i3_exec.log
 exec --no-startup-id __screendim_off
 
 # For language toggle en/ru
-#bindsym --release $mod+space exec change_keyboard_layout --layouts us/ru
 bindsym --release $mod+space exec ChangeKeyboardLayout --layouts us/ru
 
 # For keyboard speed             dly speed
