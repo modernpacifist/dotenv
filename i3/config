@@ -83,13 +83,13 @@ bindsym --release XF86MonBrightnessDown exec --no-startup-id ScreenDim -f -0.1
 bindsym --release XF86MonBrightnessUp exec --no-startup-id ScreenDim -f 0.1
 
 # Use pactl to adjust volume in PulseAudio.
-bindsym --release XF86AudioRaiseVolume exec --no-startup-id __volume_control +2 $max_volume
-bindsym --release XF86AudioLowerVolume exec --no-startup-id __volume_control -2 $max_volume
+bindsym --release XF86AudioRaiseVolume exec --no-startup-id __volume_control +1 $max_volume
+bindsym --release XF86AudioLowerVolume exec --no-startup-id __volume_control -1 $max_volume
 bindsym --release XF86AudioMute exec --no-startup-id __volume_control toggle
 
 bindsym --release Mod1+F10 exec --no-startup-id __volume_control toggle 
-bindsym --release Mod1+F11 exec --no-startup-id __volume_control -2 $max_volume
-bindsym --release Mod1+F12 exec --no-startup-id __volume_control +2 $max_volume
+bindsym --release Mod1+F11 exec --no-startup-id __volume_control -1 $max_volume
+bindsym --release Mod1+F12 exec --no-startup-id __volume_control +1 $max_volume
 bindsym --release Mod1+Shift+F11 exec --no-startup-id __volume_control -10 $max_volume
 bindsym --release Mod1+Shift+F12 exec --no-startup-id __volume_control +10 $max_volume
 bindsym --release $mod+Mod1+F12 exec --no-startup-id __volume_control round
@@ -348,21 +348,15 @@ bindsym --release $mod+Ctrl+m exec __monitor_scratchpad "mark"
 bindsym --release $mod+s exec --no-startup-id ManageFloatContainer --save
 
 # overall scratchpads
-bindsym --release $mod+Ctrl+1, sticky disable, mark "1", move scratchpad, [con_mark="^1$"] scratchpad show
-#bindsym --release $mod+Ctrl+2, sticky disable, mark "2", move scratchpad, [con_mark="^2$"] scratchpad show, move absolute position $mark_2_abs_position_x px $mark_2_abs_position_y px, resize set $mark_2_horizontal_size $mark_2_vertical_size
-#bindsym --release $mod+Ctrl+3, sticky disable, mark "3", move scratchpad, [con_mark="^3$"] scratchpad show, move absolute position $mark_3_abs_position_x px $mark_3_abs_position_y px, resize set $mark_3_horizontal_size $mark_3_vertical_size
-#bindsym --release $mod+Ctrl+4, sticky disable, mark "4", move scratchpad, [con_mark="^4$"] scratchpad show, move absolute position $mark_4_abs_position_x px $mark_4_abs_position_y px, resize set $mark_4_horizontal_size $mark_4_vertical_size
-#bindsym --release $mod+Ctrl+5, sticky disable, mark "5", move scratchpad, [con_mark="^5$"] scratchpad show
-#bindsym --release $mod+Ctrl+6, sticky disable, mark "6", move scratchpad, [con_mark="^6$"] scratchpad show
-bindsym --release $mod+Ctrl+7, sticky disable, mark "7", move scratchpad, [con_mark="^7$"] scratchpad show
-bindsym --release $mod+Ctrl+8, sticky disable, mark "8", move scratchpad, [con_mark="^8$"] scratchpad show, move absolute position $mark_8_abs_position_x px $mark_8_abs_position_y px, resize set $mark_8_horizontal_size $mark_8_vertical_size
-bindsym --release $mod+Ctrl+9, sticky disable, mark "9", move scratchpad, [con_mark="^9$"] scratchpad show, move absolute position $mark_9_abs_position_x px $mark_9_abs_position_y px, resize set $mark_9_horizontal_size $mark_9_vertical_size
-#bindsym --release $mod+Ctrl+0, sticky disable, mark "0", move scratchpad, [con_mark="^0$"] scratchpad show, move absolute position $mark_0_abs_position_x px $mark_0_abs_position_y px, resize set $mark_0_horizontal_size $mark_0_vertical_size
+bindsym --release $mod+Ctrl+1 exec --no-startup-id ManageFloatContainer --restore 1
 bindsym --release $mod+Ctrl+2 exec --no-startup-id ManageFloatContainer --restore 2
 bindsym --release $mod+Ctrl+3 exec --no-startup-id ManageFloatContainer --restore 3
 bindsym --release $mod+Ctrl+4 exec --no-startup-id ManageFloatContainer --restore 4
 bindsym --release $mod+Ctrl+5 exec --no-startup-id ManageFloatContainer --restore 5
 bindsym --release $mod+Ctrl+6 exec --no-startup-id ManageFloatContainer --restore 6
+bindsym --release $mod+Ctrl+7 exec --no-startup-id ManageFloatContainer --restore 7
+bindsym --release $mod+Ctrl+8 exec --no-startup-id ManageFloatContainer --restore 8
+bindsym --release $mod+Ctrl+9 exec --no-startup-id ManageFloatContainer --restore 9
 bindsym --release $mod+Ctrl+0 exec --no-startup-id ManageFloatContainer --restore 0
 
 # lvl2
