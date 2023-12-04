@@ -20,6 +20,7 @@ alias f='fuck'
 alias pdfreader='atril'
 alias b='batcat'
 alias cal='cal -A 2'
+alias t='touch'
 
 if type -q exa
     alias l "exa -aalig --icons --color=never"
