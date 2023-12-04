@@ -197,6 +197,7 @@ noremap <F12> :qa!<CR>
 
 noremap <Leader>y "+y
 noremap <Leader>p "+p
+noremap <Leader>b :bprevious<CR>
 
 nnoremap Y Y
 nnoremap <C-J> <C-W><C-J>
