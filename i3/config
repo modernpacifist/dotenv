@@ -644,7 +644,7 @@ bar {
 }
 
 # For wallpaper
-exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallpaper.jpg
+exec_always --no-startup-id feh --bg-fill $HOME/Pictures/wallpaper_upscaled.png
 
 # warpd
 #exec --no-startup-id warpd 2>> /tmp/i3_waprd_exec.log
