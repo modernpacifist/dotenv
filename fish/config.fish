@@ -25,6 +25,7 @@ alias t='touch'
 if type -q exa
     alias l "exa -aalig --icons --color=never"
     alias ll "exa -lagi --tree --level=2 --icons --color=never"
+    alias lll "exa -lagi --tree --level=3 --icons --color=never"
     alias ls "exa -aalig --icons --color=never --sort=created"
 end
 
