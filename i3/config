@@ -304,6 +304,8 @@ assign [class="Xdg-desktop-portal-gtk" instance="xdg-desktop-portal-gtk"] → ou
 no_focus [class="Firefox-esr" instance="Navigator"]
 for_window [class="Firefox-esr" instance="Navigator"] floating enable, resize set 2100 1210, move position center
 
+no_focus [class="(?i)Steam"]
+
 no_focus [class="zoom"]
 
 assign [class="zoom"] $ws9
@@ -517,50 +519,25 @@ mode "ScaleFloatWindow" {
     # for borderline resize
     bindsym --release grave exec --no-startup-id ScaleFloatWindow -mode r
 
-    #bindsym --release w exec --no-startup-id ScaleFloatWindow -mode w
-    #bindsym --release s exec --no-startup-id ScaleFloatWindow -mode s
-    #bindsym --release d exec --no-startup-id ScaleFloatWindow -mode d
-    #bindsym --release a exec --no-startup-id ScaleFloatWindow -mode a
-
     bindsym --release w exec --no-startup-id ScaleFloatWindow --mode w && ManageFloatContainer --save
     bindsym --release s exec --no-startup-id ScaleFloatWindow --mode s && ManageFloatContainer --save
     bindsym --release d exec --no-startup-id ScaleFloatWindow --mode d && ManageFloatContainer --save
     bindsym --release a exec --no-startup-id ScaleFloatWindow --mode a && ManageFloatContainer --save
-
-    #bindsym l exec __scale_float_window 1 1
-    #bindsym k exec __scale_float_window 2 1
-    #bindsym j exec __scale_float_window 3 1
-    #bindsym h exec __scale_float_window 4 1
 
     bindsym l exec __scale_float_window 1 1 && ManageFloatContainer --save
     bindsym k exec __scale_float_window 2 1 && ManageFloatContainer --save
     bindsym j exec __scale_float_window 3 1 && ManageFloatContainer --save
     bindsym h exec __scale_float_window 4 1 && ManageFloatContainer --save
 
-    #bindsym Mod1+l exec __scale_float_window 1 20
-    #bindsym Mod1+k exec __scale_float_window 2 20
-    #bindsym Mod1+j exec __scale_float_window 3 20
-    #bindsym Mod1+h exec __scale_float_window 4 20
-
     bindsym Mod1+l exec --no-startup-id __scale_float_window 1 20 && ManageFloatContainer --save
     bindsym Mod1+k exec --no-startup-id __scale_float_window 2 20 && ManageFloatContainer --save
     bindsym Mod1+j exec --no-startup-id __scale_float_window 3 20 && ManageFloatContainer --save
     bindsym Mod1+h exec --no-startup-id __scale_float_window 4 20 && ManageFloatContainer --save
 
-    #bindsym Ctrl+l exec __scale_float_window 1 40
-    #bindsym Ctrl+k exec __scale_float_window 2 40
-    #bindsym Ctrl+j exec __scale_float_window 3 40
-    #bindsym Ctrl+h exec __scale_float_window 4 40
-
     bindsym Ctrl+l exec __scale_float_window 1 40 && ManageFloatContainer --save
     bindsym Ctrl+k exec __scale_float_window 2 40 && ManageFloatContainer --save
     bindsym Ctrl+j exec __scale_float_window 3 40 && ManageFloatContainer --save
     bindsym Ctrl+h exec __scale_float_window 4 40 && ManageFloatContainer --save
-
-    #bindsym Shift+l exec __scale_float_window 1 200
-    #bindsym Shift+k exec __scale_float_window 2 200
-    #bindsym Shift+j exec __scale_float_window 3 200
-    #bindsym Shift+h exec __scale_float_window 4 200
 
     bindsym Shift+l exec --no-startup-id __scale_float_window 1 200 && ManageFloatContainer --save
     bindsym Shift+k exec --no-startup-id __scale_float_window 2 200 && ManageFloatContainer --save
