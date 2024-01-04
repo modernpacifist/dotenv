@@ -318,6 +318,8 @@ assign [class="^easyeffects$" instance="^easyeffects$"] $ws10
 for_window [class="^easyeffects$" instance="^easyeffects$" title="^Easy Effects$"] floating enable, resize set 3240 1731, move position center
 for_window [class="^easyeffects$" instance="^easyeffects$" title="^Preferences$"] floating enable, resize set 3000 1000, move position center
 
+exec easyeffects
+
 # programming-spawned windows
 for_window [class="DevFloatingWindow"] floating enable, move absolute position 0 px 1960 px, resize set 1300 200
 for_window [class="Matplotlib"] floating enable, move absolute position 420 px 1350 px, resize set 1000 540
