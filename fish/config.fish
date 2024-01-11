@@ -18,7 +18,7 @@ alias _speedtest='curl -s \'https://raw.githubusercontent.com/sivel/speedtest-cl
 alias vi='nvim'
 alias f='fuck'
 alias pdfreader='atril'
-alias b='batcat'
+alias cat='batcat'
 alias cal='cal -A 2'
 alias t='touch'
 
@@ -71,8 +71,8 @@ function fish_user_key_bindings
     bind \cv vi
 end
 
-function export_pentest_variables --on-event fish_prompt
-    for s in (grep -E '": [^\{]' ~/.pentest_values.json 2>/dev/null | sed -e 's/: /=/' -e "s/\(\,\)\$//" | tr -d \"\ )
-        export $s
-    end
-end
+#function export_pentest_variables --on-event fish_prompt
+    #for s in (grep -E '": [^\{]' ~/.pentest_values.json 2>/dev/null | sed -e 's/: /=/' -e "s/\(\,\)\$//" | tr -d \"\ )
+        #export $s
+    #end
+#end
