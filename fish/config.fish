@@ -14,12 +14,11 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
-alias _speedtest='curl -s \'https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py\' | python3.9 -'
 alias vi='nvim'
 alias f='fuck'
 alias pdfreader='atril'
 alias cat='batcat'
-alias cal='cal -A 2'
+alias calendar='cal -A 2'
 alias t='touch'
 
 if type -q exa
