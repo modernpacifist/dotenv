@@ -94,6 +94,9 @@ require("telescope").setup {
     },
 }
 
+vim.keymap.set('n', 'F14', ':vertical resize -10<CR>')
+vim.keymap.set('n', 'F15', ':vertical resize +10<CR>')
+
 EOF
 
 filetype plugin indent on
@@ -171,12 +174,11 @@ let g:VM_highlight_matches = 'hi! Search ctermfg=255 ctermbg=240'
 let g:VM_case_setting = 'sensitive'
 
 let g:neomake_python_enabled_makers = ['flake8']
-" Reloads buffer on its focus
+" Reloads buffer on its focus"
 autocmd FocusGained,BufEnter * :checktime
-" Saves buffer on any change of data in it
+" Saves buffer on any change of data in it"
 autocmd FocusLost,InsertLeave,TextChanged,InsertChange * :wa
 
-" NerdCommenter settings
 map <C-_> <plug>NERDCommenterToggle
 let g:NERDToggleCheckAllLines = 1
 
@@ -195,6 +197,9 @@ noremap <F10> :x<CR>
 noremap <F11> :xa<CR>
 noremap <F12> :qa!<CR>
 
+"noremap <F14> :vertical resize <CR>
+"noremap <F15> :qa!<CR>
+
 noremap <Leader>y "+y
 noremap <Leader>p "+p
 noremap <Leader>b :bprevious<CR>
@@ -205,10 +210,10 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" substitute word under cursor
+" substitute word under cursor "
 nnoremap <Leader>s :argdo %s/\<<C-r><C-w>\>//gIe<Left><Left><Left><Left>
 
-" tabs management 
+" tabs management "
 nnoremap <Leader>tk  :tabnext<CR>
 nnoremap <Leader>tj  :tabprev<CR>
 nnoremap <Leader>t< :-tabmove<CR>
@@ -227,18 +232,18 @@ nnoremap <Leader>t8  :tabn 8<CR>
 nnoremap <Leader>t9  :tabn 9<CR>
 nnoremap <Leader>t0  :tabn 10<CR>
 
-" markdown preview
+" markdown preview "
 let vim_markdown_preview_hotkey='<Nop>'
 nnoremap <Leader>mp  :call Vim_Markdown_Preview()<CR>
 
-" windows management
+" windows management "
 nnoremap <Leader>vs  :vsplit<CR>
 nnoremap <Leader>hs  :split<Space>
 
-" disable of default shortcuts
+" disable of default shortcuts "
 nnoremap <S-k> <Nop>
 
-" gitblame
+" gitblame "
 fun! GitCommand(command)
   silent! !clear
   exec "!git " . a:command . " %"
