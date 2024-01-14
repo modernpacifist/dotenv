@@ -94,9 +94,6 @@ require("telescope").setup {
     },
 }
 
-vim.keymap.set('n', 'F14', ':vertical resize -10<CR>')
-vim.keymap.set('n', 'F15', ':vertical resize +10<CR>')
-
 EOF
 
 filetype plugin indent on
@@ -197,8 +194,10 @@ noremap <F10> :x<CR>
 noremap <F11> :xa<CR>
 noremap <F12> :qa!<CR>
 
-"noremap <F14> :vertical resize <CR>
-"noremap <F15> :qa!<CR>
+noremap <F14> :vertical resize -10<CR>
+noremap <F15> :vertical resize +10<CR>
+noremap <F15> :vertical resize +10<CR>
+noremap <F15> :vertical resize +10<CR>
 
 noremap <Leader>y "+y
 noremap <Leader>p "+p
