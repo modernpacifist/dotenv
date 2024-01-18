@@ -661,3 +661,6 @@ bindsym --release $mod+Shift+u exec caja
 
 # Swapping workspaces
 bindsym --release $mod+Ctrl+Shift+s exec __swap_workspaces
+
+# Remap keyboard 
+exec xmodmap ~/.Xmodmap

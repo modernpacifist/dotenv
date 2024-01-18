@@ -209,9 +209,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" substitute word under cursor "
-nnoremap <Leader>s :argdo %s/\<<C-r><C-w>\>//gIe<Left><Left><Left><Left>
-
 " tabs management "
 nnoremap <Leader>tk  :tabnext<CR>
 nnoremap <Leader>tj  :tabprev<CR>
