@@ -36,9 +36,17 @@ Plug 'machakann/vim-highlightedyank'
 
 Plug 'lewis6991/gitsigns.nvim'
 
+Plug 'natecraddock/sessions.nvim'
+
 call plug#end()
 
 lua << EOF
+
+require("sessions").setup({
+    events = { "VimLeavePre", "FocusGained", "BufEnter" },
+    session_filepath = "~/.nvim/session",
+    absolute = false,
+})
 
 require("nvim-autopairs").setup {}
 
@@ -210,23 +218,23 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " tabs management "
-nnoremap <Leader>tk  :tabnext<CR>
-nnoremap <Leader>tj  :tabprev<CR>
+nnoremap <Leader>tk :tabnext<CR>
+nnoremap <Leader>tj :tabprev<CR>
 nnoremap <Leader>t< :-tabmove<CR>
 nnoremap <Leader>t> :+tabmove<CR>
-nnoremap <Leader>tw  :tabclose<CR>
-nnoremap <Leader>tn  :tabnew<Space>
+nnoremap <Leader>tw :tabclose<CR>
+nnoremap <Leader>tn :tabnew<Space>
 
-nnoremap <Leader>t1  :tabn 1<CR>
-nnoremap <Leader>t2  :tabn 2<CR>
-nnoremap <Leader>t3  :tabn 3<CR>
-nnoremap <Leader>t4  :tabn 4<CR>
-nnoremap <Leader>t5  :tabn 5<CR>
-nnoremap <Leader>t6  :tabn 6<CR>
-nnoremap <Leader>t7  :tabn 7<CR>
-nnoremap <Leader>t8  :tabn 8<CR>
-nnoremap <Leader>t9  :tabn 9<CR>
-nnoremap <Leader>t0  :tabn 10<CR>
+nnoremap <Leader>t1 :tabn 1<CR>
+nnoremap <Leader>t2 :tabn 2<CR>
+nnoremap <Leader>t3 :tabn 3<CR>
+nnoremap <Leader>t4 :tabn 4<CR>
+nnoremap <Leader>t5 :tabn 5<CR>
+nnoremap <Leader>t6 :tabn 6<CR>
+nnoremap <Leader>t7 :tabn 7<CR>
+nnoremap <Leader>t8 :tabn 8<CR>
+nnoremap <Leader>t9 :tabn 9<CR>
+nnoremap <Leader>t0 :tabn 10<CR>
 
 " markdown preview "
 let vim_markdown_preview_hotkey='<Nop>'
