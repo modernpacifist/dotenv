@@ -234,7 +234,7 @@ nnoremap <Leader>mp  :call Vim_Markdown_Preview()<CR>
 
 " windows management "
 nnoremap <Leader>vs  :vsplit<CR>
-nnoremap <Leader>hs  :split<Space>
+nnoremap <Leader>hs  :split<CR>
 
 " disable of default shortcuts "
 nnoremap <S-k> <Nop>
