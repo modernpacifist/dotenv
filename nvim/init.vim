@@ -36,17 +36,9 @@ Plug 'machakann/vim-highlightedyank'
 
 Plug 'lewis6991/gitsigns.nvim'
 
-Plug 'natecraddock/sessions.nvim'
-
 call plug#end()
 
 lua << EOF
-
-require("sessions").setup({
-    events = { "VimLeavePre", "FocusGained", "BufEnter" },
-    session_filepath = "~/.nvim/session",
-    absolute = false,
-})
 
 require("nvim-autopairs").setup {}
 
