@@ -17,6 +17,8 @@ Plug 'numirias/semshi'
 Plug 'preservim/nerdcommenter'
 Plug 'lukas-reineke/indent-blankline.nvim'
 
+Plug 'tpope/vim-obsession'
+
 Plug 'nvim-treesitter/nvim-treesitter'
 
 Plug 'nvim-lua/plenary.nvim'
@@ -147,6 +149,7 @@ set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
 set statusline+=\[%{&fileformat}\]
 set statusline+=\ %p%%
 set statusline+=\ %l:%c
+set statusline+=\ %{ObsessionStatus()}
 set statusline+=\ 
 
 let g:python3_host_prog = '/usr/local/bin/python3.10'
