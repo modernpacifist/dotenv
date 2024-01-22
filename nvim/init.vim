@@ -276,7 +276,7 @@ inoremap <M-L> <Right>
 "    autocmd FileType vim set syntax=off
 "augroup END
 
-if filereadable(expand("%:p:h") . "/Session.vim")
+if argc() == 0 && filereadable(expand("%:p:h") . "/Session.vim")
     source %:p:h/Session.vim
 endif
 
