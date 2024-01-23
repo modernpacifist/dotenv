@@ -425,9 +425,6 @@ bindsym --release Ctrl+F8 [con_mark="^f8$"] focus
 bindsym --release Ctrl+F9 [con_mark="^f9$"] focus
 bindsym --release Ctrl+F10 [con_mark="^f10$"] focus
 
-# swap marked containers
-bindsym --release $mod+Mod1+Shift+s exec __swap_container_with_mark
-
 # whole scratchpad
 bindsym --release $mod+Mod1+equal [class=".*"] scratchpad show
 
@@ -659,7 +656,10 @@ bindsym --release $mod+Shift+m exec rofi -show run -config ~/.config/rofi/config
 # File explorer
 bindsym --release $mod+Shift+u exec caja
 
-# Swapping workspaces
+# Swap marked containers
+bindsym --release $mod+Mod1+Shift+s exec __swap_container_with_mark
+
+# Swap workspaces
 bindsym --release $mod+Ctrl+Shift+s exec SwapWorkspaces
 
 # Remap keyboard 
