@@ -660,7 +660,7 @@ bindsym --release $mod+Shift+m exec rofi -show run -config ~/.config/rofi/config
 bindsym --release $mod+Shift+u exec caja
 
 # Swapping workspaces
-bindsym --release $mod+Ctrl+Shift+s exec __swap_workspaces
+bindsym --release $mod+Ctrl+Shift+s exec SwapWorkspaces
 
 # Remap keyboard 
 exec_always xmodmap ~/.Xmodmap
