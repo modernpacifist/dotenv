@@ -664,6 +664,3 @@ bindsym --release $mod+Mod1+Shift+s exec __swap_container_with_mark
 
 # Swap workspaces
 bindsym --release $mod+Ctrl+Shift+s exec SwapWorkspaces
-
-# Remap keyboard 
-exec_always xmodmap ~/.Xmodmap
