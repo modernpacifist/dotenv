@@ -27,7 +27,11 @@ alias t='touch'
 alias r='source ~/.config/fish/config.fish'
 
 # git
+alias gs='git status'
+alias gp='git pull'
 alias gc='git checkout'
+alias gb='git branch'
+alias gd='git diff'
 alias gcl='gitlab-ci-local'
 alias gtbk='git add -A && git commit -m "backup" && git push'
 
