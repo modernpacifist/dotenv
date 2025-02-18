@@ -38,7 +38,7 @@ alias gdf='git diff'
 alias gcl='gitlab-ci-local'
 alias gcm='git commit -m'
 
-alias gtbk='git add -A && git commit -m "backup" && git push'
+alias gtbk='git add -A && git commit -m "Backup" && git push'
 
 # docker
 alias d='docker'
