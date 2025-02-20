@@ -71,22 +71,6 @@ function nvm
     bash -c "source $HOME/.nvm/nvm.sh; nvm $argv"
 end
 
-#function export_pentest_variables --on-event fish_prompt
-    #for s in (grep -E '": [^\{]' ~/.pentest_values.json 2>/dev/null | sed -e 's/: /=/' -e "s/\(\,\)\$//" | tr -d \"\ )
-        #export $s
-    #end
-#end
-
-#function fish_prompt
-      #set_color purple
-      #date
-      #set_color FF0
-      #echo (pwd)
-      #set_color green
-      #echo (git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/')
-      #set_color normal
-#end
-
 function loadenv
     argparse h/help print printb U/unload -- $argv
     or return 1
