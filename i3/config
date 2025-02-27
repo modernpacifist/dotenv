@@ -85,16 +85,16 @@ bindsym --release XF86MonBrightnessDown exec --no-startup-id ScreenDim -f -0.1
 bindsym --release XF86MonBrightnessUp exec --no-startup-id ScreenDim -f 0.1
 
 # Use pactl to adjust volume in PulseAudio.
-bindsym --release XF86AudioLowerVolume exec --no-startup-id VolumeControl -- -1
-bindsym --release XF86AudioRaiseVolume exec --no-startup-id VolumeControl -- +1
-bindsym --release XF86AudioMute exec --no-startup-id VolumeControl --toggle
+bindsym --release XF86AudioLowerVolume exec --no-startup-id VolumeControl adjust -1
+bindsym --release XF86AudioRaiseVolume exec --no-startup-id VolumeControl adjust +1
+bindsym --release XF86AudioMute exec --no-startup-id VolumeControl toggle
 
-bindsym --release Mod1+F10 exec --no-startup-id VolumeControl --toggle 
-bindsym --release Mod1+F11 exec --no-startup-id VolumeControl -- -1
-bindsym --release Mod1+F12 exec --no-startup-id VolumeControl -- +1
-bindsym --release Mod1+Shift+F11 exec --no-startup-id VolumeControl -- -10
-bindsym --release Mod1+Shift+F12 exec --no-startup-id VolumeControl -- +10
-bindsym --release $mod+Mod1+F12 exec --no-startup-id VolumeControl --round
+bindsym --release Mod1+F10 exec --no-startup-id VolumeControl toggle 
+bindsym --release Mod1+F11 exec --no-startup-id VolumeControl adjust -1
+bindsym --release Mod1+F12 exec --no-startup-id VolumeControl adjust +1
+bindsym --release Mod1+Shift+F11 exec --no-startup-id VolumeControl adjust -10
+bindsym --release Mod1+Shift+F12 exec --no-startup-id VolumeControl adjust +10
+bindsym --release $mod+Mod1+F12 exec --no-startup-id VolumeControl round
 
 # Use playerctl to control player
 bindsym --release XF86AudioPlay exec playerctl play-pause
