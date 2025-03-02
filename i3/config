@@ -225,24 +225,24 @@ set $ws16 "16"
 workspace $ws1 output primary
 
 # change workspace index
-bindsym --release $mod+Ctrl+Shift+asciitilde exec ChangeWorkspaceIndex --index $ws0
-bindsym --release $mod+Ctrl+Shift+1 exec ChangeWorkspaceIndex --index $ws1
-bindsym --release $mod+Ctrl+Shift+2 exec ChangeWorkspaceIndex --index $ws2
-bindsym --release $mod+Ctrl+Shift+3 exec ChangeWorkspaceIndex --index $ws3
-bindsym --release $mod+Ctrl+Shift+4 exec ChangeWorkspaceIndex --index $ws4
-bindsym --release $mod+Ctrl+Shift+5 exec ChangeWorkspaceIndex --index $ws5
-bindsym --release $mod+Ctrl+Shift+6 exec ChangeWorkspaceIndex --index $ws6
-bindsym --release $mod+Ctrl+Shift+7 exec ChangeWorkspaceIndex --index $ws7
-bindsym --release $mod+Ctrl+Shift+8 exec ChangeWorkspaceIndex --index $ws8
-bindsym --release $mod+Ctrl+Shift+9 exec ChangeWorkspaceIndex --index $ws9
-bindsym --release $mod+Ctrl+Shift+0 exec ChangeWorkspaceIndex --index $ws10
+bindsym --release $mod+Ctrl+Shift+asciitilde exec ChangeWorkspaceIndex index $ws0
+bindsym --release $mod+Ctrl+Shift+1 exec ChangeWorkspaceIndex index $ws1
+bindsym --release $mod+Ctrl+Shift+2 exec ChangeWorkspaceIndex index $ws2
+bindsym --release $mod+Ctrl+Shift+3 exec ChangeWorkspaceIndex index $ws3
+bindsym --release $mod+Ctrl+Shift+4 exec ChangeWorkspaceIndex index $ws4
+bindsym --release $mod+Ctrl+Shift+5 exec ChangeWorkspaceIndex index $ws5
+bindsym --release $mod+Ctrl+Shift+6 exec ChangeWorkspaceIndex index $ws6
+bindsym --release $mod+Ctrl+Shift+7 exec ChangeWorkspaceIndex index $ws7
+bindsym --release $mod+Ctrl+Shift+8 exec ChangeWorkspaceIndex index $ws8
+bindsym --release $mod+Ctrl+Shift+9 exec ChangeWorkspaceIndex index $ws9
+bindsym --release $mod+Ctrl+Shift+0 exec ChangeWorkspaceIndex index $ws10
 
-bindsym --release $mod+Ctrl+Shift+F1 exec ChangeWorkspaceIndex --index $ws11
-bindsym --release $mod+Ctrl+Shift+F2 exec ChangeWorkspaceIndex --index $ws12
-bindsym --release $mod+Ctrl+Shift+F3 exec ChangeWorkspaceIndex --index $ws13
-bindsym --release $mod+Ctrl+Shift+F4 exec ChangeWorkspaceIndex --index $ws14
-bindsym --release $mod+Ctrl+Shift+F5 exec ChangeWorkspaceIndex --index $ws15
-bindsym --release $mod+Ctrl+Shift+F6 exec ChangeWorkspaceIndex --index $ws16
+bindsym --release $mod+Ctrl+Shift+F1 exec ChangeWorkspaceIndex index $ws11
+bindsym --release $mod+Ctrl+Shift+F2 exec ChangeWorkspaceIndex index $ws12
+bindsym --release $mod+Ctrl+Shift+F3 exec ChangeWorkspaceIndex index $ws13
+bindsym --release $mod+Ctrl+Shift+F4 exec ChangeWorkspaceIndex index $ws14
+bindsym --release $mod+Ctrl+Shift+F5 exec ChangeWorkspaceIndex index $ws15
+bindsym --release $mod+Ctrl+Shift+F6 exec ChangeWorkspaceIndex index $ws16
 
 # append name to the workspace
 bindsym --release $mod+Shift+r exec RenameWorkspace
